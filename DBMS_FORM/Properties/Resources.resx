@@ -118,22 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch-vintage-books-seamless-pattern-or-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\backgroundImage\ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch-vintage-books-seamless-pattern-or-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="turnover.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\backgroundImage\turnover.png.crdownload;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="staff-icostafficon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\backgroundImage\staff-icostafficon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="turnover " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\backgroundImage\turnover .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bookm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\backgroundImage\bookm.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch-vintage-books-seamless-pattern-or-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\backgroundImage\ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch-vintage-books-seamless-pattern-or-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Book-icon-bible" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\backgroundImage\Book-icon-bible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turnover.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\backgroundImage\turnover.png.crdownload;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turnover " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\backgroundImage\turnover .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="0af3c9613761d2d2394d99312aeba397" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0af3c9613761d2d2394d99312aeba397.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

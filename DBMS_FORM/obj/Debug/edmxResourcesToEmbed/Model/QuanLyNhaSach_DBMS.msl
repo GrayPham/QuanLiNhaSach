@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DOAN_QUANLYNHASACH_DBMSModelStoreContainer" CdmEntityContainer="DOAN_QUANLYNHASACH_DBMSEntities">
+    <EntitySetMapping Name="CungCaps">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.CungCap">
+        <MappingFragment StoreEntitySet="CungCap">
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="MNCC" ColumnName="MNCC" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
+          <ScalarProperty Name="maNQL" ColumnName="maNQL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DaBans">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.DaBan">
+        <MappingFragment StoreEntitySet="DaBan">
+          <ScalarProperty Name="MaNVB" ColumnName="MaNVB" />
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="MHD" ColumnName="MHD" />
+          <ScalarProperty Name="MaTV" ColumnName="MaTV" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="MHD" ColumnName="MHD" />
+          <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+          <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
+          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
+          <ScalarProperty Name="CThanhVien" ColumnName="CThanhVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Muons">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Muon">
+        <MappingFragment StoreEntitySet="Muon">
+          <ScalarProperty Name="MaTV" ColumnName="MaTV" />
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="MaNVM" ColumnName="MaNVM" />
+          <ScalarProperty Name="SoLuongMuon" ColumnName="SoLuongMuon" />
+          <ScalarProperty Name="ThoiGianM" ColumnName="ThoiGianM" />
+          <ScalarProperty Name="DonGiaMuon" ColumnName="DonGiaMuon" />
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCaps">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="MNCC" ColumnName="MNCC" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="ConHD" ColumnName="ConHD" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NVs">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.NV">
+        <MappingFragment StoreEntitySet="NV">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Saches">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Sach">
+        <MappingFragment StoreEntitySet="Sach">
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="TenSach" ColumnName="TenSach" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="NamXB" ColumnName="NamXB" />
+          <ScalarProperty Name="MaTL" ColumnName="MaTL" />
+          <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
+          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
+          <ScalarProperty Name="SoluongCon" ColumnName="SoluongCon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThanhViens">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.ThanhVien">
+        <MappingFragment StoreEntitySet="ThanhVien">
+          <ScalarProperty Name="MTV" ColumnName="MTV" />
+          <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+          <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="MTL" ColumnName="MTL" />
+          <ScalarProperty Name="BiLoaiBo" ColumnName="BiLoaiBo" />
+          <ScalarProperty Name="TenTL" ColumnName="TenTL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fluongNV" FunctionImportName="fluongNV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fluongNV_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fThanhVien" FunctionImportName="fThanhVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fThanhVien_Result">
+          <ScalarProperty Name="MTV" ColumnName="MTV" />
+          <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+          <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_HoaDonOfNhanVien" FunctionImportName="fun_HoaDonOfNhanVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_HoaDonOfNhanVien_Result">
+          <ScalarProperty Name="MaNVB" ColumnName="MaNVB" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="MHD" ColumnName="MHD" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fuNhanvienOfQl" FunctionImportName="fuNhanvienOfQl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fuNhanvienOfQl_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.MuonQuaHan" FunctionImportName="MuonQuaHan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.MuonQuaHan_Result">
+          <ScalarProperty Name="MaTV" ColumnName="MaTV" />
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="MaNVM" ColumnName="MaNVM" />
+          <ScalarProperty Name="SoLuongMuon" ColumnName="SoLuongMuon" />
+          <ScalarProperty Name="ThoiGianM" ColumnName="ThoiGianM" />
+          <ScalarProperty Name="DonGiaMuon" ColumnName="DonGiaMuon" />
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.NVinHD" FunctionImportName="NVinHD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.NVinHD_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SearchNhaCC" FunctionImportName="SearchNhaCC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.SearchNhaCC_Result">
+          <ScalarProperty Name="MNCC" ColumnName="MNCC" />
+          <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="ConHD" ColumnName="ConHD" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="deleteSach" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.deleteSach" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
