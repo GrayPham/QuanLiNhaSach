@@ -28,150 +28,168 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.usernametxt = new System.Windows.Forms.TextBox();
-            this.passwordtxt = new System.Windows.Forms.TextBox();
-            this.lbforgotpwd = new System.Windows.Forms.Label();
-            this.lbregister = new System.Windows.Forms.Label();
-            this.loginbtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            this.panel1 = new System.Windows.Forms.Panel();
             this.cancelbtn = new System.Windows.Forms.Button();
+            this.loginbtn = new System.Windows.Forms.Button();
+            this.lbforgotpwd = new System.Windows.Forms.Label();
+            this.passwordtxt = new System.Windows.Forms.TextBox();
+            this.usernametxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("UVN Saigon", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "LOGIN FORM";
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.cancelbtn);
+            this.panel1.Controls.Add(this.loginbtn);
+            this.panel1.Controls.Add(this.lbforgotpwd);
+            this.panel1.Controls.Add(this.passwordtxt);
+            this.panel1.Controls.Add(this.usernametxt);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(537, 417);
+            this.panel1.TabIndex = 0;
             // 
-            // label2
+            // cancelbtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("UVN Saigon", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("UVN Saigon", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password:";
-            // 
-            // usernametxt
-            // 
-            this.usernametxt.Location = new System.Drawing.Point(176, 149);
-            this.usernametxt.Name = "usernametxt";
-            this.usernametxt.Size = new System.Drawing.Size(250, 22);
-            this.usernametxt.TabIndex = 3;
-            // 
-            // passwordtxt
-            // 
-            this.passwordtxt.Location = new System.Drawing.Point(176, 204);
-            this.passwordtxt.Name = "passwordtxt";
-            this.passwordtxt.Size = new System.Drawing.Size(250, 22);
-            this.passwordtxt.TabIndex = 4;
-            // 
-            // lbforgotpwd
-            // 
-            this.lbforgotpwd.AutoSize = true;
-            this.lbforgotpwd.Font = new System.Drawing.Font("UVN Saigon", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbforgotpwd.Location = new System.Drawing.Point(177, 242);
-            this.lbforgotpwd.Name = "lbforgotpwd";
-            this.lbforgotpwd.Size = new System.Drawing.Size(144, 22);
-            this.lbforgotpwd.TabIndex = 5;
-            this.lbforgotpwd.Text = "Forgot Password?";
-            // 
-            // lbregister
-            // 
-            this.lbregister.AutoSize = true;
-            this.lbregister.Font = new System.Drawing.Font("UVN Saigon", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbregister.Location = new System.Drawing.Point(177, 285);
-            this.lbregister.Name = "lbregister";
-            this.lbregister.Size = new System.Drawing.Size(80, 22);
-            this.lbregister.TabIndex = 6;
-            this.lbregister.Text = "Register?";
+            this.cancelbtn.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelbtn.Location = new System.Drawing.Point(304, 316);
+            this.cancelbtn.Name = "cancelbtn";
+            this.cancelbtn.Size = new System.Drawing.Size(124, 36);
+            this.cancelbtn.TabIndex = 20;
+            this.cancelbtn.Text = "CANCEL";
+            this.cancelbtn.UseVisualStyleBackColor = false;
+            this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
             // loginbtn
             // 
             this.loginbtn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.loginbtn.Font = new System.Drawing.Font("UVN Saigon", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginbtn.Location = new System.Drawing.Point(71, 343);
+            this.loginbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginbtn.Location = new System.Drawing.Point(94, 316);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(124, 36);
-            this.loginbtn.TabIndex = 7;
+            this.loginbtn.TabIndex = 18;
             this.loginbtn.Text = "LOGIN";
             this.loginbtn.UseVisualStyleBackColor = false;
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
+            // 
+            // lbforgotpwd
+            // 
+            this.lbforgotpwd.AutoSize = true;
+            this.lbforgotpwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbforgotpwd.Location = new System.Drawing.Point(201, 253);
+            this.lbforgotpwd.Name = "lbforgotpwd";
+            this.lbforgotpwd.Size = new System.Drawing.Size(147, 18);
+            this.lbforgotpwd.TabIndex = 16;
+            this.lbforgotpwd.Text = "Forgot Password?";
+            // 
+            // passwordtxt
+            // 
+            this.passwordtxt.Location = new System.Drawing.Point(200, 210);
+            this.passwordtxt.Name = "passwordtxt";
+            this.passwordtxt.Size = new System.Drawing.Size(250, 22);
+            this.passwordtxt.TabIndex = 15;
+            // 
+            // usernametxt
+            // 
+            this.usernametxt.Location = new System.Drawing.Point(200, 154);
+            this.usernametxt.Name = "usernametxt";
+            this.usernametxt.Size = new System.Drawing.Size(250, 22);
+            this.usernametxt.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(90, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Password:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(90, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Username:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(193, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 38);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "LOGIN FORM";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DBMS_FORM.Properties.Resources.Book_icon_bible;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(53, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // cancelbtn
+            // pictureBox2
             // 
-            this.cancelbtn.BackColor = System.Drawing.Color.DarkRed;
-            this.cancelbtn.Font = new System.Drawing.Font("UVN Saigon", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelbtn.Location = new System.Drawing.Point(302, 343);
-            this.cancelbtn.Name = "cancelbtn";
-            this.cancelbtn.Size = new System.Drawing.Size(124, 36);
-            this.cancelbtn.TabIndex = 10;
-            this.cancelbtn.Text = "CANCEL";
-            this.cancelbtn.UseVisualStyleBackColor = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(53, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(122, 113);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DBMS_FORM.Properties.Resources.ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch_vintage_books_seamless_pattern_or_background;
-            this.ClientSize = new System.Drawing.Size(484, 443);
-            this.Controls.Add(this.cancelbtn);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.loginbtn);
-            this.Controls.Add(this.lbregister);
-            this.Controls.Add(this.lbforgotpwd);
-            this.Controls.Add(this.passwordtxt);
-            this.Controls.Add(this.usernametxt);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(537, 417);
+            this.Controls.Add(this.panel1);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox usernametxt;
-        private System.Windows.Forms.TextBox passwordtxt;
-        private System.Windows.Forms.Label lbforgotpwd;
-        private System.Windows.Forms.Label lbregister;
-        private System.Windows.Forms.Button loginbtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button cancelbtn;
+        private System.Windows.Forms.Button loginbtn;
+        private System.Windows.Forms.Label lbforgotpwd;
+        private System.Windows.Forms.TextBox passwordtxt;
+        private System.Windows.Forms.TextBox usernametxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

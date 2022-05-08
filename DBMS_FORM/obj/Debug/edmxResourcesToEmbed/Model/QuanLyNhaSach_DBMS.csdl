@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="fluongNV_Result">
+    <Property Name="MNV" Type="Int32" Nullable="false" />
+    <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="luongNV" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="fThanhVien_Result">
+    <Property Name="MTV" Type="Int32" Nullable="false" />
+    <Property Name="HoVaTenTV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ConSD" Type="Boolean" />
+    <Property Name="MDThanThiet" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="fun_HoaDonOfNhanVien_Result">
+    <Property Name="MaNVB" Type="Int32" Nullable="false" />
+    <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DaNghi" Type="Boolean" />
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="MHD" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="NgayXuat" Type="DateTime" />
+    <Property Name="TongTien" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="fuNhanvienOfQl_Result">
+    <Property Name="MNV" Type="Int32" Nullable="false" />
+    <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoSachBan" Type="Int32" />
+    <Property Name="luongNV" Type="Int32" />
+    <Property Name="NgayVang" Type="Int32" />
+    <Property Name="NgayNghiViec" Type="DateTime" />
+    <Property Name="DaNghi" Type="Boolean" />
+    <Property Name="MNQL" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="MuonQuaHan_Result">
+    <Property Name="MaTV" Type="Int32" Nullable="false" />
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="MaNVM" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongMuon" Type="Int32" />
+    <Property Name="ThoiGianM" Type="DateTime" />
+    <Property Name="DonGiaMuon" Type="Int32" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="NVinHD_Result">
+    <Property Name="MNV" Type="Int32" Nullable="false" />
+    <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoSachBan" Type="Int32" />
+    <Property Name="luongNV" Type="Int32" />
+    <Property Name="NgayVang" Type="Int32" />
+    <Property Name="NgayNghiViec" Type="DateTime" />
+    <Property Name="DaNghi" Type="Boolean" />
+    <Property Name="MNQL" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="SearchNhaCC_Result">
+    <Property Name="MNCC" Type="Int32" Nullable="false" />
+    <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConHD" Type="Boolean" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="CungCap">
+    <Key>
+      <PropertyRef Name="MaSach" />
+      <PropertyRef Name="MNCC" />
+    </Key>
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="MNCC" Type="Int32" Nullable="false" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="DonGiaNhap" Type="Int32" />
+    <Property Name="maNQL" Type="Int32" />
+    <NavigationProperty Name="NhaCungCap" Relationship="Self.FK_CungCap_NhaCungCap" FromRole="CungCap" ToRole="NhaCungCap" />
+    <NavigationProperty Name="NV" Relationship="Self.FK_CungCap_NV" FromRole="CungCap" ToRole="NV" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_CungCap_Sach" FromRole="CungCap" ToRole="Sach" />
+  </EntityType>
+  <EntityType Name="DaBan">
+    <Key>
+      <PropertyRef Name="MaNVB" />
+      <PropertyRef Name="MaSach" />
+      <PropertyRef Name="MHD" />
+    </Key>
+    <Property Name="MaNVB" Type="Int32" Nullable="false" />
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="MHD" Type="Int32" Nullable="false" />
+    <Property Name="MaTV" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="NgayBan" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_DaBan_HoaDon" FromRole="DaBan" ToRole="HoaDon" />
+    <NavigationProperty Name="NV" Relationship="Self.FK_DaBan_NV" FromRole="DaBan" ToRole="NV" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_DaBan_Sach" FromRole="DaBan" ToRole="Sach" />
+    <NavigationProperty Name="ThanhVien" Relationship="Self.FK_DaBan_ThanhVien" FromRole="DaBan" ToRole="ThanhVien" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MHD" />
+    </Key>
+    <Property Name="MHD" Type="Int32" Nullable="false" />
+    <Property Name="NgayXuat" Type="DateTime" Precision="3" />
+    <Property Name="TongTien" Type="Int32" />
+    <Property Name="GiamGia" Type="Int32" Nullable="false" />
+    <Property Name="NgayXoa" Type="DateTime" Precision="3" />
+    <Property Name="DaXoa" Type="Boolean" />
+    <Property Name="CThanhVien" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_HoaDon" FromRole="HoaDon" ToRole="DaBan" />
+    <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_HoaDon" FromRole="HoaDon" ToRole="Muon" />
+  </EntityType>
+  <EntityType Name="Muon">
+    <Key>
+      <PropertyRef Name="MaTV" />
+      <PropertyRef Name="MaSach" />
+      <PropertyRef Name="MaNVM" />
+    </Key>
+    <Property Name="MaTV" Type="Int32" Nullable="false" />
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="MaNVM" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongMuon" Type="Int32" />
+    <Property Name="ThoiGianM" Type="DateTime" Precision="3" />
+    <Property Name="DonGiaMuon" Type="Int32" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_Muon_HoaDon" FromRole="Muon" ToRole="HoaDon" />
+    <NavigationProperty Name="NV" Relationship="Self.FK_Muon_NV" FromRole="Muon" ToRole="NV" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_Muon_Sach" FromRole="Muon" ToRole="Sach" />
+    <NavigationProperty Name="ThanhVien" Relationship="Self.FK_Muon_ThanhVien" FromRole="Muon" ToRole="ThanhVien" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="MNCC" />
+    </Key>
+    <Property Name="MNCC" Type="Int32" Nullable="false" />
+    <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConHD" Type="Boolean" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CungCaps" Relationship="Self.FK_CungCap_NhaCungCap" FromRole="NhaCungCap" ToRole="CungCap" />
+  </EntityType>
+  <EntityType Name="NV">
+    <Key>
+      <PropertyRef Name="MNV" />
+    </Key>
+    <Property Name="MNV" Type="Int32" Nullable="false" />
+    <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoSachBan" Type="Int32" />
+    <Property Name="luongNV" Type="Int32" />
+    <Property Name="NgayVang" Type="Int32" />
+    <Property Name="NgayNghiViec" Type="DateTime" Precision="3" />
+    <Property Name="DaNghi" Type="Boolean" />
+    <Property Name="MNQL" Type="Int32" />
+    <NavigationProperty Name="CungCaps" Relationship="Self.FK_CungCap_NV" FromRole="NV" ToRole="CungCap" />
+    <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_NV" FromRole="NV" ToRole="DaBan" />
+    <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_NV" FromRole="NV" ToRole="Muon" />
+    <NavigationProperty Name="NV1" Relationship="Self.FK_NV_NV1" FromRole="NV" ToRole="NV1" />
+    <NavigationProperty Name="NV2" Relationship="Self.FK_NV_NV1" FromRole="NV1" ToRole="NV" />
+  </EntityType>
+  <EntityType Name="Sach">
+    <Key>
+      <PropertyRef Name="MaSach" />
+    </Key>
+    <Property Name="MaSach" Type="Int32" Nullable="false" />
+    <Property Name="TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="3" />
+    <Property Name="NamXB" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaTL" Type="Int32" Nullable="false" />
+    <Property Name="NgayXoa" Type="DateTime" Precision="3" />
+    <Property Name="DaXoa" Type="Boolean" />
+    <Property Name="SoluongCon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CungCaps" Relationship="Self.FK_CungCap_Sach" FromRole="Sach" ToRole="CungCap" />
+    <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_Sach" FromRole="Sach" ToRole="DaBan" />
+    <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_Sach" FromRole="Sach" ToRole="Muon" />
+    <NavigationProperty Name="TheLoai" Relationship="Self.FK_Sach_TheLoai" FromRole="Sach" ToRole="TheLoai" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ThanhVien">
+    <Key>
+      <PropertyRef Name="MTV" />
+    </Key>
+    <Property Name="MTV" Type="Int32" Nullable="false" />
+    <Property Name="HoVaTenTV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ConSD" Type="Boolean" />
+    <Property Name="MDThanThiet" Type="Int32" />
+    <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_ThanhVien" FromRole="ThanhVien" ToRole="DaBan" />
+    <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_ThanhVien" FromRole="ThanhVien" ToRole="Muon" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="MTL" />
+    </Key>
+    <Property Name="MTL" Type="Int32" Nullable="false" />
+    <Property Name="BiLoaiBo" Type="Boolean" />
+    <Property Name="TenTL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Saches" Relationship="Self.FK_Sach_TheLoai" FromRole="TheLoai" ToRole="Sach" />
+  </EntityType>
+  <Association Name="FK_CungCap_NhaCungCap">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CungCap" Type="Self.CungCap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="MNCC" />
+      </Principal>
+      <Dependent Role="CungCap">
+        <PropertyRef Name="MNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CungCap_NV">
+    <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
+    <End Role="CungCap" Type="Self.CungCap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NV">
+        <PropertyRef Name="MNV" />
+      </Principal>
+      <Dependent Role="CungCap">
+        <PropertyRef Name="maNQL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CungCap_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CungCap" Type="Self.CungCap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="CungCap">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DaBan_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="DaBan" Type="Self.DaBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MHD" />
+      </Principal>
+      <Dependent Role="DaBan">
+        <PropertyRef Name="MHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DaBan_NV">
+    <End Role="NV" Type="Self.NV" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DaBan" Type="Self.DaBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NV">
+        <PropertyRef Name="MNV" />
+      </Principal>
+      <Dependent Role="DaBan">
+        <PropertyRef Name="MaNVB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DaBan_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DaBan" Type="Self.DaBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="DaBan">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DaBan_ThanhVien">
+    <End Role="ThanhVien" Type="Self.ThanhVien" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DaBan" Type="Self.DaBan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThanhVien">
+        <PropertyRef Name="MTV" />
+      </Principal>
+      <Dependent Role="DaBan">
+        <PropertyRef Name="MaTV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Muon_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MHD" />
+      </Principal>
+      <Dependent Role="Muon">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Muon_NV">
+    <End Role="NV" Type="Self.NV" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NV">
+        <PropertyRef Name="MNV" />
+      </Principal>
+      <Dependent Role="Muon">
+        <PropertyRef Name="MaNVM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Muon_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="MaSach" />
+      </Principal>
+      <Dependent Role="Muon">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Muon_ThanhVien">
+    <End Role="ThanhVien" Type="Self.ThanhVien" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThanhVien">
+        <PropertyRef Name="MTV" />
+      </Principal>
+      <Dependent Role="Muon">
+        <PropertyRef Name="MaTV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NV_NV1">
+    <End Role="NV" Type="Self.NV" Multiplicity="0..1" />
+    <End Role="NV1" Type="Self.NV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NV">
+        <PropertyRef Name="MNV" />
+      </Principal>
+      <Dependent Role="NV1">
+        <PropertyRef Name="MNQL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sach_TheLoai">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sach" Type="Self.Sach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="MTL" />
+      </Principal>
+      <Dependent Role="Sach">
+        <PropertyRef Name="MaTL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DOAN_QUANLYNHASACH_DBMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CungCaps" EntityType="Self.CungCap" />
+    <EntitySet Name="DaBans" EntityType="Self.DaBan" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="Muons" EntityType="Self.Muon" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="NVs" EntityType="Self.NV" />
+    <EntitySet Name="Saches" EntityType="Self.Sach" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="ThanhViens" EntityType="Self.ThanhVien" />
+    <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+    <AssociationSet Name="FK_CungCap_NhaCungCap" Association="Self.FK_CungCap_NhaCungCap">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="CungCap" EntitySet="CungCaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CungCap_NV" Association="Self.FK_CungCap_NV">
+      <End Role="NV" EntitySet="NVs" />
+      <End Role="CungCap" EntitySet="CungCaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CungCap_Sach" Association="Self.FK_CungCap_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="CungCap" EntitySet="CungCaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DaBan_HoaDon" Association="Self.FK_DaBan_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="DaBan" EntitySet="DaBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DaBan_NV" Association="Self.FK_DaBan_NV">
+      <End Role="NV" EntitySet="NVs" />
+      <End Role="DaBan" EntitySet="DaBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DaBan_Sach" Association="Self.FK_DaBan_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="DaBan" EntitySet="DaBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DaBan_ThanhVien" Association="Self.FK_DaBan_ThanhVien">
+      <End Role="ThanhVien" EntitySet="ThanhViens" />
+      <End Role="DaBan" EntitySet="DaBans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Muon_HoaDon" Association="Self.FK_Muon_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="Muon" EntitySet="Muons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Muon_NV" Association="Self.FK_Muon_NV">
+      <End Role="NV" EntitySet="NVs" />
+      <End Role="Muon" EntitySet="Muons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Muon_Sach" Association="Self.FK_Muon_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="Muon" EntitySet="Muons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Muon_ThanhVien" Association="Self.FK_Muon_ThanhVien">
+      <End Role="ThanhVien" EntitySet="ThanhViens" />
+      <End Role="Muon" EntitySet="Muons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NV_NV1" Association="Self.FK_NV_NV1">
+      <End Role="NV" EntitySet="NVs" />
+      <End Role="NV1" EntitySet="NVs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sach_TheLoai" Association="Self.FK_Sach_TheLoai">
+      <End Role="TheLoai" EntitySet="TheLoais" />
+      <End Role="Sach" EntitySet="Saches" />
+    </AssociationSet>
+    <FunctionImport Name="fluongNV" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fluongNV_Result)" />
+    <FunctionImport Name="fThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fThanhVien_Result)" />
+    <FunctionImport Name="fun_HoaDonOfNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_HoaDonOfNhanVien_Result)">
+      <Parameter Name="maNV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fuNhanvienOfQl" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fuNhanvienOfQl_Result)">
+      <Parameter Name="maNQL" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MuonQuaHan" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.MuonQuaHan_Result)" />
+    <FunctionImport Name="NVinHD" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.NVinHD_Result)">
+      <Parameter Name="maHD" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SearchNhaCC" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SearchNhaCC_Result)">
+      <Parameter Name="search" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="deleteSach">
+      <Parameter Name="maSach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

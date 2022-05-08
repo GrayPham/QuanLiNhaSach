@@ -16,5 +16,17 @@ namespace DBMS_FORM
         {
             InitializeComponent();
         }
+
+        private void cancelbtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
