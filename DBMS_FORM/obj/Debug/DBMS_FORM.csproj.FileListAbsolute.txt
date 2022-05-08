@@ -22,3 +22,6 @@ D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.dll
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
+C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe.config
+C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.exe
+C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb
