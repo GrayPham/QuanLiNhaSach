@@ -16,26 +16,24 @@ namespace DBMS_FORM
         {
             InitializeComponent();
         }
-
-        NhanVien quanLy = new NhanVien();
-        private void lbSearch_Click(object sender, EventArgs e)
-        {
-
-        }
+        public string userName { get; set; } = "Nguyen Van A";
+        public string userRole { get; set; } = "Employee";
+        NhanVien nv = new NhanVien();
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //  NOTE: Đợi phân quyền
-            int maNV = 2002;  
-            dataGridView1.DataSource = quanLy.capDuoi(maNV);
-            if(dataGridView1.Rows.Count == 0)
-            {
-                dataGridView1.DataSource = quanLy.hoaDon(maNV);
-            }    
+            dataGridView1.DataSource = nv.hienThi();
+            label_name.Text = userName;
+            lbRole.Text = userRole;
         }
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = nv.search(textBox_search.Text);
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Your search does not exist!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

@@ -9,17 +9,17 @@ namespace DBMS_FORM.BLL
 {
     public class NhanVien : QuanLyNhaSach
     {
-        internal object capDuoi(int maNQL)
+
+        internal object hienThi()
         {
-            
-            var nv = db.fuNhanvienOfQl(maNQL);
-            return nv;
+            var sach = db.fun_SachCon();
+            return sach;
         }
 
-        internal object hoaDon(int maNV)
+        internal object search(string chuoi)
         {
-            var hd = db.fun_HoaDonOfNhanVien(maNV);
-            return hd;
+            var timKiem = db.fun_SearchSach(chuoi);
+            return timKiem; 
         }
     }
 }
