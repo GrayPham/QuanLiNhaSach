@@ -208,5 +208,178 @@ namespace DBMS_FORM.Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchCuaNhanVien")]
+        public virtual IQueryable<fun_SearchCuaNhanVien_Result> fun_SearchCuaNhanVien()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchCuaNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchCuaNhanVien]()");
+        }
+    
+        public virtual int InsertMuon(Nullable<int> mATV, Nullable<int> mS, Nullable<int> mANV, Nullable<int> soLuong, Nullable<System.DateTime> nMuon, Nullable<System.DateTime> nTra, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<int> giamGia, Nullable<System.DateTime> nXOA, Nullable<bool> dXOA, Nullable<bool> thanhVien)
+        {
+            var mATVParameter = mATV.HasValue ?
+                new ObjectParameter("MATV", mATV) :
+                new ObjectParameter("MATV", typeof(int));
+    
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var mANVParameter = mANV.HasValue ?
+                new ObjectParameter("MANV", mANV) :
+                new ObjectParameter("MANV", typeof(int));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
+    
+            var nMuonParameter = nMuon.HasValue ?
+                new ObjectParameter("NMuon", nMuon) :
+                new ObjectParameter("NMuon", typeof(System.DateTime));
+    
+            var nTraParameter = nTra.HasValue ?
+                new ObjectParameter("NTra", nTra) :
+                new ObjectParameter("NTra", typeof(System.DateTime));
+    
+            var mHDParameter = mHD.HasValue ?
+                new ObjectParameter("MHD", mHD) :
+                new ObjectParameter("MHD", typeof(int));
+    
+            var nXuatParameter = nXuat.HasValue ?
+                new ObjectParameter("NXuat", nXuat) :
+                new ObjectParameter("NXuat", typeof(System.DateTime));
+    
+            var tongTienParameter = tongTien.HasValue ?
+                new ObjectParameter("TongTien", tongTien) :
+                new ObjectParameter("TongTien", typeof(int));
+    
+            var giamGiaParameter = giamGia.HasValue ?
+                new ObjectParameter("GiamGia", giamGia) :
+                new ObjectParameter("GiamGia", typeof(int));
+    
+            var nXOAParameter = nXOA.HasValue ?
+                new ObjectParameter("NXOA", nXOA) :
+                new ObjectParameter("NXOA", typeof(System.DateTime));
+    
+            var dXOAParameter = dXOA.HasValue ?
+                new ObjectParameter("DXOA", dXOA) :
+                new ObjectParameter("DXOA", typeof(bool));
+    
+            var thanhVienParameter = thanhVien.HasValue ?
+                new ObjectParameter("ThanhVien", thanhVien) :
+                new ObjectParameter("ThanhVien", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertMuon", mATVParameter, mSParameter, mANVParameter, soLuongParameter, nMuonParameter, nTraParameter, mHDParameter, nXuatParameter, tongTienParameter, giamGiaParameter, nXOAParameter, dXOAParameter, thanhVienParameter);
+        }
+    
+        public virtual ObjectResult<SettingNhanVien_Result> SettingNhanVien(string action, Nullable<int> mNV, string hoTenNV, string sDT, string diaChi, Nullable<int> soSachBan, Nullable<int> luongNV, Nullable<int> ngayVang, Nullable<System.DateTime> ngayNghiViec, Nullable<bool> daNghi, Nullable<int> mNQL, Nullable<bool> status)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            var mNVParameter = mNV.HasValue ?
+                new ObjectParameter("MNV", mNV) :
+                new ObjectParameter("MNV", typeof(int));
+    
+            var hoTenNVParameter = hoTenNV != null ?
+                new ObjectParameter("HoTenNV", hoTenNV) :
+                new ObjectParameter("HoTenNV", typeof(string));
+    
+            var sDTParameter = sDT != null ?
+                new ObjectParameter("SDT", sDT) :
+                new ObjectParameter("SDT", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var soSachBanParameter = soSachBan.HasValue ?
+                new ObjectParameter("SoSachBan", soSachBan) :
+                new ObjectParameter("SoSachBan", typeof(int));
+    
+            var luongNVParameter = luongNV.HasValue ?
+                new ObjectParameter("luongNV", luongNV) :
+                new ObjectParameter("luongNV", typeof(int));
+    
+            var ngayVangParameter = ngayVang.HasValue ?
+                new ObjectParameter("NgayVang", ngayVang) :
+                new ObjectParameter("NgayVang", typeof(int));
+    
+            var ngayNghiViecParameter = ngayNghiViec.HasValue ?
+                new ObjectParameter("NgayNghiViec", ngayNghiViec) :
+                new ObjectParameter("NgayNghiViec", typeof(System.DateTime));
+    
+            var daNghiParameter = daNghi.HasValue ?
+                new ObjectParameter("DaNghi", daNghi) :
+                new ObjectParameter("DaNghi", typeof(bool));
+    
+            var mNQLParameter = mNQL.HasValue ?
+                new ObjectParameter("MNQL", mNQL) :
+                new ObjectParameter("MNQL", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingNhanVien_Result>("SettingNhanVien", actionParameter, mNVParameter, hoTenNVParameter, sDTParameter, diaChiParameter, soSachBanParameter, luongNVParameter, ngayVangParameter, ngayNghiViecParameter, daNghiParameter, mNQLParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<SettingThanhVien_Result> SettingThanhVien(string action, Nullable<int> mTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<bool> conSD, Nullable<int> mDThanThiet, Nullable<bool> status)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            var mTVParameter = mTV.HasValue ?
+                new ObjectParameter("MTV", mTV) :
+                new ObjectParameter("MTV", typeof(int));
+    
+            var hoVaTenTVParameter = hoVaTenTV != null ?
+                new ObjectParameter("HoVaTenTV", hoVaTenTV) :
+                new ObjectParameter("HoVaTenTV", typeof(string));
+    
+            var soDTParameter = soDT != null ?
+                new ObjectParameter("SoDT", soDT) :
+                new ObjectParameter("SoDT", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var mailParameter = mail != null ?
+                new ObjectParameter("Mail", mail) :
+                new ObjectParameter("Mail", typeof(string));
+    
+            var conSDParameter = conSD.HasValue ?
+                new ObjectParameter("ConSD", conSD) :
+                new ObjectParameter("ConSD", typeof(bool));
+    
+            var mDThanThietParameter = mDThanThiet.HasValue ?
+                new ObjectParameter("MDThanThiet", mDThanThiet) :
+                new ObjectParameter("MDThanThiet", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingThanhVien_Result>("SettingThanhVien", actionParameter, mTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter, statusParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SachCon")]
+        public virtual IQueryable<fun_SachCon_Result> fun_SachCon()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SachCon_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SachCon]()");
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchSach")]
+        public virtual IQueryable<fun_SearchSach_Result> fun_SearchSach(string searchSach)
+        {
+            var searchSachParameter = searchSach != null ?
+                new ObjectParameter("searchSach", searchSach) :
+                new ObjectParameter("searchSach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchSach_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchSach](@searchSach)", searchSachParameter);
+        }
     }
 }

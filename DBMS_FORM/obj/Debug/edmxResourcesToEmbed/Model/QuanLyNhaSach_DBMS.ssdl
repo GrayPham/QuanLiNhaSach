@@ -74,6 +74,7 @@
     <Property Name="NgayNghiViec" Type="datetime" />
     <Property Name="DaNghi" Type="bit" />
     <Property Name="MNQL" Type="int" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -110,6 +111,7 @@
     <Property Name="SoDT" Type="varchar" MaxLength="15" />
     <Property Name="ConSD" Type="bit" />
     <Property Name="MDThanThiet" Type="int" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="TheLoai">
     <Key>
@@ -331,21 +333,37 @@
   <Function Name="fuCountSachTL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="maTl" Type="int" Mode="In" />
   </Function>
-  <Function Name="fun_HoaDonOfNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="maNV" Type="int" Mode="In" />
+  <Function Name="fun_SachCon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>
         <RowType>
-          <Property Name="MaNVB" Type="int" Nullable="false" />
-          <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
-          <Property Name="SDT" Type="varchar" MaxLength="15" />
-          <Property Name="DiaChi" Type="varchar" MaxLength="50" />
-          <Property Name="DaNghi" Type="bit" />
           <Property Name="MaSach" Type="int" Nullable="false" />
-          <Property Name="MHD" Type="int" Nullable="false" />
-          <Property Name="SoLuong" Type="int" />
-          <Property Name="NgayXuat" Type="datetime" />
-          <Property Name="TongTien" Type="int" />
+          <Property Name="TenSach" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NgayNhap" Type="datetime" />
+          <Property Name="NamXB" Type="nchar" MaxLength="10" />
+          <Property Name="MaTL" Type="int" Nullable="false" />
+          <Property Name="NgayXoa" Type="datetime" />
+          <Property Name="DaXoa" Type="bit" />
+          <Property Name="SoluongCon" Type="nchar" MaxLength="10" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fun_SearchSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="searchSach" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MaSach" Type="int" Nullable="false" />
+          <Property Name="TenSach" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NgayNhap" Type="datetime" />
+          <Property Name="NamXB" Type="nchar" MaxLength="10" />
+          <Property Name="MaTL" Type="int" Nullable="false" />
+          <Property Name="NgayXoa" Type="datetime" />
+          <Property Name="DaXoa" Type="bit" />
+          <Property Name="SoluongCon" Type="nchar" MaxLength="10" />
         </RowType>
       </CollectionType>
     </ReturnType>
@@ -371,6 +389,21 @@
   </Function>
   <Function Name="fuSongayNghi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="maNV" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MATV" Type="int" Mode="In" />
+    <Parameter Name="MS" Type="int" Mode="In" />
+    <Parameter Name="MANV" Type="int" Mode="In" />
+    <Parameter Name="SoLuong" Type="int" Mode="In" />
+    <Parameter Name="NMuon" Type="datetime" Mode="In" />
+    <Parameter Name="NTra" Type="datetime" Mode="In" />
+    <Parameter Name="MHD" Type="int" Mode="In" />
+    <Parameter Name="NXuat" Type="datetime" Mode="In" />
+    <Parameter Name="TongTien" Type="int" Mode="In" />
+    <Parameter Name="GiamGia" Type="int" Mode="In" />
+    <Parameter Name="NXOA" Type="datetime" Mode="In" />
+    <Parameter Name="DXOA" Type="bit" Mode="In" />
+    <Parameter Name="ThanhVien" Type="bit" Mode="In" />
   </Function>
   <Function Name="MuonQuaHan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
@@ -419,6 +452,31 @@
         </RowType>
       </CollectionType>
     </ReturnType>
+  </Function>
+  <Function Name="SettingNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+    <Parameter Name="MNV" Type="int" Mode="In" />
+    <Parameter Name="HoTenNV" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoSachBan" Type="int" Mode="In" />
+    <Parameter Name="luongNV" Type="int" Mode="In" />
+    <Parameter Name="NgayVang" Type="int" Mode="In" />
+    <Parameter Name="NgayNghiViec" Type="datetime" Mode="In" />
+    <Parameter Name="DaNghi" Type="bit" Mode="In" />
+    <Parameter Name="MNQL" Type="int" Mode="In" />
+    <Parameter Name="status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SettingThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+    <Parameter Name="MTV" Type="int" Mode="In" />
+    <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoDT" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConSD" Type="bit" Mode="In" />
+    <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+    <Parameter Name="status" Type="bit" Mode="In" />
   </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
