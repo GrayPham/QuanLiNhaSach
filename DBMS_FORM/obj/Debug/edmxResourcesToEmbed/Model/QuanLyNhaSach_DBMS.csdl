@@ -159,6 +159,7 @@
     <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_NV" FromRole="NV" ToRole="Muon" />
     <NavigationProperty Name="NV1" Relationship="Self.FK_NV_NV1" FromRole="NV" ToRole="NV1" />
     <NavigationProperty Name="NV2" Relationship="Self.FK_NV_NV1" FromRole="NV1" ToRole="NV" />
+    <Property Name="Status" Type="Boolean" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -201,6 +202,7 @@
     <Property Name="MDThanThiet" Type="Int32" />
     <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_ThanhVien" FromRole="ThanhVien" ToRole="DaBan" />
     <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_ThanhVien" FromRole="ThanhVien" ToRole="Muon" />
+    <Property Name="Status" Type="Boolean" />
   </EntityType>
   <EntityType Name="TheLoai">
     <Key>
@@ -498,6 +500,51 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="fun_SearchCuaNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchCuaNhanVien_Result)" />
+    <FunctionImport Name="InsertMuon">
+      <Parameter Name="MATV" Mode="In" Type="Int32" />
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="MANV" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="NMuon" Mode="In" Type="DateTime" />
+      <Parameter Name="NTra" Mode="In" Type="DateTime" />
+      <Parameter Name="MHD" Mode="In" Type="Int32" />
+      <Parameter Name="NXuat" Mode="In" Type="DateTime" />
+      <Parameter Name="TongTien" Mode="In" Type="Int32" />
+      <Parameter Name="GiamGia" Mode="In" Type="Int32" />
+      <Parameter Name="NXOA" Mode="In" Type="DateTime" />
+      <Parameter Name="DXOA" Mode="In" Type="Boolean" />
+      <Parameter Name="ThanhVien" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SettingNhanVien" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SettingNhanVien_Result)">
+      <Parameter Name="Action" Mode="In" Type="String" />
+      <Parameter Name="MNV" Mode="In" Type="Int32" />
+      <Parameter Name="HoTenNV" Mode="In" Type="String" />
+      <Parameter Name="SDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="SoSachBan" Mode="In" Type="Int32" />
+      <Parameter Name="luongNV" Mode="In" Type="Int32" />
+      <Parameter Name="NgayVang" Mode="In" Type="Int32" />
+      <Parameter Name="NgayNghiViec" Mode="In" Type="DateTime" />
+      <Parameter Name="DaNghi" Mode="In" Type="Boolean" />
+      <Parameter Name="MNQL" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SettingThanhVien" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result)">
+      <Parameter Name="Action" Mode="In" Type="String" />
+      <Parameter Name="MTV" Mode="In" Type="Int32" />
+      <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
+      <Parameter Name="SoDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="ConSD" Mode="In" Type="Boolean" />
+      <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="fun_SachCon" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SachCon_Result)" />
+    <FunctionImport Name="fun_SearchSach" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchSach_Result)">
+      <Parameter Name="searchSach" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -509,5 +556,61 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="fun_SearchCuaNhanVien_Result">
+    <Property Type="Int32" Name="MaSach" Nullable="false" />
+    <Property Type="String" Name="TenSach" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="DonGia" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NgayNhap" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NamXB" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MaTL" Nullable="false" />
+    <Property Type="DateTime" Name="NgayXoa" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="DaXoa" Nullable="true" />
+    <Property Type="String" Name="SoluongCon" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SettingNhanVien_Result">
+    <Property Type="Int32" Name="MNV" Nullable="false" />
+    <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SoSachBan" Nullable="true" />
+    <Property Type="Int32" Name="luongNV" Nullable="true" />
+    <Property Type="Int32" Name="NgayVang" Nullable="true" />
+    <Property Type="DateTime" Name="NgayNghiViec" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="DaNghi" Nullable="true" />
+    <Property Type="Int32" Name="MNQL" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SettingThanhVien_Result">
+    <Property Type="Int32" Name="MTV" Nullable="false" />
+    <Property Type="String" Name="HoVaTenTV" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Diachi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SoDT" Nullable="true" MaxLength="15" />
+    <Property Type="Boolean" Name="ConSD" Nullable="true" />
+    <Property Type="Int32" Name="MDThanThiet" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="fun_SachCon_Result">
+    <Property Type="Int32" Name="MaSach" Nullable="false" />
+    <Property Type="String" Name="TenSach" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="DonGia" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NgayNhap" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NamXB" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MaTL" Nullable="false" />
+    <Property Type="DateTime" Name="NgayXoa" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="DaXoa" Nullable="true" />
+    <Property Type="String" Name="SoluongCon" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="fun_SearchSach_Result">
+    <Property Type="Int32" Name="MaSach" Nullable="false" />
+    <Property Type="String" Name="TenSach" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="DonGia" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NgayNhap" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NamXB" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="MaTL" Nullable="false" />
+    <Property Type="DateTime" Name="NgayXoa" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="DaXoa" Nullable="true" />
+    <Property Type="String" Name="SoluongCon" Nullable="true" MaxLength="10" />
   </ComplexType>
 </Schema>

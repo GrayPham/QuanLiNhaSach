@@ -22,3 +22,26 @@ D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.dll
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe.config
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.pdb
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.dll
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.AssemblyReference.cache
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.SuggestedBindingRedirects.cache
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Banfrm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Form1.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.FormNhanVien.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.FormThanhVien.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Importfrm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.LoginForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.ManagerForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.NhapHoaDon.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Properties.Resources.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Thuefrm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.TurnoverCheckForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.GenerateResource.cache
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CoreCompileInputs.cache
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.exe
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb

@@ -115,6 +115,15 @@
     <Compile Include="Model\fun_HoaDonOfNhanVien_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\fun_SachCon_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_SearchCuaNhanVien_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_SearchSach_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\HoaDon.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
@@ -153,6 +162,12 @@
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SearchNhaCC_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SettingNhanVien_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SettingThanhVien_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">

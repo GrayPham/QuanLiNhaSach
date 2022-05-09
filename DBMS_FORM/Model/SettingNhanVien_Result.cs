@@ -10,18 +10,9 @@
 namespace DBMS_FORM.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class NV
+    public partial class SettingNhanVien_Result
     {
-        public NV()
-        {
-            this.CungCaps = new HashSet<CungCap>();
-            this.DaBans = new HashSet<DaBan>();
-            this.Muons = new HashSet<Muon>();
-            this.NV1 = new HashSet<NV>();
-        }
-    
         public int MNV { get; set; }
         public string HoTenNV { get; set; }
         public string SDT { get; set; }
@@ -33,11 +24,5 @@ namespace DBMS_FORM.Model
         public Nullable<bool> DaNghi { get; set; }
         public Nullable<int> MNQL { get; set; }
         public Nullable<bool> Status { get; set; }
-    
-        public virtual ICollection<CungCap> CungCaps { get; set; }
-        public virtual ICollection<DaBan> DaBans { get; set; }
-        public virtual ICollection<Muon> Muons { get; set; }
-        public virtual ICollection<NV> NV1 { get; set; }
-        public virtual NV NV2 { get; set; }
     }
 }
