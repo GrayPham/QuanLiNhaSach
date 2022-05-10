@@ -302,6 +302,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="CheckMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MTV" Type="int" Mode="In" />
+          <Parameter Name="MS" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="InOut" />
+          <Parameter Name="Status2" Type="int" Mode="InOut" />
+        </Function>
         <Function Name="CountSachDaMua" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maTV" Type="int" Mode="In" />
         </Function>
@@ -338,6 +345,21 @@
         <Function Name="fuCountSachTL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maTl" Type="int" Mode="In" />
         </Function>
+        <Function Name="fun_DanhSachNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="MNV" Type="int" Nullable="false" />
+                <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+                <Property Name="SDT" Type="varchar" MaxLength="15" />
+                <Property Name="DiaChi" Type="varchar" MaxLength="50" />
+                <Property Name="SoSachBan" Type="int" />
+                <Property Name="luongNV" Type="int" />
+                <Property Name="NgayVang" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="fun_SachCon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
             <CollectionType>
@@ -351,6 +373,22 @@
                 <Property Name="NgayXoa" Type="datetime" />
                 <Property Name="DaXoa" Type="bit" />
                 <Property Name="SoluongCon" Type="nchar" MaxLength="10" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fun_SearchNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nv" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="MNV" Type="int" Nullable="false" />
+                <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+                <Property Name="SDT" Type="varchar" MaxLength="15" />
+                <Property Name="DiaChi" Type="varchar" MaxLength="50" />
+                <Property Name="SoSachBan" Type="int" />
+                <Property Name="luongNV" Type="int" />
+                <Property Name="NgayVang" Type="int" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -369,6 +407,39 @@
                 <Property Name="NgayXoa" Type="datetime" />
                 <Property Name="DaXoa" Type="bit" />
                 <Property Name="SoluongCon" Type="nchar" MaxLength="10" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fun_SearchThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchThanhVien" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="MTV" Type="int" Nullable="false" />
+                <Property Name="HoVaTenTV" Type="nvarchar" MaxLength="50" />
+                <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
+                <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+                <Property Name="SoDT" Type="varchar" MaxLength="15" />
+                <Property Name="ConSD" Type="bit" />
+                <Property Name="MDThanThiet" Type="int" />
+                <Property Name="Status" Type="bit" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fun_ThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="MTV" Type="int" Nullable="false" />
+                <Property Name="HoVaTenTV" Type="nvarchar" MaxLength="50" />
+                <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
+                <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+                <Property Name="SoDT" Type="varchar" MaxLength="15" />
+                <Property Name="ConSD" Type="bit" />
+                <Property Name="MDThanThiet" Type="int" />
+                <Property Name="Status" Type="bit" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -395,7 +466,31 @@
         <Function Name="fuSongayNghi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maNV" Type="int" Mode="In" />
         </Function>
+        <Function Name="INSERTBAN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flag" Type="int" Mode="In" />
+          <Parameter Name="MANV" Type="int" Mode="In" />
+          <Parameter Name="MS" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="NBan" Type="datetime" Mode="In" />
+          <Parameter Name="MHD" Type="int" Mode="In" />
+          <Parameter Name="NXuat" Type="datetime" Mode="In" />
+          <Parameter Name="TongTien" Type="int" Mode="In" />
+          <Parameter Name="DXOA" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="INSERTBANTV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flag" Type="int" Mode="In" />
+          <Parameter Name="MANV" Type="int" Mode="In" />
+          <Parameter Name="MS" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="NBan" Type="datetime" Mode="In" />
+          <Parameter Name="MHD" Type="int" Mode="In" />
+          <Parameter Name="NXuat" Type="datetime" Mode="In" />
+          <Parameter Name="TongTien" Type="int" Mode="In" />
+          <Parameter Name="GIAMGIA" Type="int" Mode="In" />
+          <Parameter Name="MTV" Type="int" Mode="In" />
+        </Function>
         <Function Name="InsertMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flag" Type="int" Mode="In" />
           <Parameter Name="MATV" Type="int" Mode="In" />
           <Parameter Name="MS" Type="int" Mode="In" />
           <Parameter Name="MANV" Type="int" Mode="In" />
@@ -406,7 +501,6 @@
           <Parameter Name="NXuat" Type="datetime" Mode="In" />
           <Parameter Name="TongTien" Type="int" Mode="In" />
           <Parameter Name="GiamGia" Type="int" Mode="In" />
-          <Parameter Name="NXOA" Type="datetime" Mode="In" />
           <Parameter Name="DXOA" Type="bit" Mode="In" />
           <Parameter Name="ThanhVien" Type="bit" Mode="In" />
         </Function>
@@ -1083,6 +1177,7 @@
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="fun_SearchCuaNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchCuaNhanVien_Result)" />
           <FunctionImport Name="InsertMuon">
+            <Parameter Name="flag" Mode="In" Type="Int32" />
             <Parameter Name="MATV" Mode="In" Type="Int32" />
             <Parameter Name="MS" Mode="In" Type="Int32" />
             <Parameter Name="MANV" Mode="In" Type="Int32" />
@@ -1093,7 +1188,6 @@
             <Parameter Name="NXuat" Mode="In" Type="DateTime" />
             <Parameter Name="TongTien" Mode="In" Type="Int32" />
             <Parameter Name="GiamGia" Mode="In" Type="Int32" />
-            <Parameter Name="NXOA" Mode="In" Type="DateTime" />
             <Parameter Name="DXOA" Mode="In" Type="Boolean" />
             <Parameter Name="ThanhVien" Mode="In" Type="Boolean" />
           </FunctionImport>
@@ -1124,7 +1218,45 @@
           </FunctionImport>
           <FunctionImport Name="fun_SachCon" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SachCon_Result)" />
           <FunctionImport Name="fun_SearchSach" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchSach_Result)">
-            <Parameter Name="searchSach" Mode="In" Type="String" />
+          <Parameter Name="searchSach" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CheckMuon">
+            <Parameter Name="MTV" Mode="In" Type="Int32" />
+            <Parameter Name="MS" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="InOut" Type="Int32" />
+            <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="fun_DanhSachNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachNhanVien_Result)" />
+          <FunctionImport Name="fun_SearchNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchNhanVien_Result)">
+            <Parameter Name="nv" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fun_SearchThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchThanhVien_Result)">
+            <Parameter Name="searchThanhVien" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fun_ThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_ThanhVien_Result)" />
+          <FunctionImport Name="INSERTBAN">
+            <Parameter Name="flag" Mode="In" Type="Int32" />
+            <Parameter Name="MANV" Mode="In" Type="Int32" />
+            <Parameter Name="MS" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="NBan" Mode="In" Type="DateTime" />
+            <Parameter Name="MHD" Mode="In" Type="Int32" />
+            <Parameter Name="NXuat" Mode="In" Type="DateTime" />
+            <Parameter Name="TongTien" Mode="In" Type="Int32" />
+            <Parameter Name="DXOA" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="INSERTBANTV">
+            <Parameter Name="flag" Mode="In" Type="Int32" />
+            <Parameter Name="MANV" Mode="In" Type="Int32" />
+            <Parameter Name="MS" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="NBan" Mode="In" Type="DateTime" />
+            <Parameter Name="MHD" Mode="In" Type="Int32" />
+            <Parameter Name="NXuat" Mode="In" Type="DateTime" />
+            <Parameter Name="TongTien" Mode="In" Type="Int32" />
+            <Parameter Name="GIAMGIA" Mode="In" Type="Int32" />
+            <Parameter Name="MTV" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1193,6 +1325,44 @@
           <Property Type="DateTime" Name="NgayXoa" Nullable="true" Precision="23" />
           <Property Type="Boolean" Name="DaXoa" Nullable="true" />
           <Property Type="String" Name="SoluongCon" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="fun_DanhSachNhanVien_Result">
+          <Property Type="Int32" Name="MNV" Nullable="false" />
+          <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SoSachBan" Nullable="true" />
+          <Property Type="Int32" Name="luongNV" Nullable="true" />
+          <Property Type="Int32" Name="NgayVang" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="fun_SearchNhanVien_Result">
+          <Property Type="Int32" Name="MNV" Nullable="false" />
+          <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SoSachBan" Nullable="true" />
+          <Property Type="Int32" Name="luongNV" Nullable="true" />
+          <Property Type="Int32" Name="NgayVang" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="fun_SearchThanhVien_Result">
+          <Property Type="Int32" Name="MTV" Nullable="false" />
+          <Property Type="String" Name="HoVaTenTV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Diachi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SoDT" Nullable="true" MaxLength="15" />
+          <Property Type="Boolean" Name="ConSD" Nullable="true" />
+          <Property Type="Int32" Name="MDThanThiet" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="fun_ThanhVien_Result">
+          <Property Type="Int32" Name="MTV" Nullable="false" />
+          <Property Type="String" Name="HoVaTenTV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Diachi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Mail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SoDT" Nullable="true" MaxLength="15" />
+          <Property Type="Boolean" Name="ConSD" Nullable="true" />
+          <Property Type="Int32" Name="MDThanThiet" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1491,6 +1661,63 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CheckMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckMuon" />
+          <FunctionImportMapping FunctionImportName="fun_DanhSachNhanVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_DanhSachNhanVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachNhanVien_Result">
+                <ScalarProperty Name="MNV" ColumnName="MNV" />
+                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+                <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+                <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fun_SearchNhanVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_SearchNhanVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_SearchNhanVien_Result">
+                <ScalarProperty Name="MNV" ColumnName="MNV" />
+                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+                <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+                <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fun_SearchThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_SearchThanhVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_SearchThanhVien_Result">
+                <ScalarProperty Name="MTV" ColumnName="MTV" />
+                <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+                <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+                <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fun_ThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_ThanhVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_ThanhVien_Result">
+                <ScalarProperty Name="MTV" ColumnName="MTV" />
+                <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+                <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+                <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INSERTBAN" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBAN" />
+          <FunctionImportMapping FunctionImportName="INSERTBANTV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBANTV" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
