@@ -44,15 +44,24 @@
             this.lb_NAMESTORE = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lbMasach = new System.Windows.Forms.Label();
-            this.lbSoluong = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnPrintf = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lbSoluong = new System.Windows.Forms.Label();
+            this.lbMasach = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnPrintf = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnYes = new System.Windows.Forms.RadioButton();
+            this.btnNo = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -208,22 +217,56 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(157, 178);
+            this.groupBox3.Location = new System.Drawing.Point(157, 239);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(907, 385);
+            this.groupBox3.Size = new System.Drawing.Size(907, 324);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(895, 285);
             this.dataGridView1.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Ma Sach";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Ten Sach";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Don Gia";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "So Luong";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.btnNo);
+            this.groupBox4.Controls.Add(this.btnYes);
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.textBox3);
             this.groupBox4.Controls.Add(this.textBox2);
             this.groupBox4.Controls.Add(this.btnAdd);
@@ -232,9 +275,53 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(157, 109);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(907, 69);
+            this.groupBox4.Size = new System.Drawing.Size(907, 124);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(493, 22);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(182, 29);
+            this.textBox3.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(128, 22);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(182, 29);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(760, 22);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 29);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lbSoluong
+            // 
+            this.lbSoluong.AutoSize = true;
+            this.lbSoluong.Location = new System.Drawing.Point(400, 25);
+            this.lbSoluong.Name = "lbSoluong";
+            this.lbSoluong.Size = new System.Drawing.Size(87, 23);
+            this.lbSoluong.TabIndex = 1;
+            this.lbSoluong.Text = "So Luong";
+            // 
+            // lbMasach
+            // 
+            this.lbMasach.AutoSize = true;
+            this.lbMasach.Location = new System.Drawing.Point(43, 25);
+            this.lbMasach.Name = "lbMasach";
+            this.lbMasach.Size = new System.Drawing.Size(79, 23);
+            this.lbMasach.TabIndex = 0;
+            this.lbMasach.Text = "Ma Sach";
             // 
             // groupBox5
             // 
@@ -247,33 +334,16 @@
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             // 
-            // lbMasach
+            // btnPrintf
             // 
-            this.lbMasach.AutoSize = true;
-            this.lbMasach.Location = new System.Drawing.Point(43, 25);
-            this.lbMasach.Name = "lbMasach";
-            this.lbMasach.Size = new System.Drawing.Size(79, 23);
-            this.lbMasach.TabIndex = 0;
-            this.lbMasach.Text = "Ma Sach";
-            // 
-            // lbSoluong
-            // 
-            this.lbSoluong.AutoSize = true;
-            this.lbSoluong.Location = new System.Drawing.Point(400, 25);
-            this.lbSoluong.Name = "lbSoluong";
-            this.lbSoluong.Size = new System.Drawing.Size(87, 23);
-            this.lbSoluong.TabIndex = 1;
-            this.lbSoluong.Text = "So Luong";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(760, 22);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 29);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnPrintf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintf.Location = new System.Drawing.Point(543, 19);
+            this.btnPrintf.Name = "btnPrintf";
+            this.btnPrintf.Size = new System.Drawing.Size(87, 44);
+            this.btnPrintf.TabIndex = 4;
+            this.btnPrintf.Text = "Printf";
+            this.btnPrintf.UseVisualStyleBackColor = true;
+            this.btnPrintf.Click += new System.EventHandler(this.btnPrintf_Click);
             // 
             // btnDelete
             // 
@@ -284,30 +354,58 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnPrintf
+            // textBox4
             // 
-            this.btnPrintf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintf.Location = new System.Drawing.Point(543, 19);
-            this.btnPrintf.Name = "btnPrintf";
-            this.btnPrintf.Size = new System.Drawing.Size(87, 44);
-            this.btnPrintf.TabIndex = 4;
-            this.btnPrintf.Text = "Printf";
-            this.btnPrintf.UseVisualStyleBackColor = true;
+            this.textBox4.Location = new System.Drawing.Point(493, 75);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(182, 29);
+            this.textBox4.TabIndex = 6;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox2
+            // label1
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 29);
-            this.textBox2.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(408, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "MaTV";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox3
+            // btnYes
             // 
-            this.textBox3.Location = new System.Drawing.Point(493, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 29);
-            this.textBox3.TabIndex = 4;
+            this.btnYes.AutoSize = true;
+            this.btnYes.Location = new System.Drawing.Point(150, 76);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(57, 27);
+            this.btnYes.TabIndex = 7;
+            this.btnYes.TabStop = true;
+            this.btnYes.Text = "YES";
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.CheckedChanged += new System.EventHandler(this.btnYes_CheckedChanged);
+            // 
+            // btnNo
+            // 
+            this.btnNo.AutoSize = true;
+            this.btnNo.Location = new System.Drawing.Point(254, 78);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(56, 27);
+            this.btnNo.TabIndex = 8;
+            this.btnNo.TabStop = true;
+            this.btnNo.Text = "NO";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.CheckedChanged += new System.EventHandler(this.btnNo_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 23);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "ThanhVien";
             // 
             // Banfrm
             // 
@@ -364,5 +462,14 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnPrintf;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton btnNo;
+        private System.Windows.Forms.RadioButton btnYes;
     }
 }
