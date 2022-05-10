@@ -215,8 +215,12 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchCuaNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchCuaNhanVien]()");
         }
     
-        public virtual int InsertMuon(Nullable<int> mATV, Nullable<int> mS, Nullable<int> mANV, Nullable<int> soLuong, Nullable<System.DateTime> nMuon, Nullable<System.DateTime> nTra, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<int> giamGia, Nullable<System.DateTime> nXOA, Nullable<bool> dXOA, Nullable<bool> thanhVien)
+        public virtual int InsertMuon(Nullable<int> flag, Nullable<int> mATV, Nullable<int> mS, Nullable<int> mANV, Nullable<int> soLuong, Nullable<System.DateTime> nMuon, Nullable<System.DateTime> nTra, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<int> giamGia, Nullable<bool> dXOA, Nullable<bool> thanhVien)
         {
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("flag", flag) :
+                new ObjectParameter("flag", typeof(int));
+    
             var mATVParameter = mATV.HasValue ?
                 new ObjectParameter("MATV", mATV) :
                 new ObjectParameter("MATV", typeof(int));
@@ -257,10 +261,6 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("GiamGia", giamGia) :
                 new ObjectParameter("GiamGia", typeof(int));
     
-            var nXOAParameter = nXOA.HasValue ?
-                new ObjectParameter("NXOA", nXOA) :
-                new ObjectParameter("NXOA", typeof(System.DateTime));
-    
             var dXOAParameter = dXOA.HasValue ?
                 new ObjectParameter("DXOA", dXOA) :
                 new ObjectParameter("DXOA", typeof(bool));
@@ -269,7 +269,7 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("ThanhVien", thanhVien) :
                 new ObjectParameter("ThanhVien", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertMuon", mATVParameter, mSParameter, mANVParameter, soLuongParameter, nMuonParameter, nTraParameter, mHDParameter, nXuatParameter, tongTienParameter, giamGiaParameter, nXOAParameter, dXOAParameter, thanhVienParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertMuon", flagParameter, mATVParameter, mSParameter, mANVParameter, soLuongParameter, nMuonParameter, nTraParameter, mHDParameter, nXuatParameter, tongTienParameter, giamGiaParameter, dXOAParameter, thanhVienParameter);
         }
     
         public virtual ObjectResult<SettingNhanVien_Result> SettingNhanVien(string action, Nullable<int> mNV, string hoTenNV, string sDT, string diaChi, Nullable<int> soSachBan, Nullable<int> luongNV, Nullable<int> ngayVang, Nullable<System.DateTime> ngayNghiViec, Nullable<bool> daNghi, Nullable<int> mNQL, Nullable<bool> status)
@@ -380,6 +380,141 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("searchSach", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchSach_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchSach](@searchSach)", searchSachParameter);
+        }
+    
+        public virtual int CheckMuon(Nullable<int> mTV, Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
+        {
+            var mTVParameter = mTV.HasValue ?
+                new ObjectParameter("MTV", mTV) :
+                new ObjectParameter("MTV", typeof(int));
+    
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CheckMuon", mTVParameter, mSParameter, soLuongParameter, status, status2);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachNhanVien")]
+        public virtual IQueryable<fun_DanhSachNhanVien_Result> fun_DanhSachNhanVien()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachNhanVien]()");
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchNhanVien")]
+        public virtual IQueryable<fun_SearchNhanVien_Result> fun_SearchNhanVien(string nv)
+        {
+            var nvParameter = nv != null ?
+                new ObjectParameter("nv", nv) :
+                new ObjectParameter("nv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchNhanVien](@nv)", nvParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchThanhVien")]
+        public virtual IQueryable<fun_SearchThanhVien_Result> fun_SearchThanhVien(string searchThanhVien)
+        {
+            var searchThanhVienParameter = searchThanhVien != null ?
+                new ObjectParameter("searchThanhVien", searchThanhVien) :
+                new ObjectParameter("searchThanhVien", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchThanhVien](@searchThanhVien)", searchThanhVienParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_ThanhVien")]
+        public virtual IQueryable<fun_ThanhVien_Result> fun_ThanhVien()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_ThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_ThanhVien]()");
+        }
+    
+        public virtual int INSERTBAN(Nullable<int> flag, Nullable<int> mANV, Nullable<int> mS, Nullable<int> soLuong, Nullable<System.DateTime> nBan, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<bool> dXOA)
+        {
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("flag", flag) :
+                new ObjectParameter("flag", typeof(int));
+    
+            var mANVParameter = mANV.HasValue ?
+                new ObjectParameter("MANV", mANV) :
+                new ObjectParameter("MANV", typeof(int));
+    
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
+    
+            var nBanParameter = nBan.HasValue ?
+                new ObjectParameter("NBan", nBan) :
+                new ObjectParameter("NBan", typeof(System.DateTime));
+    
+            var mHDParameter = mHD.HasValue ?
+                new ObjectParameter("MHD", mHD) :
+                new ObjectParameter("MHD", typeof(int));
+    
+            var nXuatParameter = nXuat.HasValue ?
+                new ObjectParameter("NXuat", nXuat) :
+                new ObjectParameter("NXuat", typeof(System.DateTime));
+    
+            var tongTienParameter = tongTien.HasValue ?
+                new ObjectParameter("TongTien", tongTien) :
+                new ObjectParameter("TongTien", typeof(int));
+    
+            var dXOAParameter = dXOA.HasValue ?
+                new ObjectParameter("DXOA", dXOA) :
+                new ObjectParameter("DXOA", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERTBAN", flagParameter, mANVParameter, mSParameter, soLuongParameter, nBanParameter, mHDParameter, nXuatParameter, tongTienParameter, dXOAParameter);
+        }
+    
+        public virtual int INSERTBANTV(Nullable<int> flag, Nullable<int> mANV, Nullable<int> mS, Nullable<int> soLuong, Nullable<System.DateTime> nBan, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<int> gIAMGIA, Nullable<int> mTV)
+        {
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("flag", flag) :
+                new ObjectParameter("flag", typeof(int));
+    
+            var mANVParameter = mANV.HasValue ?
+                new ObjectParameter("MANV", mANV) :
+                new ObjectParameter("MANV", typeof(int));
+    
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
+    
+            var nBanParameter = nBan.HasValue ?
+                new ObjectParameter("NBan", nBan) :
+                new ObjectParameter("NBan", typeof(System.DateTime));
+    
+            var mHDParameter = mHD.HasValue ?
+                new ObjectParameter("MHD", mHD) :
+                new ObjectParameter("MHD", typeof(int));
+    
+            var nXuatParameter = nXuat.HasValue ?
+                new ObjectParameter("NXuat", nXuat) :
+                new ObjectParameter("NXuat", typeof(System.DateTime));
+    
+            var tongTienParameter = tongTien.HasValue ?
+                new ObjectParameter("TongTien", tongTien) :
+                new ObjectParameter("TongTien", typeof(int));
+    
+            var gIAMGIAParameter = gIAMGIA.HasValue ?
+                new ObjectParameter("GIAMGIA", gIAMGIA) :
+                new ObjectParameter("GIAMGIA", typeof(int));
+    
+            var mTVParameter = mTV.HasValue ?
+                new ObjectParameter("MTV", mTV) :
+                new ObjectParameter("MTV", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERTBANTV", flagParameter, mANVParameter, mSParameter, soLuongParameter, nBanParameter, mHDParameter, nXuatParameter, tongTienParameter, gIAMGIAParameter, mTVParameter);
         }
     }
 }
