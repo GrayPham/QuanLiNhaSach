@@ -31,13 +31,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnPrintf = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lbMaSachThue = new System.Windows.Forms.Label();
-            this.lbMasach = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -52,19 +46,31 @@
             this.lbSearch = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbNameuser = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lbSoluong = new System.Windows.Forms.Label();
+            this.dateTra = new System.Windows.Forms.DateTimePicker();
+            this.dateMuon = new System.Windows.Forms.DateTimePicker();
             this.button7 = new System.Windows.Forms.Button();
             this.lbNgayTra = new System.Windows.Forms.Label();
             this.lbNgayMuon = new System.Windows.Forms.Label();
-            this.dateMuon = new System.Windows.Forms.DateTimePicker();
-            this.dateTra = new System.Windows.Forms.DateTimePicker();
-            this.lbSoluong = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lbMaSachThue = new System.Windows.Forms.Label();
+            this.lbMasach = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -87,6 +93,7 @@
             this.btnPrintf.TabIndex = 4;
             this.btnPrintf.Text = "Printf";
             this.btnPrintf.UseVisualStyleBackColor = true;
+            this.btnPrintf.Click += new System.EventHandler(this.btnPrintf_Click);
             // 
             // btnDelete
             // 
@@ -97,59 +104,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.lbSoluong);
-            this.groupBox4.Controls.Add(this.dateTra);
-            this.groupBox4.Controls.Add(this.dateMuon);
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.lbNgayTra);
-            this.groupBox4.Controls.Add(this.lbNgayMuon);
-            this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Controls.Add(this.lbMaSachThue);
-            this.groupBox4.Controls.Add(this.lbMasach);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(165, 114);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(907, 135);
-            this.groupBox4.TabIndex = 10;
-            this.groupBox4.TabStop = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(493, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 29);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(128, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 29);
-            this.textBox2.TabIndex = 3;
-            // 
-            // lbMaSachThue
-            // 
-            this.lbMaSachThue.AutoSize = true;
-            this.lbMaSachThue.Location = new System.Drawing.Point(400, 25);
-            this.lbMaSachThue.Name = "lbMaSachThue";
-            this.lbMaSachThue.Size = new System.Drawing.Size(79, 23);
-            this.lbMaSachThue.TabIndex = 1;
-            this.lbMaSachThue.Text = "Ma Sach";
-            // 
-            // lbMasach
-            // 
-            this.lbMasach.AutoSize = true;
-            this.lbMasach.Location = new System.Drawing.Point(43, 25);
-            this.lbMasach.Name = "lbMasach";
-            this.lbMasach.Size = new System.Drawing.Size(63, 23);
-            this.lbMasach.TabIndex = 0;
-            this.lbMasach.Text = "Ma TV";
-            this.lbMasach.Click += new System.EventHandler(this.lbMasach_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupBox3
             // 
@@ -159,14 +114,6 @@
             this.groupBox3.Size = new System.Drawing.Size(907, 313);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(895, 285);
-            this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -312,6 +259,60 @@
             this.lbNameuser.TabIndex = 0;
             this.lbNameuser.Text = "Name User";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.lbSoluong);
+            this.groupBox4.Controls.Add(this.dateTra);
+            this.groupBox4.Controls.Add(this.dateMuon);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.lbNgayTra);
+            this.groupBox4.Controls.Add(this.lbNgayMuon);
+            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.lbMaSachThue);
+            this.groupBox4.Controls.Add(this.lbMasach);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(165, 113);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(907, 135);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(804, 21);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(34, 29);
+            this.textBox4.TabIndex = 11;
+            // 
+            // lbSoluong
+            // 
+            this.lbSoluong.AutoSize = true;
+            this.lbSoluong.Location = new System.Drawing.Point(711, 24);
+            this.lbSoluong.Name = "lbSoluong";
+            this.lbSoluong.Size = new System.Drawing.Size(87, 23);
+            this.lbSoluong.TabIndex = 10;
+            this.lbSoluong.Text = "So Luong";
+            // 
+            // dateTra
+            // 
+            this.dateTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTra.Location = new System.Drawing.Point(493, 75);
+            this.dateTra.Name = "dateTra";
+            this.dateTra.Size = new System.Drawing.Size(200, 29);
+            this.dateTra.TabIndex = 9;
+            this.dateTra.Value = new System.DateTime(2022, 5, 8, 0, 0, 0, 0);
+            // 
+            // dateMuon
+            // 
+            this.dateMuon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateMuon.Location = new System.Drawing.Point(128, 75);
+            this.dateMuon.Name = "dateMuon";
+            this.dateMuon.Size = new System.Drawing.Size(200, 29);
+            this.dateMuon.TabIndex = 8;
+            this.dateMuon.Value = new System.DateTime(2022, 5, 8, 0, 0, 0, 0);
+            // 
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -321,6 +322,7 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "ADD";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // lbNgayTra
             // 
@@ -340,36 +342,86 @@
             this.lbNgayMuon.TabIndex = 5;
             this.lbNgayMuon.Text = "Ngay Muon";
             // 
-            // dateMuon
+            // textBox3
             // 
-            this.dateMuon.Location = new System.Drawing.Point(128, 75);
-            this.dateMuon.Name = "dateMuon";
-            this.dateMuon.Size = new System.Drawing.Size(200, 29);
-            this.dateMuon.TabIndex = 8;
+            this.textBox3.Location = new System.Drawing.Point(493, 22);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(200, 29);
+            this.textBox3.TabIndex = 4;
             // 
-            // dateTra
+            // textBox2
             // 
-            this.dateTra.Location = new System.Drawing.Point(493, 75);
-            this.dateTra.Name = "dateTra";
-            this.dateTra.Size = new System.Drawing.Size(200, 29);
-            this.dateTra.TabIndex = 9;
+            this.textBox2.Location = new System.Drawing.Point(128, 22);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(200, 29);
+            this.textBox2.TabIndex = 3;
             // 
-            // lbSoluong
+            // lbMaSachThue
             // 
-            this.lbSoluong.AutoSize = true;
-            this.lbSoluong.Location = new System.Drawing.Point(711, 24);
-            this.lbSoluong.Name = "lbSoluong";
-            this.lbSoluong.Size = new System.Drawing.Size(87, 23);
-            this.lbSoluong.TabIndex = 10;
-            this.lbSoluong.Text = "So Luong";
-            this.lbSoluong.Click += new System.EventHandler(this.label1_Click);
+            this.lbMaSachThue.AutoSize = true;
+            this.lbMaSachThue.Location = new System.Drawing.Point(400, 25);
+            this.lbMaSachThue.Name = "lbMaSachThue";
+            this.lbMaSachThue.Size = new System.Drawing.Size(79, 23);
+            this.lbMaSachThue.TabIndex = 1;
+            this.lbMaSachThue.Text = "Ma Sach";
             // 
-            // textBox4
+            // lbMasach
             // 
-            this.textBox4.Location = new System.Drawing.Point(804, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(34, 29);
-            this.textBox4.TabIndex = 11;
+            this.lbMasach.AutoSize = true;
+            this.lbMasach.Location = new System.Drawing.Point(43, 25);
+            this.lbMasach.Name = "lbMasach";
+            this.lbMasach.Size = new System.Drawing.Size(63, 23);
+            this.lbMasach.TabIndex = 0;
+            this.lbMasach.Text = "Ma TV";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 14);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(895, 236);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Ma Sach";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Ten Sach";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 230;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Don Gia";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 140;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "So Luong";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Ngay Muon";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 140;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Ngay Tra";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 140;
             // 
             // Thuefrm
             // 
@@ -377,8 +429,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1082, 575);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -387,14 +439,14 @@
             this.Name = "Thuefrm";
             this.Text = "Thuefrm";
             this.groupBox5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,16 +456,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnPrintf;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label lbNgayTra;
-        private System.Windows.Forms.Label lbNgayMuon;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lbMaSachThue;
-        private System.Windows.Forms.Label lbMasach;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -428,9 +471,24 @@
         private System.Windows.Forms.Label lbSearch;
         private System.Windows.Forms.Label lbRole;
         private System.Windows.Forms.Label lbNameuser;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label lbSoluong;
         private System.Windows.Forms.DateTimePicker dateTra;
         private System.Windows.Forms.DateTimePicker dateMuon;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label lbNgayTra;
+        private System.Windows.Forms.Label lbNgayMuon;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lbMaSachThue;
+        private System.Windows.Forms.Label lbMasach;
     }
 }
