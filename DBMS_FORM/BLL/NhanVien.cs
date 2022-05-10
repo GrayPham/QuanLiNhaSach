@@ -21,5 +21,17 @@ namespace DBMS_FORM.BLL
             var timKiem = db.fun_SearchSach(chuoi);
             return timKiem; 
         }
+
+        internal object hienThiNV()
+        {
+            var nv = db.fun_DanhSachNhanVien();
+            return nv;
+        }
+
+        internal object searchNV(string chuoi)
+        {
+            var timKiem = db.fun_SearchNhanVien(chuoi);
+            return timKiem;
+        }
     }
 }
