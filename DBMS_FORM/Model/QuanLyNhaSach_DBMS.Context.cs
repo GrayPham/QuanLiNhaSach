@@ -582,5 +582,47 @@ namespace DBMS_FORM.Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual int InsertPersonalDetailsAndAccount(string firstName, string lastName, Nullable<short> age, Nullable<bool> active, Nullable<decimal> salary, Nullable<decimal> pPFDeduction)
+        {
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("FirstName", firstName) :
+                new ObjectParameter("FirstName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("LastName", lastName) :
+                new ObjectParameter("LastName", typeof(string));
+    
+            var ageParameter = age.HasValue ?
+                new ObjectParameter("Age", age) :
+                new ObjectParameter("Age", typeof(short));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("Active", active) :
+                new ObjectParameter("Active", typeof(bool));
+    
+            var salaryParameter = salary.HasValue ?
+                new ObjectParameter("Salary", salary) :
+                new ObjectParameter("Salary", typeof(decimal));
+    
+            var pPFDeductionParameter = pPFDeduction.HasValue ?
+                new ObjectParameter("PPFDeduction", pPFDeduction) :
+                new ObjectParameter("PPFDeduction", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertPersonalDetailsAndAccount", firstNameParameter, lastNameParameter, ageParameter, activeParameter, salaryParameter, pPFDeductionParameter);
+        }
+    
+        public virtual int SP_DeleteUSER_MANAGEMENT(Nullable<int> userId, string method)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var methodParameter = method != null ?
+                new ObjectParameter("Method", method) :
+                new ObjectParameter("Method", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_DeleteUSER_MANAGEMENT", userIdParameter, methodParameter);
+        }
     }
 }
