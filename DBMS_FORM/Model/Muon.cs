@@ -18,7 +18,7 @@ namespace DBMS_FORM.Model
         public int MaSach { get; set; }
         public int MaNVM { get; set; }
         public Nullable<int> SoLuongMuon { get; set; }
-        public Nullable<System.DateTime> ThoiGianM { get; set; }
+        public System.DateTime ThoiGianM { get; set; }
         public Nullable<int> DonGiaMuon { get; set; }
         public int MaHD { get; set; }
     

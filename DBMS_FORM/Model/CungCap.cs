@@ -16,6 +16,7 @@ namespace DBMS_FORM.Model
     {
         public int MaSach { get; set; }
         public int MNCC { get; set; }
+        public System.DateTime NgayNhap { get; set; }
         public Nullable<int> Soluong { get; set; }
         public Nullable<int> DonGiaNhap { get; set; }
         public Nullable<int> maNQL { get; set; }

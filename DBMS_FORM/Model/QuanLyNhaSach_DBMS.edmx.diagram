@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c2d4e439d8234e2db54af99b4040d7d4" Name="Diagram1">
+      <Diagram DiagramId="092e1a035c3142b28641774719c28e2b" Name="Diagram1">
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.CungCap" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.DaBan" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.HoaDon" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.DaBan" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.HoaDon" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Muon" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.NV" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Sach" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Sach" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.ThanhVien" Width="1.5" PointX="0.75" PointY="21.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.TheLoai" Width="1.5" PointX="1.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.ThanhVien" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.TheLoai" Width="1.5" PointX="1.5" PointY="18.375" IsExpanded="true" />
         <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_CungCap_NhaCungCap" ManuallyRouted="false" />
         <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_CungCap_NV" ManuallyRouted="false" />
         <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_CungCap_Sach" ManuallyRouted="false" />

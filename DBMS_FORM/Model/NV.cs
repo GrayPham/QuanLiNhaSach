@@ -32,7 +32,6 @@ namespace DBMS_FORM.Model
         public Nullable<System.DateTime> NgayNghiViec { get; set; }
         public Nullable<bool> DaNghi { get; set; }
         public Nullable<int> MNQL { get; set; }
-        public Nullable<bool> Status { get; set; }
     
         public virtual ICollection<CungCap> CungCaps { get; set; }
         public virtual ICollection<DaBan> DaBans { get; set; }

@@ -11,15 +11,9 @@ namespace DBMS_FORM.Model
 {
     using System;
     
-    public partial class fun_SearchThanhVien_Result
+    public partial class TurnoverByMonth_Result
     {
-        public int MTV { get; set; }
-        public string HoVaTenTV { get; set; }
-        public string Diachi { get; set; }
-        public string Mail { get; set; }
-        public string SoDT { get; set; }
-        public Nullable<bool> ConSD { get; set; }
-        public Nullable<int> MDThanThiet { get; set; }
-        public Nullable<bool> status { get; set; }
+        public Nullable<int> THANG { get; set; }
+        public Nullable<int> DOANHTHU { get; set; }
     }
 }

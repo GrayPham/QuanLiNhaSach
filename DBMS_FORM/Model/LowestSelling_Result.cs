@@ -11,17 +11,9 @@ namespace DBMS_FORM.Model
 {
     using System;
     
-    public partial class fun_HoaDonOfNhanVien_Result
+    public partial class LowestSelling_Result
     {
-        public int MaNVB { get; set; }
-        public string HoTenNV { get; set; }
-        public string SDT { get; set; }
-        public string DiaChi { get; set; }
-        public Nullable<bool> DaNghi { get; set; }
         public int MaSach { get; set; }
-        public int MHD { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<System.DateTime> NgayXuat { get; set; }
-        public Nullable<int> TongTien { get; set; }
+        public string TenSach { get; set; }
     }
 }

@@ -51,14 +51,52 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fThanhVien]()");
         }
     
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_HoaDonOfNhanVien")]
-        public virtual IQueryable<fun_HoaDonOfNhanVien_Result> fun_HoaDonOfNhanVien(Nullable<int> maNV)
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachNhanVien")]
+        public virtual IQueryable<fun_DanhSachNhanVien_Result> fun_DanhSachNhanVien()
         {
-            var maNVParameter = maNV.HasValue ?
-                new ObjectParameter("maNV", maNV) :
-                new ObjectParameter("maNV", typeof(int));
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachNhanVien]()");
+        }
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_HoaDonOfNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_HoaDonOfNhanVien](@maNV)", maNVParameter);
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SachCon")]
+        public virtual IQueryable<fun_SachCon_Result> fun_SachCon()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SachCon_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SachCon]()");
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchNhanVien")]
+        public virtual IQueryable<fun_SearchNhanVien_Result> fun_SearchNhanVien(string nv)
+        {
+            var nvParameter = nv != null ?
+                new ObjectParameter("nv", nv) :
+                new ObjectParameter("nv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchNhanVien](@nv)", nvParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchSach")]
+        public virtual IQueryable<fun_SearchSach_Result> fun_SearchSach(string searchSach)
+        {
+            var searchSachParameter = searchSach != null ?
+                new ObjectParameter("searchSach", searchSach) :
+                new ObjectParameter("searchSach", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchSach_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchSach](@searchSach)", searchSachParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchThanhVien")]
+        public virtual IQueryable<fun_SearchThanhVien_Result> fun_SearchThanhVien(string searchThanhVien)
+        {
+            var searchThanhVienParameter = searchThanhVien != null ?
+                new ObjectParameter("searchThanhVien", searchThanhVien) :
+                new ObjectParameter("searchThanhVien", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchThanhVien](@searchThanhVien)", searchThanhVienParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_ThanhVien")]
+        public virtual IQueryable<fun_ThanhVien_Result> fun_ThanhVien()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_ThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_ThanhVien]()");
         }
     
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fuNhanvienOfQl")]
@@ -69,6 +107,12 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("maNQL", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fuNhanvienOfQl_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fuNhanvienOfQl](@maNQL)", maNQLParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "LowestSelling")]
+        public virtual IQueryable<LowestSelling_Result> LowestSelling()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<LowestSelling_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[LowestSelling]()");
         }
     
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "MuonQuaHan")]
@@ -97,289 +141,26 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SearchNhaCC_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[SearchNhaCC](@search)", searchParameter);
         }
     
-        public virtual int deleteSach(Nullable<int> maSach)
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "TurnoverByDay")]
+        public virtual IQueryable<TurnoverByDay_Result> TurnoverByDay()
         {
-            var maSachParameter = maSach.HasValue ?
-                new ObjectParameter("maSach", maSach) :
-                new ObjectParameter("maSach", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deleteSach", maSachParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<TurnoverByDay_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[TurnoverByDay]()");
         }
     
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "TurnoverByMonth")]
+        public virtual IQueryable<TurnoverByMonth_Result> TurnoverByMonth(Nullable<System.DateTime> yearNow)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var yearNowParameter = yearNow.HasValue ?
+                new ObjectParameter("yearNow", yearNow) :
+                new ObjectParameter("yearNow", typeof(System.DateTime));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<TurnoverByMonth_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[TurnoverByMonth](@yearNow)", yearNowParameter);
         }
     
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "TurnoverByYear")]
+        public virtual IQueryable<TurnoverByYear_Result> TurnoverByYear()
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchCuaNhanVien")]
-        public virtual IQueryable<fun_SearchCuaNhanVien_Result> fun_SearchCuaNhanVien()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchCuaNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchCuaNhanVien]()");
-        }
-    
-        public virtual int InsertMuon(Nullable<int> flag, Nullable<int> mATV, Nullable<int> mS, Nullable<int> mANV, Nullable<int> soLuong, Nullable<System.DateTime> nMuon, Nullable<System.DateTime> nTra, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<int> giamGia, Nullable<bool> dXOA, Nullable<bool> thanhVien)
-        {
-            var flagParameter = flag.HasValue ?
-                new ObjectParameter("flag", flag) :
-                new ObjectParameter("flag", typeof(int));
-    
-            var mATVParameter = mATV.HasValue ?
-                new ObjectParameter("MATV", mATV) :
-                new ObjectParameter("MATV", typeof(int));
-    
-            var mSParameter = mS.HasValue ?
-                new ObjectParameter("MS", mS) :
-                new ObjectParameter("MS", typeof(int));
-    
-            var mANVParameter = mANV.HasValue ?
-                new ObjectParameter("MANV", mANV) :
-                new ObjectParameter("MANV", typeof(int));
-    
-            var soLuongParameter = soLuong.HasValue ?
-                new ObjectParameter("SoLuong", soLuong) :
-                new ObjectParameter("SoLuong", typeof(int));
-    
-            var nMuonParameter = nMuon.HasValue ?
-                new ObjectParameter("NMuon", nMuon) :
-                new ObjectParameter("NMuon", typeof(System.DateTime));
-    
-            var nTraParameter = nTra.HasValue ?
-                new ObjectParameter("NTra", nTra) :
-                new ObjectParameter("NTra", typeof(System.DateTime));
-    
-            var mHDParameter = mHD.HasValue ?
-                new ObjectParameter("MHD", mHD) :
-                new ObjectParameter("MHD", typeof(int));
-    
-            var nXuatParameter = nXuat.HasValue ?
-                new ObjectParameter("NXuat", nXuat) :
-                new ObjectParameter("NXuat", typeof(System.DateTime));
-    
-            var tongTienParameter = tongTien.HasValue ?
-                new ObjectParameter("TongTien", tongTien) :
-                new ObjectParameter("TongTien", typeof(int));
-    
-            var giamGiaParameter = giamGia.HasValue ?
-                new ObjectParameter("GiamGia", giamGia) :
-                new ObjectParameter("GiamGia", typeof(int));
-    
-            var dXOAParameter = dXOA.HasValue ?
-                new ObjectParameter("DXOA", dXOA) :
-                new ObjectParameter("DXOA", typeof(bool));
-    
-            var thanhVienParameter = thanhVien.HasValue ?
-                new ObjectParameter("ThanhVien", thanhVien) :
-                new ObjectParameter("ThanhVien", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertMuon", flagParameter, mATVParameter, mSParameter, mANVParameter, soLuongParameter, nMuonParameter, nTraParameter, mHDParameter, nXuatParameter, tongTienParameter, giamGiaParameter, dXOAParameter, thanhVienParameter);
-        }
-    
-        public virtual ObjectResult<SettingNhanVien_Result> SettingNhanVien(string action, Nullable<int> mNV, string hoTenNV, string sDT, string diaChi, Nullable<int> soSachBan, Nullable<int> luongNV, Nullable<int> ngayVang, Nullable<System.DateTime> ngayNghiViec, Nullable<bool> daNghi, Nullable<int> mNQL, Nullable<bool> status)
-        {
-            var actionParameter = action != null ?
-                new ObjectParameter("Action", action) :
-                new ObjectParameter("Action", typeof(string));
-    
-            var mNVParameter = mNV.HasValue ?
-                new ObjectParameter("MNV", mNV) :
-                new ObjectParameter("MNV", typeof(int));
-    
-            var hoTenNVParameter = hoTenNV != null ?
-                new ObjectParameter("HoTenNV", hoTenNV) :
-                new ObjectParameter("HoTenNV", typeof(string));
-    
-            var sDTParameter = sDT != null ?
-                new ObjectParameter("SDT", sDT) :
-                new ObjectParameter("SDT", typeof(string));
-    
-            var diaChiParameter = diaChi != null ?
-                new ObjectParameter("DiaChi", diaChi) :
-                new ObjectParameter("DiaChi", typeof(string));
-    
-            var soSachBanParameter = soSachBan.HasValue ?
-                new ObjectParameter("SoSachBan", soSachBan) :
-                new ObjectParameter("SoSachBan", typeof(int));
-    
-            var luongNVParameter = luongNV.HasValue ?
-                new ObjectParameter("luongNV", luongNV) :
-                new ObjectParameter("luongNV", typeof(int));
-    
-            var ngayVangParameter = ngayVang.HasValue ?
-                new ObjectParameter("NgayVang", ngayVang) :
-                new ObjectParameter("NgayVang", typeof(int));
-    
-            var ngayNghiViecParameter = ngayNghiViec.HasValue ?
-                new ObjectParameter("NgayNghiViec", ngayNghiViec) :
-                new ObjectParameter("NgayNghiViec", typeof(System.DateTime));
-    
-            var daNghiParameter = daNghi.HasValue ?
-                new ObjectParameter("DaNghi", daNghi) :
-                new ObjectParameter("DaNghi", typeof(bool));
-    
-            var mNQLParameter = mNQL.HasValue ?
-                new ObjectParameter("MNQL", mNQL) :
-                new ObjectParameter("MNQL", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingNhanVien_Result>("SettingNhanVien", actionParameter, mNVParameter, hoTenNVParameter, sDTParameter, diaChiParameter, soSachBanParameter, luongNVParameter, ngayVangParameter, ngayNghiViecParameter, daNghiParameter, mNQLParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<SettingThanhVien_Result> SettingThanhVien(string action, Nullable<int> mTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<bool> conSD, Nullable<int> mDThanThiet, Nullable<bool> status)
-        {
-            var actionParameter = action != null ?
-                new ObjectParameter("Action", action) :
-                new ObjectParameter("Action", typeof(string));
-    
-            var mTVParameter = mTV.HasValue ?
-                new ObjectParameter("MTV", mTV) :
-                new ObjectParameter("MTV", typeof(int));
-    
-            var hoVaTenTVParameter = hoVaTenTV != null ?
-                new ObjectParameter("HoVaTenTV", hoVaTenTV) :
-                new ObjectParameter("HoVaTenTV", typeof(string));
-    
-            var soDTParameter = soDT != null ?
-                new ObjectParameter("SoDT", soDT) :
-                new ObjectParameter("SoDT", typeof(string));
-    
-            var diaChiParameter = diaChi != null ?
-                new ObjectParameter("DiaChi", diaChi) :
-                new ObjectParameter("DiaChi", typeof(string));
-    
-            var mailParameter = mail != null ?
-                new ObjectParameter("Mail", mail) :
-                new ObjectParameter("Mail", typeof(string));
-    
-            var conSDParameter = conSD.HasValue ?
-                new ObjectParameter("ConSD", conSD) :
-                new ObjectParameter("ConSD", typeof(bool));
-    
-            var mDThanThietParameter = mDThanThiet.HasValue ?
-                new ObjectParameter("MDThanThiet", mDThanThiet) :
-                new ObjectParameter("MDThanThiet", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingThanhVien_Result>("SettingThanhVien", actionParameter, mTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter, statusParameter);
-        }
-    
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SachCon")]
-        public virtual IQueryable<fun_SachCon_Result> fun_SachCon()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SachCon_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SachCon]()");
-        }
-    
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchSach")]
-        public virtual IQueryable<fun_SearchSach_Result> fun_SearchSach(string searchSach)
-        {
-            var searchSachParameter = searchSach != null ?
-                new ObjectParameter("searchSach", searchSach) :
-                new ObjectParameter("searchSach", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchSach_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchSach](@searchSach)", searchSachParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<TurnoverByYear_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[TurnoverByYear]()");
         }
     
         public virtual int CheckMuon(Nullable<int> mTV, Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
@@ -399,36 +180,54 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CheckMuon", mTVParameter, mSParameter, soLuongParameter, status, status2);
         }
     
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachNhanVien")]
-        public virtual IQueryable<fun_DanhSachNhanVien_Result> fun_DanhSachNhanVien()
+        public virtual int deleteSach(Nullable<int> maSach)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachNhanVien]()");
+            var maSachParameter = maSach.HasValue ?
+                new ObjectParameter("maSach", maSach) :
+                new ObjectParameter("maSach", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deleteSach", maSachParameter);
         }
     
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchNhanVien")]
-        public virtual IQueryable<fun_SearchNhanVien_Result> fun_SearchNhanVien(string nv)
+        public virtual int IMPORTSACH(Nullable<int> mS, string tS, Nullable<int> dG, Nullable<System.DateTime> nN, Nullable<System.DateTime> nXB, Nullable<int> mTL, Nullable<int> soluong, Nullable<int> mNQL, Nullable<int> mNCC)
         {
-            var nvParameter = nv != null ?
-                new ObjectParameter("nv", nv) :
-                new ObjectParameter("nv", typeof(string));
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchNhanVien](@nv)", nvParameter);
-        }
+            var tSParameter = tS != null ?
+                new ObjectParameter("TS", tS) :
+                new ObjectParameter("TS", typeof(string));
     
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SearchThanhVien")]
-        public virtual IQueryable<fun_SearchThanhVien_Result> fun_SearchThanhVien(string searchThanhVien)
-        {
-            var searchThanhVienParameter = searchThanhVien != null ?
-                new ObjectParameter("searchThanhVien", searchThanhVien) :
-                new ObjectParameter("searchThanhVien", typeof(string));
+            var dGParameter = dG.HasValue ?
+                new ObjectParameter("DG", dG) :
+                new ObjectParameter("DG", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_SearchThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_SearchThanhVien](@searchThanhVien)", searchThanhVienParameter);
-        }
+            var nNParameter = nN.HasValue ?
+                new ObjectParameter("NN", nN) :
+                new ObjectParameter("NN", typeof(System.DateTime));
     
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_ThanhVien")]
-        public virtual IQueryable<fun_ThanhVien_Result> fun_ThanhVien()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_ThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_ThanhVien]()");
+            var nXBParameter = nXB.HasValue ?
+                new ObjectParameter("NXB", nXB) :
+                new ObjectParameter("NXB", typeof(System.DateTime));
+    
+            var mTLParameter = mTL.HasValue ?
+                new ObjectParameter("MTL", mTL) :
+                new ObjectParameter("MTL", typeof(int));
+    
+            var soluongParameter = soluong.HasValue ?
+                new ObjectParameter("Soluong", soluong) :
+                new ObjectParameter("Soluong", typeof(int));
+    
+            var mNQLParameter = mNQL.HasValue ?
+                new ObjectParameter("MNQL", mNQL) :
+                new ObjectParameter("MNQL", typeof(int));
+    
+            var mNCCParameter = mNCC.HasValue ?
+                new ObjectParameter("MNCC", mNCC) :
+                new ObjectParameter("MNCC", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("IMPORTSACH", mSParameter, tSParameter, dGParameter, nNParameter, nXBParameter, mTLParameter, soluongParameter, mNQLParameter, mNCCParameter);
         }
     
         public virtual int INSERTBAN(Nullable<int> flag, Nullable<int> mANV, Nullable<int> mS, Nullable<int> soLuong, Nullable<System.DateTime> nBan, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<bool> dXOA)
@@ -515,6 +314,273 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("MTV", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERTBANTV", flagParameter, mANVParameter, mSParameter, soLuongParameter, nBanParameter, mHDParameter, nXuatParameter, tongTienParameter, gIAMGIAParameter, mTVParameter);
+        }
+    
+        public virtual int InsertMuon(Nullable<int> flag, Nullable<int> mATV, Nullable<int> mS, Nullable<int> mANV, Nullable<int> soLuong, Nullable<System.DateTime> nMuon, Nullable<System.DateTime> nTra, Nullable<int> mHD, Nullable<System.DateTime> nXuat, Nullable<int> tongTien, Nullable<int> giamGia, Nullable<bool> dXOA, Nullable<bool> thanhVien)
+        {
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("flag", flag) :
+                new ObjectParameter("flag", typeof(int));
+    
+            var mATVParameter = mATV.HasValue ?
+                new ObjectParameter("MATV", mATV) :
+                new ObjectParameter("MATV", typeof(int));
+    
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var mANVParameter = mANV.HasValue ?
+                new ObjectParameter("MANV", mANV) :
+                new ObjectParameter("MANV", typeof(int));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
+    
+            var nMuonParameter = nMuon.HasValue ?
+                new ObjectParameter("NMuon", nMuon) :
+                new ObjectParameter("NMuon", typeof(System.DateTime));
+    
+            var nTraParameter = nTra.HasValue ?
+                new ObjectParameter("NTra", nTra) :
+                new ObjectParameter("NTra", typeof(System.DateTime));
+    
+            var mHDParameter = mHD.HasValue ?
+                new ObjectParameter("MHD", mHD) :
+                new ObjectParameter("MHD", typeof(int));
+    
+            var nXuatParameter = nXuat.HasValue ?
+                new ObjectParameter("NXuat", nXuat) :
+                new ObjectParameter("NXuat", typeof(System.DateTime));
+    
+            var tongTienParameter = tongTien.HasValue ?
+                new ObjectParameter("TongTien", tongTien) :
+                new ObjectParameter("TongTien", typeof(int));
+    
+            var giamGiaParameter = giamGia.HasValue ?
+                new ObjectParameter("GiamGia", giamGia) :
+                new ObjectParameter("GiamGia", typeof(int));
+    
+            var dXOAParameter = dXOA.HasValue ?
+                new ObjectParameter("DXOA", dXOA) :
+                new ObjectParameter("DXOA", typeof(bool));
+    
+            var thanhVienParameter = thanhVien.HasValue ?
+                new ObjectParameter("ThanhVien", thanhVien) :
+                new ObjectParameter("ThanhVien", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertMuon", flagParameter, mATVParameter, mSParameter, mANVParameter, soLuongParameter, nMuonParameter, nTraParameter, mHDParameter, nXuatParameter, tongTienParameter, giamGiaParameter, dXOAParameter, thanhVienParameter);
+        }
+    
+        public virtual ObjectResult<SettingThanhVien_Result> SettingThanhVien(string action, Nullable<int> mTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<bool> conSD, Nullable<int> mDThanThiet, Nullable<bool> status)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("Action", action) :
+                new ObjectParameter("Action", typeof(string));
+    
+            var mTVParameter = mTV.HasValue ?
+                new ObjectParameter("MTV", mTV) :
+                new ObjectParameter("MTV", typeof(int));
+    
+            var hoVaTenTVParameter = hoVaTenTV != null ?
+                new ObjectParameter("HoVaTenTV", hoVaTenTV) :
+                new ObjectParameter("HoVaTenTV", typeof(string));
+    
+            var soDTParameter = soDT != null ?
+                new ObjectParameter("SoDT", soDT) :
+                new ObjectParameter("SoDT", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var mailParameter = mail != null ?
+                new ObjectParameter("Mail", mail) :
+                new ObjectParameter("Mail", typeof(string));
+    
+            var conSDParameter = conSD.HasValue ?
+                new ObjectParameter("ConSD", conSD) :
+                new ObjectParameter("ConSD", typeof(bool));
+    
+            var mDThanThietParameter = mDThanThiet.HasValue ?
+                new ObjectParameter("MDThanThiet", mDThanThiet) :
+                new ObjectParameter("MDThanThiet", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingThanhVien_Result>("SettingThanhVien", actionParameter, mTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter, statusParameter);
+        }
+    
+        public virtual int sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, ObjectParameter ketqua)
+        {
+            var manvParameter = manv.HasValue ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(int));
+    
+            var hotenParameter = hoten != null ?
+                new ObjectParameter("hoten", hoten) :
+                new ObjectParameter("hoten", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var dcParameter = dc != null ?
+                new ObjectParameter("dc", dc) :
+                new ObjectParameter("dc", typeof(string));
+    
+            var sosachbanParameter = sosachban.HasValue ?
+                new ObjectParameter("sosachban", sosachban) :
+                new ObjectParameter("sosachban", typeof(int));
+    
+            var luongnvParameter = luongnv.HasValue ?
+                new ObjectParameter("luongnv", luongnv) :
+                new ObjectParameter("luongnv", typeof(int));
+    
+            var ngayvangParameter = ngayvang.HasValue ?
+                new ObjectParameter("ngayvang", ngayvang) :
+                new ObjectParameter("ngayvang", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter, ketqua);
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_EditNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang)
+        {
+            var manvParameter = manv.HasValue ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(int));
+    
+            var hotenParameter = hoten != null ?
+                new ObjectParameter("hoten", hoten) :
+                new ObjectParameter("hoten", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var dcParameter = dc != null ?
+                new ObjectParameter("dc", dc) :
+                new ObjectParameter("dc", typeof(string));
+    
+            var sosachbanParameter = sosachban.HasValue ?
+                new ObjectParameter("sosachban", sosachban) :
+                new ObjectParameter("sosachban", typeof(int));
+    
+            var luongnvParameter = luongnv.HasValue ?
+                new ObjectParameter("luongnv", luongnv) :
+                new ObjectParameter("luongnv", typeof(int));
+    
+            var ngayvangParameter = ngayvang.HasValue ?
+                new ObjectParameter("ngayvang", ngayvang) :
+                new ObjectParameter("ngayvang", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     }
 }
