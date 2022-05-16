@@ -4,9 +4,11 @@
     <Key>
       <PropertyRef Name="MaSach" />
       <PropertyRef Name="MNCC" />
+      <PropertyRef Name="NgayNhap" />
     </Key>
     <Property Name="MaSach" Type="int" Nullable="false" />
     <Property Name="MNCC" Type="int" Nullable="false" />
+    <Property Name="NgayNhap" Type="datetime" Nullable="false" />
     <Property Name="Soluong" Type="int" />
     <Property Name="DonGiaNhap" Type="int" />
     <Property Name="maNQL" Type="int" />
@@ -16,13 +18,14 @@
       <PropertyRef Name="MaNVB" />
       <PropertyRef Name="MaSach" />
       <PropertyRef Name="MHD" />
+      <PropertyRef Name="NgayBan" />
     </Key>
     <Property Name="MaNVB" Type="int" Nullable="false" />
     <Property Name="MaSach" Type="int" Nullable="false" />
     <Property Name="MHD" Type="int" Nullable="false" />
     <Property Name="MaTV" Type="int" />
     <Property Name="SoLuong" Type="int" />
-    <Property Name="NgayBan" Type="datetime" />
+    <Property Name="NgayBan" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="HoaDon">
     <Key>
@@ -41,12 +44,13 @@
       <PropertyRef Name="MaTV" />
       <PropertyRef Name="MaSach" />
       <PropertyRef Name="MaNVM" />
+      <PropertyRef Name="ThoiGianM" />
     </Key>
     <Property Name="MaTV" Type="int" Nullable="false" />
     <Property Name="MaSach" Type="int" Nullable="false" />
     <Property Name="MaNVM" Type="int" Nullable="false" />
     <Property Name="SoLuongMuon" Type="int" />
-    <Property Name="ThoiGianM" Type="datetime" />
+    <Property Name="ThoiGianM" Type="datetime" Nullable="false" />
     <Property Name="DonGiaMuon" Type="int" />
     <Property Name="MaHD" Type="int" Nullable="false" />
   </EntityType>
@@ -74,7 +78,6 @@
     <Property Name="NgayNghiViec" Type="datetime" />
     <Property Name="DaNghi" Type="bit" />
     <Property Name="MNQL" Type="int" />
-    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -418,7 +421,7 @@
           <Property Name="SoDT" Type="varchar" MaxLength="15" />
           <Property Name="ConSD" Type="bit" />
           <Property Name="MDThanThiet" Type="int" />
-          <Property Name="Status" Type="bit" />
+          <Property Name="status" Type="bit" />
         </RowType>
       </CollectionType>
     </ReturnType>
@@ -546,20 +549,6 @@
         </RowType>
       </CollectionType>
     </ReturnType>
-  </Function>
-  <Function Name="SettingNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Action" Type="nvarchar" Mode="In" />
-    <Parameter Name="MNV" Type="int" Mode="In" />
-    <Parameter Name="HoTenNV" Type="nvarchar" Mode="In" />
-    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
-    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
-    <Parameter Name="SoSachBan" Type="int" Mode="In" />
-    <Parameter Name="luongNV" Type="int" Mode="In" />
-    <Parameter Name="NgayVang" Type="int" Mode="In" />
-    <Parameter Name="NgayNghiViec" Type="datetime" Mode="In" />
-    <Parameter Name="DaNghi" Type="bit" Mode="In" />
-    <Parameter Name="MNQL" Type="int" Mode="In" />
-    <Parameter Name="status" Type="bit" Mode="In" />
   </Function>
   <Function Name="SettingThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Action" Type="nvarchar" Mode="In" />

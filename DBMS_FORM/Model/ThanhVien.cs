@@ -28,6 +28,8 @@ namespace DBMS_FORM.Model
         public Nullable<bool> ConSD { get; set; }
         public Nullable<int> MDThanThiet { get; set; }
         public Nullable<bool> Status { get; set; }
+        public Nullable<bool> status { get; set; }
+        public Nullable<bool> Status1 { get; set; }
     
         public virtual ICollection<DaBan> DaBans { get; set; }
         public virtual ICollection<Muon> Muons { get; set; }

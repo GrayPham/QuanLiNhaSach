@@ -70,6 +70,7 @@
     <Key>
       <PropertyRef Name="MaSach" />
       <PropertyRef Name="MNCC" />
+      <PropertyRef Name="NgayNhap" />
     </Key>
     <Property Name="MaSach" Type="Int32" Nullable="false" />
     <Property Name="MNCC" Type="Int32" Nullable="false" />
@@ -79,6 +80,7 @@
     <NavigationProperty Name="NhaCungCap" Relationship="Self.FK_CungCap_NhaCungCap" FromRole="CungCap" ToRole="NhaCungCap" />
     <NavigationProperty Name="NV" Relationship="Self.FK_CungCap_NV" FromRole="CungCap" ToRole="NV" />
     <NavigationProperty Name="Sach" Relationship="Self.FK_CungCap_Sach" FromRole="CungCap" ToRole="Sach" />
+    <Property Name="NgayNhap" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="DaBan">
     <Key>
@@ -91,7 +93,7 @@
     <Property Name="MHD" Type="Int32" Nullable="false" />
     <Property Name="MaTV" Type="Int32" />
     <Property Name="SoLuong" Type="Int32" />
-    <Property Name="NgayBan" Type="DateTime" Precision="3" />
+    <Property Name="NgayBan" Type="DateTime" Precision="3" Nullable="false" />
     <NavigationProperty Name="HoaDon" Relationship="Self.FK_DaBan_HoaDon" FromRole="DaBan" ToRole="HoaDon" />
     <NavigationProperty Name="NV" Relationship="Self.FK_DaBan_NV" FromRole="DaBan" ToRole="NV" />
     <NavigationProperty Name="Sach" Relationship="Self.FK_DaBan_Sach" FromRole="DaBan" ToRole="Sach" />
@@ -121,7 +123,7 @@
     <Property Name="MaSach" Type="Int32" Nullable="false" />
     <Property Name="MaNVM" Type="Int32" Nullable="false" />
     <Property Name="SoLuongMuon" Type="Int32" />
-    <Property Name="ThoiGianM" Type="DateTime" Precision="3" />
+    <Property Name="ThoiGianM" Type="DateTime" Precision="3" Nullable="false" />
     <Property Name="DonGiaMuon" Type="Int32" />
     <Property Name="MaHD" Type="Int32" Nullable="false" />
     <NavigationProperty Name="HoaDon" Relationship="Self.FK_Muon_HoaDon" FromRole="Muon" ToRole="HoaDon" />
@@ -203,6 +205,8 @@
     <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_ThanhVien" FromRole="ThanhVien" ToRole="DaBan" />
     <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_ThanhVien" FromRole="ThanhVien" ToRole="Muon" />
     <Property Name="Status" Type="Boolean" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="Status1" Type="Boolean" />
   </EntityType>
   <EntityType Name="TheLoai">
     <Key>

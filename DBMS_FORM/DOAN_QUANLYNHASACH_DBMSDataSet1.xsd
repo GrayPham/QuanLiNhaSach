@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DOAN_QUANLYNHASACH_DBMSDataSet1" targetNamespace="http://tempuri.org/DOAN_QUANLYNHASACH_DBMSDataSet1.xsd" xmlns:mstns="http://tempuri.org/DOAN_QUANLYNHASACH_DBMSDataSet1.xsd" xmlns="http://tempuri.org/DOAN_QUANLYNHASACH_DBMSDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DOAN_QUANLYNHASACH_DBMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DOAN_QUANLYNHASACH_DBMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DBMS_FORM.Properties.Settings.GlobalReference.Default.DOAN_QUANLYNHASACH_DBMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fun_ThanhVienTableAdapter" GeneratorDataComponentClassName="fun_ThanhVienTableAdapter" Name="fun_ThanhVien" UserDataComponentName="fun_ThanhVienTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DOAN_QUANLYNHASACH_DBMSConnectionString (Settings)" DbObjectName="DOAN_QUANLYNHASACH_DBMS.dbo.fun_ThanhVien" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MTV, HoVaTenTV, Diachi, Mail, SoDT, ConSD, MDThanThiet, Status FROM dbo.fun_ThanhVien()</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MTV" DataSetColumn="MTV" />
+              <Mapping SourceColumn="HoVaTenTV" DataSetColumn="HoVaTenTV" />
+              <Mapping SourceColumn="Diachi" DataSetColumn="Diachi" />
+              <Mapping SourceColumn="Mail" DataSetColumn="Mail" />
+              <Mapping SourceColumn="SoDT" DataSetColumn="SoDT" />
+              <Mapping SourceColumn="ConSD" DataSetColumn="ConSD" />
+              <Mapping SourceColumn="MDThanThiet" DataSetColumn="MDThanThiet" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DOAN_QUANLYNHASACH_DBMSDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DOAN_QUANLYNHASACH_DBMSDataSet1" msprop:Generator_UserDSName="DOAN_QUANLYNHASACH_DBMSDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="fun_ThanhVien" msprop:Generator_TableClassName="fun_ThanhVienDataTable" msprop:Generator_TableVarName="tablefun_ThanhVien" msprop:Generator_TablePropName="fun_ThanhVien" msprop:Generator_RowDeletingName="fun_ThanhVienRowDeleting" msprop:Generator_RowChangingName="fun_ThanhVienRowChanging" msprop:Generator_RowEvHandlerName="fun_ThanhVienRowChangeEventHandler" msprop:Generator_RowDeletedName="fun_ThanhVienRowDeleted" msprop:Generator_UserTableName="fun_ThanhVien" msprop:Generator_RowChangedName="fun_ThanhVienRowChanged" msprop:Generator_RowEvArgName="fun_ThanhVienRowChangeEvent" msprop:Generator_RowClassName="fun_ThanhVienRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MTV" msprop:Generator_ColumnVarNameInTable="columnMTV" msprop:Generator_ColumnPropNameInRow="MTV" msprop:Generator_ColumnPropNameInTable="MTVColumn" msprop:Generator_UserColumnName="MTV" type="xs:int" />
+              <xs:element name="HoVaTenTV" msprop:Generator_ColumnVarNameInTable="columnHoVaTenTV" msprop:Generator_ColumnPropNameInRow="HoVaTenTV" msprop:Generator_ColumnPropNameInTable="HoVaTenTVColumn" msprop:Generator_UserColumnName="HoVaTenTV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Diachi" msprop:Generator_ColumnVarNameInTable="columnDiachi" msprop:Generator_ColumnPropNameInRow="Diachi" msprop:Generator_ColumnPropNameInTable="DiachiColumn" msprop:Generator_UserColumnName="Diachi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mail" msprop:Generator_ColumnVarNameInTable="columnMail" msprop:Generator_ColumnPropNameInRow="Mail" msprop:Generator_ColumnPropNameInTable="MailColumn" msprop:Generator_UserColumnName="Mail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoDT" msprop:Generator_ColumnVarNameInTable="columnSoDT" msprop:Generator_ColumnPropNameInRow="SoDT" msprop:Generator_ColumnPropNameInTable="SoDTColumn" msprop:Generator_UserColumnName="SoDT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConSD" msprop:Generator_ColumnVarNameInTable="columnConSD" msprop:Generator_ColumnPropNameInRow="ConSD" msprop:Generator_ColumnPropNameInTable="ConSDColumn" msprop:Generator_UserColumnName="ConSD" type="xs:boolean" minOccurs="0" />
+              <xs:element name="MDThanThiet" msprop:Generator_ColumnVarNameInTable="columnMDThanThiet" msprop:Generator_ColumnPropNameInRow="MDThanThiet" msprop:Generator_ColumnPropNameInTable="MDThanThietColumn" msprop:Generator_UserColumnName="MDThanThiet" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:fun_ThanhVien" />
+      <xs:field xpath="mstns:MTV" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

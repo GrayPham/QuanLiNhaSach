@@ -19,6 +19,7 @@ namespace DBMS_FORM.Model
         public Nullable<int> Soluong { get; set; }
         public Nullable<int> DonGiaNhap { get; set; }
         public Nullable<int> maNQL { get; set; }
+        public System.DateTime NgayNhap { get; set; }
     
         public virtual NhaCungCap NhaCungCap { get; set; }
         public virtual NV NV { get; set; }

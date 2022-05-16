@@ -9,9 +9,11 @@
           <Key>
             <PropertyRef Name="MaSach" />
             <PropertyRef Name="MNCC" />
+            <PropertyRef Name="NgayNhap" />
           </Key>
           <Property Name="MaSach" Type="int" Nullable="false" />
           <Property Name="MNCC" Type="int" Nullable="false" />
+          <Property Name="NgayNhap" Type="datetime" Nullable="false" />
           <Property Name="Soluong" Type="int" />
           <Property Name="DonGiaNhap" Type="int" />
           <Property Name="maNQL" Type="int" />
@@ -21,13 +23,14 @@
             <PropertyRef Name="MaNVB" />
             <PropertyRef Name="MaSach" />
             <PropertyRef Name="MHD" />
+            <PropertyRef Name="NgayBan" />
           </Key>
           <Property Name="MaNVB" Type="int" Nullable="false" />
           <Property Name="MaSach" Type="int" Nullable="false" />
           <Property Name="MHD" Type="int" Nullable="false" />
           <Property Name="MaTV" Type="int" />
           <Property Name="SoLuong" Type="int" />
-          <Property Name="NgayBan" Type="datetime" />
+          <Property Name="NgayBan" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -46,12 +49,13 @@
             <PropertyRef Name="MaTV" />
             <PropertyRef Name="MaSach" />
             <PropertyRef Name="MaNVM" />
+            <PropertyRef Name="ThoiGianM" />
           </Key>
           <Property Name="MaTV" Type="int" Nullable="false" />
           <Property Name="MaSach" Type="int" Nullable="false" />
           <Property Name="MaNVM" Type="int" Nullable="false" />
           <Property Name="SoLuongMuon" Type="int" />
-          <Property Name="ThoiGianM" Type="datetime" />
+          <Property Name="ThoiGianM" Type="datetime" Nullable="false" />
           <Property Name="DonGiaMuon" Type="int" />
           <Property Name="MaHD" Type="int" Nullable="false" />
         </EntityType>
@@ -79,7 +83,6 @@
           <Property Name="NgayNghiViec" Type="datetime" />
           <Property Name="DaNghi" Type="bit" />
           <Property Name="MNQL" Type="int" />
-          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Sach">
           <Key>
@@ -423,7 +426,7 @@
                 <Property Name="SoDT" Type="varchar" MaxLength="15" />
                 <Property Name="ConSD" Type="bit" />
                 <Property Name="MDThanThiet" Type="int" />
-                <Property Name="Status" Type="bit" />
+                <Property Name="status" Type="bit" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -551,20 +554,6 @@
               </RowType>
             </CollectionType>
           </ReturnType>
-        </Function>
-        <Function Name="SettingNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Action" Type="nvarchar" Mode="In" />
-          <Parameter Name="MNV" Type="int" Mode="In" />
-          <Parameter Name="HoTenNV" Type="nvarchar" Mode="In" />
-          <Parameter Name="SDT" Type="nvarchar" Mode="In" />
-          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
-          <Parameter Name="SoSachBan" Type="int" Mode="In" />
-          <Parameter Name="luongNV" Type="int" Mode="In" />
-          <Parameter Name="NgayVang" Type="int" Mode="In" />
-          <Parameter Name="NgayNghiViec" Type="datetime" Mode="In" />
-          <Parameter Name="DaNghi" Type="bit" Mode="In" />
-          <Parameter Name="MNQL" Type="int" Mode="In" />
-          <Parameter Name="status" Type="bit" Mode="In" />
         </Function>
         <Function Name="SettingThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Action" Type="nvarchar" Mode="In" />
@@ -745,6 +734,7 @@
           <Key>
             <PropertyRef Name="MaSach" />
             <PropertyRef Name="MNCC" />
+            <PropertyRef Name="NgayNhap" />
           </Key>
           <Property Name="MaSach" Type="Int32" Nullable="false" />
           <Property Name="MNCC" Type="Int32" Nullable="false" />
@@ -754,6 +744,7 @@
           <NavigationProperty Name="NhaCungCap" Relationship="Self.FK_CungCap_NhaCungCap" FromRole="CungCap" ToRole="NhaCungCap" />
           <NavigationProperty Name="NV" Relationship="Self.FK_CungCap_NV" FromRole="CungCap" ToRole="NV" />
           <NavigationProperty Name="Sach" Relationship="Self.FK_CungCap_Sach" FromRole="CungCap" ToRole="Sach" />
+          <Property Name="NgayNhap" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="DaBan">
           <Key>
@@ -766,7 +757,7 @@
           <Property Name="MHD" Type="Int32" Nullable="false" />
           <Property Name="MaTV" Type="Int32" />
           <Property Name="SoLuong" Type="Int32" />
-          <Property Name="NgayBan" Type="DateTime" Precision="3" />
+          <Property Name="NgayBan" Type="DateTime" Precision="3" Nullable="false" />
           <NavigationProperty Name="HoaDon" Relationship="Self.FK_DaBan_HoaDon" FromRole="DaBan" ToRole="HoaDon" />
           <NavigationProperty Name="NV" Relationship="Self.FK_DaBan_NV" FromRole="DaBan" ToRole="NV" />
           <NavigationProperty Name="Sach" Relationship="Self.FK_DaBan_Sach" FromRole="DaBan" ToRole="Sach" />
@@ -796,7 +787,7 @@
           <Property Name="MaSach" Type="Int32" Nullable="false" />
           <Property Name="MaNVM" Type="Int32" Nullable="false" />
           <Property Name="SoLuongMuon" Type="Int32" />
-          <Property Name="ThoiGianM" Type="DateTime" Precision="3" />
+          <Property Name="ThoiGianM" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="DonGiaMuon" Type="Int32" />
           <Property Name="MaHD" Type="Int32" Nullable="false" />
           <NavigationProperty Name="HoaDon" Relationship="Self.FK_Muon_HoaDon" FromRole="Muon" ToRole="HoaDon" />
@@ -878,6 +869,8 @@
           <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_ThanhVien" FromRole="ThanhVien" ToRole="DaBan" />
           <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_ThanhVien" FromRole="ThanhVien" ToRole="Muon" />
           <Property Name="Status" Type="Boolean" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="Status1" Type="Boolean" />
         </EntityType>
         <EntityType Name="TheLoai">
           <Key>
@@ -1229,10 +1222,10 @@
           </FunctionImport>
           <FunctionImport Name="fun_DanhSachNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachNhanVien_Result)" />
           <FunctionImport Name="fun_SearchNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchNhanVien_Result)">
-            <Parameter Name="nv" Mode="In" Type="String" />
+          <Parameter Name="nv" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_SearchThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchThanhVien_Result)">
-            <Parameter Name="searchThanhVien" Mode="In" Type="String" />
+          <Parameter Name="searchThanhVien" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_ThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_ThanhVien_Result)" />
           <FunctionImport Name="INSERTBAN">
@@ -1373,6 +1366,7 @@
           <EntitySetMapping Name="CungCaps">
             <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.CungCap">
               <MappingFragment StoreEntitySet="CungCap">
+                <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
                 <ScalarProperty Name="MaSach" ColumnName="MaSach" />
                 <ScalarProperty Name="MNCC" ColumnName="MNCC" />
                 <ScalarProperty Name="Soluong" ColumnName="Soluong" />
@@ -1433,7 +1427,6 @@
           <EntitySetMapping Name="NVs">
             <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.NV">
               <MappingFragment StoreEntitySet="NV">
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="MNV" ColumnName="MNV" />
                 <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
@@ -1476,7 +1469,7 @@
           <EntitySetMapping Name="ThanhViens">
             <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.ThanhVien">
               <MappingFragment StoreEntitySet="ThanhVien">
-                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Status1" ColumnName="Status" />
                 <ScalarProperty Name="MTV" ColumnName="MTV" />
                 <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
                 <ScalarProperty Name="Diachi" ColumnName="Diachi" />
@@ -1600,23 +1593,6 @@
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="InsertMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertMuon" />
-          <FunctionImportMapping FunctionImportName="SettingNhanVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingNhanVien">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.SettingNhanVien_Result">
-                <ScalarProperty Name="MNV" ColumnName="MNV" />
-                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
-                <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
-                <ScalarProperty Name="luongNV" ColumnName="luongNV" />
-                <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
-                <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
-                <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
-                <ScalarProperty Name="MNQL" ColumnName="MNQL" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result">
