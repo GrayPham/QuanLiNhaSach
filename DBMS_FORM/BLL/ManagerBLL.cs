@@ -50,5 +50,15 @@ namespace DBMS_FORM.BLL
                 MessageBox.Show(ex.Message, "Add Staff");
             }
         }
+        private string fileNV = "FireUser";
+        private string deleteNV = "DeleteUser";
+        internal void RemoveNV(int ma)
+        {
+            db.SP_DeleteUSER_MANAGEMENT(ma,fileNV);
+        }
+        internal void DeleteNV(int ma)
+        {
+            db.SP_DeleteUSER_MANAGEMENT(ma, deleteNV);
+        }
     }
 }

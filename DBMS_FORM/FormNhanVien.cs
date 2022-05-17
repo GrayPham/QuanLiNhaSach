@@ -15,7 +15,8 @@ namespace DBMS_FORM
     public partial class FormNhanVien : Form
     {
         ManagerBLL managerBLL = new ManagerBLL();
-        private int manvOld; 
+        private int manvOld;
+        
         public FormNhanVien()
         {
             InitializeComponent();
@@ -105,7 +106,18 @@ namespace DBMS_FORM
 
         private void btnremove_Click(object sender, EventArgs e)
         {
-            
+            if (textBox_id.Text != "")
+            {
+                int ma = int.Parse(textBox_id.Text);
+                
+                managerBLL.RemoveNV(ma);
+                fillDVGNhanVien();
+                btnedit.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Input Id Staff", "Add Staff");
+            }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -120,6 +132,22 @@ namespace DBMS_FORM
             numeric_booksale.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
             textBox_salary.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             numeric_absent.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (textBox_id.Text != "")
+            {
+                int ma = int.Parse(textBox_id.Text);
+
+                managerBLL.DeleteNV(ma);
+                fillDVGNhanVien();
+                btnedit.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Input Id Staff", "Add Staff");
+            }
         }
     }
 }
