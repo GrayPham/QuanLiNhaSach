@@ -608,6 +608,14 @@
       <Parameter Name="DXOA" Mode="In" Type="Boolean" />
       <Parameter Name="ThanhVien" Mode="In" Type="Boolean" />
     </FunctionImport>
+    <FunctionImport Name="InsertPersonalDetailsAndAccount">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Age" Mode="In" Type="Int16" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Salary" Mode="In" Type="Decimal" />
+      <Parameter Name="PPFDeduction" Mode="In" Type="Decimal" />
+    </FunctionImport>
     <FunctionImport Name="SettingThanhVien" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result)">
       <Parameter Name="Action" Mode="In" Type="String" />
       <Parameter Name="MTV" Mode="In" Type="Int32" />
@@ -619,7 +627,7 @@
       <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
       <Parameter Name="status" Mode="In" Type="Boolean" />
     </FunctionImport>
-    <FunctionImport Name="sp_AddNV">
+    <FunctionImport Name="sp_AddNV" ReturnType="Collection(String)">
       <Parameter Name="manv" Mode="In" Type="Int32" />
       <Parameter Name="hoten" Mode="In" Type="String" />
       <Parameter Name="sdt" Mode="In" Type="String" />
@@ -641,18 +649,23 @@
       <Parameter Name="version" Mode="In" Type="Int32" />
       <Parameter Name="definition" Mode="In" Type="Binary" />
     </FunctionImport>
+    <FunctionImport Name="SP_DeleteUSER_MANAGEMENT">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Method" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="sp_dropdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_EditNV">
-      <Parameter Name="manv" Mode="In" Type="Int32" />
-      <Parameter Name="hoten" Mode="In" Type="String" />
-      <Parameter Name="sdt" Mode="In" Type="String" />
-      <Parameter Name="dc" Mode="In" Type="String" />
-      <Parameter Name="sosachban" Mode="In" Type="Int32" />
-      <Parameter Name="luongnv" Mode="In" Type="Int32" />
-      <Parameter Name="ngayvang" Mode="In" Type="Int32" />
+      <Parameter Name="macu" Mode="In" Type="Int32" />
+      <Parameter Name="mamoi" Mode="In" Type="Int32" />
+      <Parameter Name="hotenmoi" Mode="In" Type="String" />
+      <Parameter Name="sdtm" Mode="In" Type="String" />
+      <Parameter Name="dcm" Mode="In" Type="String" />
+      <Parameter Name="luongnvmoi" Mode="In" Type="Int32" />
+      <Parameter Name="ngayvangmoi" Mode="In" Type="Int32" />
+      <Parameter Name="kq" Mode="InOut" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />

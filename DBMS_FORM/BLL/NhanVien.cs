@@ -33,5 +33,11 @@ namespace DBMS_FORM.BLL
             var timKiem = db.fun_SearchNhanVien(chuoi);
             return timKiem;
         }
+
+        //internal object Add(int id, string name, string phone, string address, int booksale, int salary, int absent, string kq)
+        //{
+        //    //var them = db.sp_AddNV(id, name, phone, address, booksale, salary,absent);
+        //    //return them;
+        //}
     }
 }

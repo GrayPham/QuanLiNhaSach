@@ -300,6 +300,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="userId" Type="int" Mode="In" />
+  </Function>
   <Function Name="CheckMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MTV" Type="int" Mode="In" />
     <Parameter Name="MS" Type="int" Mode="In" />
@@ -513,6 +516,14 @@
     <Parameter Name="DXOA" Type="bit" Mode="In" />
     <Parameter Name="ThanhVien" Type="bit" Mode="In" />
   </Function>
+  <Function Name="InsertPersonalDetailsAndAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Age" Type="smallint" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Salary" Type="money" Mode="In" />
+    <Parameter Name="PPFDeduction" Type="money" Mode="In" />
+  </Function>
   <Function Name="LowestSelling" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>
@@ -604,18 +615,23 @@
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="SP_DeleteUSER_MANAGEMENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Method" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_EditNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="manv" Type="int" Mode="In" />
-    <Parameter Name="hoten" Type="nvarchar" Mode="In" />
-    <Parameter Name="sdt" Type="varchar" Mode="In" />
-    <Parameter Name="dc" Type="varchar" Mode="In" />
-    <Parameter Name="sosachban" Type="int" Mode="In" />
-    <Parameter Name="luongnv" Type="int" Mode="In" />
-    <Parameter Name="ngayvang" Type="int" Mode="In" />
+    <Parameter Name="macu" Type="int" Mode="In" />
+    <Parameter Name="mamoi" Type="int" Mode="In" />
+    <Parameter Name="hotenmoi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdtm" Type="varchar" Mode="In" />
+    <Parameter Name="dcm" Type="varchar" Mode="In" />
+    <Parameter Name="luongnvmoi" Type="int" Mode="In" />
+    <Parameter Name="ngayvangmoi" Type="int" Mode="In" />
+    <Parameter Name="kq" Type="nvarchar" Mode="InOut" />
   </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />

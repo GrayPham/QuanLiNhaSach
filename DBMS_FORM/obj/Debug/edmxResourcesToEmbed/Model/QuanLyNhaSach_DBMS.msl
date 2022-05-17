@@ -327,6 +327,7 @@
     <FunctionImportMapping FunctionImportName="INSERTBAN" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBAN" />
     <FunctionImportMapping FunctionImportName="INSERTBANTV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBANTV" />
     <FunctionImportMapping FunctionImportName="InsertMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertMuon" />
+    <FunctionImportMapping FunctionImportName="InsertPersonalDetailsAndAccount" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertPersonalDetailsAndAccount" />
     <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result">
@@ -344,6 +345,7 @@
     <FunctionImportMapping FunctionImportName="sp_AddNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_AddNV" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteUSER_MANAGEMENT" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SP_DeleteUSER_MANAGEMENT" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_dropdiagram" />
     <FunctionImportMapping FunctionImportName="sp_EditNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_EditNV" />
     <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_helpdiagramdefinition">

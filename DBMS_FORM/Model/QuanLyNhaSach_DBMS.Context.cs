@@ -373,6 +373,35 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertMuon", flagParameter, mATVParameter, mSParameter, mANVParameter, soLuongParameter, nMuonParameter, nTraParameter, mHDParameter, nXuatParameter, tongTienParameter, giamGiaParameter, dXOAParameter, thanhVienParameter);
         }
     
+        public virtual int InsertPersonalDetailsAndAccount(string firstName, string lastName, Nullable<short> age, Nullable<bool> active, Nullable<decimal> salary, Nullable<decimal> pPFDeduction)
+        {
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("FirstName", firstName) :
+                new ObjectParameter("FirstName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("LastName", lastName) :
+                new ObjectParameter("LastName", typeof(string));
+    
+            var ageParameter = age.HasValue ?
+                new ObjectParameter("Age", age) :
+                new ObjectParameter("Age", typeof(short));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("Active", active) :
+                new ObjectParameter("Active", typeof(bool));
+    
+            var salaryParameter = salary.HasValue ?
+                new ObjectParameter("Salary", salary) :
+                new ObjectParameter("Salary", typeof(decimal));
+    
+            var pPFDeductionParameter = pPFDeduction.HasValue ?
+                new ObjectParameter("PPFDeduction", pPFDeduction) :
+                new ObjectParameter("PPFDeduction", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertPersonalDetailsAndAccount", firstNameParameter, lastNameParameter, ageParameter, activeParameter, salaryParameter, pPFDeductionParameter);
+        }
+    
         public virtual ObjectResult<SettingThanhVien_Result> SettingThanhVien(string action, Nullable<int> mTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<bool> conSD, Nullable<int> mDThanThiet, Nullable<bool> status)
         {
             var actionParameter = action != null ?
@@ -414,7 +443,7 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingThanhVien_Result>("SettingThanhVien", actionParameter, mTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter, statusParameter);
         }
     
-        public virtual int sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, ObjectParameter ketqua)
+        public virtual ObjectResult<string> sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, ObjectParameter ketqua)
         {
             var manvParameter = manv.HasValue ?
                 new ObjectParameter("manv", manv) :
@@ -444,7 +473,7 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("ngayvang", ngayvang) :
                 new ObjectParameter("ngayvang", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter, ketqua);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_AddNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter, ketqua);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -489,6 +518,19 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
+        public virtual int SP_DeleteUSER_MANAGEMENT(Nullable<int> userId, string method)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var methodParameter = method != null ?
+                new ObjectParameter("Method", method) :
+                new ObjectParameter("Method", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_DeleteUSER_MANAGEMENT", userIdParameter, methodParameter);
+        }
+    
         public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
@@ -502,37 +544,37 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_EditNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang)
+        public virtual int sp_EditNV(Nullable<int> macu, Nullable<int> mamoi, string hotenmoi, string sdtm, string dcm, Nullable<int> luongnvmoi, Nullable<int> ngayvangmoi, ObjectParameter kq)
         {
-            var manvParameter = manv.HasValue ?
-                new ObjectParameter("manv", manv) :
-                new ObjectParameter("manv", typeof(int));
+            var macuParameter = macu.HasValue ?
+                new ObjectParameter("macu", macu) :
+                new ObjectParameter("macu", typeof(int));
     
-            var hotenParameter = hoten != null ?
-                new ObjectParameter("hoten", hoten) :
-                new ObjectParameter("hoten", typeof(string));
+            var mamoiParameter = mamoi.HasValue ?
+                new ObjectParameter("mamoi", mamoi) :
+                new ObjectParameter("mamoi", typeof(int));
     
-            var sdtParameter = sdt != null ?
-                new ObjectParameter("sdt", sdt) :
-                new ObjectParameter("sdt", typeof(string));
+            var hotenmoiParameter = hotenmoi != null ?
+                new ObjectParameter("hotenmoi", hotenmoi) :
+                new ObjectParameter("hotenmoi", typeof(string));
     
-            var dcParameter = dc != null ?
-                new ObjectParameter("dc", dc) :
-                new ObjectParameter("dc", typeof(string));
+            var sdtmParameter = sdtm != null ?
+                new ObjectParameter("sdtm", sdtm) :
+                new ObjectParameter("sdtm", typeof(string));
     
-            var sosachbanParameter = sosachban.HasValue ?
-                new ObjectParameter("sosachban", sosachban) :
-                new ObjectParameter("sosachban", typeof(int));
+            var dcmParameter = dcm != null ?
+                new ObjectParameter("dcm", dcm) :
+                new ObjectParameter("dcm", typeof(string));
     
-            var luongnvParameter = luongnv.HasValue ?
-                new ObjectParameter("luongnv", luongnv) :
-                new ObjectParameter("luongnv", typeof(int));
+            var luongnvmoiParameter = luongnvmoi.HasValue ?
+                new ObjectParameter("luongnvmoi", luongnvmoi) :
+                new ObjectParameter("luongnvmoi", typeof(int));
     
-            var ngayvangParameter = ngayvang.HasValue ?
-                new ObjectParameter("ngayvang", ngayvang) :
-                new ObjectParameter("ngayvang", typeof(int));
+            var ngayvangmoiParameter = ngayvangmoi.HasValue ?
+                new ObjectParameter("ngayvangmoi", ngayvangmoi) :
+                new ObjectParameter("ngayvangmoi", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditNV", macuParameter, mamoiParameter, hotenmoiParameter, sdtmParameter, dcmParameter, luongnvmoiParameter, ngayvangmoiParameter, kq);
         }
     
         public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
@@ -581,48 +623,6 @@ namespace DBMS_FORM.Model
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual int InsertPersonalDetailsAndAccount(string firstName, string lastName, Nullable<short> age, Nullable<bool> active, Nullable<decimal> salary, Nullable<decimal> pPFDeduction)
-        {
-            var firstNameParameter = firstName != null ?
-                new ObjectParameter("FirstName", firstName) :
-                new ObjectParameter("FirstName", typeof(string));
-    
-            var lastNameParameter = lastName != null ?
-                new ObjectParameter("LastName", lastName) :
-                new ObjectParameter("LastName", typeof(string));
-    
-            var ageParameter = age.HasValue ?
-                new ObjectParameter("Age", age) :
-                new ObjectParameter("Age", typeof(short));
-    
-            var activeParameter = active.HasValue ?
-                new ObjectParameter("Active", active) :
-                new ObjectParameter("Active", typeof(bool));
-    
-            var salaryParameter = salary.HasValue ?
-                new ObjectParameter("Salary", salary) :
-                new ObjectParameter("Salary", typeof(decimal));
-    
-            var pPFDeductionParameter = pPFDeduction.HasValue ?
-                new ObjectParameter("PPFDeduction", pPFDeduction) :
-                new ObjectParameter("PPFDeduction", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertPersonalDetailsAndAccount", firstNameParameter, lastNameParameter, ageParameter, activeParameter, salaryParameter, pPFDeductionParameter);
-        }
-    
-        public virtual int SP_DeleteUSER_MANAGEMENT(Nullable<int> userId, string method)
-        {
-            var userIdParameter = userId.HasValue ?
-                new ObjectParameter("UserId", userId) :
-                new ObjectParameter("UserId", typeof(int));
-    
-            var methodParameter = method != null ?
-                new ObjectParameter("Method", method) :
-                new ObjectParameter("Method", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_DeleteUSER_MANAGEMENT", userIdParameter, methodParameter);
         }
     }
 }
