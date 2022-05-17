@@ -654,7 +654,6 @@
           <Parameter Name="dcm" Type="varchar" Mode="In" />
           <Parameter Name="luongnvmoi" Type="int" Mode="In" />
           <Parameter Name="ngayvangmoi" Type="int" Mode="In" />
-          <Parameter Name="kq" Type="nvarchar" Mode="InOut" />
         </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1434,7 +1433,6 @@
             <Parameter Name="dcm" Mode="In" Type="String" />
             <Parameter Name="luongnvmoi" Mode="In" Type="Int32" />
             <Parameter Name="ngayvangmoi" Mode="In" Type="Int32" />
-            <Parameter Name="kq" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />

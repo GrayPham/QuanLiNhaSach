@@ -649,7 +649,6 @@
     <Parameter Name="dcm" Type="varchar" Mode="In" />
     <Parameter Name="luongnvmoi" Type="int" Mode="In" />
     <Parameter Name="ngayvangmoi" Type="int" Mode="In" />
-    <Parameter Name="kq" Type="nvarchar" Mode="InOut" />
   </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />

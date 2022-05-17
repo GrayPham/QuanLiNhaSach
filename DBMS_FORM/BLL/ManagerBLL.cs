@@ -33,5 +33,22 @@ namespace DBMS_FORM.BLL
             var manager = db.fun_DanhSachQuanLy();
             return manager;
         }
+
+        internal void EditNV(int ma,int manvOld,  string hoTen, string sdt, string dc, int luong, int vang, int maNQL)
+        {
+            try
+            {
+                //System.Data.Objects.ObjectParameter ketqua = new ObjectParameter("ketqua", typeof(char));
+                db.sp_EditNV(ma, manvOld, hoTen, sdt, dc, luong, vang);
+                //string myCheck = ketqua.Value.ToString();
+                //MessageBox.Show(myCheck, "Add Staff");
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Add Staff");
+            }
+        }
     }
 }

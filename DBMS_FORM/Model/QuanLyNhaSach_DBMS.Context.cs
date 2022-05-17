@@ -548,7 +548,7 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_EditNV(Nullable<int> macu, Nullable<int> mamoi, string hotenmoi, string sdtm, string dcm, Nullable<int> luongnvmoi, Nullable<int> ngayvangmoi, ObjectParameter kq)
+        public virtual int sp_EditNV(Nullable<int> macu, Nullable<int> mamoi, string hotenmoi, string sdtm, string dcm, Nullable<int> luongnvmoi, Nullable<int> ngayvangmoi)
         {
             var macuParameter = macu.HasValue ?
                 new ObjectParameter("macu", macu) :
@@ -578,7 +578,7 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("ngayvangmoi", ngayvangmoi) :
                 new ObjectParameter("ngayvangmoi", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditNV", macuParameter, mamoiParameter, hotenmoiParameter, sdtmParameter, dcmParameter, luongnvmoiParameter, ngayvangmoiParameter, kq);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EditNV", macuParameter, mamoiParameter, hotenmoiParameter, sdtmParameter, dcmParameter, luongnvmoiParameter, ngayvangmoiParameter);
         }
     
         public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)

@@ -665,7 +665,6 @@
       <Parameter Name="dcm" Mode="In" Type="String" />
       <Parameter Name="luongnvmoi" Mode="In" Type="Int32" />
       <Parameter Name="ngayvangmoi" Mode="In" Type="Int32" />
-      <Parameter Name="kq" Mode="InOut" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
