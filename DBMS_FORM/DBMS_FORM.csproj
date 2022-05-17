@@ -60,7 +60,9 @@
     <Compile Include="Banfrm.Designer.cs">
       <DependentUpon>Banfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="BLL\NhanVien.cs" />
+    <Compile Include="DB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,10 +114,31 @@
     <Compile Include="Model\fuNhanvienOfQl_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\fun_HoaDonOfNhanVien_Result.cs">
+    <Compile Include="Model\fun_DanhSachNhanVien_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_DanhSachQuanLy_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_SachCon_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_SearchNhanVien_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_SearchSach_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_SearchThanhVien_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_ThanhVien_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HoaDon.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LowestSelling_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Muon.cs">
@@ -155,6 +178,9 @@
     <Compile Include="Model\SearchNhaCC_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\SettingThanhVien_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
@@ -168,6 +194,15 @@
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TheLoai.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TurnoverByDay_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TurnoverByMonth_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TurnoverByYear_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="NhapHoaDon.cs">
@@ -271,19 +306,19 @@
     <None Include="Resources\0af3c9613761d2d2394d99312aeba397.gif" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\QuanLyNhaSach_DBMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuanLyNhaSach_DBMS.Context.cs</LastGenOutput>
       <DependentUpon>QuanLyNhaSach_DBMS.edmx</DependentUpon>
+      <LastGenOutput>QuanLyNhaSach_DBMS.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\QuanLyNhaSach_DBMS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QuanLyNhaSach_DBMS.edmx</DependentUpon>
       <LastGenOutput>QuanLyNhaSach_DBMS.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

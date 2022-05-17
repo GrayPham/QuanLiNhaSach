@@ -6,6 +6,7 @@
         <MappingFragment StoreEntitySet="CungCap">
           <ScalarProperty Name="MaSach" ColumnName="MaSach" />
           <ScalarProperty Name="MNCC" ColumnName="MNCC" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
           <ScalarProperty Name="Soluong" ColumnName="Soluong" />
           <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
           <ScalarProperty Name="maNQL" ColumnName="maNQL" />
@@ -113,6 +114,7 @@
           <ScalarProperty Name="SoDT" ColumnName="SoDT" />
           <ScalarProperty Name="ConSD" ColumnName="ConSD" />
           <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -147,19 +149,87 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_HoaDonOfNhanVien" FunctionImportName="fun_HoaDonOfNhanVien">
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_DanhSachNhanVien" FunctionImportName="fun_DanhSachNhanVien">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_HoaDonOfNhanVien_Result">
-          <ScalarProperty Name="MaNVB" ColumnName="MaNVB" />
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachNhanVien_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
           <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_SachCon" FunctionImportName="fun_SachCon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_SachCon_Result">
           <ScalarProperty Name="MaSach" ColumnName="MaSach" />
-          <ScalarProperty Name="MHD" ColumnName="MHD" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="TenSach" ColumnName="TenSach" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="NamXB" ColumnName="NamXB" />
+          <ScalarProperty Name="MaTL" ColumnName="MaTL" />
+          <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
+          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
+          <ScalarProperty Name="SoluongCon" ColumnName="SoluongCon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_SearchNhanVien" FunctionImportName="fun_SearchNhanVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_SearchNhanVien_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_SearchSach" FunctionImportName="fun_SearchSach">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_SearchSach_Result">
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="TenSach" ColumnName="TenSach" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="NamXB" ColumnName="NamXB" />
+          <ScalarProperty Name="MaTL" ColumnName="MaTL" />
+          <ScalarProperty Name="NgayXoa" ColumnName="NgayXoa" />
+          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
+          <ScalarProperty Name="SoluongCon" ColumnName="SoluongCon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_SearchThanhVien" FunctionImportName="fun_SearchThanhVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_SearchThanhVien_Result">
+          <ScalarProperty Name="MTV" ColumnName="MTV" />
+          <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+          <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_ThanhVien" FunctionImportName="fun_ThanhVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_ThanhVien_Result">
+          <ScalarProperty Name="MTV" ColumnName="MTV" />
+          <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+          <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -176,6 +246,14 @@
           <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
           <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
           <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.LowestSelling" FunctionImportName="LowestSelling">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.LowestSelling_Result">
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+          <ScalarProperty Name="TenSach" ColumnName="TenSach" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -219,10 +297,57 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.TurnoverByDay" FunctionImportName="TurnoverByDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.TurnoverByDay_Result">
+          <ScalarProperty Name="NgayXuat" ColumnName="NgayXuat" />
+          <ScalarProperty Name="DOANHTHU" ColumnName="DOANHTHU" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.TurnoverByMonth" FunctionImportName="TurnoverByMonth">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.TurnoverByMonth_Result">
+          <ScalarProperty Name="THANG" ColumnName="THANG" />
+          <ScalarProperty Name="DOANHTHU" ColumnName="DOANHTHU" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.TurnoverByYear" FunctionImportName="TurnoverByYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.TurnoverByYear_Result">
+          <ScalarProperty Name="THANG" ColumnName="THANG" />
+          <ScalarProperty Name="DOANHTHU" ColumnName="DOANHTHU" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CheckMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckMuon" />
     <FunctionImportMapping FunctionImportName="deleteSach" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.deleteSach" />
+    <FunctionImportMapping FunctionImportName="IMPORTSACH" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.IMPORTSACH" />
+    <FunctionImportMapping FunctionImportName="INSERTBAN" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBAN" />
+    <FunctionImportMapping FunctionImportName="INSERTBANTV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBANTV" />
+    <FunctionImportMapping FunctionImportName="InsertMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertMuon" />
+    <FunctionImportMapping FunctionImportName="InsertPersonalDetailsAndAccount" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertPersonalDetailsAndAccount" />
+    <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result">
+          <ScalarProperty Name="MTV" ColumnName="MTV" />
+          <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+          <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_AddNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_AddNV" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteUSER_MANAGEMENT" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SP_DeleteUSER_MANAGEMENT" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_EditNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_EditNV" />
     <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_helpdiagramdefinition">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result">
@@ -244,5 +369,21 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="fun_DanhSachQuanLy" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_DanhSachQuanLy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

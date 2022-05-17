@@ -16,5 +16,10 @@ namespace DBMS_FORM
         {
             InitializeComponent();
         }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

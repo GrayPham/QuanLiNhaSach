@@ -10,16 +10,9 @@
 namespace DBMS_FORM.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ThanhVien
+    public partial class fun_ThanhVien_Result
     {
-        public ThanhVien()
-        {
-            this.DaBans = new HashSet<DaBan>();
-            this.Muons = new HashSet<Muon>();
-        }
-    
         public int MTV { get; set; }
         public string HoVaTenTV { get; set; }
         public string Diachi { get; set; }
@@ -28,8 +21,5 @@ namespace DBMS_FORM.Model
         public Nullable<bool> ConSD { get; set; }
         public Nullable<int> MDThanThiet { get; set; }
         public Nullable<bool> Status { get; set; }
-    
-        public virtual ICollection<DaBan> DaBans { get; set; }
-        public virtual ICollection<Muon> Muons { get; set; }
     }
 }

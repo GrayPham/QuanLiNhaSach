@@ -10,19 +10,17 @@
 namespace DBMS_FORM.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class CungCap
+    public partial class fun_SearchSach_Result
     {
         public int MaSach { get; set; }
-        public int MNCC { get; set; }
-        public System.DateTime NgayNhap { get; set; }
-        public Nullable<int> Soluong { get; set; }
-        public Nullable<int> DonGiaNhap { get; set; }
-        public Nullable<int> maNQL { get; set; }
-    
-        public virtual NhaCungCap NhaCungCap { get; set; }
-        public virtual NV NV { get; set; }
-        public virtual Sach Sach { get; set; }
+        public string TenSach { get; set; }
+        public Nullable<decimal> DonGia { get; set; }
+        public Nullable<System.DateTime> NgayNhap { get; set; }
+        public string NamXB { get; set; }
+        public int MaTL { get; set; }
+        public Nullable<System.DateTime> NgayXoa { get; set; }
+        public Nullable<bool> DaXoa { get; set; }
+        public string SoluongCon { get; set; }
     }
 }

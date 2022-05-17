@@ -19,7 +19,7 @@ namespace DBMS_FORM.Model
         public int MHD { get; set; }
         public Nullable<int> MaTV { get; set; }
         public Nullable<int> SoLuong { get; set; }
-        public Nullable<System.DateTime> NgayBan { get; set; }
+        public System.DateTime NgayBan { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }
         public virtual NV NV { get; set; }
