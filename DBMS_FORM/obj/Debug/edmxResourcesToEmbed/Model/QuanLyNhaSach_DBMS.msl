@@ -369,5 +369,21 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="fun_DanhSachQuanLy" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_DanhSachQuanLy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

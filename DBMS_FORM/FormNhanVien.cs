@@ -14,6 +14,7 @@ namespace DBMS_FORM
 {
     public partial class FormNhanVien : Form
     {
+        ManagerBLL managerBLL = new ManagerBLL();
         public FormNhanVien()
         {
             InitializeComponent();
@@ -22,9 +23,20 @@ namespace DBMS_FORM
 
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
+            fillDVGNhanVien();
+            fillComboBox();
+        }
+        private void fillDVGNhanVien()
+        {
             dataGridView1.DataSource = nv.hienThiNV();
         }
-
+        private void fillComboBox(int index = 0)
+        {
+            comboBox_find.DisplayMember = "MNV";
+            comboBox_find.ValueMember = "MNV";
+            comboBox_find.DataSource = managerBLL.GetManager();
+            comboBox_find.SelectedIndex = index;
+        }
         private void button_search_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = nv.searchNV(txtfind.Text);
@@ -34,43 +46,46 @@ namespace DBMS_FORM
             }
         }
 
-        bool add;
+
         private void btnadd_Click(object sender, EventArgs e)
         {
-            add = true;
+            if(textBox_id.Text != "")
+            {
+                
+                    int ma = int.Parse(textBox_id.Text);
+                    string hoTen = textBox_name.Text;
+                    string sdt = textBox_phone.Text;
+                    string dc = richTextBox_address.Text;
+
+                    int sachBan = (int)numeric_booksale.Value;
+                    int luong = int.Parse(textBox_salary.Text);
+                    int vang = (int)numeric_absent.Value;
+                    string kq = "";
+                    int maNQL = Convert.ToInt32(comboBox_find.SelectedValue);
+                    managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, maNQL);
+
+                    //addNV.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, ref kq);
+                    fillDVGNhanVien();
+                
+                
+            }
+            else
+            {
+                MessageBox.Show("Input Id Staff", "Add Staff");
+            }
+
+
         }
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            add = false;
+            
         }
 
         private void btnremove_Click(object sender, EventArgs e)
         {
-            add = false;
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (add == true)
-            {
-                int ma = int.Parse(textBox_id.Text);
-                string hoTen = textBox_name.Text;
-                string sdt = textBox_phone.Text;
-                string dc = richTextBox_address.Text;
-
-                int sachBan = (int)numeric_booksale.Value;
-                int luong = int.Parse(textBox_salary.Text);
-                int vang = (int)numeric_absent.Value;
-                string kq = "";
-
-                DOAN_QUANLYNHASACH_DBMSEntities addNV = new DOAN_QUANLYNHASACH_DBMSEntities();
-                addNV.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, ref kq);
-
-                addNV.fun_DanhSachNhanVien();
-
-
-            }
-        }
     }
 }

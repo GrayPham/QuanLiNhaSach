@@ -443,7 +443,7 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingThanhVien_Result>("SettingThanhVien", actionParameter, mTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter, statusParameter);
         }
     
-        public virtual ObjectResult<string> sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, ObjectParameter ketqua)
+        public virtual ObjectResult<string> sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, Nullable<int> manql)
         {
             var manvParameter = manv.HasValue ?
                 new ObjectParameter("manv", manv) :
@@ -473,7 +473,11 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("ngayvang", ngayvang) :
                 new ObjectParameter("ngayvang", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_AddNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter, ketqua);
+            var manqlParameter = manql.HasValue ?
+                new ObjectParameter("manql", manql) :
+                new ObjectParameter("manql", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_AddNV", manvParameter, hotenParameter, sdtParameter, dcParameter, sosachbanParameter, luongnvParameter, ngayvangParameter, manqlParameter);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -623,6 +627,12 @@ namespace DBMS_FORM.Model
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachQuanLy")]
+        public virtual IQueryable<fun_DanhSachQuanLy_Result> fun_DanhSachQuanLy()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachQuanLy_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachQuanLy]()");
         }
     }
 }

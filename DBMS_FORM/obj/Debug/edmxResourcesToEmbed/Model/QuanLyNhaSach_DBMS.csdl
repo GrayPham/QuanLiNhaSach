@@ -635,7 +635,7 @@
       <Parameter Name="sosachban" Mode="In" Type="Int32" />
       <Parameter Name="luongnv" Mode="In" Type="Int32" />
       <Parameter Name="ngayvang" Mode="In" Type="Int32" />
-      <Parameter Name="ketqua" Mode="InOut" Type="String" />
+      <Parameter Name="manql" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -681,6 +681,7 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="fun_DanhSachQuanLy" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result)" />
   </EntityContainer>
   <ComplexType Name="SettingThanhVien_Result">
     <Property Type="Int32" Name="MTV" Nullable="false" />
@@ -702,5 +703,17 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="fun_DanhSachQuanLy_Result">
+    <Property Type="Int32" Name="MNV" Nullable="false" />
+    <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SoSachBan" Nullable="true" />
+    <Property Type="Int32" Name="luongNV" Nullable="true" />
+    <Property Type="Int32" Name="NgayVang" Nullable="true" />
+    <Property Type="DateTime" Name="NgayNghiViec" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="DaNghi" Nullable="true" />
+    <Property Type="Int32" Name="MNQL" Nullable="true" />
   </ComplexType>
 </Schema>

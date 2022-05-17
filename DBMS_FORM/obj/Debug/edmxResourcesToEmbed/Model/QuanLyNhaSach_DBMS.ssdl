@@ -361,6 +361,24 @@
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="fun_DanhSachQuanLy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MNV" Type="int" Nullable="false" />
+          <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="DiaChi" Type="varchar" MaxLength="50" />
+          <Property Name="SoSachBan" Type="int" />
+          <Property Name="luongNV" Type="int" />
+          <Property Name="NgayVang" Type="int" />
+          <Property Name="NgayNghiViec" Type="datetime" />
+          <Property Name="DaNghi" Type="bit" />
+          <Property Name="MNQL" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="fun_SachCon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>
@@ -601,7 +619,7 @@
     <Parameter Name="sosachban" Type="int" Mode="In" />
     <Parameter Name="luongnv" Type="int" Mode="In" />
     <Parameter Name="ngayvang" Type="int" Mode="In" />
-    <Parameter Name="ketqua" Type="nvarchar" Mode="InOut" />
+    <Parameter Name="manql" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
