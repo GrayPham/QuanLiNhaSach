@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="BLL\NhanVien.cs" />
+    <Compile Include="BLL\ThanhVienBLL.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -176,9 +177,6 @@
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SearchNhaCC_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SettingThanhVien_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">

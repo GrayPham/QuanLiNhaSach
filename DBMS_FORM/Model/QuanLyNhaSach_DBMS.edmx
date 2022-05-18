@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CungCap">
           <Key>
             <PropertyRef Name="MaSach" />
@@ -119,7 +119,6 @@
           <Property Name="SoDT" Type="varchar" MaxLength="15" />
           <Property Name="ConSD" Type="bit" />
           <Property Name="MDThanThiet" Type="int" />
-          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="TheLoai">
           <Key>
@@ -305,6 +304,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Add_ThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTV" Type="int" Mode="In" />
+          <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
+          <Parameter Name="SoDT" Type="varchar" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConSD" Type="int" Mode="In" />
+          <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+        </Function>
         <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="userId" Type="int" Mode="In" />
         </Function>
@@ -607,14 +615,12 @@
         </Function>
         <Function Name="SettingThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Action" Type="nvarchar" Mode="In" />
-          <Parameter Name="MTV" Type="int" Mode="In" />
+          <Parameter Name="MaTV" Type="int" Mode="In" />
           <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
-          <Parameter Name="SoDT" Type="nvarchar" Mode="In" />
+          <Parameter Name="SoDT" Type="varchar" Mode="In" />
           <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
           <Parameter Name="Mail" Type="nvarchar" Mode="In" />
-          <Parameter Name="ConSD" Type="bit" Mode="In" />
           <Parameter Name="MDThanThiet" Type="int" Mode="In" />
-          <Parameter Name="status" Type="bit" Mode="In" />
         </Function>
         <Function Name="sp_AddNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="manv" Type="int" Mode="In" />
@@ -669,6 +675,15 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="thanhvienUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTV" Type="int" Mode="In" />
+          <Parameter Name="MaTVCu" Type="int" Mode="In" />
+          <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
+          <Parameter Name="SoDT" Type="varchar" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+          <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+        </Function>
         <Function Name="TurnoverByDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
             <CollectionType>
@@ -699,6 +714,10 @@
               </RowType>
             </CollectionType>
           </ReturnType>
+        </Function>
+        <Function Name="Tv_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdTV" Type="int" Mode="In" />
+          <Parameter Name="Method" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="DOAN_QUANLYNHASACH_DBMSModelStoreContainer">
           <EntitySet Name="CungCap" EntityType="Self.CungCap" Schema="dbo" store:Type="Tables" />
@@ -764,7 +783,8 @@
             <End Role="Sach" EntitySet="Sach" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -790,6 +810,18 @@
           <Property Name="SoSachBan" Type="Int32" />
           <Property Name="luongNV" Type="Int32" />
           <Property Name="NgayVang" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="fun_DanhSachQuanLy_Result">
+          <Property Name="MNV" Type="Int32" Nullable="false" />
+          <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SoSachBan" Type="Int32" />
+          <Property Name="luongNV" Type="Int32" />
+          <Property Name="NgayVang" Type="Int32" />
+          <Property Name="NgayNghiViec" Type="DateTime" />
+          <Property Name="DaNghi" Type="Boolean" />
+          <Property Name="MNQL" Type="Int32" />
         </ComplexType>
         <ComplexType Name="fun_SachCon_Result">
           <Property Name="MaSach" Type="Int32" Nullable="false" />
@@ -1035,7 +1067,6 @@
           <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ConSD" Type="Boolean" />
           <Property Name="MDThanThiet" Type="Int32" />
-          <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_ThanhVien" FromRole="ThanhVien" ToRole="DaBan" />
           <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_ThanhVien" FromRole="ThanhVien" ToRole="Muon" />
         </EntityType>
@@ -1290,33 +1321,43 @@
           <FunctionImport Name="fluongNV" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fluongNV_Result)" />
           <FunctionImport Name="fThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fThanhVien_Result)" />
           <FunctionImport Name="fun_DanhSachNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachNhanVien_Result)" />
+          <FunctionImport Name="fun_DanhSachQuanLy" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result)" />
           <FunctionImport Name="fun_SachCon" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SachCon_Result)" />
           <FunctionImport Name="fun_SearchNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchNhanVien_Result)">
-          <Parameter Name="nv" Mode="In" Type="String" />
+            <Parameter Name="nv" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_SearchSach" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchSach_Result)">
-          <Parameter Name="searchSach" Mode="In" Type="String" />
+            <Parameter Name="searchSach" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_SearchThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchThanhVien_Result)">
-          <Parameter Name="searchThanhVien" Mode="In" Type="String" />
+            <Parameter Name="searchThanhVien" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_ThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_ThanhVien_Result)" />
           <FunctionImport Name="fuNhanvienOfQl" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fuNhanvienOfQl_Result)">
-          <Parameter Name="maNQL" Mode="In" Type="Int32" />
+            <Parameter Name="maNQL" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LowestSelling" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.LowestSelling_Result)" />
           <FunctionImport Name="MuonQuaHan" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.MuonQuaHan_Result)" />
           <FunctionImport Name="NVinHD" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.NVinHD_Result)">
-          <Parameter Name="maHD" Mode="In" Type="Int32" />
+            <Parameter Name="maHD" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SearchNhaCC" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SearchNhaCC_Result)">
-          <Parameter Name="search" Mode="In" Type="String" />
+            <Parameter Name="search" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TurnoverByDay" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByDay_Result)" />
           <FunctionImport Name="TurnoverByMonth" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByMonth_Result)">
-          <Parameter Name="yearNow" Mode="In" Type="DateTime" />
+            <Parameter Name="yearNow" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="TurnoverByYear" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByYear_Result)" />
+          <FunctionImport Name="Add_ThanhVien" ReturnType="Collection(String)">
+            <Parameter Name="MaTV" Mode="In" Type="Int32" />
+            <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
+            <Parameter Name="SoDT" Mode="In" Type="String" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="Mail" Mode="In" Type="String" />
+            <Parameter Name="ConSD" Mode="In" Type="Int32" />
+            <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="CheckMuon">
             <Parameter Name="MTV" Mode="In" Type="Int32" />
             <Parameter Name="MS" Mode="In" Type="Int32" />
@@ -1325,7 +1366,7 @@
             <Parameter Name="Status2" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="deleteSach">
-          <Parameter Name="maSach" Mode="In" Type="Int32" />
+            <Parameter Name="maSach" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="IMPORTSACH">
             <Parameter Name="MS" Mode="In" Type="Int32" />
@@ -1384,16 +1425,14 @@
             <Parameter Name="Salary" Mode="In" Type="Decimal" />
             <Parameter Name="PPFDeduction" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SettingThanhVien" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result)">
+          <FunctionImport Name="SettingThanhVien" ReturnType="Collection(String)">
             <Parameter Name="Action" Mode="In" Type="String" />
-            <Parameter Name="MTV" Mode="In" Type="Int32" />
+            <Parameter Name="MaTV" Mode="In" Type="Int32" />
             <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
             <Parameter Name="SoDT" Mode="In" Type="String" />
             <Parameter Name="DiaChi" Mode="In" Type="String" />
             <Parameter Name="Mail" Mode="In" Type="String" />
-            <Parameter Name="ConSD" Mode="In" Type="Boolean" />
             <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
-            <Parameter Name="status" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="sp_AddNV" ReturnType="Collection(String)">
             <Parameter Name="manv" Mode="In" Type="Int32" />
@@ -1448,18 +1487,20 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="fun_DanhSachQuanLy" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result)" />
+          <FunctionImport Name="thanhvienUpdate">
+            <Parameter Name="MaTV" Mode="In" Type="Int32" />
+            <Parameter Name="MaTVCu" Mode="In" Type="Int32" />
+            <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
+            <Parameter Name="SoDT" Mode="In" Type="String" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="Mail" Mode="In" Type="String" />
+            <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Tv_Delete">
+            <Parameter Name="IdTV" Mode="In" Type="Int32" />
+            <Parameter Name="Method" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="SettingThanhVien_Result">
-          <Property Type="Int32" Name="MTV" Nullable="false" />
-          <Property Type="String" Name="HoVaTenTV" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Diachi" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Mail" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SoDT" Nullable="true" MaxLength="15" />
-          <Property Type="Boolean" Name="ConSD" Nullable="true" />
-          <Property Type="Int32" Name="MDThanThiet" Nullable="true" />
-          <Property Type="Boolean" Name="Status" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -1470,18 +1511,6 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="fun_DanhSachQuanLy_Result">
-          <Property Type="Int32" Name="MNV" Nullable="false" />
-          <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
-          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="SoSachBan" Nullable="true" />
-          <Property Type="Int32" Name="luongNV" Nullable="true" />
-          <Property Type="Int32" Name="NgayVang" Nullable="true" />
-          <Property Type="DateTime" Name="NgayNghiViec" Nullable="true" Precision="23" />
-          <Property Type="Boolean" Name="DaNghi" Nullable="true" />
-          <Property Type="Int32" Name="MNQL" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1602,7 +1631,6 @@
                 <ScalarProperty Name="SoDT" ColumnName="SoDT" />
                 <ScalarProperty Name="ConSD" ColumnName="ConSD" />
                 <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1647,6 +1675,22 @@
                 <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
                 <ScalarProperty Name="luongNV" ColumnName="luongNV" />
                 <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_DanhSachQuanLy" FunctionImportName="fun_DanhSachQuanLy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result">
+                <ScalarProperty Name="MNV" ColumnName="MNV" />
+                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+                <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+                <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+                <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+                <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+                <ScalarProperty Name="MNQL" ColumnName="MNQL" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1809,6 +1853,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Add_ThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_ThanhVien" />
           <FunctionImportMapping FunctionImportName="CheckMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckMuon" />
           <FunctionImportMapping FunctionImportName="deleteSach" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.deleteSach" />
           <FunctionImportMapping FunctionImportName="IMPORTSACH" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.IMPORTSACH" />
@@ -1816,20 +1861,7 @@
           <FunctionImportMapping FunctionImportName="INSERTBANTV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBANTV" />
           <FunctionImportMapping FunctionImportName="InsertMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertMuon" />
           <FunctionImportMapping FunctionImportName="InsertPersonalDetailsAndAccount" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertPersonalDetailsAndAccount" />
-          <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.SettingThanhVien_Result">
-                <ScalarProperty Name="MTV" ColumnName="MTV" />
-                <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
-                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="SoDT" ColumnName="SoDT" />
-                <ScalarProperty Name="ConSD" ColumnName="ConSD" />
-                <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien" />
           <FunctionImportMapping FunctionImportName="sp_AddNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_AddNV" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_creatediagram" />
@@ -1857,22 +1889,8 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="fun_DanhSachQuanLy" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_DanhSachQuanLy">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result">
-                <ScalarProperty Name="MNV" ColumnName="MNV" />
-                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
-                <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
-                <ScalarProperty Name="luongNV" ColumnName="luongNV" />
-                <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
-                <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
-                <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
-                <ScalarProperty Name="MNQL" ColumnName="MNQL" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
+          <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

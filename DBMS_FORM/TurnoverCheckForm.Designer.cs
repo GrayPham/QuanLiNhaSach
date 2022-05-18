@@ -29,67 +29,67 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonYear = new System.Windows.Forms.RadioButton();
+            this.radioButtonMouth = new System.Windows.Forms.RadioButton();
+            this.radioButtonDay = new System.Windows.Forms.RadioButton();
             this.btnCheck = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DVGTurnOver = new System.Windows.Forms.DataGridView();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOver)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButtonYear);
+            this.panel1.Controls.Add(this.radioButtonMouth);
+            this.panel1.Controls.Add(this.radioButtonDay);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 82);
             this.panel1.TabIndex = 3;
             // 
-            // radioButton1
+            // radioButtonYear
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton1.Location = new System.Drawing.Point(7, 38);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(108, 20);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Year Check";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonYear.AutoSize = true;
+            this.radioButtonYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonYear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.radioButtonYear.Location = new System.Drawing.Point(7, 38);
+            this.radioButtonYear.Name = "radioButtonYear";
+            this.radioButtonYear.Size = new System.Drawing.Size(108, 20);
+            this.radioButtonYear.TabIndex = 5;
+            this.radioButtonYear.TabStop = true;
+            this.radioButtonYear.Text = "Year Check";
+            this.radioButtonYear.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonMouth
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(132, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(116, 20);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Month Check";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonMouth.AutoSize = true;
+            this.radioButtonMouth.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMouth.ForeColor = System.Drawing.Color.White;
+            this.radioButtonMouth.Location = new System.Drawing.Point(132, 2);
+            this.radioButtonMouth.Name = "radioButtonMouth";
+            this.radioButtonMouth.Size = new System.Drawing.Size(116, 20);
+            this.radioButtonMouth.TabIndex = 4;
+            this.radioButtonMouth.TabStop = true;
+            this.radioButtonMouth.Text = "Month Check";
+            this.radioButtonMouth.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButtonDay
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(7, 2);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(103, 20);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Day Check";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonDay.AutoSize = true;
+            this.radioButtonDay.Checked = true;
+            this.radioButtonDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonDay.ForeColor = System.Drawing.Color.White;
+            this.radioButtonDay.Location = new System.Drawing.Point(7, 2);
+            this.radioButtonDay.Name = "radioButtonDay";
+            this.radioButtonDay.Size = new System.Drawing.Size(103, 20);
+            this.radioButtonDay.TabIndex = 3;
+            this.radioButtonDay.TabStop = true;
+            this.radioButtonDay.Text = "Day Check";
+            this.radioButtonDay.UseVisualStyleBackColor = true;
             // 
             // btnCheck
             // 
@@ -104,15 +104,15 @@
             this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
-            // dataGridView1
+            // DVGTurnOver
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(296, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(473, 413);
-            this.dataGridView1.TabIndex = 5;
+            this.DVGTurnOver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGTurnOver.Location = new System.Drawing.Point(296, 12);
+            this.DVGTurnOver.Name = "DVGTurnOver";
+            this.DVGTurnOver.RowHeadersWidth = 51;
+            this.DVGTurnOver.RowTemplate.Height = 24;
+            this.DVGTurnOver.Size = new System.Drawing.Size(473, 413);
+            this.DVGTurnOver.TabIndex = 5;
             // 
             // btnPrint
             // 
@@ -137,6 +137,7 @@
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // TurnoverCheckForm
             // 
@@ -146,14 +147,14 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DVGTurnOver);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.panel1);
             this.Name = "TurnoverCheckForm";
             this.Text = "TurnoverCheckForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOver)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,11 +162,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButtonYear;
+        private System.Windows.Forms.RadioButton radioButtonMouth;
+        private System.Windows.Forms.RadioButton radioButtonDay;
         private System.Windows.Forms.Button btnCheck;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DVGTurnOver;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnExit;
     }

@@ -57,6 +57,12 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachNhanVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachNhanVien]()");
         }
     
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachQuanLy")]
+        public virtual IQueryable<fun_DanhSachQuanLy_Result> fun_DanhSachQuanLy()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachQuanLy_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachQuanLy]()");
+        }
+    
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_SachCon")]
         public virtual IQueryable<fun_SachCon_Result> fun_SachCon()
         {
@@ -161,6 +167,39 @@ namespace DBMS_FORM.Model
         public virtual IQueryable<TurnoverByYear_Result> TurnoverByYear()
         {
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<TurnoverByYear_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[TurnoverByYear]()");
+        }
+    
+        public virtual ObjectResult<string> Add_ThanhVien(Nullable<int> maTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<int> conSD, Nullable<int> mDThanThiet)
+        {
+            var maTVParameter = maTV.HasValue ?
+                new ObjectParameter("MaTV", maTV) :
+                new ObjectParameter("MaTV", typeof(int));
+    
+            var hoVaTenTVParameter = hoVaTenTV != null ?
+                new ObjectParameter("HoVaTenTV", hoVaTenTV) :
+                new ObjectParameter("HoVaTenTV", typeof(string));
+    
+            var soDTParameter = soDT != null ?
+                new ObjectParameter("SoDT", soDT) :
+                new ObjectParameter("SoDT", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var mailParameter = mail != null ?
+                new ObjectParameter("Mail", mail) :
+                new ObjectParameter("Mail", typeof(string));
+    
+            var conSDParameter = conSD.HasValue ?
+                new ObjectParameter("ConSD", conSD) :
+                new ObjectParameter("ConSD", typeof(int));
+    
+            var mDThanThietParameter = mDThanThiet.HasValue ?
+                new ObjectParameter("MDThanThiet", mDThanThiet) :
+                new ObjectParameter("MDThanThiet", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_ThanhVien", maTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter);
         }
     
         public virtual int CheckMuon(Nullable<int> mTV, Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
@@ -402,15 +441,15 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertPersonalDetailsAndAccount", firstNameParameter, lastNameParameter, ageParameter, activeParameter, salaryParameter, pPFDeductionParameter);
         }
     
-        public virtual ObjectResult<SettingThanhVien_Result> SettingThanhVien(string action, Nullable<int> mTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<bool> conSD, Nullable<int> mDThanThiet, Nullable<bool> status)
+        public virtual ObjectResult<string> SettingThanhVien(string action, Nullable<int> maTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<int> mDThanThiet)
         {
             var actionParameter = action != null ?
                 new ObjectParameter("Action", action) :
                 new ObjectParameter("Action", typeof(string));
     
-            var mTVParameter = mTV.HasValue ?
-                new ObjectParameter("MTV", mTV) :
-                new ObjectParameter("MTV", typeof(int));
+            var maTVParameter = maTV.HasValue ?
+                new ObjectParameter("MaTV", maTV) :
+                new ObjectParameter("MaTV", typeof(int));
     
             var hoVaTenTVParameter = hoVaTenTV != null ?
                 new ObjectParameter("HoVaTenTV", hoVaTenTV) :
@@ -428,19 +467,11 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("Mail", mail) :
                 new ObjectParameter("Mail", typeof(string));
     
-            var conSDParameter = conSD.HasValue ?
-                new ObjectParameter("ConSD", conSD) :
-                new ObjectParameter("ConSD", typeof(bool));
-    
             var mDThanThietParameter = mDThanThiet.HasValue ?
                 new ObjectParameter("MDThanThiet", mDThanThiet) :
                 new ObjectParameter("MDThanThiet", typeof(int));
     
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SettingThanhVien_Result>("SettingThanhVien", actionParameter, mTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter, statusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SettingThanhVien", actionParameter, maTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, mDThanThietParameter);
         }
     
         public virtual ObjectResult<string> sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, Nullable<int> manql)
@@ -629,10 +660,50 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachQuanLy")]
-        public virtual IQueryable<fun_DanhSachQuanLy_Result> fun_DanhSachQuanLy()
+        public virtual int thanhvienUpdate(Nullable<int> maTV, Nullable<int> maTVCu, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<int> mDThanThiet)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_DanhSachQuanLy_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_DanhSachQuanLy]()");
+            var maTVParameter = maTV.HasValue ?
+                new ObjectParameter("MaTV", maTV) :
+                new ObjectParameter("MaTV", typeof(int));
+    
+            var maTVCuParameter = maTVCu.HasValue ?
+                new ObjectParameter("MaTVCu", maTVCu) :
+                new ObjectParameter("MaTVCu", typeof(int));
+    
+            var hoVaTenTVParameter = hoVaTenTV != null ?
+                new ObjectParameter("HoVaTenTV", hoVaTenTV) :
+                new ObjectParameter("HoVaTenTV", typeof(string));
+    
+            var soDTParameter = soDT != null ?
+                new ObjectParameter("SoDT", soDT) :
+                new ObjectParameter("SoDT", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var mailParameter = mail != null ?
+                new ObjectParameter("Mail", mail) :
+                new ObjectParameter("Mail", typeof(string));
+    
+            var mDThanThietParameter = mDThanThiet.HasValue ?
+                new ObjectParameter("MDThanThiet", mDThanThiet) :
+                new ObjectParameter("MDThanThiet", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("thanhvienUpdate", maTVParameter, maTVCuParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, mDThanThietParameter);
+        }
+    
+        public virtual int Tv_Delete(Nullable<int> idTV, string method)
+        {
+            var idTVParameter = idTV.HasValue ?
+                new ObjectParameter("IdTV", idTV) :
+                new ObjectParameter("IdTV", typeof(int));
+    
+            var methodParameter = method != null ?
+                new ObjectParameter("Method", method) :
+                new ObjectParameter("Method", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Tv_Delete", idTVParameter, methodParameter);
         }
     }
 }
