@@ -1,6 +1,6 @@
 ﻿namespace DBMS_FORM
 {
-    partial class ManagerForm
+    partial class Manager
     {
         /// <summary>
         /// Required designer variable.
@@ -58,6 +58,7 @@
             this.importBookToolStripMenuItem.Name = "importBookToolStripMenuItem";
             this.importBookToolStripMenuItem.Size = new System.Drawing.Size(126, 34);
             this.importBookToolStripMenuItem.Text = "Import Book";
+            this.importBookToolStripMenuItem.Click += new System.EventHandler(this.importBookToolStripMenuItem_Click);
             // 
             // staffManagementToolStripMenuItem
             // 
@@ -65,6 +66,7 @@
             this.staffManagementToolStripMenuItem.Name = "staffManagementToolStripMenuItem";
             this.staffManagementToolStripMenuItem.Size = new System.Drawing.Size(166, 34);
             this.staffManagementToolStripMenuItem.Text = "Staff Management";
+            this.staffManagementToolStripMenuItem.Click += new System.EventHandler(this.staffManagementToolStripMenuItem_Click);
             // 
             // turnoverToolStripMenuItem
             // 
@@ -72,6 +74,7 @@
             this.turnoverToolStripMenuItem.Name = "turnoverToolStripMenuItem";
             this.turnoverToolStripMenuItem.Size = new System.Drawing.Size(101, 34);
             this.turnoverToolStripMenuItem.Text = "Turnover";
+            this.turnoverToolStripMenuItem.Click += new System.EventHandler(this.turnoverToolStripMenuItem_Click);
             // 
             // bookManagementToolStripMenuItem
             // 
@@ -90,7 +93,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 376);
             this.dataGridView1.TabIndex = 1;
             // 
-            // ManagerForm
+            // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,7 +102,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ManagerForm";
+            this.Name = "Manager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

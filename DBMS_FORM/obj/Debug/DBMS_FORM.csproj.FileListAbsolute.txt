@@ -10,7 +10,6 @@ D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.FormNhanVien.
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.FormThanhVien.resources
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Importfrm.resources
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.LoginForm.resources
-D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.ManagerForm.resources
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.NhapHoaDon.resources
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Properties.Resources.resources
 D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Thuefrm.resources
@@ -48,3 +47,4 @@ F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.exe
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb
+D:\Năm 2\DBMS PROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Manager.resources

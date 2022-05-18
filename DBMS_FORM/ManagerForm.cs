@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DBMS_FORM
 {
-    public partial class ManagerForm : Form
+    public partial class Manager : Form
     {
-        public ManagerForm()
+        public Manager()
         {
             InitializeComponent();
         }
@@ -25,6 +25,30 @@ namespace DBMS_FORM
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void importBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Importfrm importfrm = new Importfrm();
+            this.Visible = false;
+            importfrm.ShowDialog();
+            this.Visible=true;
+        }
+
+        private void staffManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNhanVien formNhanVien = new FormNhanVien();
+            this.Visible = false;
+            formNhanVien.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void turnoverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnoverCheckForm turnoverCheckForm = new TurnoverCheckForm();
+            this.Visible = false;
+            turnoverCheckForm.ShowDialog();
+            this.Visible = true;
         }
     }
 }

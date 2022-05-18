@@ -35,5 +35,50 @@ namespace DBMS_FORM
                 MessageBox.Show("Your search does not exist!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void button_thue_Click(object sender, EventArgs e)
+        {
+            Thuefrm thuefrm = new Thuefrm();
+            this.Visible = false;
+            thuefrm.ShowDialog(); 
+            this.Visible=true;
+        }
+
+        private void button_bansach_Click(object sender, EventArgs e)
+        {
+            Banfrm banfrm = new Banfrm();
+            this.Visible=false;
+            banfrm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button_hoadon_Click(object sender, EventArgs e)
+        {
+            NhapHoaDon nhapHoaDon = new NhapHoaDon();
+            this.Visible=false; 
+            nhapHoaDon.ShowDialog();
+            this.Visible= true;
+        }
+
+        private void button_cungcap_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button_thanhvien_Click(object sender, EventArgs e)
+        {
+            FormThanhVien formThanhVien = new FormThanhVien();
+            this.Visible=false;
+            formThanhVien.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button_manager_Click(object sender, EventArgs e)
+        {
+            Manager managerForm = new Manager();
+            this.Visible=false;
+            managerForm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

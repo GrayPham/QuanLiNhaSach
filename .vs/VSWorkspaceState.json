@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DBMS_FORM"
+    "\\DBMS_FORM",
+    "\\DBMS_FORM\\BLL"
   ],
-  "SelectedNode": "\\DBMS_FORM\\ManagerForm.cs",
+  "SelectedNode": "\\DBMS_FORM\\BLL\\ManagerBLL.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -30,14 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_manager = new System.Windows.Forms.Button();
+            this.button_thanhvien = new System.Windows.Forms.Button();
+            this.button_cungcap = new System.Windows.Forms.Button();
+            this.button_hoadon = new System.Windows.Forms.Button();
+            this.button_bansach = new System.Windows.Forms.Button();
+            this.button_thue = new System.Windows.Forms.Button();
             this.lb_NAMESTORE = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_name = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.lbSearch = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.lbNameuser = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label_name = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -54,12 +54,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button_manager);
+            this.groupBox1.Controls.Add(this.button_thanhvien);
+            this.groupBox1.Controls.Add(this.button_cungcap);
+            this.groupBox1.Controls.Add(this.button_hoadon);
+            this.groupBox1.Controls.Add(this.button_bansach);
+            this.groupBox1.Controls.Add(this.button_thue);
             this.groupBox1.Controls.Add(this.lb_NAMESTORE);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 2);
@@ -70,71 +70,77 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // button6
+            // button_manager
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(8, 597);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(191, 86);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Manager";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button_manager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_manager.Location = new System.Drawing.Point(8, 597);
+            this.button_manager.Margin = new System.Windows.Forms.Padding(4);
+            this.button_manager.Name = "button_manager";
+            this.button_manager.Size = new System.Drawing.Size(191, 86);
+            this.button_manager.TabIndex = 8;
+            this.button_manager.Text = "Manager";
+            this.button_manager.UseVisualStyleBackColor = true;
+            this.button_manager.Click += new System.EventHandler(this.button_manager_Click);
             // 
-            // button5
+            // button_thanhvien
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(8, 505);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(191, 86);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Thanh Vien";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button_thanhvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_thanhvien.Location = new System.Drawing.Point(8, 505);
+            this.button_thanhvien.Margin = new System.Windows.Forms.Padding(4);
+            this.button_thanhvien.Name = "button_thanhvien";
+            this.button_thanhvien.Size = new System.Drawing.Size(191, 86);
+            this.button_thanhvien.TabIndex = 7;
+            this.button_thanhvien.Text = "Thanh Vien";
+            this.button_thanhvien.UseVisualStyleBackColor = true;
+            this.button_thanhvien.Click += new System.EventHandler(this.button_thanhvien_Click);
             // 
-            // button4
+            // button_cungcap
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(8, 411);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(191, 86);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Cung Cap";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button_cungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_cungcap.Location = new System.Drawing.Point(8, 411);
+            this.button_cungcap.Margin = new System.Windows.Forms.Padding(4);
+            this.button_cungcap.Name = "button_cungcap";
+            this.button_cungcap.Size = new System.Drawing.Size(191, 86);
+            this.button_cungcap.TabIndex = 6;
+            this.button_cungcap.Text = "Cung Cap";
+            this.button_cungcap.UseVisualStyleBackColor = true;
+            this.button_cungcap.Click += new System.EventHandler(this.button_cungcap_Click);
             // 
-            // button3
+            // button_hoadon
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(8, 318);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 86);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Hoa Don Ban";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_hoadon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_hoadon.Location = new System.Drawing.Point(8, 318);
+            this.button_hoadon.Margin = new System.Windows.Forms.Padding(4);
+            this.button_hoadon.Name = "button_hoadon";
+            this.button_hoadon.Size = new System.Drawing.Size(191, 86);
+            this.button_hoadon.TabIndex = 5;
+            this.button_hoadon.Text = "Hoa Don Ban";
+            this.button_hoadon.UseVisualStyleBackColor = true;
+            this.button_hoadon.Click += new System.EventHandler(this.button_hoadon_Click);
             // 
-            // button2
+            // button_bansach
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(8, 224);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(191, 86);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Ban Sach";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_bansach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_bansach.Location = new System.Drawing.Point(8, 224);
+            this.button_bansach.Margin = new System.Windows.Forms.Padding(4);
+            this.button_bansach.Name = "button_bansach";
+            this.button_bansach.Size = new System.Drawing.Size(191, 86);
+            this.button_bansach.TabIndex = 4;
+            this.button_bansach.Text = "Ban Sach";
+            this.button_bansach.UseVisualStyleBackColor = true;
+            this.button_bansach.Click += new System.EventHandler(this.button_bansach_Click);
             // 
-            // button1
+            // button_thue
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(8, 130);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 86);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Thue Sach";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_thue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_thue.Location = new System.Drawing.Point(8, 130);
+            this.button_thue.Margin = new System.Windows.Forms.Padding(4);
+            this.button_thue.Name = "button_thue";
+            this.button_thue.Size = new System.Drawing.Size(191, 86);
+            this.button_thue.TabIndex = 3;
+            this.button_thue.Text = "Thue Sach";
+            this.button_thue.UseVisualStyleBackColor = true;
+            this.button_thue.Click += new System.EventHandler(this.button_thue_Click);
             // 
             // lb_NAMESTORE
             // 
@@ -163,6 +169,16 @@
             this.groupBox2.Size = new System.Drawing.Size(1209, 123);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(205, 20);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(129, 30);
+            this.label_name.TabIndex = 5;
+            this.label_name.Text = "Name User";
             // 
             // btnFind
             // 
@@ -245,16 +261,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1193, 514);
             this.dataGridView1.TabIndex = 0;
             // 
-            // label_name
-            // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(205, 20);
-            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(129, 30);
-            this.label_name.TabIndex = 5;
-            this.label_name.Text = "Name User";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,12 +271,12 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Main Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -285,7 +291,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_thue;
         private System.Windows.Forms.Label lb_NAMESTORE;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnFind;
@@ -295,11 +301,11 @@
         private System.Windows.Forms.Label lbNameuser;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_manager;
+        private System.Windows.Forms.Button button_thanhvien;
+        private System.Windows.Forms.Button button_cungcap;
+        private System.Windows.Forms.Button button_hoadon;
+        private System.Windows.Forms.Button button_bansach;
         private System.Windows.Forms.Label label_name;
     }
 }
