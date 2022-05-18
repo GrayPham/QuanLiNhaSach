@@ -239,6 +239,10 @@
     <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_NV" FromRole="NV" ToRole="Muon" />
     <NavigationProperty Name="NV1" Relationship="Self.FK_NV_NV1" FromRole="NV" ToRole="NV1" />
     <NavigationProperty Name="NV2" Relationship="Self.FK_NV_NV1" FromRole="NV1" ToRole="NV" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TypeId" Type="Int32" />
+    <NavigationProperty Name="UserType" Relationship="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" FromRole="NV" ToRole="UserType" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -712,6 +716,12 @@
       <Parameter Name="IdTV" Mode="In" Type="Int32" />
       <Parameter Name="Method" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="Permissions" EntityType="DOAN_QUANLYNHASACH_DBMSModel.Permission" />
+    <EntitySet Name="UserTypes" EntityType="DOAN_QUANLYNHASACH_DBMSModel.UserType" />
+    <AssociationSet Name="FK_NV_UserType" Association="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="NV" EntitySet="NVs" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -724,4 +734,31 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NVs" Relationship="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" FromRole="UserType" ToRole="NV" />
+  </EntityType>
+  <Association Name="FK_NV_UserType">
+    <End Type="DOAN_QUANLYNHASACH_DBMSModel.UserType" Role="UserType" Multiplicity="0..1" />
+    <End Type="DOAN_QUANLYNHASACH_DBMSModel.NV" Role="NV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="NV">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

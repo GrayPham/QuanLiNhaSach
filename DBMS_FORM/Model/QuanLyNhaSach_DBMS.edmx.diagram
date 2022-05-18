@@ -28,6 +28,9 @@
         <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_Muon_ThanhVien" ManuallyRouted="false" />
         <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_NV1" ManuallyRouted="false" />
         <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_Sach_TheLoai" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Permission" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.UserType" Width="1.5" PointX="0.75" PointY="26" />
+        <AssociationConnector Association="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -52,7 +52,8 @@ namespace DBMS_FORM.BLL
 
         internal object GetManager()
         {
-            var manager = db.fun_DanhSachQuanLy();
+            //var manager = db.fun_DanhSachQuanLy();
+            var manager = db.NVs.Where(u => u.MNQL == null).ToList();
             return manager;
         }
 

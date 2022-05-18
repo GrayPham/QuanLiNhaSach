@@ -38,7 +38,7 @@ namespace DBMS_FORM
             comboBox_find.DisplayMember = "MNV";
             comboBox_find.ValueMember = "MNV";
             comboBox_find.DataSource = managerBLL.GetManager();
-            comboBox_find.SelectedIndex = index;
+            
         }
         private void button_search_Click(object sender, EventArgs e)
         {

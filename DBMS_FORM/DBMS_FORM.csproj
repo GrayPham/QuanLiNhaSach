@@ -157,6 +157,9 @@
     <Compile Include="Model\NVinHD_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Permission.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\QuanLyNhaSach.cs" />
     <Compile Include="Model\QuanLyNhaSach_DBMS.Context.cs">
       <AutoGen>True</AutoGen>
@@ -201,6 +204,9 @@
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TurnoverByYear_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserType.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="NhapHoaDon.cs">
