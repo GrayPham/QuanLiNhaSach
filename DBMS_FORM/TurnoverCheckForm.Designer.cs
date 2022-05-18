@@ -48,17 +48,17 @@
             this.panel1.Controls.Add(this.radioButtonDay);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 82);
+            this.panel1.Size = new System.Drawing.Size(257, 164);
             this.panel1.TabIndex = 3;
             // 
             // radioButtonYear
             // 
             this.radioButtonYear.AutoSize = true;
-            this.radioButtonYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonYear.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonYear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButtonYear.Location = new System.Drawing.Point(7, 38);
+            this.radioButtonYear.Location = new System.Drawing.Point(7, 112);
             this.radioButtonYear.Name = "radioButtonYear";
-            this.radioButtonYear.Size = new System.Drawing.Size(108, 20);
+            this.radioButtonYear.Size = new System.Drawing.Size(138, 31);
             this.radioButtonYear.TabIndex = 5;
             this.radioButtonYear.TabStop = true;
             this.radioButtonYear.Text = "Year Check";
@@ -67,11 +67,11 @@
             // radioButtonMouth
             // 
             this.radioButtonMouth.AutoSize = true;
-            this.radioButtonMouth.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMouth.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonMouth.ForeColor = System.Drawing.Color.White;
-            this.radioButtonMouth.Location = new System.Drawing.Point(132, 2);
+            this.radioButtonMouth.Location = new System.Drawing.Point(7, 57);
             this.radioButtonMouth.Name = "radioButtonMouth";
-            this.radioButtonMouth.Size = new System.Drawing.Size(116, 20);
+            this.radioButtonMouth.Size = new System.Drawing.Size(160, 31);
             this.radioButtonMouth.TabIndex = 4;
             this.radioButtonMouth.TabStop = true;
             this.radioButtonMouth.Text = "Month Check";
@@ -81,11 +81,11 @@
             // 
             this.radioButtonDay.AutoSize = true;
             this.radioButtonDay.Checked = true;
-            this.radioButtonDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonDay.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonDay.ForeColor = System.Drawing.Color.White;
             this.radioButtonDay.Location = new System.Drawing.Point(7, 2);
             this.radioButtonDay.Name = "radioButtonDay";
-            this.radioButtonDay.Size = new System.Drawing.Size(103, 20);
+            this.radioButtonDay.Size = new System.Drawing.Size(133, 31);
             this.radioButtonDay.TabIndex = 3;
             this.radioButtonDay.TabStop = true;
             this.radioButtonDay.Text = "Day Check";
@@ -94,9 +94,9 @@
             // btnCheck
             // 
             this.btnCheck.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCheck.Location = new System.Drawing.Point(12, 130);
+            this.btnCheck.Location = new System.Drawing.Point(12, 202);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(257, 34);
             this.btnCheck.TabIndex = 4;
@@ -117,9 +117,9 @@
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(12, 194);
+            this.btnPrint.Location = new System.Drawing.Point(12, 266);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(257, 34);
             this.btnPrint.TabIndex = 6;
@@ -129,9 +129,9 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Location = new System.Drawing.Point(12, 256);
+            this.btnExit.Location = new System.Drawing.Point(12, 328);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(257, 34);
             this.btnExit.TabIndex = 7;
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DBMS_FORM.Properties.Resources.ori_3640123_3l7mjhcaxzfkpsefqhle43i56egp3jrrw9874zo5_sketch_vintage_books_seamless_pattern_or_background;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPrint);

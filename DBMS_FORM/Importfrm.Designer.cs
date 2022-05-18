@@ -57,51 +57,51 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 137);
+            this.label1.Location = new System.Drawing.Point(65, 137);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 30);
+            this.label1.Size = new System.Drawing.Size(97, 30);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Ma Sach";
+            this.label1.Text = "Book ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1111, 137);
+            this.label2.Location = new System.Drawing.Point(1097, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 30);
+            this.label2.Size = new System.Drawing.Size(115, 30);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Don Gia";
+            this.label2.Text = "Unit price";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(408, 137);
+            this.label3.Location = new System.Drawing.Point(386, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 30);
+            this.label3.Size = new System.Drawing.Size(133, 30);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Ten Sach";
+            this.label3.Text = "Book name";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(745, 137);
+            this.label4.Location = new System.Drawing.Point(739, 137);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 30);
+            this.label4.Size = new System.Drawing.Size(114, 30);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Tua Sach";
+            this.label4.Text = "Book title";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(137, 324);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1136, 283);
@@ -111,7 +111,7 @@
             // 
             this.txtMS.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMS.Location = new System.Drawing.Point(192, 137);
-            this.txtMS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMS.Name = "txtMS";
             this.txtMS.Size = new System.Drawing.Size(132, 34);
             this.txtMS.TabIndex = 13;
@@ -120,7 +120,7 @@
             // 
             this.txtTS.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTS.Location = new System.Drawing.Point(527, 133);
-            this.txtTS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTS.Name = "txtTS";
             this.txtTS.Size = new System.Drawing.Size(132, 34);
             this.txtTS.TabIndex = 14;
@@ -129,7 +129,7 @@
             // 
             this.txtTuaSach.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTuaSach.Location = new System.Drawing.Point(863, 135);
-            this.txtTuaSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTuaSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuaSach.Name = "txtTuaSach";
             this.txtTuaSach.Size = new System.Drawing.Size(132, 34);
             this.txtTuaSach.TabIndex = 15;
@@ -137,8 +137,8 @@
             // txtDonGia
             // 
             this.txtDonGia.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(1220, 133);
-            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDonGia.Location = new System.Drawing.Point(1220, 137);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(132, 34);
             this.txtDonGia.TabIndex = 16;
@@ -147,7 +147,7 @@
             // 
             this.txtNCC.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNCC.Location = new System.Drawing.Point(192, 257);
-            this.txtNCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtNCC.Name = "txtNCC";
             this.txtNCC.Size = new System.Drawing.Size(132, 34);
             this.txtNCC.TabIndex = 17;
@@ -157,7 +157,7 @@
             // 
             this.txtNXB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNXB.Location = new System.Drawing.Point(527, 257);
-            this.txtNXB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNXB.Margin = new System.Windows.Forms.Padding(4);
             this.txtNXB.Name = "txtNXB";
             this.txtNXB.Size = new System.Drawing.Size(132, 34);
             this.txtNXB.TabIndex = 18;
@@ -166,7 +166,7 @@
             // 
             this.txtSoluong.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoluong.Location = new System.Drawing.Point(863, 256);
-            this.txtSoluong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoluong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(132, 34);
             this.txtSoluong.TabIndex = 19;
@@ -175,7 +175,7 @@
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.Location = new System.Drawing.Point(1220, 257);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(132, 34);
             this.txtTongTien.TabIndex = 20;
@@ -184,45 +184,45 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 260);
+            this.label5.Location = new System.Drawing.Point(62, 256);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 30);
+            this.label5.Size = new System.Drawing.Size(100, 30);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Nha Cung Cap";
+            this.label5.Text = "Provider";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(352, 260);
+            this.label6.Location = new System.Drawing.Point(344, 259);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 30);
+            this.label6.Size = new System.Drawing.Size(175, 30);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Nam Xuat Ban";
+            this.label6.Text = "Publishing year";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(739, 260);
+            this.label7.Location = new System.Drawing.Point(748, 260);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 30);
+            this.label7.Size = new System.Drawing.Size(105, 30);
             this.label7.TabIndex = 23;
-            this.label7.Text = "So Luong";
+            this.label7.Text = "Quantity";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1089, 263);
+            this.label8.Location = new System.Drawing.Point(1139, 261);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 30);
+            this.label8.Size = new System.Drawing.Size(73, 30);
             this.label8.TabIndex = 24;
-            this.label8.Text = "Tong Tien";
+            this.label8.Text = "Total ";
             // 
             // label9
             // 
@@ -238,8 +238,9 @@
             // btnImport
             // 
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.Location = new System.Drawing.Point(607, 629);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(204, 64);
             this.btnImport.TabIndex = 26;
@@ -250,12 +251,12 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 11);
+            this.label10.Location = new System.Drawing.Point(52, 9);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 30);
+            this.label10.Size = new System.Drawing.Size(90, 30);
             this.label10.TabIndex = 27;
-            this.label10.Text = "Ma NQL";
+            this.label10.Text = "NQL ID";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
@@ -265,9 +266,9 @@
             this.label11.Location = new System.Drawing.Point(16, 55);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 30);
+            this.label11.Size = new System.Drawing.Size(126, 30);
             this.label11.TabIndex = 28;
-            this.label11.Text = "Ten NQL";
+            this.label11.Text = "NQL name";
             // 
             // label12
             // 
@@ -276,15 +277,15 @@
             this.label12.Location = new System.Drawing.Point(16, 668);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(128, 30);
+            this.label12.Size = new System.Drawing.Size(152, 30);
             this.label12.TabIndex = 29;
-            this.label12.Text = "Nhap Sach";
+            this.label12.Text = "Import Book ";
             // 
             // Importfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1443, 708);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -310,7 +311,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Importfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importfrm";

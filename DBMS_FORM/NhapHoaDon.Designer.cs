@@ -35,279 +35,304 @@
             this.lbThanhVien = new System.Windows.Forms.Label();
             this.lbGiamgia = new System.Windows.Forms.Label();
             this.lbTenSach = new System.Windows.Forms.Label();
-            this.lbBanorMuon = new System.Windows.Forms.Label();
             this.lbTongTien = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.btnCo = new System.Windows.Forms.RadioButton();
-            this.btnKhong = new System.Windows.Forms.RadioButton();
+            this.customertxt = new System.Windows.Forms.TextBox();
+            this.inputdatetxt = new System.Windows.Forms.TextBox();
+            this.discounttxt = new System.Windows.Forms.TextBox();
+            this.booknametxt = new System.Windows.Forms.TextBox();
+            this.totaltxt = new System.Windows.Forms.TextBox();
+            this.btnstill = new System.Windows.Forms.RadioButton();
+            this.btnno = new System.Windows.Forms.RadioButton();
             this.lbMatv = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.memidtxt = new System.Windows.Forms.TextBox();
+            this.quantxt = new System.Windows.Forms.TextBox();
             this.lbSoLuong = new System.Windows.Forms.Label();
-            this.btnPrintf = new System.Windows.Forms.Button();
             this.btnPDF = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radiosell = new System.Windows.Forms.RadioButton();
+            this.radiorent = new System.Windows.Forms.RadioButton();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbNameForm
             // 
             this.lbNameForm.AutoSize = true;
             this.lbNameForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameForm.Location = new System.Drawing.Point(113, 34);
+            this.lbNameForm.Location = new System.Drawing.Point(127, 34);
             this.lbNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNameForm.Name = "lbNameForm";
-            this.lbNameForm.Size = new System.Drawing.Size(442, 51);
+            this.lbNameForm.Size = new System.Drawing.Size(393, 51);
             this.lbNameForm.TabIndex = 0;
-            this.lbNameForm.Text = " Hoa Don Ban/ Muon";
+            this.lbNameForm.Text = "BILL OF SELL/RENT";
             // 
             // lbTypeActivate
             // 
             this.lbTypeActivate.AutoSize = true;
             this.lbTypeActivate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeActivate.Location = new System.Drawing.Point(32, 107);
+            this.lbTypeActivate.Location = new System.Drawing.Point(147, 118);
             this.lbTypeActivate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTypeActivate.Name = "lbTypeActivate";
-            this.lbTypeActivate.Size = new System.Drawing.Size(174, 30);
+            this.lbTypeActivate.Size = new System.Drawing.Size(64, 30);
             this.lbTypeActivate.TabIndex = 1;
-            this.lbTypeActivate.Text = "Loai hoat dong";
+            this.lbTypeActivate.Text = "Type";
             // 
             // lbKhachHang
             // 
             this.lbKhachHang.AutoSize = true;
             this.lbKhachHang.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKhachHang.Location = new System.Drawing.Point(32, 169);
+            this.lbKhachHang.Location = new System.Drawing.Point(30, 169);
             this.lbKhachHang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbKhachHang.Name = "lbKhachHang";
-            this.lbKhachHang.Size = new System.Drawing.Size(142, 30);
+            this.lbKhachHang.Size = new System.Drawing.Size(181, 30);
             this.lbKhachHang.TabIndex = 2;
-            this.lbKhachHang.Text = "Khach Hang";
+            this.lbKhachHang.Text = "Customer name";
             // 
             // lbNgayNhap
             // 
             this.lbNgayNhap.AutoSize = true;
             this.lbNgayNhap.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayNhap.Location = new System.Drawing.Point(32, 230);
+            this.lbNgayNhap.Location = new System.Drawing.Point(89, 230);
             this.lbNgayNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNgayNhap.Name = "lbNgayNhap";
-            this.lbNgayNhap.Size = new System.Drawing.Size(134, 30);
+            this.lbNgayNhap.Size = new System.Drawing.Size(122, 30);
             this.lbNgayNhap.TabIndex = 3;
-            this.lbNgayNhap.Text = "Ngay Nhap";
+            this.lbNgayNhap.Text = "Input date";
             // 
             // lbThanhVien
             // 
             this.lbThanhVien.AutoSize = true;
             this.lbThanhVien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThanhVien.Location = new System.Drawing.Point(32, 292);
+            this.lbThanhVien.Location = new System.Drawing.Point(109, 292);
             this.lbThanhVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbThanhVien.Name = "lbThanhVien";
-            this.lbThanhVien.Size = new System.Drawing.Size(134, 30);
+            this.lbThanhVien.Size = new System.Drawing.Size(102, 30);
             this.lbThanhVien.TabIndex = 4;
-            this.lbThanhVien.Text = "Thanh Vien";
+            this.lbThanhVien.Text = "Member";
             // 
             // lbGiamgia
             // 
             this.lbGiamgia.AutoSize = true;
             this.lbGiamgia.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiamgia.Location = new System.Drawing.Point(32, 353);
+            this.lbGiamgia.Location = new System.Drawing.Point(104, 353);
             this.lbGiamgia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbGiamgia.Name = "lbGiamgia";
-            this.lbGiamgia.Size = new System.Drawing.Size(109, 30);
+            this.lbGiamgia.Size = new System.Drawing.Size(107, 30);
             this.lbGiamgia.TabIndex = 5;
-            this.lbGiamgia.Text = "Giam Gia";
+            this.lbGiamgia.Text = "Discount";
             // 
             // lbTenSach
             // 
             this.lbTenSach.AutoSize = true;
             this.lbTenSach.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenSach.Location = new System.Drawing.Point(32, 415);
+            this.lbTenSach.Location = new System.Drawing.Point(78, 415);
             this.lbTenSach.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTenSach.Name = "lbTenSach";
-            this.lbTenSach.Size = new System.Drawing.Size(109, 30);
+            this.lbTenSach.Size = new System.Drawing.Size(133, 30);
             this.lbTenSach.TabIndex = 6;
-            this.lbTenSach.Text = "Ten Sach";
-            // 
-            // lbBanorMuon
-            // 
-            this.lbBanorMuon.AutoSize = true;
-            this.lbBanorMuon.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBanorMuon.Location = new System.Drawing.Point(229, 107);
-            this.lbBanorMuon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbBanorMuon.Name = "lbBanorMuon";
-            this.lbBanorMuon.Size = new System.Drawing.Size(126, 30);
-            this.lbBanorMuon.TabIndex = 7;
-            this.lbBanorMuon.Text = "Ban/Muon";
+            this.lbTenSach.Text = "Book name";
             // 
             // lbTongTien
             // 
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongTien.Location = new System.Drawing.Point(32, 476);
+            this.lbTongTien.Location = new System.Drawing.Point(65, 477);
             this.lbTongTien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTongTien.Name = "lbTongTien";
-            this.lbTongTien.Size = new System.Drawing.Size(120, 30);
+            this.lbTongTien.Size = new System.Drawing.Size(146, 30);
             this.lbTongTien.TabIndex = 8;
-            this.lbTongTien.Text = "Tong Tien";
+            this.lbTongTien.Text = "Total money";
             // 
-            // textBox1
+            // customertxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(219, 169);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(385, 34);
-            this.textBox1.TabIndex = 11;
+            this.customertxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customertxt.Location = new System.Drawing.Point(219, 169);
+            this.customertxt.Margin = new System.Windows.Forms.Padding(4);
+            this.customertxt.Name = "customertxt";
+            this.customertxt.Size = new System.Drawing.Size(385, 34);
+            this.customertxt.TabIndex = 11;
             // 
-            // textBox2
+            // inputdatetxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(219, 230);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(385, 34);
-            this.textBox2.TabIndex = 12;
+            this.inputdatetxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputdatetxt.Location = new System.Drawing.Point(219, 230);
+            this.inputdatetxt.Margin = new System.Windows.Forms.Padding(4);
+            this.inputdatetxt.Name = "inputdatetxt";
+            this.inputdatetxt.Size = new System.Drawing.Size(385, 34);
+            this.inputdatetxt.TabIndex = 12;
             // 
-            // textBox3
+            // discounttxt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(219, 353);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 34);
-            this.textBox3.TabIndex = 13;
+            this.discounttxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discounttxt.Location = new System.Drawing.Point(219, 353);
+            this.discounttxt.Margin = new System.Windows.Forms.Padding(4);
+            this.discounttxt.Name = "discounttxt";
+            this.discounttxt.Size = new System.Drawing.Size(149, 34);
+            this.discounttxt.TabIndex = 13;
             // 
-            // textBox4
+            // booknametxt
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(219, 411);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(385, 34);
-            this.textBox4.TabIndex = 14;
+            this.booknametxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booknametxt.Location = new System.Drawing.Point(219, 411);
+            this.booknametxt.Margin = new System.Windows.Forms.Padding(4);
+            this.booknametxt.Name = "booknametxt";
+            this.booknametxt.Size = new System.Drawing.Size(385, 34);
+            this.booknametxt.TabIndex = 14;
             // 
-            // textBox5
+            // totaltxt
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(219, 473);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(385, 34);
-            this.textBox5.TabIndex = 15;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.totaltxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totaltxt.Location = new System.Drawing.Point(219, 473);
+            this.totaltxt.Margin = new System.Windows.Forms.Padding(4);
+            this.totaltxt.Name = "totaltxt";
+            this.totaltxt.Size = new System.Drawing.Size(385, 34);
+            this.totaltxt.TabIndex = 15;
+            this.totaltxt.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // btnCo
+            // btnstill
             // 
-            this.btnCo.AutoSize = true;
-            this.btnCo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCo.Location = new System.Drawing.Point(219, 292);
-            this.btnCo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCo.Name = "btnCo";
-            this.btnCo.Size = new System.Drawing.Size(63, 34);
-            this.btnCo.TabIndex = 16;
-            this.btnCo.TabStop = true;
-            this.btnCo.Text = "Co";
-            this.btnCo.UseVisualStyleBackColor = true;
+            this.btnstill.AutoSize = true;
+            this.btnstill.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnstill.ForeColor = System.Drawing.Color.White;
+            this.btnstill.Location = new System.Drawing.Point(9, 11);
+            this.btnstill.Margin = new System.Windows.Forms.Padding(4);
+            this.btnstill.Name = "btnstill";
+            this.btnstill.Size = new System.Drawing.Size(73, 34);
+            this.btnstill.TabIndex = 16;
+            this.btnstill.TabStop = true;
+            this.btnstill.Text = "Still";
+            this.btnstill.UseVisualStyleBackColor = true;
             // 
-            // btnKhong
+            // btnno
             // 
-            this.btnKhong.AutoSize = true;
-            this.btnKhong.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhong.Location = new System.Drawing.Point(293, 292);
-            this.btnKhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnKhong.Name = "btnKhong";
-            this.btnKhong.Size = new System.Drawing.Size(104, 34);
-            this.btnKhong.TabIndex = 17;
-            this.btnKhong.TabStop = true;
-            this.btnKhong.Text = "Khong";
-            this.btnKhong.UseVisualStyleBackColor = true;
+            this.btnno.AutoSize = true;
+            this.btnno.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnno.Location = new System.Drawing.Point(83, 11);
+            this.btnno.Margin = new System.Windows.Forms.Padding(4);
+            this.btnno.Name = "btnno";
+            this.btnno.Size = new System.Drawing.Size(66, 34);
+            this.btnno.TabIndex = 17;
+            this.btnno.TabStop = true;
+            this.btnno.Text = "No";
+            this.btnno.UseVisualStyleBackColor = true;
             // 
             // lbMatv
             // 
             this.lbMatv.AutoSize = true;
             this.lbMatv.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatv.Location = new System.Drawing.Point(409, 292);
+            this.lbMatv.Location = new System.Drawing.Point(395, 292);
             this.lbMatv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMatv.Name = "lbMatv";
-            this.lbMatv.Size = new System.Drawing.Size(82, 30);
+            this.lbMatv.Size = new System.Drawing.Size(98, 30);
             this.lbMatv.TabIndex = 18;
-            this.lbMatv.Text = "Ma TV";
+            this.lbMatv.Text = "Mem ID";
             // 
-            // textBox6
+            // memidtxt
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(501, 292);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(103, 34);
-            this.textBox6.TabIndex = 19;
+            this.memidtxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memidtxt.Location = new System.Drawing.Point(501, 292);
+            this.memidtxt.Margin = new System.Windows.Forms.Padding(4);
+            this.memidtxt.Name = "memidtxt";
+            this.memidtxt.Size = new System.Drawing.Size(103, 34);
+            this.memidtxt.TabIndex = 19;
             // 
-            // textBox7
+            // quantxt
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(501, 353);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(103, 34);
-            this.textBox7.TabIndex = 21;
+            this.quantxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantxt.Location = new System.Drawing.Point(501, 353);
+            this.quantxt.Margin = new System.Windows.Forms.Padding(4);
+            this.quantxt.Name = "quantxt";
+            this.quantxt.Size = new System.Drawing.Size(103, 34);
+            this.quantxt.TabIndex = 21;
             // 
             // lbSoLuong
             // 
             this.lbSoLuong.AutoSize = true;
             this.lbSoLuong.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoLuong.Location = new System.Drawing.Point(377, 353);
+            this.lbSoLuong.Location = new System.Drawing.Point(388, 353);
             this.lbSoLuong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoLuong.Name = "lbSoLuong";
-            this.lbSoLuong.Size = new System.Drawing.Size(114, 30);
+            this.lbSoLuong.Size = new System.Drawing.Size(105, 30);
             this.lbSoLuong.TabIndex = 20;
-            this.lbSoLuong.Text = "So Luong";
-            // 
-            // btnPrintf
-            // 
-            this.btnPrintf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintf.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintf.Location = new System.Drawing.Point(431, 565);
-            this.btnPrintf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnPrintf.Name = "btnPrintf";
-            this.btnPrintf.Size = new System.Drawing.Size(145, 49);
-            this.btnPrintf.TabIndex = 22;
-            this.btnPrintf.Text = "Print";
-            this.btnPrintf.UseVisualStyleBackColor = true;
+            this.lbSoLuong.Text = "Quantity";
             // 
             // btnPDF
             // 
             this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPDF.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPDF.Location = new System.Drawing.Point(77, 565);
-            this.btnPDF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPDF.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPDF.Location = new System.Drawing.Point(45, 566);
+            this.btnPDF.Margin = new System.Windows.Forms.Padding(4);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(145, 49);
+            this.btnPDF.Size = new System.Drawing.Size(569, 49);
             this.btnPDF.TabIndex = 23;
-            this.btnPDF.Text = "Xuat PDF";
+            this.btnPDF.Text = "PRINT PDF";
             this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnstill);
+            this.panel1.Controls.Add(this.btnno);
+            this.panel1.Location = new System.Drawing.Point(219, 281);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(154, 54);
+            this.panel1.TabIndex = 24;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radiorent);
+            this.panel2.Controls.Add(this.radiosell);
+            this.panel2.Location = new System.Drawing.Point(219, 107);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(171, 54);
+            this.panel2.TabIndex = 25;
+            // 
+            // radiosell
+            // 
+            this.radiosell.AutoSize = true;
+            this.radiosell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiosell.ForeColor = System.Drawing.Color.White;
+            this.radiosell.Location = new System.Drawing.Point(4, 11);
+            this.radiosell.Margin = new System.Windows.Forms.Padding(4);
+            this.radiosell.Name = "radiosell";
+            this.radiosell.Size = new System.Drawing.Size(71, 34);
+            this.radiosell.TabIndex = 16;
+            this.radiosell.TabStop = true;
+            this.radiosell.Text = "Sell";
+            this.radiosell.UseVisualStyleBackColor = true;
+            // 
+            // radiorent
+            // 
+            this.radiorent.AutoSize = true;
+            this.radiorent.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiorent.ForeColor = System.Drawing.Color.White;
+            this.radiorent.Location = new System.Drawing.Point(85, 11);
+            this.radiorent.Margin = new System.Windows.Forms.Padding(4);
+            this.radiorent.Name = "radiorent";
+            this.radiorent.Size = new System.Drawing.Size(82, 34);
+            this.radiorent.TabIndex = 26;
+            this.radiorent.TabStop = true;
+            this.radiorent.Text = "Rent";
+            this.radiorent.UseVisualStyleBackColor = true;
             // 
             // NhapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(653, 644);
             this.Controls.Add(this.btnPDF);
-            this.Controls.Add(this.btnPrintf);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.quantxt);
             this.Controls.Add(this.lbSoLuong);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.memidtxt);
             this.Controls.Add(this.lbMatv);
-            this.Controls.Add(this.btnKhong);
-            this.Controls.Add(this.btnCo);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.totaltxt);
+            this.Controls.Add(this.booknametxt);
+            this.Controls.Add(this.discounttxt);
+            this.Controls.Add(this.inputdatetxt);
+            this.Controls.Add(this.customertxt);
             this.Controls.Add(this.lbTongTien);
-            this.Controls.Add(this.lbBanorMuon);
             this.Controls.Add(this.lbTenSach);
             this.Controls.Add(this.lbGiamgia);
             this.Controls.Add(this.lbThanhVien);
@@ -315,10 +340,16 @@
             this.Controls.Add(this.lbKhachHang);
             this.Controls.Add(this.lbTypeActivate);
             this.Controls.Add(this.lbNameForm);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhapHoaDon";
-            this.Text = "NhapHoaDon";
+            this.Text = "Input Bill";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,20 +364,22 @@
         private System.Windows.Forms.Label lbThanhVien;
         private System.Windows.Forms.Label lbGiamgia;
         private System.Windows.Forms.Label lbTenSach;
-        private System.Windows.Forms.Label lbBanorMuon;
         private System.Windows.Forms.Label lbTongTien;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.RadioButton btnCo;
-        private System.Windows.Forms.RadioButton btnKhong;
+        private System.Windows.Forms.TextBox customertxt;
+        private System.Windows.Forms.TextBox inputdatetxt;
+        private System.Windows.Forms.TextBox discounttxt;
+        private System.Windows.Forms.TextBox booknametxt;
+        private System.Windows.Forms.TextBox totaltxt;
+        private System.Windows.Forms.RadioButton btnstill;
+        private System.Windows.Forms.RadioButton btnno;
         private System.Windows.Forms.Label lbMatv;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox memidtxt;
+        private System.Windows.Forms.TextBox quantxt;
         private System.Windows.Forms.Label lbSoLuong;
-        private System.Windows.Forms.Button btnPrintf;
         private System.Windows.Forms.Button btnPDF;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radiorent;
+        private System.Windows.Forms.RadioButton radiosell;
     }
 }
