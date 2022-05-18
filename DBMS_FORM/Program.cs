@@ -16,7 +16,7 @@ namespace DBMS_FORM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormThanhVien());
+            Application.Run(new TurnoverCheckForm());
         }
     }
 }

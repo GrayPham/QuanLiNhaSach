@@ -28,6 +28,28 @@ namespace DBMS_FORM.BLL
             }
         }
 
+        internal object GetTurnOver(int type)
+        {
+            
+            if(type == 1)
+            {
+               var turnOver = db.TurnoverByDay();
+                return turnOver;
+            }
+            else if(type == 2)
+            {
+                DateTime temp = DateTime.Now;
+                var turnOver = db.TurnoverByMonth(temp);
+                return turnOver;
+            }   
+            else if (type == 3)
+            {
+                var turnOver = db.TurnoverByYear();
+                return turnOver;
+            }
+            return null;
+        }
+
         internal object GetManager()
         {
             var manager = db.fun_DanhSachQuanLy();

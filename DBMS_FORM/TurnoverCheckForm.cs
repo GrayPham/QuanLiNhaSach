@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBMS_FORM.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,29 @@ namespace DBMS_FORM
         {
             InitializeComponent();
         }
-
+        ManagerBLL mBLL = new ManagerBLL();
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            int type = checkTypeTurnOver();
+            if (type != 0)
+            {
+                DVGTurnOver.DataSource =mBLL.GetTurnOver(type);
+            }
+        }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private int checkTypeTurnOver()
+        {
+            if (radioButtonDay.Checked)
+                return 1;
+            if (radioButtonMouth.Checked)
+                return 2;
+            if (radioButtonYear.Checked)
+                return 3;
+            return 0;
         }
     }
 }
