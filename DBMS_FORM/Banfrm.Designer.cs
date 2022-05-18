@@ -49,6 +49,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnNo = new System.Windows.Forms.RadioButton();
+            this.btnYes = new System.Windows.Forms.RadioButton();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -57,11 +62,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnPrintf = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnYes = new System.Windows.Forms.RadioButton();
-            this.btnNo = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -217,6 +217,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(157, 239);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(907, 324);
@@ -278,6 +279,57 @@
             this.groupBox4.Size = new System.Drawing.Size(907, 124);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 23);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "ThanhVien";
+            // 
+            // btnNo
+            // 
+            this.btnNo.AutoSize = true;
+            this.btnNo.Location = new System.Drawing.Point(254, 78);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(56, 27);
+            this.btnNo.TabIndex = 8;
+            this.btnNo.TabStop = true;
+            this.btnNo.Text = "NO";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.CheckedChanged += new System.EventHandler(this.btnNo_CheckedChanged);
+            // 
+            // btnYes
+            // 
+            this.btnYes.AutoSize = true;
+            this.btnYes.Location = new System.Drawing.Point(150, 76);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(57, 27);
+            this.btnYes.TabIndex = 7;
+            this.btnYes.TabStop = true;
+            this.btnYes.Text = "YES";
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.CheckedChanged += new System.EventHandler(this.btnYes_CheckedChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(493, 75);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(182, 29);
+            this.textBox4.TabIndex = 6;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(408, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "MaTV";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox3
             // 
@@ -355,57 +407,6 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(493, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(182, 29);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(408, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "MaTV";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btnYes
-            // 
-            this.btnYes.AutoSize = true;
-            this.btnYes.Location = new System.Drawing.Point(150, 76);
-            this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(57, 27);
-            this.btnYes.TabIndex = 7;
-            this.btnYes.TabStop = true;
-            this.btnYes.Text = "YES";
-            this.btnYes.UseVisualStyleBackColor = true;
-            this.btnYes.CheckedChanged += new System.EventHandler(this.btnYes_CheckedChanged);
-            // 
-            // btnNo
-            // 
-            this.btnNo.AutoSize = true;
-            this.btnNo.Location = new System.Drawing.Point(254, 78);
-            this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(56, 27);
-            this.btnNo.TabIndex = 8;
-            this.btnNo.TabStop = true;
-            this.btnNo.Text = "NO";
-            this.btnNo.UseVisualStyleBackColor = true;
-            this.btnNo.CheckedChanged += new System.EventHandler(this.btnNo_CheckedChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 23);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "ThanhVien";
             // 
             // Banfrm
             // 

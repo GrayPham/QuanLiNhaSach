@@ -64,8 +64,9 @@ namespace DBMS_FORM
             comand.Parameters.Add("@Soluong", SqlDbType.Int).Value = int.Parse(txtSL.Text);
             comand.Parameters.Add("@MNQL", SqlDbType.Int).Value = 2001;
             comand.Parameters.Add("@MNCC", SqlDbType.Int).Value = int.Parse(txtMNCC.Text);
-         
-            comand.ExecuteNonQuery();
+            comand.Parameters.Add("@NXB", SqlDbType.NVarChar).Value =txtNXB.Text;
+
+                comand.ExecuteNonQuery();
             }
             catch (Exception E)
             {

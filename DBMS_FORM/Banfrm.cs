@@ -27,7 +27,7 @@ namespace DBMS_FORM
         {
             DB mydb = new DB();
             mydb.openconnection();
-           
+            int Soluong = int.Parse(textBox3.Text);
             int MS = int.Parse(textBox2.Text);
             SqlCommand command = new SqlCommand("Select MaSach, TenSach, DonGia FROM Sach Where MaSach =" + MS, mydb.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -42,15 +42,39 @@ namespace DBMS_FORM
                 DataTable table2 = new DataTable();
                 adapter.SelectCommand = command2;
                 adapter.Fill(table2);
-                SqlDataReader reader = command.ExecuteReader();
+
                 if (table2.Rows.Count > 0)
                 {
                     if (table.Rows.Count > 0)
                     {
-                        while (reader.Read())
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "CheckBan";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = mydb.getConnection;
+                        SqlParameter parameter = new SqlParameter();
+                        cmd.Parameters.Add("@MS", SqlDbType.Int).Value = MS;
+                        cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = Soluong;
+                        cmd.Parameters.Add("@Status", SqlDbType.Int).Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add("@Status2", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                        cmd.ExecuteNonQuery();
+
+                        int flag1 = Convert.ToInt32(cmd.Parameters["@Status"].Value);
+                        int flag2 = Convert.ToInt32(cmd.Parameters["@Status2"].Value);
+                        if (flag2 == 1)
                         {
-                            dataGridView1.Rows.Add(reader["MaSach"].ToString(), reader["TenSach"].ToString(), reader["DonGia"].ToString(), textBox3.Text);
+                            SqlDataReader reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                dataGridView1.Rows.Add(reader["MaSach"].ToString(), reader["TenSach"].ToString(), reader["DonGia"].ToString(), textBox3.Text);
+                            }
+                            reader.Close();
                         }
+                        else
+                        {
+                            MessageBox.Show("So Luong Sach Khong Du", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
                     else
                     {
@@ -65,12 +89,35 @@ namespace DBMS_FORM
             }
             else
             {
-                SqlDataReader reader = command.ExecuteReader();
+                //SqlDataReader reader = command.ExecuteReader();
                 if (table.Rows.Count > 0)
                 {
-                    while (reader.Read())
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "CheckBan";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = mydb.getConnection;
+                    SqlParameter parameter = new SqlParameter();
+                    cmd.Parameters.Add("@MS", SqlDbType.Int).Value = MS;
+                    cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = Soluong;
+                    cmd.Parameters.Add("@Status", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@Status2", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    int flag1 = Convert.ToInt32(cmd.Parameters["@Status"].Value);
+                    int flag2 = Convert.ToInt32(cmd.Parameters["@Status2"].Value);
+                    if (flag2 == 1)
                     {
-                        dataGridView1.Rows.Add(reader["MaSach"].ToString(), reader["TenSach"].ToString(), reader["DonGia"].ToString(), textBox3.Text);
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            dataGridView1.Rows.Add(reader["MaSach"].ToString(), reader["TenSach"].ToString(), reader["DonGia"].ToString(), textBox3.Text);
+                        }
+                        reader.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("So Luong Sach Khong Du", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -78,7 +125,6 @@ namespace DBMS_FORM
                     MessageBox.Show("Invalid Ma Sach", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
 
         }
 
@@ -103,6 +149,7 @@ namespace DBMS_FORM
 
             }
             reader.Close();
+
             if (btnYes.Checked)
             {
                
@@ -112,6 +159,16 @@ namespace DBMS_FORM
 
                     int row = dataGridView1.Rows.Count;
                     int tong = 0;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "SALEOFF";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = mydb.getConnection;
+                    SqlParameter parameter = new SqlParameter();
+                    cmd.Parameters.Add("@MTV", SqlDbType.Int).Value = int.Parse(textBox2.Text);
+                    cmd.Parameters.Add("@DIS", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();
+                    int DIS = Convert.ToInt32(cmd.Parameters["@DIS"].Value);
+
                     int MTV = int.Parse(textBox4.Text);
                     for (int i = 0; i < row - 1; i++)
                     {
@@ -124,7 +181,7 @@ namespace DBMS_FORM
                         comand.CommandType = CommandType.StoredProcedure;
                         comand.Connection = mydb.getConnection;
                         comand.Parameters.Add("@flag", SqlDbType.Int).Value = i;
-                        comand.Parameters.Add("@GIAMGIA", SqlDbType.Int).Value = 0;
+                        comand.Parameters.Add("@GIAMGIA", SqlDbType.Int).Value = DIS;
                         comand.Parameters.Add("@MS", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
                         comand.Parameters.Add("@MANV", SqlDbType.Int).Value = 2001;
                         comand.Parameters.Add("@SoLuong", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
@@ -132,7 +189,7 @@ namespace DBMS_FORM
                         comand.Parameters.Add("@MHD", SqlDbType.Int).Value = MHD;
                         comand.Parameters.Add("@NXuat", SqlDbType.DateTime).Value = DateTime.Now;
                         comand.Parameters.Add("@NBan", SqlDbType.DateTime).Value = DateTime.Now;
-                        comand.Parameters.Add("@TongTien", SqlDbType.Int).Value = tong;
+                        comand.Parameters.Add("@TongTien", SqlDbType.Int).Value = tong-(tong*DIS/100);
 
                         comand.ExecuteNonQuery();
                      

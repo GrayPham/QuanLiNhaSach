@@ -129,7 +129,17 @@ namespace DBMS_FORM
               
                 int row = dataGridView1.Rows.Count;
                 int tong = 0;
-                for(int i = 0; i < row - 1; i++)
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SALEOFF";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = mydb.getConnection;
+            SqlParameter parameter = new SqlParameter();
+            cmd.Parameters.Add("@MTV", SqlDbType.Int).Value = int.Parse(textBox2.Text);
+            cmd.Parameters.Add("@DIS", SqlDbType.Int).Direction = ParameterDirection.Output;
+            cmd.ExecuteNonQuery();
+            int DIS = Convert.ToInt32(cmd.Parameters["@DIS"].Value);
+            for (int i = 0; i < row - 1; i++)
                 {
                     tong += int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()) * int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
                 }
@@ -151,8 +161,8 @@ namespace DBMS_FORM
                     comand.Parameters.Add("@NTra", SqlDbType.DateTime).Value = dateTra.Value;
                     comand.Parameters.Add("@MHD", SqlDbType.Int).Value = MHD;
                     comand.Parameters.Add("@NXuat", SqlDbType.DateTime).Value = dateMuon.Value;
-                    comand.Parameters.Add("@TongTien", SqlDbType.Int).Value = tong;
-                    comand.Parameters.Add("@GiamGia", SqlDbType.Int).Value = 0;
+                    comand.Parameters.Add("@TongTien", SqlDbType.Int).Value = tong-(tong*DIS/100);
+                    comand.Parameters.Add("@GiamGia", SqlDbType.Int).Value = DIS;
                     comand.Parameters.Add("@DXOA", SqlDbType.Bit).Value = false;
                     comand.Parameters.Add("@ThanhVien", SqlDbType.Bit).Value = false;
 

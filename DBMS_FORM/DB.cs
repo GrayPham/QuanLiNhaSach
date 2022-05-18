@@ -11,7 +11,7 @@ namespace DBMS_FORM
     class DB
     {
         //// Tạo kết nối
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-6O4O28PB\PHONGNGUYEN;Initial Catalog=DOAN_QUANLYNHASACH_DBMS;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-KF2J8C6;Initial Catalog=DOAN_QUANLYNHASACH_DBMS;User ID=ThanhPhong;Password=12345");
 
 
         public SqlConnection getConnection

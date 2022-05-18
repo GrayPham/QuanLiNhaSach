@@ -42,7 +42,7 @@
             this.txtSL = new System.Windows.Forms.TextBox();
             this.txtDGN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNamXB = new System.Windows.Forms.Label();
+            this.labelNXB = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -178,15 +178,15 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Nha Cung Cap";
             // 
-            // txtNamXB
+            // labelNXB
             // 
-            this.txtNamXB.AutoSize = true;
-            this.txtNamXB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamXB.Location = new System.Drawing.Point(264, 211);
-            this.txtNamXB.Name = "txtNamXB";
-            this.txtNamXB.Size = new System.Drawing.Size(125, 23);
-            this.txtNamXB.TabIndex = 22;
-            this.txtNamXB.Text = "Nam Xuat Ban";
+            this.labelNXB.AutoSize = true;
+            this.labelNXB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNXB.Location = new System.Drawing.Point(264, 211);
+            this.labelNXB.Name = "labelNXB";
+            this.labelNXB.Size = new System.Drawing.Size(125, 23);
+            this.labelNXB.TabIndex = 22;
+            this.labelNXB.Text = "Nam Xuat Ban";
             // 
             // label4
             // 
@@ -273,7 +273,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNamXB);
+            this.Controls.Add(this.labelNXB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDGN);
             this.Controls.Add(this.txtSL);
@@ -314,7 +314,7 @@
         private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.TextBox txtDGN;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label txtNamXB;
+        private System.Windows.Forms.Label labelNXB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label9;

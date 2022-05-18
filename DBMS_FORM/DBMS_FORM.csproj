@@ -80,6 +80,7 @@
     <Compile Include="FormThanhVien.Designer.cs">
       <DependentUpon>FormThanhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GETID.cs" />
     <Compile Include="Importfrm.cs">
       <SubType>Form</SubType>
     </Compile>
