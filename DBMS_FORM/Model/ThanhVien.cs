@@ -27,7 +27,6 @@ namespace DBMS_FORM.Model
         public string SoDT { get; set; }
         public Nullable<bool> ConSD { get; set; }
         public Nullable<int> MDThanThiet { get; set; }
-        public Nullable<bool> Status { get; set; }
     
         public virtual ICollection<DaBan> DaBans { get; set; }
         public virtual ICollection<Muon> Muons { get; set; }

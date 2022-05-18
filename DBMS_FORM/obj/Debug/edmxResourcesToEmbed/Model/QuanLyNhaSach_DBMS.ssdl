@@ -114,7 +114,6 @@
     <Property Name="SoDT" Type="varchar" MaxLength="15" />
     <Property Name="ConSD" Type="bit" />
     <Property Name="MDThanThiet" Type="int" />
-    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="TheLoai">
     <Key>
@@ -300,6 +299,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Add_ThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaTV" Type="int" Mode="In" />
+    <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoDT" Type="varchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConSD" Type="int" Mode="In" />
+    <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+  </Function>
   <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="userId" Type="int" Mode="In" />
   </Function>
@@ -602,14 +610,12 @@
   </Function>
   <Function Name="SettingThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Action" Type="nvarchar" Mode="In" />
-    <Parameter Name="MTV" Type="int" Mode="In" />
+    <Parameter Name="MaTV" Type="int" Mode="In" />
     <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
-    <Parameter Name="SoDT" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoDT" Type="varchar" Mode="In" />
     <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
     <Parameter Name="Mail" Type="nvarchar" Mode="In" />
-    <Parameter Name="ConSD" Type="bit" Mode="In" />
     <Parameter Name="MDThanThiet" Type="int" Mode="In" />
-    <Parameter Name="status" Type="bit" Mode="In" />
   </Function>
   <Function Name="sp_AddNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="int" Mode="In" />
@@ -664,6 +670,15 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="thanhvienUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaTV" Type="int" Mode="In" />
+    <Parameter Name="MaTVCu" Type="int" Mode="In" />
+    <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
+    <Parameter Name="SoDT" Type="varchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+    <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+  </Function>
   <Function Name="TurnoverByDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>
@@ -694,6 +709,10 @@
         </RowType>
       </CollectionType>
     </ReturnType>
+  </Function>
+  <Function Name="Tv_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdTV" Type="int" Mode="In" />
+    <Parameter Name="Method" Type="nvarchar" Mode="In" />
   </Function>
   <EntityContainer Name="DOAN_QUANLYNHASACH_DBMSModelStoreContainer">
     <EntitySet Name="CungCap" EntityType="Self.CungCap" Schema="dbo" store:Type="Tables" />
