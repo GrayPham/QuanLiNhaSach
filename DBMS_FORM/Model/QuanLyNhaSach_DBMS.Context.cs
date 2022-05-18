@@ -34,11 +34,11 @@ namespace DBMS_FORM.Model
         public DbSet<Muon> Muons { get; set; }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public DbSet<NV> NVs { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
         public DbSet<Sach> Saches { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<ThanhVien> ThanhViens { get; set; }
         public DbSet<TheLoai> TheLoais { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
     
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fluongNV")]
@@ -51,6 +51,20 @@ namespace DBMS_FORM.Model
         public virtual IQueryable<fThanhVien_Result> fThanhVien()
         {
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fThanhVien_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fThanhVien]()");
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_checkLogin")]
+        public virtual IQueryable<fun_checkLogin_Result> fun_checkLogin(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_checkLogin_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_checkLogin](@username, @password)", usernameParameter, passwordParameter);
         }
     
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_DanhSachNhanVien")]
@@ -204,6 +218,19 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_ThanhVien", maTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter);
         }
     
+        public virtual int CheckBan(Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
+        {
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CheckBan", mSParameter, soLuongParameter, status, status2);
+        }
+    
         public virtual int CheckMuon(Nullable<int> mTV, Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
         {
             var mTVParameter = mTV.HasValue ?
@@ -219,6 +246,23 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("SoLuong", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CheckMuon", mTVParameter, mSParameter, soLuongParameter, status, status2);
+        }
+    
+        public virtual int createDbmsUser(string username, string password, string role)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var roleParameter = role != null ?
+                new ObjectParameter("role", role) :
+                new ObjectParameter("role", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("createDbmsUser", usernameParameter, passwordParameter, roleParameter);
         }
     
         public virtual int deleteSach(Nullable<int> maSach)
@@ -722,50 +766,6 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("Method", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Tv_Delete", idTVParameter, methodParameter);
-        }
-    
-        public virtual int CheckBan(Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
-        {
-            var mSParameter = mS.HasValue ?
-                new ObjectParameter("MS", mS) :
-                new ObjectParameter("MS", typeof(int));
-    
-            var soLuongParameter = soLuong.HasValue ?
-                new ObjectParameter("SoLuong", soLuong) :
-                new ObjectParameter("SoLuong", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CheckBan", mSParameter, soLuongParameter, status, status2);
-        }
-    
-        public virtual int createDbmsUser(string username, string password, string role)
-        {
-            var usernameParameter = username != null ?
-                new ObjectParameter("username", username) :
-                new ObjectParameter("username", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("password", password) :
-                new ObjectParameter("password", typeof(string));
-    
-            var roleParameter = role != null ?
-                new ObjectParameter("role", role) :
-                new ObjectParameter("role", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("createDbmsUser", usernameParameter, passwordParameter, roleParameter);
-        }
-    
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fun_checkLogin")]
-        public virtual IQueryable<fun_checkLogin_Result> fun_checkLogin(string username, string password)
-        {
-            var usernameParameter = username != null ?
-                new ObjectParameter("username", username) :
-                new ObjectParameter("username", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("password", password) :
-                new ObjectParameter("password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fun_checkLogin_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fun_checkLogin](@username, @password)", usernameParameter, passwordParameter);
         }
     }
 }

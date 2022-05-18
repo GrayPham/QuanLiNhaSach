@@ -65,7 +65,12 @@ namespace DBMS_FORM
                     int vang = (int)numeric_absent.Value;
 
                     int maNQL = Convert.ToInt32(comboBox_find.SelectedValue);
-                    managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, maNQL);
+                string username = textBox_username.Text;
+                string pass = textBox_password.Text;
+                int typeid = Convert.ToInt32(comboBox_type.SelectedValue);
+
+
+                    managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, username, pass,typeid, vang, maNQL);
 
                     //addNV.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, ref kq);
                     fillDVGNhanVien();

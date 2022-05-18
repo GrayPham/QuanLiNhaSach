@@ -340,6 +340,12 @@
   <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="userId" Type="int" Mode="In" />
   </Function>
+  <Function Name="CheckBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MS" Type="int" Mode="In" />
+    <Parameter Name="SoLuong" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="InOut" />
+    <Parameter Name="Status2" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="CheckMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MTV" Type="int" Mode="In" />
     <Parameter Name="MS" Type="int" Mode="In" />
@@ -349,6 +355,11 @@
   </Function>
   <Function Name="CountSachDaMua" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="maTV" Type="int" Mode="In" />
+  </Function>
+  <Function Name="createDbmsUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="password" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="role" Type="nvarchar(max)" Mode="In" />
   </Function>
   <Function Name="deleteSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maSach" Type="int" Mode="In" />
@@ -382,6 +393,19 @@
   </Function>
   <Function Name="fuCountSachTL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="maTl" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fun_checkLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
   </Function>
   <Function Name="fun_DanhSachNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
@@ -479,7 +503,6 @@
           <Property Name="SoDT" Type="varchar" MaxLength="15" />
           <Property Name="ConSD" Type="bit" />
           <Property Name="MDThanThiet" Type="int" />
-          <Property Name="status" Type="bit" />
         </RowType>
       </CollectionType>
     </ReturnType>
@@ -527,7 +550,7 @@
     <Parameter Name="TS" Type="varchar" Mode="In" />
     <Parameter Name="DG" Type="int" Mode="In" />
     <Parameter Name="NN" Type="datetime" Mode="In" />
-    <Parameter Name="NXB" Type="datetime" Mode="In" />
+    <Parameter Name="NXB" Type="nvarchar" Mode="In" />
     <Parameter Name="MTL" Type="int" Mode="In" />
     <Parameter Name="Soluong" Type="int" Mode="In" />
     <Parameter Name="MNQL" Type="int" Mode="In" />
@@ -654,7 +677,11 @@
     <Parameter Name="sosachban" Type="int" Mode="In" />
     <Parameter Name="luongnv" Type="int" Mode="In" />
     <Parameter Name="ngayvang" Type="int" Mode="In" />
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="TypeId" Type="int" Mode="In" />
     <Parameter Name="manql" Type="int" Mode="In" />
+    <Parameter Name="danghi" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />

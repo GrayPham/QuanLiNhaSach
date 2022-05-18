@@ -11,12 +11,12 @@ namespace DBMS_FORM.BLL
 {
     internal class ManagerBLL : QuanLyNhaSach
     {
-        internal void AddNV(int ma, string hoTen, string sdt, string dc, int sachBan, int luong, int vang, int maNQL)
+        internal void AddNV(int ma, string hoTen, string sdt, string dc, int sachBan, int luong, string username, string pass,int typeid, int vang, int maNQL)
         {
             try
             {
                 //System.Data.Objects.ObjectParameter ketqua = new ObjectParameter("ketqua", typeof(char));
-                db.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, maNQL);
+                db.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, username, pass, typeid, maNQL,0);
                 //string myCheck = ketqua.Value.ToString();
                 //MessageBox.Show(myCheck, "Add Staff");
                 db.SaveChanges();
