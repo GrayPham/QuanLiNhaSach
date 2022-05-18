@@ -345,6 +345,12 @@
         <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="userId" Type="int" Mode="In" />
         </Function>
+        <Function Name="CheckBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MS" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="InOut" />
+          <Parameter Name="Status2" Type="int" Mode="InOut" />
+        </Function>
         <Function Name="CheckMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MTV" Type="int" Mode="In" />
           <Parameter Name="MS" Type="int" Mode="In" />
@@ -354,6 +360,11 @@
         </Function>
         <Function Name="CountSachDaMua" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maTV" Type="int" Mode="In" />
+        </Function>
+        <Function Name="createDbmsUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="role" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="deleteSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="maSach" Type="int" Mode="In" />
@@ -387,6 +398,19 @@
         </Function>
         <Function Name="fuCountSachTL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maTl" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fun_checkLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+                <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+                <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
         </Function>
         <Function Name="fun_DanhSachNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
@@ -484,7 +508,6 @@
                 <Property Name="SoDT" Type="varchar" MaxLength="15" />
                 <Property Name="ConSD" Type="bit" />
                 <Property Name="MDThanThiet" Type="int" />
-                <Property Name="status" Type="bit" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -532,7 +555,7 @@
           <Parameter Name="TS" Type="varchar" Mode="In" />
           <Parameter Name="DG" Type="int" Mode="In" />
           <Parameter Name="NN" Type="datetime" Mode="In" />
-          <Parameter Name="NXB" Type="datetime" Mode="In" />
+          <Parameter Name="NXB" Type="nvarchar" Mode="In" />
           <Parameter Name="MTL" Type="int" Mode="In" />
           <Parameter Name="Soluong" Type="int" Mode="In" />
           <Parameter Name="MNQL" Type="int" Mode="In" />
@@ -659,7 +682,11 @@
           <Parameter Name="sosachban" Type="int" Mode="In" />
           <Parameter Name="luongnv" Type="int" Mode="In" />
           <Parameter Name="ngayvang" Type="int" Mode="In" />
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="TypeId" Type="int" Mode="In" />
           <Parameter Name="manql" Type="int" Mode="In" />
+          <Parameter Name="danghi" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1411,7 +1438,7 @@
             <Parameter Name="TS" Mode="In" Type="String" />
             <Parameter Name="DG" Mode="In" Type="Int32" />
             <Parameter Name="NN" Mode="In" Type="DateTime" />
-            <Parameter Name="NXB" Mode="In" Type="DateTime" />
+            <Parameter Name="NXB" Mode="In" Type="String" />
             <Parameter Name="MTL" Mode="In" Type="Int32" />
             <Parameter Name="Soluong" Mode="In" Type="Int32" />
             <Parameter Name="MNQL" Mode="In" Type="Int32" />
@@ -1480,7 +1507,11 @@
             <Parameter Name="sosachban" Mode="In" Type="Int32" />
             <Parameter Name="luongnv" Mode="In" Type="Int32" />
             <Parameter Name="ngayvang" Mode="In" Type="Int32" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="TypeId" Mode="In" Type="Int32" />
             <Parameter Name="manql" Mode="In" Type="Int32" />
+            <Parameter Name="danghi" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1544,6 +1575,21 @@
             <End Role="UserType" EntitySet="UserTypes" />
             <End Role="NV" EntitySet="NVs" />
           </AssociationSet>
+          <FunctionImport Name="CheckBan">
+            <Parameter Name="MS" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="InOut" Type="Int32" />
+            <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="createDbmsUser">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="role" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fun_checkLogin" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_checkLogin_Result)">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1583,6 +1629,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="fun_checkLogin_Result">
+          <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TypeName" Nullable="true" MaxLength="100" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1981,6 +2032,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CheckBan" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckBan" />
+          <FunctionImportMapping FunctionImportName="createDbmsUser" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.createDbmsUser" />
+          <FunctionImportMapping FunctionImportName="fun_checkLogin" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_checkLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_checkLogin_Result">
+                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
