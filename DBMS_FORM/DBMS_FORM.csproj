@@ -122,6 +122,9 @@
     <Compile Include="Model\fuNhanvienOfQl_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\fun_checkLogin_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\fun_DanhSachNhanVien_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
