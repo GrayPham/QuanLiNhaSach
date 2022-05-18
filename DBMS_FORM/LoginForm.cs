@@ -51,7 +51,7 @@ namespace DBMS_FORM
 
             if (dt.Rows.Count > 0)
             {
-
+                BaseData.Name = dt.Rows[0]["HoTenNV"].ToString();
                 BaseData.username = dt.Rows[0]["username"].ToString();
                 BaseData.role = dt.Rows[0]["TypeName"].ToString();
                 return true;

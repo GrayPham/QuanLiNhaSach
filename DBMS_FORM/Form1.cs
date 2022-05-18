@@ -18,15 +18,14 @@ namespace DBMS_FORM
         {
             InitializeComponent();
         }
-        public string userName { get; set; } = "Nguyen Van A";
-        public string userRole { get; set; } = "Employee";
+
         NhanVien nv = new NhanVien();
 
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = nv.hienThi();
-            label_name.Text = userName;
-            lbRole.Text = userRole;
+            label_name.Text = BaseData.Name;
+            lbRole.Text = BaseData.role;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
