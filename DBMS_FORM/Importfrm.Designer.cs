@@ -101,7 +101,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(137, 324);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1136, 283);
@@ -111,7 +111,7 @@
             // 
             this.txtMS.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMS.Location = new System.Drawing.Point(192, 137);
-            this.txtMS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMS.Name = "txtMS";
             this.txtMS.Size = new System.Drawing.Size(132, 34);
             this.txtMS.TabIndex = 13;
@@ -120,7 +120,7 @@
             // 
             this.txtTS.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTS.Location = new System.Drawing.Point(527, 133);
-            this.txtTS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTS.Name = "txtTS";
             this.txtTS.Size = new System.Drawing.Size(132, 34);
             this.txtTS.TabIndex = 14;
@@ -129,7 +129,7 @@
             // 
             this.txtTuaSach.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTuaSach.Location = new System.Drawing.Point(863, 135);
-            this.txtTuaSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTuaSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuaSach.Name = "txtTuaSach";
             this.txtTuaSach.Size = new System.Drawing.Size(132, 34);
             this.txtTuaSach.TabIndex = 15;
@@ -138,7 +138,7 @@
             // 
             this.txtDonGia.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonGia.Location = new System.Drawing.Point(1220, 133);
-            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(132, 34);
             this.txtDonGia.TabIndex = 16;
@@ -147,7 +147,7 @@
             // 
             this.txtNCC.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNCC.Location = new System.Drawing.Point(192, 257);
-            this.txtNCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtNCC.Name = "txtNCC";
             this.txtNCC.Size = new System.Drawing.Size(132, 34);
             this.txtNCC.TabIndex = 17;
@@ -157,7 +157,7 @@
             // 
             this.txtNXB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNXB.Location = new System.Drawing.Point(527, 257);
-            this.txtNXB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNXB.Margin = new System.Windows.Forms.Padding(4);
             this.txtNXB.Name = "txtNXB";
             this.txtNXB.Size = new System.Drawing.Size(132, 34);
             this.txtNXB.TabIndex = 18;
@@ -166,7 +166,7 @@
             // 
             this.txtSoluong.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoluong.Location = new System.Drawing.Point(863, 256);
-            this.txtSoluong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoluong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(132, 34);
             this.txtSoluong.TabIndex = 19;
@@ -175,7 +175,7 @@
             // 
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.Location = new System.Drawing.Point(1220, 257);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(132, 34);
             this.txtTongTien.TabIndex = 20;
@@ -238,8 +238,9 @@
             // btnImport
             // 
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.Location = new System.Drawing.Point(607, 629);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(204, 64);
             this.btnImport.TabIndex = 26;
@@ -310,7 +311,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Importfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importfrm";

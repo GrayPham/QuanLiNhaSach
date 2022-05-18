@@ -54,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox1.Controls.Add(this.button_manager);
             this.groupBox1.Controls.Add(this.button_thanhvien);
             this.groupBox1.Controls.Add(this.button_cungcap);
@@ -90,7 +91,7 @@
             this.button_thanhvien.Name = "button_thanhvien";
             this.button_thanhvien.Size = new System.Drawing.Size(191, 86);
             this.button_thanhvien.TabIndex = 7;
-            this.button_thanhvien.Text = "Thanh Vien";
+            this.button_thanhvien.Text = "Member";
             this.button_thanhvien.UseVisualStyleBackColor = true;
             this.button_thanhvien.Click += new System.EventHandler(this.button_thanhvien_Click);
             // 
@@ -102,7 +103,7 @@
             this.button_cungcap.Name = "button_cungcap";
             this.button_cungcap.Size = new System.Drawing.Size(191, 86);
             this.button_cungcap.TabIndex = 6;
-            this.button_cungcap.Text = "Cung Cap";
+            this.button_cungcap.Text = "Provider";
             this.button_cungcap.UseVisualStyleBackColor = true;
             this.button_cungcap.Click += new System.EventHandler(this.button_cungcap_Click);
             // 
@@ -114,7 +115,7 @@
             this.button_hoadon.Name = "button_hoadon";
             this.button_hoadon.Size = new System.Drawing.Size(191, 86);
             this.button_hoadon.TabIndex = 5;
-            this.button_hoadon.Text = "Hoa Don Ban";
+            this.button_hoadon.Text = "Sell Bill";
             this.button_hoadon.UseVisualStyleBackColor = true;
             this.button_hoadon.Click += new System.EventHandler(this.button_hoadon_Click);
             // 
@@ -126,7 +127,7 @@
             this.button_bansach.Name = "button_bansach";
             this.button_bansach.Size = new System.Drawing.Size(191, 86);
             this.button_bansach.TabIndex = 4;
-            this.button_bansach.Text = "Ban Sach";
+            this.button_bansach.Text = "Sell Book";
             this.button_bansach.UseVisualStyleBackColor = true;
             this.button_bansach.Click += new System.EventHandler(this.button_bansach_Click);
             // 
@@ -138,7 +139,7 @@
             this.button_thue.Name = "button_thue";
             this.button_thue.Size = new System.Drawing.Size(191, 86);
             this.button_thue.TabIndex = 3;
-            this.button_thue.Text = "Thue Sach";
+            this.button_thue.Text = "Rent Book";
             this.button_thue.UseVisualStyleBackColor = true;
             this.button_thue.Click += new System.EventHandler(this.button_thue_Click);
             // 
@@ -155,6 +156,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox2.Controls.Add(this.label_name);
             this.groupBox2.Controls.Add(this.btnFind);
             this.groupBox2.Controls.Add(this.textBox_search);
@@ -232,6 +234,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(217, 133);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
