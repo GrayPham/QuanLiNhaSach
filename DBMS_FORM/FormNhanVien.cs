@@ -68,7 +68,7 @@ namespace DBMS_FORM
                     managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, maNQL);
 
                     //addNV.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, ref kq);
-                    fillDVGNhanVien();
+                    //fillDVGNhanVien();
                 
                 
             }

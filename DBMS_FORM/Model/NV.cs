@@ -25,16 +25,16 @@ namespace DBMS_FORM.Model
         public int MNV { get; set; }
         public string HoTenNV { get; set; }
         public string SDT { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
         public string DiaChi { get; set; }
         public Nullable<int> SoSachBan { get; set; }
         public Nullable<int> luongNV { get; set; }
         public Nullable<int> NgayVang { get; set; }
         public Nullable<System.DateTime> NgayNghiViec { get; set; }
+        public Nullable<int> TypeId { get; set; }
         public Nullable<bool> DaNghi { get; set; }
         public Nullable<int> MNQL { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> TypeId { get; set; }
     
         public virtual ICollection<CungCap> CungCaps { get; set; }
         public virtual ICollection<DaBan> DaBans { get; set; }

@@ -60,6 +60,7 @@
     <Compile Include="Banfrm.Designer.cs">
       <DependentUpon>Banfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\Login.cs" />
     <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="BLL\NhanVien.cs" />
     <Compile Include="BLL\ThanhVienBLL.cs" />
@@ -113,6 +114,9 @@
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fuNhanvienOfQl_Result.cs">
+      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_checkLogin_Result.cs">
       <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_DanhSachNhanVien_Result.cs">
@@ -215,6 +219,7 @@
     <Compile Include="NhapHoaDon.Designer.cs">
       <DependentUpon>NhapHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object\BaseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Thuefrm.cs">
@@ -324,6 +329,7 @@
       <LastGenOutput>QuanLyNhaSach_DBMS.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

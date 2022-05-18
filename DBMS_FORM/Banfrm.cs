@@ -111,7 +111,117 @@ namespace DBMS_FORM
 
         private void btnPrintf_Click(object sender, EventArgs e)
         {
+            DB mydb = new DB();
+            mydb.openconnection();
 
+
+            SqlCommand cmdhd = new SqlCommand("Select MHD From HoaDon", mydb.getConnection);
+            int MHD = 0;
+            SqlDataReader reader = cmdhd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (MHD <= int.Parse(reader["MHD"].ToString()))
+                {
+                    MHD = int.Parse(reader["MHD"].ToString()) + 1;
+                }
+
+            }
+            reader.Close();
+            if (btnYes.Checked)
+            {
+
+
+                try
+                {
+
+                    int row = dataGridView1.Rows.Count;
+                    int tong = 0;
+                    int MTV = int.Parse(textBox4.Text);
+                    for (int i = 0; i < row - 1; i++)
+                    {
+                        tong += int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()) * int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                    }
+                    for (int i = 0; i < row - 1; i++)
+                    {
+                        SqlCommand comand = new SqlCommand();
+                        comand.CommandText = "INSERTBANTV";
+                        comand.CommandType = CommandType.StoredProcedure;
+                        comand.Connection = mydb.getConnection;
+                        comand.Parameters.Add("@flag", SqlDbType.Int).Value = i;
+                        comand.Parameters.Add("@GIAMGIA", SqlDbType.Int).Value = 0;
+                        comand.Parameters.Add("@MS", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                        comand.Parameters.Add("@MANV", SqlDbType.Int).Value = 2001;
+                        comand.Parameters.Add("@SoLuong", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                        comand.Parameters.Add("@MTV", SqlDbType.Int).Value = MTV;
+                        comand.Parameters.Add("@MHD", SqlDbType.Int).Value = MHD;
+                        comand.Parameters.Add("@NXuat", SqlDbType.DateTime).Value = DateTime.Now;
+                        comand.Parameters.Add("@NBan", SqlDbType.DateTime).Value = DateTime.Now;
+                        comand.Parameters.Add("@TongTien", SqlDbType.Int).Value = tong;
+
+                        comand.ExecuteNonQuery();
+
+
+                    }
+                }
+                catch (Exception E)
+                {
+                    MessageBox.Show("ERROR" + E.Message);
+
+                }
+                finally
+                {
+                    mydb.closeConnection();
+                }
+            }
+            else
+            {
+
+
+                try
+                {
+
+                    int row = dataGridView1.Rows.Count;
+                    int tong = 0;
+                    for (int i = 0; i < row - 1; i++)
+                    {
+                        tong += int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()) * int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                    }
+                    for (int i = 0; i < row - 1; i++)
+                    {
+                        SqlCommand comand = new SqlCommand();
+                        comand.CommandText = "INSERTBAN";
+                        comand.CommandType = CommandType.StoredProcedure;
+                        comand.Connection = mydb.getConnection;
+
+                        comand.Parameters.Add("@flag", SqlDbType.Int).Value = i;
+
+                        comand.Parameters.Add("@MS", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
+                        comand.Parameters.Add("@MANV", SqlDbType.Int).Value = 2001;
+                        comand.Parameters.Add("@SoLuong", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+
+                        comand.Parameters.Add("@MHD", SqlDbType.Int).Value = MHD;
+                        comand.Parameters.Add("@NXuat", SqlDbType.DateTime).Value = DateTime.Now;
+                        comand.Parameters.Add("@NBan", SqlDbType.DateTime).Value = DateTime.Now;
+                        comand.Parameters.Add("@TongTien", SqlDbType.Int).Value = tong;
+
+                        comand.Parameters.Add("@DXOA", SqlDbType.Bit).Value = false;
+
+                        comand.ExecuteNonQuery();
+
+
+                    }
+                }
+                catch (Exception E)
+                {
+                    MessageBox.Show("ERROR" + E.Message);
+
+                }
+                finally
+                {
+                    mydb.closeConnection();
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

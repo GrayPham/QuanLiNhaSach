@@ -15,6 +15,7 @@ namespace DBMS_FORM
         public Form1()
         {
             InitializeComponent();
+
         }
         public string userName { get; set; } = "Nguyen Van A";
         public string userRole { get; set; } = "Employee";

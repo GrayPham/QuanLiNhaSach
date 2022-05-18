@@ -227,11 +227,14 @@
     <Property Name="MNV" Type="Int32" Nullable="false" />
     <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="SoSachBan" Type="Int32" />
     <Property Name="luongNV" Type="Int32" />
     <Property Name="NgayVang" Type="Int32" />
     <Property Name="NgayNghiViec" Type="DateTime" Precision="3" />
+    <Property Name="TypeId" Type="Int32" />
     <Property Name="DaNghi" Type="Boolean" />
     <Property Name="MNQL" Type="Int32" />
     <NavigationProperty Name="CungCaps" Relationship="Self.FK_CungCap_NV" FromRole="NV" ToRole="CungCap" />
@@ -239,10 +242,14 @@
     <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_NV" FromRole="NV" ToRole="Muon" />
     <NavigationProperty Name="NV1" Relationship="Self.FK_NV_NV1" FromRole="NV" ToRole="NV1" />
     <NavigationProperty Name="NV2" Relationship="Self.FK_NV_NV1" FromRole="NV1" ToRole="NV" />
-    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="TypeId" Type="Int32" />
-    <NavigationProperty Name="UserType" Relationship="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" FromRole="NV" ToRole="UserType" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_NV_UserType" FromRole="NV" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -294,6 +301,14 @@
     <Property Name="BiLoaiBo" Type="Boolean" />
     <Property Name="TenTL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Saches" Relationship="Self.FK_Sach_TheLoai" FromRole="TheLoai" ToRole="Sach" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NVs" Relationship="Self.FK_NV_UserType" FromRole="UserType" ToRole="NV" />
   </EntityType>
   <Association Name="FK_CungCap_NhaCungCap">
     <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="1">
@@ -457,6 +472,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_NV_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="NV" Type="Self.NV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="NV">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Sach_TheLoai">
     <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -478,10 +505,12 @@
     <EntitySet Name="Muons" EntityType="Self.Muon" />
     <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
     <EntitySet Name="NVs" EntityType="Self.NV" />
+    <EntitySet Name="Permissions" EntityType="Self.Permission" />
     <EntitySet Name="Saches" EntityType="Self.Sach" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="ThanhViens" EntityType="Self.ThanhVien" />
     <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
     <AssociationSet Name="FK_CungCap_NhaCungCap" Association="Self.FK_CungCap_NhaCungCap">
       <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
       <End Role="CungCap" EntitySet="CungCaps" />
@@ -529,6 +558,10 @@
     <AssociationSet Name="FK_NV_NV1" Association="Self.FK_NV_NV1">
       <End Role="NV" EntitySet="NVs" />
       <End Role="NV1" EntitySet="NVs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NV_UserType" Association="Self.FK_NV_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="NV" EntitySet="NVs" />
     </AssociationSet>
     <AssociationSet Name="FK_Sach_TheLoai" Association="Self.FK_Sach_TheLoai">
       <End Role="TheLoai" EntitySet="TheLoais" />
@@ -589,7 +622,7 @@
       <Parameter Name="TS" Mode="In" Type="String" />
       <Parameter Name="DG" Mode="In" Type="Int32" />
       <Parameter Name="NN" Mode="In" Type="DateTime" />
-      <Parameter Name="NXB" Mode="In" Type="DateTime" />
+      <Parameter Name="NXB" Mode="In" Type="String" />
       <Parameter Name="MTL" Mode="In" Type="Int32" />
       <Parameter Name="Soluong" Mode="In" Type="Int32" />
       <Parameter Name="MNQL" Mode="In" Type="Int32" />
@@ -658,7 +691,11 @@
       <Parameter Name="sosachban" Mode="In" Type="Int32" />
       <Parameter Name="luongnv" Mode="In" Type="Int32" />
       <Parameter Name="ngayvang" Mode="In" Type="Int32" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="TypeId" Mode="In" Type="Int32" />
       <Parameter Name="manql" Mode="In" Type="Int32" />
+      <Parameter Name="danghi" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -716,12 +753,21 @@
       <Parameter Name="IdTV" Mode="In" Type="Int32" />
       <Parameter Name="Method" Mode="In" Type="String" />
     </FunctionImport>
-    <EntitySet Name="Permissions" EntityType="DOAN_QUANLYNHASACH_DBMSModel.Permission" />
-    <EntitySet Name="UserTypes" EntityType="DOAN_QUANLYNHASACH_DBMSModel.UserType" />
-    <AssociationSet Name="FK_NV_UserType" Association="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType">
-      <End Role="UserType" EntitySet="UserTypes" />
-      <End Role="NV" EntitySet="NVs" />
-    </AssociationSet>
+    <FunctionImport Name="CheckBan">
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="InOut" Type="Int32" />
+      <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="createDbmsUser">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="fun_checkLogin" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_checkLogin_Result)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -734,31 +780,9 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
-  <EntityType Name="Permission">
-    <Key>
-      <PropertyRef Name="Pid" />
-    </Key>
-    <Property Name="Pid" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="UserType">
-    <Key>
-      <PropertyRef Name="TypeId" />
-    </Key>
-    <Property Name="TypeId" Type="Int32" Nullable="false" />
-    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="NVs" Relationship="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" FromRole="UserType" ToRole="NV" />
-  </EntityType>
-  <Association Name="FK_NV_UserType">
-    <End Type="DOAN_QUANLYNHASACH_DBMSModel.UserType" Role="UserType" Multiplicity="0..1" />
-    <End Type="DOAN_QUANLYNHASACH_DBMSModel.NV" Role="NV" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserType">
-        <PropertyRef Name="TypeId" />
-      </Principal>
-      <Dependent Role="NV">
-        <PropertyRef Name="TypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <ComplexType Name="fun_checkLogin_Result">
+    <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="100" />
+  </ComplexType>
 </Schema>

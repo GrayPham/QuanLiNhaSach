@@ -65,19 +65,27 @@
     <EntitySetMapping Name="NVs">
       <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.NV">
         <MappingFragment StoreEntitySet="NV">
-          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="MNV" ColumnName="MNV" />
           <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
           <ScalarProperty Name="luongNV" ColumnName="luongNV" />
           <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
           <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
           <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
           <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Permission">
+        <MappingFragment StoreEntitySet="Permission">
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -126,6 +134,14 @@
           <ScalarProperty Name="MTL" ColumnName="MTL" />
           <ScalarProperty Name="BiLoaiBo" ColumnName="BiLoaiBo" />
           <ScalarProperty Name="TenTL" ColumnName="TenTL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -377,21 +393,16 @@
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
     <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
-    <EntitySetMapping Name="Permissions">
-      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Permission">
-        <MappingFragment StoreEntitySet="Permission">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Pid" ColumnName="Pid" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserTypes">
-      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.UserType">
-        <MappingFragment StoreEntitySet="UserType">
+    <FunctionImportMapping FunctionImportName="CheckBan" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckBan" />
+    <FunctionImportMapping FunctionImportName="createDbmsUser" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.createDbmsUser" />
+    <FunctionImportMapping FunctionImportName="fun_checkLogin" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_checkLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_checkLogin_Result">
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

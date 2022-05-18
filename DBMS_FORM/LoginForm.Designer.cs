@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cancelbtn = new System.Windows.Forms.Button();
             this.loginbtn = new System.Windows.Forms.Button();
             this.lbforgotpwd = new System.Windows.Forms.Label();
-            this.passwordtxt = new System.Windows.Forms.TextBox();
-            this.usernametxt = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsename = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,8 +53,8 @@
             this.panel1.Controls.Add(this.cancelbtn);
             this.panel1.Controls.Add(this.loginbtn);
             this.panel1.Controls.Add(this.lbforgotpwd);
-            this.panel1.Controls.Add(this.passwordtxt);
-            this.panel1.Controls.Add(this.usernametxt);
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.txtUsename);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -63,6 +63,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(537, 417);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(53, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(122, 113);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(53, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // cancelbtn
             // 
@@ -92,25 +110,25 @@
             // 
             this.lbforgotpwd.AutoSize = true;
             this.lbforgotpwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbforgotpwd.Location = new System.Drawing.Point(201, 253);
+            this.lbforgotpwd.Location = new System.Drawing.Point(301, 250);
             this.lbforgotpwd.Name = "lbforgotpwd";
             this.lbforgotpwd.Size = new System.Drawing.Size(147, 18);
             this.lbforgotpwd.TabIndex = 16;
             this.lbforgotpwd.Text = "Forgot Password?";
             // 
-            // passwordtxt
+            // txtPassword
             // 
-            this.passwordtxt.Location = new System.Drawing.Point(200, 210);
-            this.passwordtxt.Name = "passwordtxt";
-            this.passwordtxt.Size = new System.Drawing.Size(250, 22);
-            this.passwordtxt.TabIndex = 15;
+            this.txtPassword.Location = new System.Drawing.Point(200, 210);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(250, 22);
+            this.txtPassword.TabIndex = 15;
             // 
-            // usernametxt
+            // txtUsename
             // 
-            this.usernametxt.Location = new System.Drawing.Point(200, 154);
-            this.usernametxt.Name = "usernametxt";
-            this.usernametxt.Size = new System.Drawing.Size(250, 22);
-            this.usernametxt.TabIndex = 14;
+            this.txtUsename.Location = new System.Drawing.Point(200, 154);
+            this.txtUsename.Name = "txtUsename";
+            this.txtUsename.Size = new System.Drawing.Size(250, 22);
+            this.txtUsename.TabIndex = 14;
             // 
             // label3
             // 
@@ -142,24 +160,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "LOGIN FORM";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(53, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(53, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(122, 113);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,8 +172,8 @@
             this.Text = "LoginForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,8 +184,8 @@
         private System.Windows.Forms.Button cancelbtn;
         private System.Windows.Forms.Button loginbtn;
         private System.Windows.Forms.Label lbforgotpwd;
-        private System.Windows.Forms.TextBox passwordtxt;
-        private System.Windows.Forms.TextBox usernametxt;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsename;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -38,6 +38,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lb_NAMESTORE = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_name = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.lbSearch = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.lbNameuser = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label_name = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -164,6 +164,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(205, 20);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(129, 30);
+            this.label_name.TabIndex = 5;
+            this.label_name.Text = "Name User";
+            // 
             // btnFind
             // 
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -244,16 +254,6 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1193, 514);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label_name
-            // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(205, 20);
-            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(129, 30);
-            this.label_name.TabIndex = 5;
-            this.label_name.Text = "Name User";
             // 
             // Form1
             // 
