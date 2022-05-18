@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBMS_FORM.BLL;
+using DBMS_FORM.Object;
+
 namespace DBMS_FORM
 {
     public partial class Form1 : Form
@@ -75,10 +77,18 @@ namespace DBMS_FORM
 
         private void button_manager_Click(object sender, EventArgs e)
         {
-            Manager managerForm = new Manager();
-            this.Visible=false;
-            managerForm.ShowDialog();
-            this.Visible = true;
+            if(BaseData.role != "MANAGER")
+            {
+                MessageBox.Show("You do not have permission to use this function", "Error");
+            }
+            else
+            {
+                Manager managerForm = new Manager();
+                this.Visible = false;
+                managerForm.ShowDialog();
+                this.Visible = true;
+            }
+            
         }
     }
 }
