@@ -272,12 +272,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 101);
+            this.label2.Location = new System.Drawing.Point(60, 96);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 30);
+            this.label2.Size = new System.Drawing.Size(102, 30);
             this.label2.TabIndex = 9;
-            this.label2.Text = "ThanhVien";
+            this.label2.Text = "Member";
             // 
             // btnNo
             // 
@@ -319,9 +319,9 @@
             this.label1.Location = new System.Drawing.Point(544, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 30);
+            this.label1.Size = new System.Drawing.Size(105, 30);
             this.label1.TabIndex = 5;
-            this.label1.Text = "MaTV";
+            this.label1.Text = "Mem ID ";
             // 
             // textBox3
             // 
@@ -342,7 +342,7 @@
             // btnAdd
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(1013, 27);
+            this.btnAdd.Location = new System.Drawing.Point(1004, 57);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 36);
@@ -354,22 +354,22 @@
             // lbSoluong
             // 
             this.lbSoluong.AutoSize = true;
-            this.lbSoluong.Location = new System.Drawing.Point(533, 31);
+            this.lbSoluong.Location = new System.Drawing.Point(544, 31);
             this.lbSoluong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoluong.Name = "lbSoluong";
-            this.lbSoluong.Size = new System.Drawing.Size(114, 30);
+            this.lbSoluong.Size = new System.Drawing.Size(105, 30);
             this.lbSoluong.TabIndex = 1;
-            this.lbSoluong.Text = "So Luong";
+            this.lbSoluong.Text = "Quantity";
             // 
             // lbMasach
             // 
             this.lbMasach.AutoSize = true;
-            this.lbMasach.Location = new System.Drawing.Point(57, 31);
+            this.lbMasach.Location = new System.Drawing.Point(65, 31);
             this.lbMasach.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMasach.Name = "lbMasach";
-            this.lbMasach.Size = new System.Drawing.Size(104, 30);
+            this.lbMasach.Size = new System.Drawing.Size(97, 30);
             this.lbMasach.TabIndex = 0;
-            this.lbMasach.Text = "Ma Sach";
+            this.lbMasach.Text = "Book ID";
             // 
             // Banfrm
             // 

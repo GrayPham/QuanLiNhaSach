@@ -302,9 +302,9 @@
             this.lbSoluong.Location = new System.Drawing.Point(1027, 31);
             this.lbSoluong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoluong.Name = "lbSoluong";
-            this.lbSoluong.Size = new System.Drawing.Size(114, 30);
+            this.lbSoluong.Size = new System.Drawing.Size(105, 30);
             this.lbSoluong.TabIndex = 10;
-            this.lbSoluong.Text = "So Luong";
+            this.lbSoluong.Text = "Quantity";
             // 
             // dateTra
             // 
@@ -341,22 +341,22 @@
             // lbNgayTra
             // 
             this.lbNgayTra.AutoSize = true;
-            this.lbNgayTra.Location = new System.Drawing.Point(533, 92);
+            this.lbNgayTra.Location = new System.Drawing.Point(513, 92);
             this.lbNgayTra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNgayTra.Name = "lbNgayTra";
-            this.lbNgayTra.Size = new System.Drawing.Size(109, 30);
+            this.lbNgayTra.Size = new System.Drawing.Size(136, 30);
             this.lbNgayTra.TabIndex = 6;
-            this.lbNgayTra.Text = "Ngay Tra";
+            this.lbNgayTra.Text = "Return date";
             // 
             // lbNgayMuon
             // 
             this.lbNgayMuon.AutoSize = true;
-            this.lbNgayMuon.Location = new System.Drawing.Point(21, 92);
+            this.lbNgayMuon.Location = new System.Drawing.Point(41, 94);
             this.lbNgayMuon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNgayMuon.Name = "lbNgayMuon";
-            this.lbNgayMuon.Size = new System.Drawing.Size(140, 30);
+            this.lbNgayMuon.Size = new System.Drawing.Size(114, 30);
             this.lbNgayMuon.TabIndex = 5;
-            this.lbNgayMuon.Text = "Ngay Muon";
+            this.lbNgayMuon.Text = "Rent date";
             // 
             // textBox3
             // 
@@ -377,12 +377,12 @@
             // lbMaSachThue
             // 
             this.lbMaSachThue.AutoSize = true;
-            this.lbMaSachThue.Location = new System.Drawing.Point(533, 31);
+            this.lbMaSachThue.Location = new System.Drawing.Point(552, 31);
             this.lbMaSachThue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMaSachThue.Name = "lbMaSachThue";
-            this.lbMaSachThue.Size = new System.Drawing.Size(104, 30);
+            this.lbMaSachThue.Size = new System.Drawing.Size(97, 30);
             this.lbMaSachThue.TabIndex = 1;
-            this.lbMaSachThue.Text = "Ma Sach";
+            this.lbMaSachThue.Text = "Book ID";
             // 
             // lbMasach
             // 
@@ -390,9 +390,9 @@
             this.lbMasach.Location = new System.Drawing.Point(57, 31);
             this.lbMasach.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMasach.Name = "lbMasach";
-            this.lbMasach.Size = new System.Drawing.Size(82, 30);
+            this.lbMasach.Size = new System.Drawing.Size(98, 30);
             this.lbMasach.TabIndex = 0;
-            this.lbMasach.Text = "Ma TV";
+            this.lbMasach.Text = "Mem ID";
             // 
             // Thuefrm
             // 
