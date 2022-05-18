@@ -25,7 +25,7 @@ namespace DBMS_FORM
         {
             dataGridView1.DataSource = nv.hienThi();
             label_name.Text = BaseData.Name;
-            lbRole.Text = BaseData.role;
+            labelRole.Text = BaseData.role;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
