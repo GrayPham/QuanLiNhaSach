@@ -73,3 +73,4 @@ C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.dll
 C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.xml
 C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
+C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.ResolveComReference.cache

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DBMS_FORM
 {
     static class Program
@@ -16,7 +17,7 @@ namespace DBMS_FORM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormThanhVien());
+            Application.Run(new TurnoverCheckForm());
         }
     }
 }
