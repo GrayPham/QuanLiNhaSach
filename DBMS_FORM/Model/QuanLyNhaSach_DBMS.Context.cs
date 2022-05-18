@@ -38,6 +38,8 @@ namespace DBMS_FORM.Model
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<ThanhVien> ThanhViens { get; set; }
         public DbSet<TheLoai> TheLoais { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
     
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "fluongNV")]
         public virtual IQueryable<fluongNV_Result> fluongNV()

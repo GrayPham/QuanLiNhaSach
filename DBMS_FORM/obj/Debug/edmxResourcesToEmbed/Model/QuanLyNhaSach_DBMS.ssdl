@@ -71,13 +71,23 @@
     <Property Name="MNV" Type="int" Nullable="false" />
     <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
     <Property Name="SDT" Type="varchar" MaxLength="15" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
     <Property Name="DiaChi" Type="varchar" MaxLength="50" />
     <Property Name="SoSachBan" Type="int" />
     <Property Name="luongNV" Type="int" />
     <Property Name="NgayVang" Type="int" />
     <Property Name="NgayNghiViec" Type="datetime" />
+    <Property Name="TypeId" Type="int" />
     <Property Name="DaNghi" Type="bit" />
     <Property Name="MNQL" Type="int" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Pid" />
+    </Key>
+    <Property Name="Pid" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -122,6 +132,13 @@
     <Property Name="MTL" Type="int" Nullable="false" />
     <Property Name="BiLoaiBo" Type="bit" />
     <Property Name="TenTL" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <Association Name="FK_CungCap_NhaCungCap">
     <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="1">
@@ -282,6 +299,18 @@
       </Principal>
       <Dependent Role="NV1">
         <PropertyRef Name="MNQL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NV_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="NV" Type="Self.NV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="NV">
+        <PropertyRef Name="TypeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -721,10 +750,12 @@
     <EntitySet Name="Muon" EntityType="Self.Muon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sach" EntityType="Self.Sach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThanhVien" EntityType="Self.ThanhVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CungCap_NhaCungCap" Association="Self.FK_CungCap_NhaCungCap">
       <End Role="NhaCungCap" EntitySet="NhaCungCap" />
       <End Role="CungCap" EntitySet="CungCap" />
@@ -772,6 +803,10 @@
     <AssociationSet Name="FK_NV_NV1" Association="Self.FK_NV_NV1">
       <End Role="NV" EntitySet="NV" />
       <End Role="NV1" EntitySet="NV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NV_UserType" Association="Self.FK_NV_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="NV" EntitySet="NV" />
     </AssociationSet>
     <AssociationSet Name="FK_Sach_TheLoai" Association="Self.FK_Sach_TheLoai">
       <End Role="TheLoai" EntitySet="TheLoai" />

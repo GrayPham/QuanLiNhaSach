@@ -32,11 +32,15 @@ namespace DBMS_FORM.Model
         public Nullable<System.DateTime> NgayNghiViec { get; set; }
         public Nullable<bool> DaNghi { get; set; }
         public Nullable<int> MNQL { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> TypeId { get; set; }
     
         public virtual ICollection<CungCap> CungCaps { get; set; }
         public virtual ICollection<DaBan> DaBans { get; set; }
         public virtual ICollection<Muon> Muons { get; set; }
         public virtual ICollection<NV> NV1 { get; set; }
         public virtual NV NV2 { get; set; }
+        public virtual UserType UserType { get; set; }
     }
 }
