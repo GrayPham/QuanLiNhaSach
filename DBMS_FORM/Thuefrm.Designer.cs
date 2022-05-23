@@ -45,8 +45,6 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbSearch = new System.Windows.Forms.Label();
-            this.lbRole = new System.Windows.Forms.Label();
-            this.lbNameuser = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lbSoluong = new System.Windows.Forms.Label();
@@ -59,6 +57,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbMaSachThue = new System.Windows.Forms.Label();
             this.lbMasach = new System.Windows.Forms.Label();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -121,6 +123,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -141,42 +145,36 @@
             this.Column1.HeaderText = "Ma Sach";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Ten Sach";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 230;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Don Gia";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 140;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "So Luong";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Ngay Muon";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 140;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Ngay Tra";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 140;
             // 
             // groupBox1
             // 
@@ -203,11 +201,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelRole);
+            this.groupBox2.Controls.Add(this.label_name);
+            this.groupBox2.Controls.Add(this.lbRole);
+            this.groupBox2.Controls.Add(this.lbNameuser);
             this.groupBox2.Controls.Add(this.btnFind);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.lbSearch);
-            this.groupBox2.Controls.Add(this.lbRole);
-            this.groupBox2.Controls.Add(this.lbNameuser);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(221, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -245,26 +245,6 @@
             this.lbSearch.Size = new System.Drawing.Size(83, 30);
             this.lbSearch.TabIndex = 2;
             this.lbSearch.Text = "Search";
-            // 
-            // lbRole
-            // 
-            this.lbRole.AutoSize = true;
-            this.lbRole.Location = new System.Drawing.Point(57, 82);
-            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(68, 30);
-            this.lbRole.TabIndex = 1;
-            this.lbRole.Text = "ROLE";
-            // 
-            // lbNameuser
-            // 
-            this.lbNameuser.AutoSize = true;
-            this.lbNameuser.Location = new System.Drawing.Point(57, 20);
-            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNameuser.Name = "lbNameuser";
-            this.lbNameuser.Size = new System.Drawing.Size(129, 30);
-            this.lbNameuser.TabIndex = 0;
-            this.lbNameuser.Text = "Name User";
             // 
             // groupBox4
             // 
@@ -394,6 +374,46 @@
             this.lbMasach.TabIndex = 0;
             this.lbMasach.Text = "Mem ID";
             // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.Location = new System.Drawing.Point(165, 81);
+            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(129, 30);
+            this.labelRole.TabIndex = 10;
+            this.labelRole.Text = "Name User";
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(165, 22);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(129, 30);
+            this.label_name.TabIndex = 9;
+            this.label_name.Text = "Name User";
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Location = new System.Drawing.Point(17, 84);
+            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(68, 30);
+            this.lbRole.TabIndex = 8;
+            this.lbRole.Text = "ROLE";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Location = new System.Drawing.Point(17, 22);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(129, 30);
+            this.lbNameuser.TabIndex = 7;
+            this.lbNameuser.Text = "Name User";
+            // 
             // Thuefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -410,6 +430,7 @@
             this.Name = "Thuefrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thue Sach";
+            this.Load += new System.EventHandler(this.Thuefrm_Load_1);
             this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -435,8 +456,6 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbSearch;
-        private System.Windows.Forms.Label lbRole;
-        private System.Windows.Forms.Label lbNameuser;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -456,5 +475,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lbMaSachThue;
         private System.Windows.Forms.Label lbMasach;
+        private System.Windows.Forms.Label labelRole;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.Label lbNameuser;
     }
 }

@@ -50,6 +50,13 @@ namespace DBMS_FORM.BLL
             return null;
         }
 
+        internal List<UserType> GetTypeUser()
+        {
+            List<UserType> typeUser = db.UserTypes.ToList<UserType>();
+            
+            return typeUser;
+        }
+
         internal object GetManager()
         {
             //var manager = db.fun_DanhSachQuanLy();

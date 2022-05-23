@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBMS_FORM.Object;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,8 @@ namespace DBMS_FORM
 
         private void Importfrm_Load(object sender, EventArgs e)
         {
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
             DB mydb = new DB();
             mydb.openconnection();
             SqlCommand command = new SqlCommand("Select * From NhaCungCap", mydb.getConnection);

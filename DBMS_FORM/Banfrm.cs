@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBMS_FORM.Object;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -244,6 +245,12 @@ namespace DBMS_FORM
         private void btnNo_CheckedChanged(object sender, EventArgs e)
         {
             textBox4.Enabled = false;
+        }
+
+        private void Banfrm_Load(object sender, EventArgs e)
+        {
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
         }
     }
 }

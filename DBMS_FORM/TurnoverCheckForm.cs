@@ -1,4 +1,5 @@
 ﻿using DBMS_FORM.BLL;
+using DBMS_FORM.Object;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,6 +110,12 @@ namespace DBMS_FORM
                 }
 
             }
+        }
+
+        private void TurnoverCheckForm_Load(object sender, EventArgs e)
+        {
+            label_name.Text = BaseData.Name;
+
         }
     }
 }

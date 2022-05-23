@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBMS_FORM.Object;
 using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -124,6 +125,12 @@ namespace DBMS_FORM
                 stream.Close();
             }
             System.Diagnostics.Process.Start(folderPath + "\\" + strFileName);
+        }
+
+        private void NhapHoaDon_Load(object sender, EventArgs e)
+        {
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
         }
     }
 }

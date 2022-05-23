@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBMS_FORM.Object;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -176,6 +177,12 @@ namespace DBMS_FORM
             {
                 dataGridView1.Rows.RemoveAt(item.Index);
             }
+        }
+
+        private void Thuefrm_Load_1(object sender, EventArgs e)
+        {
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
         }
     }
 }

@@ -11,11 +11,11 @@ namespace DBMS_FORM.BLL
 {
     public class Login : QuanLyNhaSach
     {
-        DB db = new DB();
+        DB dblogin = new DB();
         internal object CheckLogin(string username, string password)
         {
             
-            SqlCommand command = new SqlCommand("SELECT * FROM dbo.fun_checkLogin('" + username + "', '" + password + "')", db.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM dbo.fun_checkLogin('" + username + "', '" + password + "')", dblogin.getConnection);
             SqlDataAdapter sda = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             sda.Fill(dt);

@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbfind = new System.Windows.Forms.Label();
             this.txtfind = new System.Windows.Forms.TextBox();
             this.btnremove = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.button_search = new System.Windows.Forms.Button();
-            this.comboBox_find = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numeric_booksale = new System.Windows.Forms.NumericUpDown();
             this.numeric_absent = new System.Windows.Forms.NumericUpDown();
@@ -58,7 +57,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
+            this.comboBox_find = new System.Windows.Forms.ComboBox();
             this.comboBox_type = new System.Windows.Forms.ComboBox();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_booksale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_absent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -137,15 +141,6 @@
             this.button_search.Text = "SEARCH";
             this.button_search.UseVisualStyleBackColor = false;
             this.button_search.Click += new System.EventHandler(this.button_search_Click);
-            // 
-            // comboBox_find
-            // 
-            this.comboBox_find.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_find.FormattingEnabled = true;
-            this.comboBox_find.Location = new System.Drawing.Point(1304, 159);
-            this.comboBox_find.Name = "comboBox_find";
-            this.comboBox_find.Size = new System.Drawing.Size(155, 35);
-            this.comboBox_find.TabIndex = 10;
             // 
             // label1
             // 
@@ -372,14 +367,14 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
             this.dataGridView1.Location = new System.Drawing.Point(13, 94);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -387,6 +382,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(697, 582);
             this.dataGridView1.TabIndex = 51;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick_1);
             // 
             // label10
             // 
@@ -400,14 +396,68 @@
             this.label10.TabIndex = 53;
             this.label10.Text = "Type Of User";
             // 
+            // comboBox_find
+            // 
+            this.comboBox_find.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_find.FormattingEnabled = true;
+            this.comboBox_find.Location = new System.Drawing.Point(1304, 159);
+            this.comboBox_find.Name = "comboBox_find";
+            this.comboBox_find.Size = new System.Drawing.Size(155, 35);
+            this.comboBox_find.TabIndex = 10;
+            // 
             // comboBox_type
             // 
             this.comboBox_type.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_type.FormattingEnabled = true;
-            this.comboBox_type.Location = new System.Drawing.Point(1304, 338);
+            this.comboBox_type.Location = new System.Drawing.Point(1303, 338);
             this.comboBox_type.Name = "comboBox_type";
             this.comboBox_type.Size = new System.Drawing.Size(155, 35);
-            this.comboBox_type.TabIndex = 52;
+            this.comboBox_type.TabIndex = 54;
+            this.comboBox_type.SelectedIndexChanged += new System.EventHandler(this.comboBox_type_SelectedIndexChanged);
+            // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRole.Location = new System.Drawing.Point(172, 49);
+            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(110, 25);
+            this.labelRole.TabIndex = 58;
+            this.labelRole.Text = "Name User";
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name.Location = new System.Drawing.Point(172, 9);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(110, 25);
+            this.label_name.TabIndex = 57;
+            this.label_name.Text = "Name User";
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRole.Location = new System.Drawing.Point(24, 52);
+            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(65, 25);
+            this.lbRole.TabIndex = 56;
+            this.lbRole.Text = "ROLE";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameuser.Location = new System.Drawing.Point(24, 9);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(110, 25);
+            this.lbNameuser.TabIndex = 55;
+            this.lbNameuser.Text = "Name User";
             // 
             // FormNhanVien
             // 
@@ -415,8 +465,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1560, 695);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelRole);
+            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.lbRole);
+            this.Controls.Add(this.lbNameuser);
             this.Controls.Add(this.comboBox_type);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.label8);
@@ -466,7 +520,6 @@
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button button_search;
-        private System.Windows.Forms.ComboBox comboBox_find;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numeric_booksale;
         private System.Windows.Forms.NumericUpDown numeric_absent;
@@ -489,6 +542,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox_find;
         private System.Windows.Forms.ComboBox comboBox_type;
+        private System.Windows.Forms.Label labelRole;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.Label lbNameuser;
     }
 }

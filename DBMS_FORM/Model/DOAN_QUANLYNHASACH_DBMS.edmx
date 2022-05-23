@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CungCap">
           <Key>
             <PropertyRef Name="MaSach" />
@@ -504,10 +504,10 @@
                 <Property Name="MTV" Type="int" Nullable="false" />
                 <Property Name="HoVaTenTV" Type="nvarchar" MaxLength="50" />
                 <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
-                <Property Name="Mail" Type="nvarchar" MaxLength="50" />
                 <Property Name="SoDT" Type="varchar" MaxLength="15" />
-                <Property Name="ConSD" Type="bit" />
+                <Property Name="Mail" Type="nvarchar" MaxLength="50" />
                 <Property Name="MDThanThiet" Type="int" />
+                <Property Name="ConSD" Type="bit" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -845,8 +845,7 @@
             <End Role="Sach" EntitySet="Sach" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DOAN_QUANLYNHASACH_DBMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1431,29 +1430,29 @@
           <FunctionImport Name="fun_DanhSachQuanLy" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result)" />
           <FunctionImport Name="fun_SachCon" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SachCon_Result)" />
           <FunctionImport Name="fun_SearchNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchNhanVien_Result)">
-            <Parameter Name="nv" Mode="In" Type="String" />
+          <Parameter Name="nv" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_SearchSach" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchSach_Result)">
-            <Parameter Name="searchSach" Mode="In" Type="String" />
+          <Parameter Name="searchSach" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_SearchThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SearchThanhVien_Result)">
-            <Parameter Name="searchThanhVien" Mode="In" Type="String" />
+          <Parameter Name="searchThanhVien" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="fun_ThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_ThanhVien_Result)" />
           <FunctionImport Name="fuNhanvienOfQl" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fuNhanvienOfQl_Result)">
-            <Parameter Name="maNQL" Mode="In" Type="Int32" />
+          <Parameter Name="maNQL" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LowestSelling" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.LowestSelling_Result)" />
           <FunctionImport Name="MuonQuaHan" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.MuonQuaHan_Result)" />
           <FunctionImport Name="NVinHD" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.NVinHD_Result)">
-            <Parameter Name="maHD" Mode="In" Type="Int32" />
+          <Parameter Name="maHD" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SearchNhaCC" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.SearchNhaCC_Result)">
-            <Parameter Name="search" Mode="In" Type="String" />
+          <Parameter Name="search" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TurnoverByDay" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByDay_Result)" />
           <FunctionImport Name="TurnoverByMonth" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByMonth_Result)">
-            <Parameter Name="yearNow" Mode="In" Type="DateTime" />
+          <Parameter Name="yearNow" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="TurnoverByYear" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByYear_Result)" />
           <FunctionImport Name="Add_ThanhVien" ReturnType="Collection(String)">
@@ -1484,7 +1483,7 @@
             <Parameter Name="role" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="deleteSach">
-            <Parameter Name="maSach" Mode="In" Type="Int32" />
+          <Parameter Name="maSach" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="IMPORTSACH">
             <Parameter Name="MS" Mode="In" Type="Int32" />

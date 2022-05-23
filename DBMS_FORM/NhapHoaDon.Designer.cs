@@ -50,8 +50,12 @@
             this.btnPDF = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radiosell = new System.Windows.Forms.RadioButton();
             this.radiorent = new System.Windows.Forms.RadioButton();
+            this.radiosell = new System.Windows.Forms.RadioButton();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +64,7 @@
             // 
             this.lbNameForm.AutoSize = true;
             this.lbNameForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameForm.Location = new System.Drawing.Point(127, 34);
+            this.lbNameForm.Location = new System.Drawing.Point(160, 89);
             this.lbNameForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNameForm.Name = "lbNameForm";
             this.lbNameForm.Size = new System.Drawing.Size(393, 51);
@@ -71,7 +75,7 @@
             // 
             this.lbTypeActivate.AutoSize = true;
             this.lbTypeActivate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeActivate.Location = new System.Drawing.Point(147, 118);
+            this.lbTypeActivate.Location = new System.Drawing.Point(202, 183);
             this.lbTypeActivate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTypeActivate.Name = "lbTypeActivate";
             this.lbTypeActivate.Size = new System.Drawing.Size(64, 30);
@@ -82,7 +86,7 @@
             // 
             this.lbKhachHang.AutoSize = true;
             this.lbKhachHang.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKhachHang.Location = new System.Drawing.Point(30, 169);
+            this.lbKhachHang.Location = new System.Drawing.Point(85, 234);
             this.lbKhachHang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbKhachHang.Name = "lbKhachHang";
             this.lbKhachHang.Size = new System.Drawing.Size(181, 30);
@@ -93,7 +97,7 @@
             // 
             this.lbNgayNhap.AutoSize = true;
             this.lbNgayNhap.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayNhap.Location = new System.Drawing.Point(89, 230);
+            this.lbNgayNhap.Location = new System.Drawing.Point(144, 295);
             this.lbNgayNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNgayNhap.Name = "lbNgayNhap";
             this.lbNgayNhap.Size = new System.Drawing.Size(122, 30);
@@ -104,7 +108,7 @@
             // 
             this.lbThanhVien.AutoSize = true;
             this.lbThanhVien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThanhVien.Location = new System.Drawing.Point(109, 292);
+            this.lbThanhVien.Location = new System.Drawing.Point(164, 357);
             this.lbThanhVien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbThanhVien.Name = "lbThanhVien";
             this.lbThanhVien.Size = new System.Drawing.Size(102, 30);
@@ -115,7 +119,7 @@
             // 
             this.lbGiamgia.AutoSize = true;
             this.lbGiamgia.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiamgia.Location = new System.Drawing.Point(104, 353);
+            this.lbGiamgia.Location = new System.Drawing.Point(159, 418);
             this.lbGiamgia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbGiamgia.Name = "lbGiamgia";
             this.lbGiamgia.Size = new System.Drawing.Size(107, 30);
@@ -126,7 +130,7 @@
             // 
             this.lbTenSach.AutoSize = true;
             this.lbTenSach.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenSach.Location = new System.Drawing.Point(78, 415);
+            this.lbTenSach.Location = new System.Drawing.Point(133, 480);
             this.lbTenSach.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTenSach.Name = "lbTenSach";
             this.lbTenSach.Size = new System.Drawing.Size(133, 30);
@@ -137,7 +141,7 @@
             // 
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongTien.Location = new System.Drawing.Point(65, 477);
+            this.lbTongTien.Location = new System.Drawing.Point(120, 542);
             this.lbTongTien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTongTien.Name = "lbTongTien";
             this.lbTongTien.Size = new System.Drawing.Size(146, 30);
@@ -147,7 +151,7 @@
             // customertxt
             // 
             this.customertxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customertxt.Location = new System.Drawing.Point(219, 169);
+            this.customertxt.Location = new System.Drawing.Point(274, 234);
             this.customertxt.Margin = new System.Windows.Forms.Padding(4);
             this.customertxt.Name = "customertxt";
             this.customertxt.Size = new System.Drawing.Size(385, 34);
@@ -156,7 +160,7 @@
             // inputdatetxt
             // 
             this.inputdatetxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputdatetxt.Location = new System.Drawing.Point(219, 230);
+            this.inputdatetxt.Location = new System.Drawing.Point(274, 295);
             this.inputdatetxt.Margin = new System.Windows.Forms.Padding(4);
             this.inputdatetxt.Name = "inputdatetxt";
             this.inputdatetxt.Size = new System.Drawing.Size(385, 34);
@@ -165,7 +169,7 @@
             // discounttxt
             // 
             this.discounttxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discounttxt.Location = new System.Drawing.Point(219, 353);
+            this.discounttxt.Location = new System.Drawing.Point(274, 418);
             this.discounttxt.Margin = new System.Windows.Forms.Padding(4);
             this.discounttxt.Name = "discounttxt";
             this.discounttxt.Size = new System.Drawing.Size(149, 34);
@@ -174,7 +178,7 @@
             // booknametxt
             // 
             this.booknametxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booknametxt.Location = new System.Drawing.Point(219, 411);
+            this.booknametxt.Location = new System.Drawing.Point(274, 476);
             this.booknametxt.Margin = new System.Windows.Forms.Padding(4);
             this.booknametxt.Name = "booknametxt";
             this.booknametxt.Size = new System.Drawing.Size(385, 34);
@@ -183,7 +187,7 @@
             // totaltxt
             // 
             this.totaltxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totaltxt.Location = new System.Drawing.Point(219, 473);
+            this.totaltxt.Location = new System.Drawing.Point(274, 538);
             this.totaltxt.Margin = new System.Windows.Forms.Padding(4);
             this.totaltxt.Name = "totaltxt";
             this.totaltxt.Size = new System.Drawing.Size(385, 34);
@@ -221,7 +225,7 @@
             // 
             this.lbMatv.AutoSize = true;
             this.lbMatv.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatv.Location = new System.Drawing.Point(395, 292);
+            this.lbMatv.Location = new System.Drawing.Point(450, 357);
             this.lbMatv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMatv.Name = "lbMatv";
             this.lbMatv.Size = new System.Drawing.Size(98, 30);
@@ -231,7 +235,7 @@
             // memidtxt
             // 
             this.memidtxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memidtxt.Location = new System.Drawing.Point(501, 292);
+            this.memidtxt.Location = new System.Drawing.Point(556, 234);
             this.memidtxt.Margin = new System.Windows.Forms.Padding(4);
             this.memidtxt.Name = "memidtxt";
             this.memidtxt.Size = new System.Drawing.Size(103, 34);
@@ -240,7 +244,7 @@
             // quantxt
             // 
             this.quantxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantxt.Location = new System.Drawing.Point(501, 353);
+            this.quantxt.Location = new System.Drawing.Point(556, 295);
             this.quantxt.Margin = new System.Windows.Forms.Padding(4);
             this.quantxt.Name = "quantxt";
             this.quantxt.Size = new System.Drawing.Size(103, 34);
@@ -250,7 +254,7 @@
             // 
             this.lbSoLuong.AutoSize = true;
             this.lbSoLuong.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoLuong.Location = new System.Drawing.Point(388, 353);
+            this.lbSoLuong.Location = new System.Drawing.Point(443, 418);
             this.lbSoLuong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoLuong.Name = "lbSoLuong";
             this.lbSoLuong.Size = new System.Drawing.Size(105, 30);
@@ -261,7 +265,7 @@
             // 
             this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPDF.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPDF.Location = new System.Drawing.Point(45, 566);
+            this.btnPDF.Location = new System.Drawing.Point(100, 631);
             this.btnPDF.Margin = new System.Windows.Forms.Padding(4);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(569, 49);
@@ -274,7 +278,7 @@
             // 
             this.panel1.Controls.Add(this.btnstill);
             this.panel1.Controls.Add(this.btnno);
-            this.panel1.Location = new System.Drawing.Point(219, 281);
+            this.panel1.Location = new System.Drawing.Point(274, 346);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 54);
             this.panel1.TabIndex = 24;
@@ -283,24 +287,10 @@
             // 
             this.panel2.Controls.Add(this.radiorent);
             this.panel2.Controls.Add(this.radiosell);
-            this.panel2.Location = new System.Drawing.Point(219, 107);
+            this.panel2.Location = new System.Drawing.Point(274, 172);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(171, 54);
             this.panel2.TabIndex = 25;
-            // 
-            // radiosell
-            // 
-            this.radiosell.AutoSize = true;
-            this.radiosell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiosell.ForeColor = System.Drawing.Color.White;
-            this.radiosell.Location = new System.Drawing.Point(4, 11);
-            this.radiosell.Margin = new System.Windows.Forms.Padding(4);
-            this.radiosell.Name = "radiosell";
-            this.radiosell.Size = new System.Drawing.Size(71, 34);
-            this.radiosell.TabIndex = 16;
-            this.radiosell.TabStop = true;
-            this.radiosell.Text = "Sell";
-            this.radiosell.UseVisualStyleBackColor = true;
             // 
             // radiorent
             // 
@@ -316,12 +306,74 @@
             this.radiorent.Text = "Rent";
             this.radiorent.UseVisualStyleBackColor = true;
             // 
+            // radiosell
+            // 
+            this.radiosell.AutoSize = true;
+            this.radiosell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiosell.ForeColor = System.Drawing.Color.White;
+            this.radiosell.Location = new System.Drawing.Point(4, 11);
+            this.radiosell.Margin = new System.Windows.Forms.Padding(4);
+            this.radiosell.Name = "radiosell";
+            this.radiosell.Size = new System.Drawing.Size(71, 34);
+            this.radiosell.TabIndex = 16;
+            this.radiosell.TabStop = true;
+            this.radiosell.Text = "Sell";
+            this.radiosell.UseVisualStyleBackColor = true;
+            // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRole.Location = new System.Drawing.Point(660, 18);
+            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(110, 25);
+            this.labelRole.TabIndex = 62;
+            this.labelRole.Text = "Name User";
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name.Location = new System.Drawing.Point(173, 18);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(110, 25);
+            this.label_name.TabIndex = 61;
+            this.label_name.Text = "Name User";
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRole.Location = new System.Drawing.Point(512, 21);
+            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(65, 25);
+            this.lbRole.TabIndex = 60;
+            this.lbRole.Text = "ROLE";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameuser.Location = new System.Drawing.Point(25, 18);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(110, 25);
+            this.lbNameuser.TabIndex = 59;
+            this.lbNameuser.Text = "Name User";
+            // 
             // NhapHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(653, 644);
+            this.ClientSize = new System.Drawing.Size(783, 747);
+            this.Controls.Add(this.labelRole);
+            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.lbRole);
+            this.Controls.Add(this.lbNameuser);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.quantxt);
             this.Controls.Add(this.lbSoLuong);
@@ -346,6 +398,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhapHoaDon";
             this.Text = "Input Bill";
+            this.Load += new System.EventHandler(this.NhapHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -381,5 +434,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radiorent;
         private System.Windows.Forms.RadioButton radiosell;
+        private System.Windows.Forms.Label labelRole;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.Label lbNameuser;
     }
 }
