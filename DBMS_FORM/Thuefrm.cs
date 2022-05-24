@@ -20,92 +20,88 @@ namespace DBMS_FORM
 
         }
 
-        private void lbMasach_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Thuefrm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            DB mydb = new DB();
-            mydb.openconnection();
-            int MS = int.Parse(textBox3.Text);
-            int MTV = int.Parse(textBox2.Text);
-            int Soluong = int.Parse(textBox4.Text);
-            SqlCommand command = new SqlCommand("Select MaSach, TenSach, DonGia FROM Sach Where MaSach =" + MS, mydb.getConnection);
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            SqlCommand command2 = new SqlCommand("Select MTV FROM ThanhVien WHERE MTV =" + MTV, mydb.getConnection);
-            SqlDataAdapter adapter2 = new SqlDataAdapter();
-            DataTable table2 = new DataTable();
-            adapter.SelectCommand = command2;
-            adapter.Fill(table2);
-
-            if (table2.Rows.Count > 0)
+            try
             {
-                if (table.Rows.Count > 0)
+                DB mydb = new DB();
+                mydb.openconnection();
+                int MS = int.Parse(textBox3.Text);
+                int MTV = int.Parse(textBox2.Text);
+                int Soluong = int.Parse(textBox4.Text);
+                SqlCommand command = new SqlCommand("Select MaSach, TenSach, DonGia FROM Sach Where MaSach =" + MS, mydb.getConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable table = new DataTable();
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                SqlCommand command2 = new SqlCommand("Select MTV FROM ThanhVien WHERE MTV =" + MTV, mydb.getConnection);
+                SqlDataAdapter adapter2 = new SqlDataAdapter();
+                DataTable table2 = new DataTable();
+                adapter.SelectCommand = command2;
+                adapter.Fill(table2);
+
+                if (table2.Rows.Count > 0)
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "CheckMuon";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = mydb.getConnection;
-                    SqlParameter parameter = new SqlParameter();
-                    cmd.Parameters.Add("@MTV", SqlDbType.Int).Value = MTV;
-                    cmd.Parameters.Add("@MS", SqlDbType.Int).Value = MS;
-                    cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = Soluong;
-                    cmd.Parameters.Add("@Status", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("@Status2", SqlDbType.Int).Direction = ParameterDirection.Output;
-
-                    cmd.ExecuteNonQuery();
-
-                    int flag1 = Convert.ToInt32(cmd.Parameters["@Status"].Value);
-                    int flag2 = Convert.ToInt32(cmd.Parameters["@Status2"].Value);
-                    if (flag1 == 1)
+                    if (table.Rows.Count > 0)
                     {
-                        if (flag2 == 1)
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "CheckMuon";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = mydb.getConnection;
+                        SqlParameter parameter = new SqlParameter();
+                        cmd.Parameters.Add("@MTV", SqlDbType.Int).Value = MTV;
+                        cmd.Parameters.Add("@MS", SqlDbType.Int).Value = MS;
+                        cmd.Parameters.Add("@SoLuong", SqlDbType.Int).Value = Soluong;
+                        cmd.Parameters.Add("@Status", SqlDbType.Int).Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add("@Status2", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                        cmd.ExecuteNonQuery();
+
+                        int flag1 = Convert.ToInt32(cmd.Parameters["@Status"].Value);
+                        int flag2 = Convert.ToInt32(cmd.Parameters["@Status2"].Value);
+                        if (flag1 == 1)
                         {
-                            SqlDataReader reader = command.ExecuteReader();
-                            while (reader.Read())
+                            if (flag2 == 1)
                             {
-                                dataGridView1.Rows.Add(reader["MaSach"].ToString(), reader["TenSach"].ToString(), reader["DonGia"].ToString(), textBox4.Text, dateMuon.Text, dateTra.Text);
+                                SqlDataReader reader = command.ExecuteReader();
+                                while (reader.Read())
+                                {
+                                    dataGridView1.Rows.Add(reader["MaSach"].ToString(), reader["TenSach"].ToString(), reader["DonGia"].ToString(), textBox4.Text, dateMuon.Text, dateTra.Text);
+                                }
+                                reader.Close();
                             }
-                            reader.Close();
+                            else
+                            {
+                                MessageBox.Show("So Luong Sach Khong Du", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("So Luong Sach Khong Du", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Da Muon Sach Nay Roi!", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+
+
+
                     }
                     else
                     {
-                        MessageBox.Show("Da Muon Sach Nay Roi!", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Invalid Ma Sach", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-
-
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Ma Sach", "MS ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid Ma Thanh Vien", "MTV ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid Ma Thanh Vien", "MTV ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
 
         }
@@ -160,6 +156,7 @@ namespace DBMS_FORM
                     comand.Parameters.Add("@ThanhVien", SqlDbType.Bit).Value = false;
 
                     comand.ExecuteNonQuery();
+                    MessageBox.Show("Invoice successful", "Information");
 
                 }
                 catch (Exception E)

@@ -162,7 +162,7 @@ namespace DBMS_FORM
 
                         comand.ExecuteNonQuery();
 
-
+                        MessageBox.Show("Invoice successful", "Information");
                     }
                 }
                 catch (Exception E)

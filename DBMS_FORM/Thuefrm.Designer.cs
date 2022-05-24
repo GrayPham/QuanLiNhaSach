@@ -42,9 +42,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_NAMESTORE = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbSearch = new System.Windows.Forms.Label();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lbSoluong = new System.Windows.Forms.Label();
@@ -57,10 +58,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbMaSachThue = new System.Windows.Forms.Label();
             this.lbMasach = new System.Windows.Forms.Label();
-            this.labelRole = new System.Windows.Forms.Label();
-            this.label_name = new System.Windows.Forms.Label();
-            this.lbRole = new System.Windows.Forms.Label();
-            this.lbNameuser = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -205,9 +202,6 @@
             this.groupBox2.Controls.Add(this.label_name);
             this.groupBox2.Controls.Add(this.lbRole);
             this.groupBox2.Controls.Add(this.lbNameuser);
-            this.groupBox2.Controls.Add(this.btnFind);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.lbSearch);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(221, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -217,34 +211,45 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
-            // btnFind
+            // labelRole
             // 
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Location = new System.Drawing.Point(929, 78);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(100, 36);
-            this.btnFind.TabIndex = 4;
-            this.btnFind.Text = "Find";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.labelRole.AutoSize = true;
+            this.labelRole.Location = new System.Drawing.Point(165, 81);
+            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(129, 30);
+            this.labelRole.TabIndex = 10;
+            this.labelRole.Text = "Name User";
             // 
-            // textBox1
+            // label_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(715, 78);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 34);
-            this.textBox1.TabIndex = 3;
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(165, 22);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(129, 30);
+            this.label_name.TabIndex = 9;
+            this.label_name.Text = "Name User";
             // 
-            // lbSearch
+            // lbRole
             // 
-            this.lbSearch.AutoSize = true;
-            this.lbSearch.Location = new System.Drawing.Point(621, 82);
-            this.lbSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbSearch.Name = "lbSearch";
-            this.lbSearch.Size = new System.Drawing.Size(83, 30);
-            this.lbSearch.TabIndex = 2;
-            this.lbSearch.Text = "Search";
+            this.lbRole.AutoSize = true;
+            this.lbRole.Location = new System.Drawing.Point(17, 84);
+            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(68, 30);
+            this.lbRole.TabIndex = 8;
+            this.lbRole.Text = "ROLE";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Location = new System.Drawing.Point(17, 22);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(129, 30);
+            this.lbNameuser.TabIndex = 7;
+            this.lbNameuser.Text = "Name User";
             // 
             // groupBox4
             // 
@@ -374,46 +379,6 @@
             this.lbMasach.TabIndex = 0;
             this.lbMasach.Text = "Mem ID";
             // 
-            // labelRole
-            // 
-            this.labelRole.AutoSize = true;
-            this.labelRole.Location = new System.Drawing.Point(165, 81);
-            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(129, 30);
-            this.labelRole.TabIndex = 10;
-            this.labelRole.Text = "Name User";
-            // 
-            // label_name
-            // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(165, 22);
-            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(129, 30);
-            this.label_name.TabIndex = 9;
-            this.label_name.Text = "Name User";
-            // 
-            // lbRole
-            // 
-            this.lbRole.AutoSize = true;
-            this.lbRole.Location = new System.Drawing.Point(17, 84);
-            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(68, 30);
-            this.lbRole.TabIndex = 8;
-            this.lbRole.Text = "ROLE";
-            // 
-            // lbNameuser
-            // 
-            this.lbNameuser.AutoSize = true;
-            this.lbNameuser.Location = new System.Drawing.Point(17, 22);
-            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNameuser.Name = "lbNameuser";
-            this.lbNameuser.Size = new System.Drawing.Size(129, 30);
-            this.lbNameuser.TabIndex = 7;
-            this.lbNameuser.Text = "Name User";
-            // 
             // Thuefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,9 +418,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lb_NAMESTORE;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
