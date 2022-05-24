@@ -79,7 +79,7 @@ namespace DBMS_FORM
                     string username = textBox_username.Text;
                     string pass = textBox_password.Text;
                     int typeid = Convert.ToInt32(comboBox_type.SelectedValue);
-
+                    
 
                     managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, username, pass,typeid, vang, maNQL);
 
