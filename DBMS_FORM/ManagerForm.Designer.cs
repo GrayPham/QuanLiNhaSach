@@ -33,11 +33,11 @@
             this.staffManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DVGNhanVien = new System.Windows.Forms.DataGridView();
             this.lbNameuser = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -85,15 +85,15 @@
             this.bookManagementToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
             this.bookManagementToolStripMenuItem.Text = "Book Management";
             // 
-            // dataGridView1
+            // DVGNhanVien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 339);
-            this.dataGridView1.TabIndex = 1;
+            this.DVGNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVGNhanVien.Location = new System.Drawing.Point(12, 90);
+            this.DVGNhanVien.Name = "DVGNhanVien";
+            this.DVGNhanVien.RowHeadersWidth = 51;
+            this.DVGNhanVien.RowTemplate.Height = 24;
+            this.DVGNhanVien.Size = new System.Drawing.Size(776, 339);
+            this.DVGNhanVien.TabIndex = 1;
             // 
             // lbNameuser
             // 
@@ -127,7 +127,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.lbNameuser);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DVGNhanVien);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Manager";
@@ -136,7 +136,7 @@
             this.Load += new System.EventHandler(this.Manager_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVGNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +149,7 @@
         private System.Windows.Forms.ToolStripMenuItem staffManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnoverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookManagementToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DVGNhanVien;
         private System.Windows.Forms.Label lbNameuser;
         private System.Windows.Forms.Label label_name;
     }

@@ -12,6 +12,7 @@ namespace DBMS_FORM.Object
         public static String username;
         public static String role;
         public static String Name;
+        public static int idUser;
         public static String serverName = "DESKTOP-UHP2JTR";
         public static String dbName = "DOAN_QUANLYNHASACH_DBMS";
     }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txbThanhVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -57,6 +57,7 @@
             this.label_name = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbNameuser = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_level)).BeginInit();
             this.panelStatus.SuspendLayout();
@@ -64,10 +65,11 @@
             // 
             // txbThanhVien
             // 
+            this.txbThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbThanhVien.Location = new System.Drawing.Point(281, 25);
             this.txbThanhVien.Multiline = true;
             this.txbThanhVien.Name = "txbThanhVien";
-            this.txbThanhVien.Size = new System.Drawing.Size(267, 30);
+            this.txbThanhVien.Size = new System.Drawing.Size(267, 41);
             this.txbThanhVien.TabIndex = 0;
             // 
             // label1
@@ -76,24 +78,24 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(50, 25);
+            this.label1.Location = new System.Drawing.Point(44, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 27);
+            this.label1.Size = new System.Drawing.Size(153, 27);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Find Member ID:";
+            this.label1.Text = "Find Member:";
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(12, 94);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -107,7 +109,7 @@
             this.btnedit.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnedit.Location = new System.Drawing.Point(1157, 435);
+            this.btnedit.Location = new System.Drawing.Point(937, 466);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(151, 39);
             this.btnedit.TabIndex = 3;
@@ -121,7 +123,7 @@
             this.btnadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnadd.Location = new System.Drawing.Point(981, 435);
+            this.btnadd.Location = new System.Drawing.Point(769, 466);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(151, 39);
             this.btnadd.TabIndex = 4;
@@ -134,7 +136,7 @@
             this.btnremove.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnremove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnremove.Location = new System.Drawing.Point(1157, 482);
+            this.btnremove.Location = new System.Drawing.Point(1280, 466);
             this.btnremove.Name = "btnremove";
             this.btnremove.Size = new System.Drawing.Size(151, 39);
             this.btnremove.TabIndex = 5;
@@ -157,7 +159,7 @@
             // numeric_level
             // 
             this.numeric_level.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeric_level.Location = new System.Drawing.Point(1230, 158);
+            this.numeric_level.Location = new System.Drawing.Point(1233, 250);
             this.numeric_level.Maximum = new decimal(new int[] {
             5,
             0,
@@ -180,7 +182,7 @@
             // textBox_Email
             // 
             this.textBox_Email.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Email.Location = new System.Drawing.Point(1230, 91);
+            this.textBox_Email.Location = new System.Drawing.Point(1233, 183);
             this.textBox_Email.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(187, 33);
@@ -192,7 +194,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(1140, 94);
+            this.label6.Location = new System.Drawing.Point(1143, 186);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 27);
@@ -205,7 +207,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(1140, 164);
+            this.label5.Location = new System.Drawing.Point(1143, 256);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 27);
@@ -215,7 +217,7 @@
             // richTextBox_address
             // 
             this.richTextBox_address.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_address.Location = new System.Drawing.Point(881, 248);
+            this.richTextBox_address.Location = new System.Drawing.Point(884, 340);
             this.richTextBox_address.Name = "richTextBox_address";
             this.richTextBox_address.Size = new System.Drawing.Size(231, 96);
             this.richTextBox_address.TabIndex = 58;
@@ -224,7 +226,7 @@
             // textBox_name
             // 
             this.textBox_name.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_name.Location = new System.Drawing.Point(881, 144);
+            this.textBox_name.Location = new System.Drawing.Point(884, 236);
             this.textBox_name.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(231, 33);
@@ -236,7 +238,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(739, 147);
+            this.label4.Location = new System.Drawing.Point(742, 239);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 27);
@@ -246,7 +248,7 @@
             // textBox_phone
             // 
             this.textBox_phone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_phone.Location = new System.Drawing.Point(881, 197);
+            this.textBox_phone.Location = new System.Drawing.Point(884, 289);
             this.textBox_phone.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_phone.Name = "textBox_phone";
             this.textBox_phone.Size = new System.Drawing.Size(231, 33);
@@ -258,7 +260,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(737, 197);
+            this.label3.Location = new System.Drawing.Point(740, 289);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 27);
@@ -271,7 +273,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(739, 248);
+            this.label2.Location = new System.Drawing.Point(742, 340);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 27);
@@ -281,7 +283,7 @@
             // textBox_id
             // 
             this.textBox_id.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_id.Location = new System.Drawing.Point(881, 93);
+            this.textBox_id.Location = new System.Drawing.Point(884, 185);
             this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(231, 33);
@@ -293,7 +295,7 @@
             this.labelMemID.BackColor = System.Drawing.Color.Transparent;
             this.labelMemID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMemID.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelMemID.Location = new System.Drawing.Point(739, 93);
+            this.labelMemID.Location = new System.Drawing.Point(742, 185);
             this.labelMemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMemID.Name = "labelMemID";
             this.labelMemID.Size = new System.Drawing.Size(127, 27);
@@ -305,7 +307,7 @@
             this.panelStatus.Controls.Add(this.checkBoxExpire);
             this.panelStatus.Controls.Add(this.checkBoxUser);
             this.panelStatus.Controls.Add(this.label7);
-            this.panelStatus.Location = new System.Drawing.Point(1145, 231);
+            this.panelStatus.Location = new System.Drawing.Point(1148, 323);
             this.panelStatus.Name = "panelStatus";
             this.panelStatus.Size = new System.Drawing.Size(272, 100);
             this.panelStatus.TabIndex = 65;
@@ -352,7 +354,7 @@
             this.buttonExpire.BackColor = System.Drawing.Color.MidnightBlue;
             this.buttonExpire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExpire.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonExpire.Location = new System.Drawing.Point(981, 482);
+            this.buttonExpire.Location = new System.Drawing.Point(1105, 466);
             this.buttonExpire.Name = "buttonExpire";
             this.buttonExpire.Size = new System.Drawing.Size(151, 39);
             this.buttonExpire.TabIndex = 66;
@@ -364,7 +366,7 @@
             // 
             this.labelRole.AutoSize = true;
             this.labelRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRole.Location = new System.Drawing.Point(890, 52);
+            this.labelRole.Location = new System.Drawing.Point(893, 144);
             this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRole.Name = "labelRole";
             this.labelRole.Size = new System.Drawing.Size(110, 25);
@@ -375,7 +377,7 @@
             // 
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_name.Location = new System.Drawing.Point(890, 12);
+            this.label_name.Location = new System.Drawing.Point(893, 104);
             this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(110, 25);
@@ -386,7 +388,7 @@
             // 
             this.lbRole.AutoSize = true;
             this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRole.Location = new System.Drawing.Point(742, 55);
+            this.lbRole.Location = new System.Drawing.Point(745, 147);
             this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRole.Name = "lbRole";
             this.lbRole.Size = new System.Drawing.Size(65, 25);
@@ -397,12 +399,25 @@
             // 
             this.lbNameuser.AutoSize = true;
             this.lbNameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameuser.Location = new System.Drawing.Point(742, 12);
+            this.lbNameuser.Location = new System.Drawing.Point(745, 104);
             this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNameuser.Name = "lbNameuser";
             this.lbNameuser.Size = new System.Drawing.Size(110, 25);
             this.lbNameuser.TabIndex = 67;
             this.lbNameuser.Text = "Name User";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Red;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReset.Location = new System.Drawing.Point(684, 558);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(151, 39);
+            this.btnReset.TabIndex = 71;
+            this.btnReset.Text = "RESET";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FormThanhVien
             // 
@@ -411,6 +426,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1533, 625);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.labelRole);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.lbRole);
@@ -479,5 +495,6 @@
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label lbRole;
         private System.Windows.Forms.Label lbNameuser;
+        private System.Windows.Forms.Button btnReset;
     }
 }

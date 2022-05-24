@@ -197,6 +197,9 @@
     <Compile Include="Model\fun_ThanhVien_Result.cs">
       <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\getNVofQL_Result.cs">
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\HoaDon.cs">
       <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>

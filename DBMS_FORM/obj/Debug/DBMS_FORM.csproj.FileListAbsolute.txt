@@ -76,3 +76,9 @@ F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.exe
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.AddBookForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.BookManagementForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.EditBookForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.EditGenreForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.RemoveBookForm.resources
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.RemoveGenreForm.resources

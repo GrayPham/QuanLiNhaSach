@@ -185,5 +185,14 @@ namespace DBMS_FORM
                 }
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+            fillDVGNhanVien();
+            fillComboBox();
+            fillComboBoxType();
+            btnedit.Enabled = false;
+        }
     }
 }

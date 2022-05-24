@@ -158,5 +158,14 @@ namespace DBMS_FORM
                 MessageBox.Show("Input Id TV", "Delete TV");
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            fillDVGThanhVien();
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
+            btnedit.Enabled = false;
+            btnremove.Enabled = false;
+        }
     }
 }

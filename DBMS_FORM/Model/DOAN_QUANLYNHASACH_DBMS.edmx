@@ -333,6 +333,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Add_NhaCungCap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MNCC" Type="int" Mode="In" />
+          <Parameter Name="TenNCC" Type="nvarchar" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+          <Parameter Name="ConHD" Type="bit" Mode="In" />
+        </Function>
         <Function Name="Add_ThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaTV" Type="int" Mode="In" />
           <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
@@ -341,6 +348,11 @@
           <Parameter Name="Mail" Type="nvarchar" Mode="In" />
           <Parameter Name="ConSD" Type="int" Mode="In" />
           <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Add_TheLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MTL" Type="int" Mode="In" />
+          <Parameter Name="TenTL" Type="nvarchar" Mode="In" />
+          <Parameter Name="BiLoaiBo" Type="bit" Mode="In" />
         </Function>
         <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="userId" Type="int" Mode="In" />
@@ -408,6 +420,7 @@
                 <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
                 <Property Name="UserName" Type="nvarchar" MaxLength="100" />
                 <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+                <Property Name="MNV" Type="int" Nullable="false" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -549,6 +562,28 @@
         </Function>
         <Function Name="fuSongayNghi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maNV" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getNVofQL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maNql" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="MNV" Type="int" Nullable="false" />
+                <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+                <Property Name="SDT" Type="varchar" MaxLength="15" />
+                <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+                <Property Name="Password" Type="nvarchar" MaxLength="100" />
+                <Property Name="DiaChi" Type="varchar" MaxLength="50" />
+                <Property Name="SoSachBan" Type="int" />
+                <Property Name="luongNV" Type="int" />
+                <Property Name="NgayVang" Type="int" />
+                <Property Name="NgayNghiViec" Type="datetime" />
+                <Property Name="TypeId" Type="int" />
+                <Property Name="DaNghi" Type="bit" />
+                <Property Name="MNQL" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
         </Function>
         <Function Name="IMPORTSACH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MS" Type="int" Mode="In" />
@@ -1621,6 +1656,21 @@
             <Parameter Name="IdTV" Mode="In" Type="Int32" />
             <Parameter Name="Method" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Add_NhaCungCap" ReturnType="Collection(String)">
+            <Parameter Name="MNCC" Mode="In" Type="Int32" />
+            <Parameter Name="TenNCC" Mode="In" Type="String" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="Mail" Mode="In" Type="String" />
+            <Parameter Name="ConHD" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="getNVofQL" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result)">
+          <Parameter Name="maNql" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Add_TheLoai" ReturnType="Collection(String)">
+            <Parameter Name="MTL" Mode="In" Type="Int32" />
+            <Parameter Name="TenTL" Mode="In" Type="String" />
+            <Parameter Name="BiLoaiBo" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1632,6 +1682,21 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getNVofQL_Result">
+          <Property Type="Int32" Name="MNV" Nullable="false" />
+          <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SoSachBan" Nullable="true" />
+          <Property Type="Int32" Name="luongNV" Nullable="true" />
+          <Property Type="Int32" Name="NgayVang" Nullable="true" />
+          <Property Type="DateTime" Name="NgayNghiViec" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="TypeId" Nullable="true" />
+          <Property Type="Boolean" Name="DaNghi" Nullable="true" />
+          <Property Type="Int32" Name="MNQL" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2041,6 +2106,27 @@
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
           <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
+          <FunctionImportMapping FunctionImportName="Add_NhaCungCap" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_NhaCungCap" />
+          <FunctionImportMapping FunctionImportName="getNVofQL" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.getNVofQL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result">
+                <ScalarProperty Name="MNV" ColumnName="MNV" />
+                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+                <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+                <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+                <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+                <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Add_TheLoai" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_TheLoai" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

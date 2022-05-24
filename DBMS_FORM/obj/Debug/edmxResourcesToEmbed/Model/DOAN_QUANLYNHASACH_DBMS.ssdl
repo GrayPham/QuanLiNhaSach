@@ -328,6 +328,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Add_NhaCungCap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MNCC" Type="int" Mode="In" />
+    <Parameter Name="TenNCC" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
+    <Parameter Name="ConHD" Type="bit" Mode="In" />
+  </Function>
   <Function Name="Add_ThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MaTV" Type="int" Mode="In" />
     <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
@@ -336,6 +343,11 @@
     <Parameter Name="Mail" Type="nvarchar" Mode="In" />
     <Parameter Name="ConSD" Type="int" Mode="In" />
     <Parameter Name="MDThanThiet" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Add_TheLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MTL" Type="int" Mode="In" />
+    <Parameter Name="TenTL" Type="nvarchar" Mode="In" />
+    <Parameter Name="BiLoaiBo" Type="bit" Mode="In" />
   </Function>
   <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="userId" Type="int" Mode="In" />
@@ -403,6 +415,7 @@
           <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
           <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+          <Property Name="MNV" Type="int" Nullable="false" />
         </RowType>
       </CollectionType>
     </ReturnType>
@@ -544,6 +557,28 @@
   </Function>
   <Function Name="fuSongayNghi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="maNV" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getNVofQL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maNql" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MNV" Type="int" Nullable="false" />
+          <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiaChi" Type="varchar" MaxLength="50" />
+          <Property Name="SoSachBan" Type="int" />
+          <Property Name="luongNV" Type="int" />
+          <Property Name="NgayVang" Type="int" />
+          <Property Name="NgayNghiViec" Type="datetime" />
+          <Property Name="TypeId" Type="int" />
+          <Property Name="DaNghi" Type="bit" />
+          <Property Name="MNQL" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
   </Function>
   <Function Name="IMPORTSACH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MS" Type="int" Mode="In" />

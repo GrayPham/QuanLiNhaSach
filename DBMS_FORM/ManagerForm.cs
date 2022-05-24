@@ -1,4 +1,5 @@
-﻿using DBMS_FORM.Object;
+﻿using DBMS_FORM.BLL;
+using DBMS_FORM.Object;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,14 +19,11 @@ namespace DBMS_FORM
             InitializeComponent();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void fillDVG_NVOfNVQL()
         {
-
-        }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
+            ManagerBLL mbll = new ManagerBLL();
+            int manql = BaseData.idUser;
+            DVGNhanVien.DataSource = mbll.GetNvOfManager(manql);
         }
 
         private void importBookToolStripMenuItem_Click(object sender, EventArgs e)

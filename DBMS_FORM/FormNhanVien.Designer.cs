@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbfind = new System.Windows.Forms.Label();
             this.txtfind = new System.Windows.Forms.TextBox();
             this.btnremove = new System.Windows.Forms.Button();
@@ -63,6 +63,7 @@
             this.label_name = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbNameuser = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_booksale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_absent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,16 +75,16 @@
             this.lbfind.BackColor = System.Drawing.Color.Transparent;
             this.lbfind.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbfind.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbfind.Location = new System.Drawing.Point(337, 30);
+            this.lbfind.Location = new System.Drawing.Point(20, 98);
             this.lbfind.Name = "lbfind";
-            this.lbfind.Size = new System.Drawing.Size(194, 27);
+            this.lbfind.Size = new System.Drawing.Size(165, 27);
             this.lbfind.TabIndex = 3;
-            this.lbfind.Text = "Find Employee ID:";
+            this.lbfind.Text = "Find Employee:";
             // 
             // txtfind
             // 
             this.txtfind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtfind.Location = new System.Drawing.Point(546, 27);
+            this.txtfind.Location = new System.Drawing.Point(229, 95);
             this.txtfind.Multiline = true;
             this.txtfind.Name = "txtfind";
             this.txtfind.Size = new System.Drawing.Size(312, 30);
@@ -94,7 +95,7 @@
             this.btnremove.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnremove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnremove.Location = new System.Drawing.Point(999, 614);
+            this.btnremove.Location = new System.Drawing.Point(1234, 619);
             this.btnremove.Name = "btnremove";
             this.btnremove.Size = new System.Drawing.Size(154, 52);
             this.btnremove.TabIndex = 8;
@@ -108,7 +109,7 @@
             this.btnadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnadd.Location = new System.Drawing.Point(999, 556);
+            this.btnadd.Location = new System.Drawing.Point(914, 619);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(154, 52);
             this.btnadd.TabIndex = 7;
@@ -121,7 +122,7 @@
             this.btnedit.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnedit.Location = new System.Drawing.Point(1159, 556);
+            this.btnedit.Location = new System.Drawing.Point(1074, 619);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(154, 52);
             this.btnedit.TabIndex = 6;
@@ -134,7 +135,7 @@
             this.button_search.BackColor = System.Drawing.Color.Tomato;
             this.button_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_search.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_search.Location = new System.Drawing.Point(875, 21);
+            this.button_search.Location = new System.Drawing.Point(558, 89);
             this.button_search.Name = "button_search";
             this.button_search.Size = new System.Drawing.Size(152, 46);
             this.button_search.TabIndex = 9;
@@ -311,7 +312,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(1159, 614);
+            this.btnDelete.Location = new System.Drawing.Point(1394, 619);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(154, 52);
             this.btnDelete.TabIndex = 46;
@@ -367,20 +368,20 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 148);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(697, 582);
+            this.dataGridView1.Size = new System.Drawing.Size(697, 528);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick_1);
             // 
@@ -459,12 +460,26 @@
             this.lbNameuser.TabIndex = 55;
             this.lbNameuser.Text = "Name User";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Red;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReset.Location = new System.Drawing.Point(736, 627);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(151, 39);
+            this.btnReset.TabIndex = 72;
+            this.btnReset.Text = "RESET";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1560, 695);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.labelRole);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.lbRole);
@@ -548,5 +563,6 @@
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label lbRole;
         private System.Windows.Forms.Label lbNameuser;
+        private System.Windows.Forms.Button btnReset;
     }
 }

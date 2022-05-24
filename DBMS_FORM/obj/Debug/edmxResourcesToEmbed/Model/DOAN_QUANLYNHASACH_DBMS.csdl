@@ -772,6 +772,21 @@
       <Parameter Name="IdTV" Mode="In" Type="Int32" />
       <Parameter Name="Method" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="Add_NhaCungCap" ReturnType="Collection(String)">
+      <Parameter Name="MNCC" Mode="In" Type="Int32" />
+      <Parameter Name="TenNCC" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="ConHD" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="getNVofQL" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result)">
+      <Parameter Name="maNql" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Add_TheLoai" ReturnType="Collection(String)">
+      <Parameter Name="MTL" Mode="In" Type="Int32" />
+      <Parameter Name="TenTL" Mode="In" Type="String" />
+      <Parameter Name="BiLoaiBo" Mode="In" Type="Boolean" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -783,5 +798,20 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getNVofQL_Result">
+    <Property Type="Int32" Name="MNV" Nullable="false" />
+    <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SoSachBan" Nullable="true" />
+    <Property Type="Int32" Name="luongNV" Nullable="true" />
+    <Property Type="Int32" Name="NgayVang" Nullable="true" />
+    <Property Type="DateTime" Name="NgayNghiViec" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="TypeId" Nullable="true" />
+    <Property Type="Boolean" Name="DaNghi" Nullable="true" />
+    <Property Type="Int32" Name="MNQL" Nullable="true" />
   </ComplexType>
 </Schema>

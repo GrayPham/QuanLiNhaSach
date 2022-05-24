@@ -767,5 +767,57 @@ namespace DBMS_FORM.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Tv_Delete", idTVParameter, methodParameter);
         }
+    
+        public virtual ObjectResult<string> Add_NhaCungCap(Nullable<int> mNCC, string tenNCC, string diaChi, string mail, Nullable<bool> conHD)
+        {
+            var mNCCParameter = mNCC.HasValue ?
+                new ObjectParameter("MNCC", mNCC) :
+                new ObjectParameter("MNCC", typeof(int));
+    
+            var tenNCCParameter = tenNCC != null ?
+                new ObjectParameter("TenNCC", tenNCC) :
+                new ObjectParameter("TenNCC", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var mailParameter = mail != null ?
+                new ObjectParameter("Mail", mail) :
+                new ObjectParameter("Mail", typeof(string));
+    
+            var conHDParameter = conHD.HasValue ?
+                new ObjectParameter("ConHD", conHD) :
+                new ObjectParameter("ConHD", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_NhaCungCap", mNCCParameter, tenNCCParameter, diaChiParameter, mailParameter, conHDParameter);
+        }
+    
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "getNVofQL")]
+        public virtual IQueryable<getNVofQL_Result> getNVofQL(Nullable<int> maNql)
+        {
+            var maNqlParameter = maNql.HasValue ?
+                new ObjectParameter("maNql", maNql) :
+                new ObjectParameter("maNql", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<getNVofQL_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[getNVofQL](@maNql)", maNqlParameter);
+        }
+    
+        public virtual ObjectResult<string> Add_TheLoai(Nullable<int> mTL, string tenTL, Nullable<bool> biLoaiBo)
+        {
+            var mTLParameter = mTL.HasValue ?
+                new ObjectParameter("MTL", mTL) :
+                new ObjectParameter("MTL", typeof(int));
+    
+            var tenTLParameter = tenTL != null ?
+                new ObjectParameter("TenTL", tenTL) :
+                new ObjectParameter("TenTL", typeof(string));
+    
+            var biLoaiBoParameter = biLoaiBo.HasValue ?
+                new ObjectParameter("BiLoaiBo", biLoaiBo) :
+                new ObjectParameter("BiLoaiBo", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_TheLoai", mTLParameter, tenTLParameter, biLoaiBoParameter);
+        }
     }
 }

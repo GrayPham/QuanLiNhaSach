@@ -12,10 +12,46 @@ namespace DBMS_FORM.BLL
     {
         internal object SearchTV(string searchTV)
         {
-            var search = db.fun_SearchThanhVien(searchTV);
-            return search;
+            if(IsNumber(searchTV) == true)
+            {
+                int idserch = Convert.ToInt32(searchTV);
+                var tv = db.ThanhViens.Where(t => t.MTV == idserch && t.ConSD == true).Select(s => new
+                {
+                    MaTV = s.MTV,
+                    Name = s.HoVaTenTV,
+                    Address = s.Diachi,
+                    Phone = s.SoDT,
+                    Email = s.Mail,
+                    Level = s.MDThanThiet
+                }).ToList();
+                return tv;
+            }
+            else
+            {
+                
+                var tv = db.ThanhViens.Where(t => t.HoVaTenTV == searchTV && t.ConSD == true).Select(s => new
+                {
+                    MaTV = s.MTV,
+                    Name = s.HoVaTenTV,
+                    Address = s.Diachi,
+                    Phone = s.SoDT,
+                    Email = s.Mail,
+                    Level = s.MDThanThiet
+                }).ToList();
+                return tv;
+            }
+            
+            
         }
-
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         private string methodDelete = "DeleteTV";
         private const string ExpireTV = "ExpireTV";
         internal bool MethodTV( int idTv, string name, string phone, string address, string email,int useTv, int level)

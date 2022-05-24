@@ -61,6 +61,12 @@ namespace DBMS_FORM.BLL
             }
         }
 
+        internal object GetNvOfManager(int manql)
+        {
+            var nv = db.getNVofQL(manql);
+            return nv;
+        }
+
         internal object GetTurnOver(int type)
         {
             

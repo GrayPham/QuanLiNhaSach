@@ -54,6 +54,7 @@ namespace DBMS_FORM
                 BaseData.Name = dt.Rows[0]["HoTenNV"].ToString();
                 BaseData.username = dt.Rows[0]["username"].ToString();
                 BaseData.role = dt.Rows[0]["TypeName"].ToString();
+                BaseData.idUser =Convert.ToInt32( dt.Rows[0]["MNV"].ToString());
                 return true;
             }
             else
