@@ -108,16 +108,18 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(200, 210);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(250, 22);
+            this.txtPassword.Size = new System.Drawing.Size(250, 30);
             this.txtPassword.TabIndex = 15;
             // 
             // txtUsename
             // 
+            this.txtUsename.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsename.Location = new System.Drawing.Point(200, 154);
             this.txtUsename.Name = "txtUsename";
-            this.txtUsename.Size = new System.Drawing.Size(250, 22);
+            this.txtUsename.Size = new System.Drawing.Size(250, 30);
             this.txtUsename.TabIndex = 14;
             // 
             // label3

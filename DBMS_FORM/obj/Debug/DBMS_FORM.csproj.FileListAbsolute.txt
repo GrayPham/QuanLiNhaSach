@@ -50,6 +50,14 @@ C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.dll
 C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.xml
 C:\Users\Admin\Winform\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe.config
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.pdb
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\BouncyCastle.Crypto.dll
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.dll
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.dll
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
+F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.xml
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.AssemblyReference.cache
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.SuggestedBindingRedirects.cache
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Banfrm.resources
@@ -65,14 +73,6 @@ F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.TurnoverCheckForm.resources
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.GenerateResource.cache
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CoreCompileInputs.cache
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe.config
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.exe
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\DBMS_FORM.pdb
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\BouncyCastle.Crypto.dll
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.dll
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.dll
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework.xml
-F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.xml
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.exe
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb

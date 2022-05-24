@@ -59,7 +59,7 @@ namespace DBMS_FORM
                 MessageBox.Show("Your search does not exist!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        
 
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -169,6 +169,7 @@ namespace DBMS_FORM
             comboBox_type.Visible = false;
             textBox_username.Visible = false;
             textBox_password.Visible = false;
+            btnadd.Enabled = false;
 
         }
 
