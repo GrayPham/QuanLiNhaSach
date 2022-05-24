@@ -1,4 +1,5 @@
 ﻿using DBMS_FORM.BLL;
+using DBMS_FORM.BookManager;
 using DBMS_FORM.Object;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,14 @@ namespace DBMS_FORM
         {
             label_name.Text = BaseData.Name;
 
+        }
+
+        private void editBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditBookForm edit = new EditBookForm();
+            this.Visible = false;
+            edit.ShowDialog();
+            this.Visible = true;
         }
     }
 }

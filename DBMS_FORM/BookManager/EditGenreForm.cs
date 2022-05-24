@@ -16,5 +16,10 @@ namespace DBMS_FORM.BookManager
         {
             InitializeComponent();
         }
+
+        private void editbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
