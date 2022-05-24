@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBMS_FORM.Object;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,12 @@ namespace DBMS_FORM
             this.Visible = false;
             turnoverCheckForm.ShowDialog();
             this.Visible = true;
+        }
+
+        private void Manager_Load(object sender, EventArgs e)
+        {
+            label_name.Text = BaseData.Name;
+
         }
     }
 }

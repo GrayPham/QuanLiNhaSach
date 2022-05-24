@@ -1,4 +1,5 @@
 ﻿using DBMS_FORM.BLL;
+using DBMS_FORM.Object;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,10 +42,11 @@ namespace DBMS_FORM
                 string address= richTextBox_address.Text.ToString();
                 string email = textBox_Email.Text.ToString();
                 int level = Convert.ToInt32(numeric_level.Value.ToString());
-                int usetv = 1;
+                int usetv = checkTypeUser();
                 if (tvBLl.MethodTV(idTv, name, phone, address, email, usetv, level) == true)
                 {
                     MessageBox.Show("Successfull!!", "Add Member");
+                    fillDVGThanhVien();
                 }
                 else
                 {
@@ -89,7 +91,7 @@ namespace DBMS_FORM
                 string address = richTextBox_address.Text.ToString();
                 string email = textBox_Email.Text.ToString();
                 int level = Convert.ToInt32(numeric_level.Value.ToString());
-                int usetv = 1;
+                int usetv = checkTypeUser();
                 if (checkBoxExpire.Checked)
                 {
                     usetv = 0;
@@ -111,7 +113,8 @@ namespace DBMS_FORM
         private void FormThanhVien_Load(object sender, EventArgs e)
         {
             fillDVGThanhVien();
-            panelStatus.Enabled = false;
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
             btnedit.Enabled = false;
             btnremove.Enabled = false;
         }
@@ -131,7 +134,15 @@ namespace DBMS_FORM
             //textBox_salary.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             //numeric_absent.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
         }
-
+        private int checkTypeUser()
+        {
+            if(checkBoxExpire.Checked == true)
+            {
+                return 0;
+            }
+            
+            return 1;
+        }
         private void buttonExpire_Click(object sender, EventArgs e)
         {
             if (textBox_id.Text != "")

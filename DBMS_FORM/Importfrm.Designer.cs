@@ -35,11 +35,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtMS = new System.Windows.Forms.TextBox();
             this.txtTS = new System.Windows.Forms.TextBox();
-            this.txtTuaSach = new System.Windows.Forms.TextBox();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.txtNCC = new System.Windows.Forms.TextBox();
+            this.txtTL = new System.Windows.Forms.TextBox();
+            this.txtDGB = new System.Windows.Forms.TextBox();
+            this.txtMNCC = new System.Windows.Forms.TextBox();
             this.txtNXB = new System.Windows.Forms.TextBox();
-            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.txtSL = new System.Windows.Forms.TextBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,9 +47,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +101,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(137, 324);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -125,33 +129,33 @@
             this.txtTS.Size = new System.Drawing.Size(132, 34);
             this.txtTS.TabIndex = 14;
             // 
-            // txtTuaSach
+            // txtTL
             // 
-            this.txtTuaSach.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTuaSach.Location = new System.Drawing.Point(863, 135);
-            this.txtTuaSach.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTuaSach.Name = "txtTuaSach";
-            this.txtTuaSach.Size = new System.Drawing.Size(132, 34);
-            this.txtTuaSach.TabIndex = 15;
+            this.txtTL.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTL.Location = new System.Drawing.Point(863, 135);
+            this.txtTL.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTL.Name = "txtTL";
+            this.txtTL.Size = new System.Drawing.Size(132, 34);
+            this.txtTL.TabIndex = 15;
             // 
-            // txtDonGia
+            // txtDGB
             // 
-            this.txtDonGia.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.Location = new System.Drawing.Point(1220, 137);
-            this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(132, 34);
-            this.txtDonGia.TabIndex = 16;
+            this.txtDGB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDGB.Location = new System.Drawing.Point(1220, 137);
+            this.txtDGB.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDGB.Name = "txtDGB";
+            this.txtDGB.Size = new System.Drawing.Size(132, 34);
+            this.txtDGB.TabIndex = 16;
             // 
-            // txtNCC
+            // txtMNCC
             // 
-            this.txtNCC.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNCC.Location = new System.Drawing.Point(192, 257);
-            this.txtNCC.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNCC.Name = "txtNCC";
-            this.txtNCC.Size = new System.Drawing.Size(132, 34);
-            this.txtNCC.TabIndex = 17;
-            this.txtNCC.TextChanged += new System.EventHandler(this.txtNCC_TextChanged);
+            this.txtMNCC.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMNCC.Location = new System.Drawing.Point(192, 257);
+            this.txtMNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMNCC.Name = "txtMNCC";
+            this.txtMNCC.Size = new System.Drawing.Size(132, 34);
+            this.txtMNCC.TabIndex = 17;
+            this.txtMNCC.TextChanged += new System.EventHandler(this.txtNCC_TextChanged);
             // 
             // txtNXB
             // 
@@ -162,14 +166,14 @@
             this.txtNXB.Size = new System.Drawing.Size(132, 34);
             this.txtNXB.TabIndex = 18;
             // 
-            // txtSoluong
+            // txtSL
             // 
-            this.txtSoluong.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoluong.Location = new System.Drawing.Point(863, 256);
-            this.txtSoluong.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(132, 34);
-            this.txtSoluong.TabIndex = 19;
+            this.txtSL.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSL.Location = new System.Drawing.Point(863, 256);
+            this.txtSL.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(132, 34);
+            this.txtSL.TabIndex = 19;
             // 
             // txtTongTien
             // 
@@ -209,9 +213,9 @@
             this.label7.Location = new System.Drawing.Point(748, 260);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 30);
+            this.label7.Size = new System.Drawing.Size(100, 30);
             this.label7.TabIndex = 23;
-            this.label7.Text = "Quantity";
+            this.label7.Text = "Number";
             // 
             // label8
             // 
@@ -246,29 +250,7 @@
             this.btnImport.TabIndex = 26;
             this.btnImport.Text = "IMPORT";
             this.btnImport.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(52, 9);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 30);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "NQL ID";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(16, 55);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 30);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "NQL name";
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // label12
             // 
@@ -281,15 +263,61 @@
             this.label12.TabIndex = 29;
             this.label12.Text = "Import Book ";
             // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRole.Location = new System.Drawing.Point(164, 70);
+            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(110, 25);
+            this.labelRole.TabIndex = 62;
+            this.labelRole.Text = "Name User";
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name.Location = new System.Drawing.Point(164, 30);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(110, 25);
+            this.label_name.TabIndex = 61;
+            this.label_name.Text = "Name User";
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRole.Location = new System.Drawing.Point(16, 73);
+            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(65, 25);
+            this.lbRole.TabIndex = 60;
+            this.lbRole.Text = "ROLE";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameuser.Location = new System.Drawing.Point(16, 30);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(110, 25);
+            this.lbNameuser.TabIndex = 59;
+            this.lbNameuser.Text = "Name User";
+            // 
             // Importfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1443, 708);
+            this.Controls.Add(this.labelRole);
+            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.lbRole);
+            this.Controls.Add(this.lbNameuser);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -297,11 +325,11 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTongTien);
-            this.Controls.Add(this.txtSoluong);
+            this.Controls.Add(this.txtSL);
             this.Controls.Add(this.txtNXB);
-            this.Controls.Add(this.txtNCC);
-            this.Controls.Add(this.txtDonGia);
-            this.Controls.Add(this.txtTuaSach);
+            this.Controls.Add(this.txtMNCC);
+            this.Controls.Add(this.txtDGB);
+            this.Controls.Add(this.txtTL);
             this.Controls.Add(this.txtTS);
             this.Controls.Add(this.txtMS);
             this.Controls.Add(this.dataGridView1);
@@ -315,6 +343,7 @@
             this.Name = "Importfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importfrm";
+            this.Load += new System.EventHandler(this.Importfrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -329,11 +358,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtMS;
         private System.Windows.Forms.TextBox txtTS;
-        private System.Windows.Forms.TextBox txtTuaSach;
-        private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.TextBox txtNCC;
+        private System.Windows.Forms.TextBox txtTL;
+        private System.Windows.Forms.TextBox txtDGB;
+        private System.Windows.Forms.TextBox txtMNCC;
         private System.Windows.Forms.TextBox txtNXB;
-        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -341,8 +370,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelRole;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.Label lbNameuser;
     }
 }

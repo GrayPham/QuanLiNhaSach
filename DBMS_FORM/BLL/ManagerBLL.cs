@@ -11,12 +11,12 @@ namespace DBMS_FORM.BLL
 {
     internal class ManagerBLL : QuanLyNhaSach
     {
-        internal void AddNV(int ma, string hoTen, string sdt, string dc, int sachBan, int luong, int vang, int maNQL)
+        internal void AddNV(int ma, string hoTen, string sdt, string dc, int sachBan, int luong, string username, string pass,int typeid, int vang, int maNQL)
         {
             try
             {
                 //System.Data.Objects.ObjectParameter ketqua = new ObjectParameter("ketqua", typeof(char));
-                db.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, maNQL);
+                db.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, username, pass, typeid, maNQL,0);
                 //string myCheck = ketqua.Value.ToString();
                 //MessageBox.Show(myCheck, "Add Staff");
                 db.SaveChanges();
@@ -48,6 +48,13 @@ namespace DBMS_FORM.BLL
                 return turnOver;
             }
             return null;
+        }
+
+        internal List<UserType> GetTypeUser()
+        {
+            List<UserType> typeUser = db.UserTypes.ToList<UserType>();
+            
+            return typeUser;
         }
 
         internal object GetManager()

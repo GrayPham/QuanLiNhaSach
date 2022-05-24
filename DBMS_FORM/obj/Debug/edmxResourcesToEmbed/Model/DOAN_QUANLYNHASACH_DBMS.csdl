@@ -154,7 +154,7 @@
     </Key>
     <Property Name="MaSach" Type="Int32" Nullable="false" />
     <Property Name="MNCC" Type="Int32" Nullable="false" />
-    <Property Name="NgayNhap" Type="DateTime" Nullable="false" />
+    <Property Name="NgayNhap" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Soluong" Type="Int32" />
     <Property Name="DonGiaNhap" Type="Int32" />
     <Property Name="maNQL" Type="Int32" />
@@ -174,7 +174,7 @@
     <Property Name="MHD" Type="Int32" Nullable="false" />
     <Property Name="MaTV" Type="Int32" />
     <Property Name="SoLuong" Type="Int32" />
-    <Property Name="NgayBan" Type="DateTime" Nullable="false" />
+    <Property Name="NgayBan" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="HoaDon" Relationship="Self.FK_DaBan_HoaDon" FromRole="DaBan" ToRole="HoaDon" />
     <NavigationProperty Name="NV" Relationship="Self.FK_DaBan_NV" FromRole="DaBan" ToRole="NV" />
     <NavigationProperty Name="Sach" Relationship="Self.FK_DaBan_Sach" FromRole="DaBan" ToRole="Sach" />
@@ -185,10 +185,10 @@
       <PropertyRef Name="MHD" />
     </Key>
     <Property Name="MHD" Type="Int32" Nullable="false" />
-    <Property Name="NgayXuat" Type="DateTime" />
+    <Property Name="NgayXuat" Type="DateTime" Precision="3" />
     <Property Name="TongTien" Type="Int32" />
     <Property Name="GiamGia" Type="Int32" Nullable="false" />
-    <Property Name="NgayXoa" Type="DateTime" />
+    <Property Name="NgayXoa" Type="DateTime" Precision="3" />
     <Property Name="DaXoa" Type="Boolean" />
     <Property Name="CThanhVien" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="DaBans" Relationship="Self.FK_DaBan_HoaDon" FromRole="HoaDon" ToRole="DaBan" />
@@ -205,7 +205,7 @@
     <Property Name="MaSach" Type="Int32" Nullable="false" />
     <Property Name="MaNVM" Type="Int32" Nullable="false" />
     <Property Name="SoLuongMuon" Type="Int32" />
-    <Property Name="ThoiGianM" Type="DateTime" Nullable="false" />
+    <Property Name="ThoiGianM" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DonGiaMuon" Type="Int32" />
     <Property Name="MaHD" Type="Int32" Nullable="false" />
     <NavigationProperty Name="HoaDon" Relationship="Self.FK_Muon_HoaDon" FromRole="Muon" ToRole="HoaDon" />
@@ -237,7 +237,7 @@
     <Property Name="SoSachBan" Type="Int32" />
     <Property Name="luongNV" Type="Int32" />
     <Property Name="NgayVang" Type="Int32" />
-    <Property Name="NgayNghiViec" Type="DateTime" />
+    <Property Name="NgayNghiViec" Type="DateTime" Precision="3" />
     <Property Name="TypeId" Type="Int32" />
     <Property Name="DaNghi" Type="Boolean" />
     <Property Name="MNQL" Type="Int32" />
@@ -262,10 +262,10 @@
     <Property Name="MaSach" Type="Int32" Nullable="false" />
     <Property Name="TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="NgayNhap" Type="DateTime" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="3" />
     <Property Name="NamXB" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="MaTL" Type="Int32" Nullable="false" />
-    <Property Name="NgayXoa" Type="DateTime" />
+    <Property Name="NgayXoa" Type="DateTime" Precision="3" />
     <Property Name="DaXoa" Type="Boolean" />
     <Property Name="SoluongCon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="CungCaps" Relationship="Self.FK_CungCap_Sach" FromRole="Sach" ToRole="CungCap" />
@@ -606,5 +606,182 @@
       <Parameter Name="yearNow" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="TurnoverByYear" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByYear_Result)" />
+    <FunctionImport Name="Add_ThanhVien" ReturnType="Collection(String)">
+      <Parameter Name="MaTV" Mode="In" Type="Int32" />
+      <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
+      <Parameter Name="SoDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="ConSD" Mode="In" Type="Int32" />
+      <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CheckBan">
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="InOut" Type="Int32" />
+      <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CheckMuon">
+      <Parameter Name="MTV" Mode="In" Type="Int32" />
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="InOut" Type="Int32" />
+      <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="createDbmsUser">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="role" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="deleteSach">
+      <Parameter Name="maSach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="IMPORTSACH">
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="TS" Mode="In" Type="String" />
+      <Parameter Name="DG" Mode="In" Type="Int32" />
+      <Parameter Name="NN" Mode="In" Type="DateTime" />
+      <Parameter Name="NXB" Mode="In" Type="String" />
+      <Parameter Name="MTL" Mode="In" Type="Int32" />
+      <Parameter Name="Soluong" Mode="In" Type="Int32" />
+      <Parameter Name="MNQL" Mode="In" Type="Int32" />
+      <Parameter Name="MNCC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="INSERTBAN">
+      <Parameter Name="flag" Mode="In" Type="Int32" />
+      <Parameter Name="MANV" Mode="In" Type="Int32" />
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="NBan" Mode="In" Type="DateTime" />
+      <Parameter Name="MHD" Mode="In" Type="Int32" />
+      <Parameter Name="NXuat" Mode="In" Type="DateTime" />
+      <Parameter Name="TongTien" Mode="In" Type="Int32" />
+      <Parameter Name="DXOA" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="INSERTBANTV">
+      <Parameter Name="flag" Mode="In" Type="Int32" />
+      <Parameter Name="MANV" Mode="In" Type="Int32" />
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="NBan" Mode="In" Type="DateTime" />
+      <Parameter Name="MHD" Mode="In" Type="Int32" />
+      <Parameter Name="NXuat" Mode="In" Type="DateTime" />
+      <Parameter Name="TongTien" Mode="In" Type="Int32" />
+      <Parameter Name="GIAMGIA" Mode="In" Type="Int32" />
+      <Parameter Name="MTV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertMuon">
+      <Parameter Name="flag" Mode="In" Type="Int32" />
+      <Parameter Name="MATV" Mode="In" Type="Int32" />
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="MANV" Mode="In" Type="Int32" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="NMuon" Mode="In" Type="DateTime" />
+      <Parameter Name="NTra" Mode="In" Type="DateTime" />
+      <Parameter Name="MHD" Mode="In" Type="Int32" />
+      <Parameter Name="NXuat" Mode="In" Type="DateTime" />
+      <Parameter Name="TongTien" Mode="In" Type="Int32" />
+      <Parameter Name="GiamGia" Mode="In" Type="Int32" />
+      <Parameter Name="DXOA" Mode="In" Type="Boolean" />
+      <Parameter Name="ThanhVien" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="InsertPersonalDetailsAndAccount">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Age" Mode="In" Type="Int16" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Salary" Mode="In" Type="Decimal" />
+      <Parameter Name="PPFDeduction" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SettingThanhVien" ReturnType="Collection(String)">
+      <Parameter Name="Action" Mode="In" Type="String" />
+      <Parameter Name="MaTV" Mode="In" Type="Int32" />
+      <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
+      <Parameter Name="SoDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_AddNV" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="Int32" />
+      <Parameter Name="hoten" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="dc" Mode="In" Type="String" />
+      <Parameter Name="sosachban" Mode="In" Type="Int32" />
+      <Parameter Name="luongnv" Mode="In" Type="Int32" />
+      <Parameter Name="ngayvang" Mode="In" Type="Int32" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="TypeId" Mode="In" Type="Int32" />
+      <Parameter Name="manql" Mode="In" Type="Int32" />
+      <Parameter Name="danghi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteUSER_MANAGEMENT">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Method" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EditNV">
+      <Parameter Name="macu" Mode="In" Type="Int32" />
+      <Parameter Name="mamoi" Mode="In" Type="Int32" />
+      <Parameter Name="hotenmoi" Mode="In" Type="String" />
+      <Parameter Name="sdtm" Mode="In" Type="String" />
+      <Parameter Name="dcm" Mode="In" Type="String" />
+      <Parameter Name="luongnvmoi" Mode="In" Type="Int32" />
+      <Parameter Name="ngayvangmoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="thanhvienUpdate">
+      <Parameter Name="MaTV" Mode="In" Type="Int32" />
+      <Parameter Name="MaTVCu" Mode="In" Type="Int32" />
+      <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
+      <Parameter Name="SoDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Tv_Delete">
+      <Parameter Name="IdTV" Mode="In" Type="Int32" />
+      <Parameter Name="Method" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

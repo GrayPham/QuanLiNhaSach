@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBMS_FORM.BLL;
+using DBMS_FORM.Object;
+
 namespace DBMS_FORM
 {
     public partial class Form1 : Form
@@ -16,15 +18,14 @@ namespace DBMS_FORM
         {
             InitializeComponent();
         }
-        public string userName { get; set; } = "Nguyen Van A";
-        public string userRole { get; set; } = "Employee";
+
         NhanVien nv = new NhanVien();
 
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = nv.hienThi();
-            label_name.Text = userName;
-            lbRole.Text = userRole;
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -75,10 +76,18 @@ namespace DBMS_FORM
 
         private void button_manager_Click(object sender, EventArgs e)
         {
-            Manager managerForm = new Manager();
-            this.Visible=false;
-            managerForm.ShowDialog();
-            this.Visible = true;
+            if(BaseData.role != "MANAGER")
+            {
+                MessageBox.Show("You do not have permission to use this function", "Error");
+            }
+            else
+            {
+                Manager managerForm = new Manager();
+                this.Visible = false;
+                managerForm.ShowDialog();
+                this.Visible = true;
+            }
+            
         }
     }
 }

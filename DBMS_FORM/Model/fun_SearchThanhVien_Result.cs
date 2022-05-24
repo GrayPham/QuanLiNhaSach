@@ -20,6 +20,5 @@ namespace DBMS_FORM.Model
         public string SoDT { get; set; }
         public Nullable<bool> ConSD { get; set; }
         public Nullable<int> MDThanThiet { get; set; }
-        public Nullable<bool> status { get; set; }
     }
 }

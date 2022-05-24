@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txbThanhVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -53,6 +53,10 @@
             this.checkBoxUser = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonExpire = new System.Windows.Forms.Button();
+            this.labelRole = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_level)).BeginInit();
             this.panelStatus.SuspendLayout();
@@ -82,14 +86,14 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 94);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -356,6 +360,50 @@
             this.buttonExpire.UseVisualStyleBackColor = false;
             this.buttonExpire.Click += new System.EventHandler(this.buttonExpire_Click);
             // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRole.Location = new System.Drawing.Point(890, 52);
+            this.labelRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(110, 25);
+            this.labelRole.TabIndex = 70;
+            this.labelRole.Text = "Name User";
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name.Location = new System.Drawing.Point(890, 12);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(110, 25);
+            this.label_name.TabIndex = 69;
+            this.label_name.Text = "Name User";
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRole.Location = new System.Drawing.Point(742, 55);
+            this.lbRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(65, 25);
+            this.lbRole.TabIndex = 68;
+            this.lbRole.Text = "ROLE";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameuser.Location = new System.Drawing.Point(742, 12);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(110, 25);
+            this.lbNameuser.TabIndex = 67;
+            this.lbNameuser.Text = "Name User";
+            // 
             // FormThanhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,6 +411,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1533, 625);
+            this.Controls.Add(this.labelRole);
+            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.lbRole);
+            this.Controls.Add(this.lbNameuser);
             this.Controls.Add(this.buttonExpire);
             this.Controls.Add(this.panelStatus);
             this.Controls.Add(this.numeric_level);
@@ -423,5 +475,9 @@
         private System.Windows.Forms.RadioButton checkBoxUser;
         private System.Windows.Forms.RadioButton checkBoxExpire;
         private System.Windows.Forms.Button buttonExpire;
+        private System.Windows.Forms.Label labelRole;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label lbRole;
+        private System.Windows.Forms.Label lbNameuser;
     }
 }

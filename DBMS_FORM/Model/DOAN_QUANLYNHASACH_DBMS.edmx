@@ -345,6 +345,12 @@
         <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="userId" Type="int" Mode="In" />
         </Function>
+        <Function Name="CheckBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MS" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="InOut" />
+          <Parameter Name="Status2" Type="int" Mode="InOut" />
+        </Function>
         <Function Name="CheckMuon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MTV" Type="int" Mode="In" />
           <Parameter Name="MS" Type="int" Mode="In" />
@@ -354,6 +360,11 @@
         </Function>
         <Function Name="CountSachDaMua" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maTV" Type="int" Mode="In" />
+        </Function>
+        <Function Name="createDbmsUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="role" Type="nvarchar(max)" Mode="In" />
         </Function>
         <Function Name="deleteSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="maSach" Type="int" Mode="In" />
@@ -387,6 +398,19 @@
         </Function>
         <Function Name="fuCountSachTL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="maTl" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fun_checkLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="HoTenNV" Type="nvarchar" MaxLength="50" />
+                <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+                <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
         </Function>
         <Function Name="fun_DanhSachNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
@@ -480,11 +504,10 @@
                 <Property Name="MTV" Type="int" Nullable="false" />
                 <Property Name="HoVaTenTV" Type="nvarchar" MaxLength="50" />
                 <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
-                <Property Name="Mail" Type="nvarchar" MaxLength="50" />
                 <Property Name="SoDT" Type="varchar" MaxLength="15" />
-                <Property Name="ConSD" Type="bit" />
+                <Property Name="Mail" Type="nvarchar" MaxLength="50" />
                 <Property Name="MDThanThiet" Type="int" />
-                <Property Name="status" Type="bit" />
+                <Property Name="ConSD" Type="bit" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -532,7 +555,7 @@
           <Parameter Name="TS" Type="varchar" Mode="In" />
           <Parameter Name="DG" Type="int" Mode="In" />
           <Parameter Name="NN" Type="datetime" Mode="In" />
-          <Parameter Name="NXB" Type="datetime" Mode="In" />
+          <Parameter Name="NXB" Type="nvarchar" Mode="In" />
           <Parameter Name="MTL" Type="int" Mode="In" />
           <Parameter Name="Soluong" Type="int" Mode="In" />
           <Parameter Name="MNQL" Type="int" Mode="In" />
@@ -659,7 +682,11 @@
           <Parameter Name="sosachban" Type="int" Mode="In" />
           <Parameter Name="luongnv" Type="int" Mode="In" />
           <Parameter Name="ngayvang" Type="int" Mode="In" />
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="TypeId" Type="int" Mode="In" />
           <Parameter Name="manql" Type="int" Mode="In" />
+          <Parameter Name="danghi" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -836,6 +863,11 @@
           <Property Name="ConSD" Type="Boolean" />
           <Property Name="MDThanThiet" Type="Int32" />
         </ComplexType>
+        <ComplexType Name="fun_checkLogin_Result">
+          <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </ComplexType>
         <ComplexType Name="fun_DanhSachNhanVien_Result">
           <Property Name="MNV" Type="Int32" Nullable="false" />
           <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -896,7 +928,6 @@
           <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ConSD" Type="Boolean" />
           <Property Name="MDThanThiet" Type="Int32" />
-          <Property Name="status" Type="Boolean" />
         </ComplexType>
         <ComplexType Name="fun_ThanhVien_Result">
           <Property Name="MTV" Type="Int32" Nullable="false" />
@@ -1049,11 +1080,14 @@
           <Property Name="MNV" Type="Int32" Nullable="false" />
           <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SoSachBan" Type="Int32" />
           <Property Name="luongNV" Type="Int32" />
           <Property Name="NgayVang" Type="Int32" />
           <Property Name="NgayNghiViec" Type="DateTime" Precision="3" />
+          <Property Name="TypeId" Type="Int32" />
           <Property Name="DaNghi" Type="Boolean" />
           <Property Name="MNQL" Type="Int32" />
           <NavigationProperty Name="CungCaps" Relationship="Self.FK_CungCap_NV" FromRole="NV" ToRole="CungCap" />
@@ -1061,10 +1095,14 @@
           <NavigationProperty Name="Muons" Relationship="Self.FK_Muon_NV" FromRole="NV" ToRole="Muon" />
           <NavigationProperty Name="NV1" Relationship="Self.FK_NV_NV1" FromRole="NV" ToRole="NV1" />
           <NavigationProperty Name="NV2" Relationship="Self.FK_NV_NV1" FromRole="NV1" ToRole="NV" />
-          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TypeId" Type="Int32" />
-          <NavigationProperty Name="UserType" Relationship="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" FromRole="NV" ToRole="UserType" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_NV_UserType" FromRole="NV" ToRole="UserType" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Pid" />
+          </Key>
+          <Property Name="Pid" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Sach">
           <Key>
@@ -1116,6 +1154,14 @@
           <Property Name="BiLoaiBo" Type="Boolean" />
           <Property Name="TenTL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Saches" Relationship="Self.FK_Sach_TheLoai" FromRole="TheLoai" ToRole="Sach" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NVs" Relationship="Self.FK_NV_UserType" FromRole="UserType" ToRole="NV" />
         </EntityType>
         <Association Name="FK_CungCap_NhaCungCap">
           <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="1">
@@ -1279,6 +1325,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NV_UserType">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+          <End Role="NV" Type="Self.NV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="NV">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sach_TheLoai">
           <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -1300,10 +1358,12 @@
           <EntitySet Name="Muons" EntityType="Self.Muon" />
           <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
           <EntitySet Name="NVs" EntityType="Self.NV" />
+          <EntitySet Name="Permissions" EntityType="Self.Permission" />
           <EntitySet Name="Saches" EntityType="Self.Sach" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="ThanhViens" EntityType="Self.ThanhVien" />
           <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
           <AssociationSet Name="FK_CungCap_NhaCungCap" Association="Self.FK_CungCap_NhaCungCap">
             <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
             <End Role="CungCap" EntitySet="CungCaps" />
@@ -1352,12 +1412,20 @@
             <End Role="NV" EntitySet="NVs" />
             <End Role="NV1" EntitySet="NVs" />
           </AssociationSet>
+          <AssociationSet Name="FK_NV_UserType" Association="Self.FK_NV_UserType">
+            <End Role="UserType" EntitySet="UserTypes" />
+            <End Role="NV" EntitySet="NVs" />
+          </AssociationSet>
           <AssociationSet Name="FK_Sach_TheLoai" Association="Self.FK_Sach_TheLoai">
             <End Role="TheLoai" EntitySet="TheLoais" />
             <End Role="Sach" EntitySet="Saches" />
           </AssociationSet>
           <FunctionImport Name="fluongNV" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fluongNV_Result)" />
           <FunctionImport Name="fThanhVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fThanhVien_Result)" />
+          <FunctionImport Name="fun_checkLogin" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_checkLogin_Result)">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="fun_DanhSachNhanVien" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachNhanVien_Result)" />
           <FunctionImport Name="fun_DanhSachQuanLy" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_DanhSachQuanLy_Result)" />
           <FunctionImport Name="fun_SachCon" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fun_SachCon_Result)" />
@@ -1396,12 +1464,23 @@
             <Parameter Name="ConSD" Mode="In" Type="Int32" />
             <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="CheckBan">
+            <Parameter Name="MS" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="InOut" Type="Int32" />
+            <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="CheckMuon">
             <Parameter Name="MTV" Mode="In" Type="Int32" />
             <Parameter Name="MS" Mode="In" Type="Int32" />
             <Parameter Name="SoLuong" Mode="In" Type="Int32" />
             <Parameter Name="Status" Mode="InOut" Type="Int32" />
             <Parameter Name="Status2" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="createDbmsUser">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="role" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="deleteSach">
           <Parameter Name="maSach" Mode="In" Type="Int32" />
@@ -1411,7 +1490,7 @@
             <Parameter Name="TS" Mode="In" Type="String" />
             <Parameter Name="DG" Mode="In" Type="Int32" />
             <Parameter Name="NN" Mode="In" Type="DateTime" />
-            <Parameter Name="NXB" Mode="In" Type="DateTime" />
+            <Parameter Name="NXB" Mode="In" Type="String" />
             <Parameter Name="MTL" Mode="In" Type="Int32" />
             <Parameter Name="Soluong" Mode="In" Type="Int32" />
             <Parameter Name="MNQL" Mode="In" Type="Int32" />
@@ -1480,7 +1559,11 @@
             <Parameter Name="sosachban" Mode="In" Type="Int32" />
             <Parameter Name="luongnv" Mode="In" Type="Int32" />
             <Parameter Name="ngayvang" Mode="In" Type="Int32" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="TypeId" Mode="In" Type="Int32" />
             <Parameter Name="manql" Mode="In" Type="Int32" />
+            <Parameter Name="danghi" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1538,12 +1621,6 @@
             <Parameter Name="IdTV" Mode="In" Type="Int32" />
             <Parameter Name="Method" Mode="In" Type="String" />
           </FunctionImport>
-          <EntitySet Name="Permissions" EntityType="DOAN_QUANLYNHASACH_DBMSModel.Permission" />
-          <EntitySet Name="UserTypes" EntityType="DOAN_QUANLYNHASACH_DBMSModel.UserType" />
-          <AssociationSet Name="FK_NV_UserType" Association="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType">
-            <End Role="UserType" EntitySet="UserTypes" />
-            <End Role="NV" EntitySet="NVs" />
-          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1556,33 +1633,6 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="Permission">
-          <Key>
-            <PropertyRef Name="Pid" />
-          </Key>
-          <Property Name="Pid" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="UserType">
-          <Key>
-            <PropertyRef Name="TypeId" />
-          </Key>
-          <Property Name="TypeId" Type="Int32" Nullable="false" />
-          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="NVs" Relationship="DOAN_QUANLYNHASACH_DBMSModel.FK_NV_UserType" FromRole="UserType" ToRole="NV" />
-        </EntityType>
-        <Association Name="FK_NV_UserType">
-          <End Type="DOAN_QUANLYNHASACH_DBMSModel.UserType" Role="UserType" Multiplicity="0..1" />
-          <End Type="DOAN_QUANLYNHASACH_DBMSModel.NV" Role="NV" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserType">
-              <PropertyRef Name="TypeId" />
-            </Principal>
-            <Dependent Role="NV">
-              <PropertyRef Name="TypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1653,19 +1703,27 @@
           <EntitySetMapping Name="NVs">
             <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.NV">
               <MappingFragment StoreEntitySet="NV">
-                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="MNV" ColumnName="MNV" />
                 <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
                 <ScalarProperty Name="luongNV" ColumnName="luongNV" />
                 <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
                 <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
                 <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
                 <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1717,6 +1775,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fluongNV" FunctionImportName="fluongNV">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fluongNV_Result">
@@ -1736,6 +1802,15 @@
                 <ScalarProperty Name="SoDT" ColumnName="SoDT" />
                 <ScalarProperty Name="ConSD" ColumnName="ConSD" />
                 <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.fun_checkLogin" FunctionImportName="fun_checkLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.fun_checkLogin_Result">
+                <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1821,7 +1896,6 @@
                 <ScalarProperty Name="SoDT" ColumnName="SoDT" />
                 <ScalarProperty Name="ConSD" ColumnName="ConSD" />
                 <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
-                <ScalarProperty Name="status" ColumnName="status" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1928,7 +2002,9 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Add_ThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_ThanhVien" />
+          <FunctionImportMapping FunctionImportName="CheckBan" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckBan" />
           <FunctionImportMapping FunctionImportName="CheckMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckMuon" />
+          <FunctionImportMapping FunctionImportName="createDbmsUser" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.createDbmsUser" />
           <FunctionImportMapping FunctionImportName="deleteSach" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.deleteSach" />
           <FunctionImportMapping FunctionImportName="IMPORTSACH" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.IMPORTSACH" />
           <FunctionImportMapping FunctionImportName="INSERTBAN" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBAN" />
@@ -1965,22 +2041,6 @@
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
           <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
-          <EntitySetMapping Name="Permissions">
-            <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Permission">
-              <MappingFragment StoreEntitySet="Permission">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Pid" ColumnName="Pid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserTypes">
-            <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.UserType">
-              <MappingFragment StoreEntitySet="UserType">
-                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

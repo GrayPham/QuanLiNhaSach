@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBMS_FORM.BLL;
 using DBMS_FORM.Model;
+using DBMS_FORM.Object;
 
 namespace DBMS_FORM
 {
@@ -25,8 +26,11 @@ namespace DBMS_FORM
 
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
+            label_name.Text = BaseData.Name;
+            labelRole.Text = BaseData.role;
             fillDVGNhanVien();
             fillComboBox();
+            fillComboBoxType();
             btnedit.Enabled=false;
         }
         private void fillDVGNhanVien()
@@ -39,6 +43,13 @@ namespace DBMS_FORM
             comboBox_find.ValueMember = "MNV";
             comboBox_find.DataSource = managerBLL.GetManager();
             
+        }
+        private void fillComboBoxType(int index = 0)
+        {
+            comboBox_type.DisplayMember = "TypeId";
+            comboBox_type.ValueMember = "TypeId";
+            comboBox_type.DataSource = managerBLL.GetTypeUser();
+
         }
         private void button_search_Click(object sender, EventArgs e)
         {
@@ -65,7 +76,12 @@ namespace DBMS_FORM
                     int vang = (int)numeric_absent.Value;
 
                     int maNQL = Convert.ToInt32(comboBox_find.SelectedValue);
-                    managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, maNQL);
+                    string username = textBox_username.Text;
+                    string pass = textBox_password.Text;
+                    int typeid = Convert.ToInt32(comboBox_type.SelectedValue);
+
+
+                    managerBLL.AddNV(ma, hoTen, sdt, dc, sachBan, luong, username, pass,typeid, vang, maNQL);
 
                     //addNV.sp_AddNV(ma, hoTen, sdt, dc, sachBan, luong, vang, ref kq);
                     fillDVGNhanVien();
@@ -120,19 +136,7 @@ namespace DBMS_FORM
             }
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            btnedit.Enabled = true;
-            numeric_booksale.ReadOnly = true;
-            manvOld =Convert.ToInt32( dataGridView1.CurrentRow.Cells[0].Value);
-            textBox_id.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            textBox_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox_phone.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            richTextBox_address.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            numeric_booksale.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-            textBox_salary.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            numeric_absent.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-        }
+        
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -147,6 +151,37 @@ namespace DBMS_FORM
             else
             {
                 MessageBox.Show("Input Id Staff", "Add Staff");
+            }
+        }
+
+        private void dataGridView1_DoubleClick_1(object sender, EventArgs e)
+        {
+            btnedit.Enabled = true;
+            numeric_booksale.ReadOnly = true;
+            manvOld = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            textBox_id.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textBox_name.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox_phone.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            richTextBox_address.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            numeric_booksale.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+            textBox_salary.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            numeric_absent.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+            comboBox_type.Visible = false;
+            textBox_username.Visible = false;
+            textBox_password.Visible = false;
+
+        }
+
+        private void comboBox_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(comboBox_type.Text)==false)
+            {
+                int value = Convert.ToInt32(comboBox_type.Text);
+                if (value == 2)
+                {
+                    comboBox_find.Visible = false;
+                }
             }
         }
     }

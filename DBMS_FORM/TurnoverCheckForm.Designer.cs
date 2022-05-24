@@ -36,6 +36,8 @@
             this.DVGTurnOver = new System.Windows.Forms.DataGridView();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label_name = new System.Windows.Forms.Label();
+            this.lbNameuser = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOver)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,7 @@
             this.panel1.Controls.Add(this.radioButtonYear);
             this.panel1.Controls.Add(this.radioButtonMouth);
             this.panel1.Controls.Add(this.radioButtonDay);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(29, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 164);
             this.panel1.TabIndex = 3;
@@ -96,7 +98,7 @@
             this.btnCheck.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCheck.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCheck.Location = new System.Drawing.Point(12, 202);
+            this.btnCheck.Location = new System.Drawing.Point(29, 245);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(257, 34);
             this.btnCheck.TabIndex = 4;
@@ -107,7 +109,7 @@
             // DVGTurnOver
             // 
             this.DVGTurnOver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DVGTurnOver.Location = new System.Drawing.Point(296, 12);
+            this.DVGTurnOver.Location = new System.Drawing.Point(299, 55);
             this.DVGTurnOver.Name = "DVGTurnOver";
             this.DVGTurnOver.RowHeadersWidth = 51;
             this.DVGTurnOver.RowTemplate.Height = 24;
@@ -119,19 +121,20 @@
             this.btnPrint.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPrint.Location = new System.Drawing.Point(12, 266);
+            this.btnPrint.Location = new System.Drawing.Point(29, 309);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(257, 34);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "PRINT";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Location = new System.Drawing.Point(12, 328);
+            this.btnExit.Location = new System.Drawing.Point(29, 371);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(257, 34);
             this.btnExit.TabIndex = 7;
@@ -139,12 +142,38 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_name.Location = new System.Drawing.Point(151, 12);
+            this.label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(135, 29);
+            this.label_name.TabIndex = 10;
+            this.label_name.Text = "Name User";
+            // 
+            // lbNameuser
+            // 
+            this.lbNameuser.AutoSize = true;
+            this.lbNameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameuser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbNameuser.Location = new System.Drawing.Point(13, 12);
+            this.lbNameuser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNameuser.Name = "lbNameuser";
+            this.lbNameuser.Size = new System.Drawing.Size(135, 29);
+            this.lbNameuser.TabIndex = 8;
+            this.lbNameuser.Text = "Name User";
+            // 
             // TurnoverCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 480);
+            this.Controls.Add(this.label_name);
+            this.Controls.Add(this.lbNameuser);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.DVGTurnOver);
@@ -152,10 +181,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "TurnoverCheckForm";
             this.Text = "TurnoverCheckForm";
+            this.Load += new System.EventHandler(this.TurnoverCheckForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DVGTurnOver)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,5 +200,7 @@
         private System.Windows.Forms.DataGridView DVGTurnOver;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label_name;
+        private System.Windows.Forms.Label lbNameuser;
     }
 }

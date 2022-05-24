@@ -499,10 +499,10 @@
           <Property Name="MTV" Type="int" Nullable="false" />
           <Property Name="HoVaTenTV" Type="nvarchar" MaxLength="50" />
           <Property Name="Diachi" Type="nvarchar" MaxLength="50" />
-          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
           <Property Name="SoDT" Type="varchar" MaxLength="15" />
-          <Property Name="ConSD" Type="bit" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
           <Property Name="MDThanThiet" Type="int" />
+          <Property Name="ConSD" Type="bit" />
         </RowType>
       </CollectionType>
     </ReturnType>

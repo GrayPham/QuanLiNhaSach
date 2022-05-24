@@ -363,5 +363,45 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Add_ThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_ThanhVien" />
+    <FunctionImportMapping FunctionImportName="CheckBan" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckBan" />
+    <FunctionImportMapping FunctionImportName="CheckMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckMuon" />
+    <FunctionImportMapping FunctionImportName="createDbmsUser" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.createDbmsUser" />
+    <FunctionImportMapping FunctionImportName="deleteSach" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.deleteSach" />
+    <FunctionImportMapping FunctionImportName="IMPORTSACH" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.IMPORTSACH" />
+    <FunctionImportMapping FunctionImportName="INSERTBAN" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBAN" />
+    <FunctionImportMapping FunctionImportName="INSERTBANTV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBANTV" />
+    <FunctionImportMapping FunctionImportName="InsertMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertMuon" />
+    <FunctionImportMapping FunctionImportName="InsertPersonalDetailsAndAccount" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertPersonalDetailsAndAccount" />
+    <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien" />
+    <FunctionImportMapping FunctionImportName="sp_AddNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_AddNV" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteUSER_MANAGEMENT" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SP_DeleteUSER_MANAGEMENT" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_EditNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_EditNV" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
+    <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
   </EntityContainerMapping>
 </Mapping>

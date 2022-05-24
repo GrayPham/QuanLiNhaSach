@@ -66,6 +66,7 @@
     <Compile Include="Banfrm.Designer.cs">
       <DependentUpon>Banfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\Login.cs" />
     <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="BLL\NhanVien.cs" />
     <Compile Include="BLL\ThanhVienBLL.cs" />
@@ -107,113 +108,116 @@
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CungCap.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DaBan.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DOAN_QUANLYNHASACH_DBMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DOAN_QUANLYNHASACH_DBMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DOAN_QUANLYNHASACH_DBMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\fluongNV_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fThanhVien_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fuNhanvienOfQl_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\fun_checkLogin_Result.cs">
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_DanhSachNhanVien_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_DanhSachQuanLy_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_SachCon_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_SearchNhanVien_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_SearchSach_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_SearchThanhVien_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\fun_ThanhVien_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HoaDon.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LowestSelling_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Muon.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\MuonQuaHan_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NhaCungCap.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NV.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NVinHD_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Permission.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\QuanLyNhaSach.cs" />
-    <Compile Include="Model\QuanLyNhaSach_DBMS.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyNhaSach_DBMS.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QuanLyNhaSach_DBMS.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QuanLyNhaSach_DBMS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyNhaSach_DBMS.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Model\Sach.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SearchNhaCC_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ThanhVien.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TheLoai.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TurnoverByDay_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TurnoverByMonth_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TurnoverByYear_Result.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserType.cs">
-      <DependentUpon>QuanLyNhaSach_DBMS.tt</DependentUpon>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
     <Compile Include="NhapHoaDon.cs">
       <SubType>Form</SubType>
@@ -221,6 +225,7 @@
     <Compile Include="NhapHoaDon.Designer.cs">
       <DependentUpon>NhapHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Object\BaseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Thuefrm.cs">
@@ -276,12 +281,12 @@
       <DependentUpon>TurnoverCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="backgroundImage\turnover.png.crdownload" />
-    <EntityDeploy Include="Model\QuanLyNhaSach_DBMS.edmx">
+    <EntityDeploy Include="Model\DOAN_QUANLYNHASACH_DBMS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyNhaSach_DBMS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DOAN_QUANLYNHASACH_DBMS.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\QuanLyNhaSach_DBMS.edmx.diagram">
-      <DependentUpon>QuanLyNhaSach_DBMS.edmx</DependentUpon>
+    <None Include="Model\DOAN_QUANLYNHASACH_DBMS.edmx.diagram">
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -319,15 +324,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\QuanLyNhaSach_DBMS.Context.tt">
+    <Content Include="Model\DOAN_QUANLYNHASACH_DBMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyNhaSach_DBMS.edmx</DependentUpon>
-      <LastGenOutput>QuanLyNhaSach_DBMS.Context.cs</LastGenOutput>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.edmx</DependentUpon>
+      <LastGenOutput>DOAN_QUANLYNHASACH_DBMS.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\QuanLyNhaSach_DBMS.tt">
+    <Content Include="Model\DOAN_QUANLYNHASACH_DBMS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuanLyNhaSach_DBMS.edmx</DependentUpon>
-      <LastGenOutput>QuanLyNhaSach_DBMS.cs</LastGenOutput>
+      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.edmx</DependentUpon>
+      <LastGenOutput>DOAN_QUANLYNHASACH_DBMS.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
