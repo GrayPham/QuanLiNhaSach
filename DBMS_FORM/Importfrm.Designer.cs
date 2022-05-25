@@ -39,7 +39,7 @@
             this.txtMNCC = new System.Windows.Forms.TextBox();
             this.txtNXB = new System.Windows.Forms.TextBox();
             this.txtSL = new System.Windows.Forms.TextBox();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.txtimportprice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -154,13 +154,13 @@
             this.txtSL.Size = new System.Drawing.Size(100, 29);
             this.txtSL.TabIndex = 19;
             // 
-            // txtTongTien
+            // txtimportprice
             // 
-            this.txtTongTien.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(915, 209);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(100, 29);
-            this.txtTongTien.TabIndex = 20;
+            this.txtimportprice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtimportprice.Location = new System.Drawing.Point(915, 209);
+            this.txtimportprice.Name = "txtimportprice";
+            this.txtimportprice.Size = new System.Drawing.Size(100, 29);
+            this.txtimportprice.TabIndex = 20;
             // 
             // label5
             // 
@@ -196,11 +196,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(854, 212);
+            this.label8.Location = new System.Drawing.Point(799, 210);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 23);
+            this.label8.Size = new System.Drawing.Size(110, 23);
             this.label8.TabIndex = 24;
-            this.label8.Text = "Total ";
+            this.label8.Text = "Import Price";
             // 
             // label9
             // 
@@ -313,7 +313,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtTongTien);
+            this.Controls.Add(this.txtimportprice);
             this.Controls.Add(this.txtSL);
             this.Controls.Add(this.txtNXB);
             this.Controls.Add(this.txtMNCC);
@@ -351,7 +351,7 @@
         private System.Windows.Forms.TextBox txtMNCC;
         private System.Windows.Forms.TextBox txtNXB;
         private System.Windows.Forms.TextBox txtSL;
-        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.TextBox txtimportprice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

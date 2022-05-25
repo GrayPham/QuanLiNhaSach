@@ -60,11 +60,14 @@ namespace DBMS_FORM
                 comand.Parameters.Add("@NN", SqlDbType.DateTime).Value = DateTime.Now;
                 comand.Parameters.Add("@MTL", SqlDbType.Int).Value = int.Parse(txtTL.Text);
                 comand.Parameters.Add("@Soluong", SqlDbType.Int).Value = int.Parse(txtSL.Text);
-                comand.Parameters.Add("@MNQL", SqlDbType.Int).Value = 2001;
+                comand.Parameters.Add("@MNQL", SqlDbType.Int).Value = BaseData.idUser;
                 comand.Parameters.Add("@MNCC", SqlDbType.Int).Value = int.Parse(txtMNCC.Text);
                 comand.Parameters.Add("@NXB", SqlDbType.NVarChar).Value = txtNXB.Text;
+                comand.Parameters.Add("@DGN", SqlDbType.Int).Value = int.Parse(txtimportprice.Text);
+
 
                 comand.ExecuteNonQuery();
+                MessageBox.Show("Invoice successful", "Information");
             }
             catch (Exception E)
             {

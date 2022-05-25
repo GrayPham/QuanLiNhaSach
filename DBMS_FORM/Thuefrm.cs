@@ -144,7 +144,7 @@ namespace DBMS_FORM
                     comand.Parameters.Add("@flag", SqlDbType.Int).Value = i;
                     comand.Parameters.Add("@MATV", SqlDbType.Int).Value = int.Parse(textBox2.Text);
                     comand.Parameters.Add("@MS", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
-                    comand.Parameters.Add("@MANV", SqlDbType.Int).Value = 2001;
+                    comand.Parameters.Add("@MANV", SqlDbType.Int).Value = BaseData.idUser;
                     comand.Parameters.Add("@SoLuong", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
                     comand.Parameters.Add("@NMuon", SqlDbType.DateTime).Value = dateMuon.Value;
                     comand.Parameters.Add("@NTra", SqlDbType.DateTime).Value = dateTra.Value;

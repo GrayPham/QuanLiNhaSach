@@ -152,7 +152,7 @@ namespace DBMS_FORM
                         comand.Parameters.Add("@flag", SqlDbType.Int).Value = i;
                         comand.Parameters.Add("@GIAMGIA", SqlDbType.Int).Value = 0;
                         comand.Parameters.Add("@MS", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
-                        comand.Parameters.Add("@MANV", SqlDbType.Int).Value = 2001;
+                        comand.Parameters.Add("@MANV", SqlDbType.Int).Value = BaseData.idUser;
                         comand.Parameters.Add("@SoLuong", SqlDbType.Int).Value = int.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
                         comand.Parameters.Add("@MTV", SqlDbType.Int).Value = MTV;
                         comand.Parameters.Add("@MHD", SqlDbType.Int).Value = MHD;
@@ -209,6 +209,7 @@ namespace DBMS_FORM
                         comand.Parameters.Add("@DXOA", SqlDbType.Bit).Value = false;
 
                         comand.ExecuteNonQuery();
+                        MessageBox.Show("Invoice successful", "Information");
 
 
                     }
