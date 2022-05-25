@@ -59,12 +59,8 @@ C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\bin\Debug\EntityFramework
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\bin\Debug\itextsharp.xml
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csprojResolveAssemblyReference.cache
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Banfrm.resources
-C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.AddBookForm.resources
-C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.BookManagementForm.resources
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.EditBookForm.resources
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.EditGenreForm.resources
-C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.RemoveBookForm.resources
-C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.RemoveGenreForm.resources
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.Form1.resources
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.FormNhanVien.resources
 C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.FormThanhVien.resources
@@ -106,3 +102,5 @@ F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\bin\Debug
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.csproj.CopyComplete
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.exe
 F:\Năm 3 kì 2\DBMS\Project\DBMS_FINALPROJECT\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.pdb
+C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.AddGenre.resources
+C:\Users\asus\Documents\GitHub\QuanLiNhaSach\DBMS_FORM\obj\Debug\DBMS_FORM.BookManager.AddProvider.resources
