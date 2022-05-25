@@ -132,5 +132,10 @@ namespace DBMS_FORM
             label_name.Text = BaseData.Name;
             labelRole.Text = BaseData.role;
         }
+
+        private void memidtxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
