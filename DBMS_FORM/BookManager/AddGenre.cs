@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBMS_FORM.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace DBMS_FORM.BookManager
         {
 
         }
+        GenreBLL genreBLL = new GenreBLL();
 
         private void addbtn_Click(object sender, EventArgs e)
         {
@@ -33,7 +35,7 @@ namespace DBMS_FORM.BookManager
                 {
                     BiLoaiBo = true;
                 }
-                if (genrebll.MethodGenre(MTL, TenTL, BiLoaiBo) == true)
+                if (genreBLL.MethodGenre(MTL, TenTL, BiLoaiBo) == true)
                 {
                     MessageBox.Show("Successfull!!", "Add Genre");
 

@@ -387,6 +387,11 @@
     <Parameter Name="NX" Type="datetime" Mode="In" />
     <Parameter Name="flag" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="EditGender" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MTL" Type="int" Mode="In" />
+    <Parameter Name="TTL" Type="nvarchar" Mode="In" />
+    <Parameter Name="flag" Type="int" Mode="In" />
+  </Function>
   <Function Name="fluongNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>

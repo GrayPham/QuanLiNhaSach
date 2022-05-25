@@ -801,6 +801,11 @@
       <Parameter Name="IdTV" Mode="In" Type="Int32" />
       <Parameter Name="Method" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="EditGender">
+      <Parameter Name="MTL" Mode="In" Type="Int32" />
+      <Parameter Name="TTL" Mode="In" Type="String" />
+      <Parameter Name="flag" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />

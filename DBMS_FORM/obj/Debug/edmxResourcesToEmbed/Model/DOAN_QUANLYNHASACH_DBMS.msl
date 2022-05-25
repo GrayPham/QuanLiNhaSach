@@ -418,5 +418,6 @@
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
     <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
+    <FunctionImportMapping FunctionImportName="EditGender" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.EditGender" />
   </EntityContainerMapping>
 </Mapping>
