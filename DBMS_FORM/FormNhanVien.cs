@@ -183,6 +183,10 @@ namespace DBMS_FORM
                 {
                     comboBox_find.Visible = false;
                 }
+                else
+                {
+                    comboBox_find.Visible = true;
+                }
             }
         }
 
@@ -192,6 +196,7 @@ namespace DBMS_FORM
             fillDVGNhanVien();
             fillComboBox();
             fillComboBoxType();
+            btnadd.Enabled=true;
             btnedit.Enabled = false;
         }
     }

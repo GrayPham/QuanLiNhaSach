@@ -18,6 +18,7 @@
     <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MNV" Type="Int32" Nullable="false" />
   </ComplexType>
   <ComplexType Name="fun_DanhSachNhanVien_Result">
     <Property Name="MNV" Type="Int32" Nullable="false" />
@@ -75,10 +76,10 @@
     <Property Name="MTV" Type="Int32" Nullable="false" />
     <Property Name="HoVaTenTV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="ConSD" Type="Boolean" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MDThanThiet" Type="Int32" />
+    <Property Name="ConSD" Type="Boolean" />
   </ComplexType>
   <ComplexType Name="fun_ThanhVien_Result">
     <Property Name="MTV" Type="Int32" Nullable="false" />
@@ -99,6 +100,21 @@
     <Property Name="luongNV" Type="Int32" />
     <Property Name="NgayVang" Type="Int32" />
     <Property Name="NgayNghiViec" Type="DateTime" />
+    <Property Name="DaNghi" Type="Boolean" />
+    <Property Name="MNQL" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="getNVofQL_Result">
+    <Property Name="MNV" Type="Int32" Nullable="false" />
+    <Property Name="HoTenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoSachBan" Type="Int32" />
+    <Property Name="luongNV" Type="Int32" />
+    <Property Name="NgayVang" Type="Int32" />
+    <Property Name="NgayNghiViec" Type="DateTime" />
+    <Property Name="TypeId" Type="Int32" />
     <Property Name="DaNghi" Type="Boolean" />
     <Property Name="MNQL" Type="Int32" />
   </ComplexType>
@@ -247,13 +263,6 @@
     <NavigationProperty Name="NV1" Relationship="Self.FK_NV_NV1" FromRole="NV" ToRole="NV1" />
     <NavigationProperty Name="NV2" Relationship="Self.FK_NV_NV1" FromRole="NV1" ToRole="NV" />
     <NavigationProperty Name="UserType" Relationship="Self.FK_NV_UserType" FromRole="NV" ToRole="UserType" />
-  </EntityType>
-  <EntityType Name="Permission">
-    <Key>
-      <PropertyRef Name="Pid" />
-    </Key>
-    <Property Name="Pid" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Sach">
     <Key>
@@ -509,7 +518,6 @@
     <EntitySet Name="Muons" EntityType="Self.Muon" />
     <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
     <EntitySet Name="NVs" EntityType="Self.NV" />
-    <EntitySet Name="Permissions" EntityType="Self.Permission" />
     <EntitySet Name="Saches" EntityType="Self.Sach" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="ThanhViens" EntityType="Self.ThanhVien" />
@@ -593,6 +601,9 @@
     <FunctionImport Name="fuNhanvienOfQl" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.fuNhanvienOfQl_Result)">
       <Parameter Name="maNQL" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="getNVofQL" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result)">
+      <Parameter Name="maNql" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="LowestSelling" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.LowestSelling_Result)" />
     <FunctionImport Name="MuonQuaHan" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.MuonQuaHan_Result)" />
     <FunctionImport Name="NVinHD" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.NVinHD_Result)">
@@ -606,6 +617,13 @@
       <Parameter Name="yearNow" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="TurnoverByYear" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.TurnoverByYear_Result)" />
+    <FunctionImport Name="Add_NhaCungCap" ReturnType="Collection(String)">
+      <Parameter Name="MNCC" Mode="In" Type="Int32" />
+      <Parameter Name="TenNCC" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Mail" Mode="In" Type="String" />
+      <Parameter Name="ConHD" Mode="In" Type="Boolean" />
+    </FunctionImport>
     <FunctionImport Name="Add_ThanhVien" ReturnType="Collection(String)">
       <Parameter Name="MaTV" Mode="In" Type="Int32" />
       <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
@@ -614,6 +632,11 @@
       <Parameter Name="Mail" Mode="In" Type="String" />
       <Parameter Name="ConSD" Mode="In" Type="Int32" />
       <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Add_TheLoai" ReturnType="Collection(String)">
+      <Parameter Name="MTL" Mode="In" Type="Int32" />
+      <Parameter Name="TenTL" Mode="In" Type="String" />
+      <Parameter Name="BiLoaiBo" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="CheckBan">
       <Parameter Name="MS" Mode="In" Type="Int32" />
@@ -633,8 +656,23 @@
       <Parameter Name="password" Mode="In" Type="String" />
       <Parameter Name="role" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="Delete_Providers">
+      <Parameter Name="MNCC" Mode="In" Type="Int32" />
+      <Parameter Name="Method" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="deleteSach">
       <Parameter Name="maSach" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="EditBook">
+      <Parameter Name="MS" Mode="In" Type="Int32" />
+      <Parameter Name="TS" Mode="In" Type="String" />
+      <Parameter Name="DG" Mode="In" Type="Int32" />
+      <Parameter Name="NN" Mode="In" Type="DateTime" />
+      <Parameter Name="NXB" Mode="In" Type="String" />
+      <Parameter Name="MTL" Mode="In" Type="Int32" />
+      <Parameter Name="Soluong" Mode="In" Type="Int32" />
+      <Parameter Name="NX" Mode="In" Type="DateTime" />
+      <Parameter Name="flag" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="IMPORTSACH">
       <Parameter Name="MS" Mode="In" Type="Int32" />
@@ -692,15 +730,6 @@
       <Parameter Name="Active" Mode="In" Type="Boolean" />
       <Parameter Name="Salary" Mode="In" Type="Decimal" />
       <Parameter Name="PPFDeduction" Mode="In" Type="Decimal" />
-    </FunctionImport>
-    <FunctionImport Name="SettingThanhVien" ReturnType="Collection(String)">
-      <Parameter Name="Action" Mode="In" Type="String" />
-      <Parameter Name="MaTV" Mode="In" Type="Int32" />
-      <Parameter Name="HoVaTenTV" Mode="In" Type="String" />
-      <Parameter Name="SoDT" Mode="In" Type="String" />
-      <Parameter Name="DiaChi" Mode="In" Type="String" />
-      <Parameter Name="Mail" Mode="In" Type="String" />
-      <Parameter Name="MDThanThiet" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_AddNV" ReturnType="Collection(String)">
       <Parameter Name="manv" Mode="In" Type="Int32" />
@@ -772,21 +801,6 @@
       <Parameter Name="IdTV" Mode="In" Type="Int32" />
       <Parameter Name="Method" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="Add_NhaCungCap" ReturnType="Collection(String)">
-      <Parameter Name="MNCC" Mode="In" Type="Int32" />
-      <Parameter Name="TenNCC" Mode="In" Type="String" />
-      <Parameter Name="DiaChi" Mode="In" Type="String" />
-      <Parameter Name="Mail" Mode="In" Type="String" />
-      <Parameter Name="ConHD" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="getNVofQL" IsComposable="true" ReturnType="Collection(DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result)">
-      <Parameter Name="maNql" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="Add_TheLoai" ReturnType="Collection(String)">
-      <Parameter Name="MTL" Mode="In" Type="Int32" />
-      <Parameter Name="TenTL" Mode="In" Type="String" />
-      <Parameter Name="BiLoaiBo" Mode="In" Type="Boolean" />
-    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -798,20 +812,5 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="getNVofQL_Result">
-    <Property Type="Int32" Name="MNV" Nullable="false" />
-    <Property Type="String" Name="HoTenNV" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="SDT" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="UserName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="SoSachBan" Nullable="true" />
-    <Property Type="Int32" Name="luongNV" Nullable="true" />
-    <Property Type="Int32" Name="NgayVang" Nullable="true" />
-    <Property Type="DateTime" Name="NgayNghiViec" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="TypeId" Nullable="true" />
-    <Property Type="Boolean" Name="DaNghi" Nullable="true" />
-    <Property Type="Int32" Name="MNQL" Nullable="true" />
   </ComplexType>
 </Schema>

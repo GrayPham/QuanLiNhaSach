@@ -16,9 +16,9 @@ namespace DBMS_FORM.Model
         public int MTV { get; set; }
         public string HoVaTenTV { get; set; }
         public string Diachi { get; set; }
-        public string Mail { get; set; }
         public string SoDT { get; set; }
-        public Nullable<bool> ConSD { get; set; }
+        public string Mail { get; set; }
         public Nullable<int> MDThanThiet { get; set; }
+        public Nullable<bool> ConSD { get; set; }
     }
 }

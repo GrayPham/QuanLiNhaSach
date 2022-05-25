@@ -34,7 +34,6 @@ namespace DBMS_FORM.Model
         public DbSet<Muon> Muons { get; set; }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public DbSet<NV> NVs { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
         public DbSet<Sach> Saches { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<ThanhVien> ThanhViens { get; set; }
@@ -131,6 +130,16 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fuNhanvienOfQl_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[fuNhanvienOfQl](@maNQL)", maNQLParameter);
         }
     
+        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "getNVofQL")]
+        public virtual IQueryable<getNVofQL_Result> getNVofQL(Nullable<int> maNql)
+        {
+            var maNqlParameter = maNql.HasValue ?
+                new ObjectParameter("maNql", maNql) :
+                new ObjectParameter("maNql", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<getNVofQL_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[getNVofQL](@maNql)", maNqlParameter);
+        }
+    
         [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "LowestSelling")]
         public virtual IQueryable<LowestSelling_Result> LowestSelling()
         {
@@ -185,6 +194,31 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<TurnoverByYear_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[TurnoverByYear]()");
         }
     
+        public virtual ObjectResult<string> Add_NhaCungCap(Nullable<int> mNCC, string tenNCC, string diaChi, string mail, Nullable<bool> conHD)
+        {
+            var mNCCParameter = mNCC.HasValue ?
+                new ObjectParameter("MNCC", mNCC) :
+                new ObjectParameter("MNCC", typeof(int));
+    
+            var tenNCCParameter = tenNCC != null ?
+                new ObjectParameter("TenNCC", tenNCC) :
+                new ObjectParameter("TenNCC", typeof(string));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var mailParameter = mail != null ?
+                new ObjectParameter("Mail", mail) :
+                new ObjectParameter("Mail", typeof(string));
+    
+            var conHDParameter = conHD.HasValue ?
+                new ObjectParameter("ConHD", conHD) :
+                new ObjectParameter("ConHD", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_NhaCungCap", mNCCParameter, tenNCCParameter, diaChiParameter, mailParameter, conHDParameter);
+        }
+    
         public virtual ObjectResult<string> Add_ThanhVien(Nullable<int> maTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<int> conSD, Nullable<int> mDThanThiet)
         {
             var maTVParameter = maTV.HasValue ?
@@ -216,6 +250,23 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("MDThanThiet", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_ThanhVien", maTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, conSDParameter, mDThanThietParameter);
+        }
+    
+        public virtual ObjectResult<string> Add_TheLoai(Nullable<int> mTL, string tenTL, Nullable<bool> biLoaiBo)
+        {
+            var mTLParameter = mTL.HasValue ?
+                new ObjectParameter("MTL", mTL) :
+                new ObjectParameter("MTL", typeof(int));
+    
+            var tenTLParameter = tenTL != null ?
+                new ObjectParameter("TenTL", tenTL) :
+                new ObjectParameter("TenTL", typeof(string));
+    
+            var biLoaiBoParameter = biLoaiBo.HasValue ?
+                new ObjectParameter("BiLoaiBo", biLoaiBo) :
+                new ObjectParameter("BiLoaiBo", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_TheLoai", mTLParameter, tenTLParameter, biLoaiBoParameter);
         }
     
         public virtual int CheckBan(Nullable<int> mS, Nullable<int> soLuong, ObjectParameter status, ObjectParameter status2)
@@ -265,6 +316,19 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("createDbmsUser", usernameParameter, passwordParameter, roleParameter);
         }
     
+        public virtual int Delete_Providers(Nullable<int> mNCC, string method)
+        {
+            var mNCCParameter = mNCC.HasValue ?
+                new ObjectParameter("MNCC", mNCC) :
+                new ObjectParameter("MNCC", typeof(int));
+    
+            var methodParameter = method != null ?
+                new ObjectParameter("Method", method) :
+                new ObjectParameter("Method", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Delete_Providers", mNCCParameter, methodParameter);
+        }
+    
         public virtual int deleteSach(Nullable<int> maSach)
         {
             var maSachParameter = maSach.HasValue ?
@@ -272,6 +336,47 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("maSach", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deleteSach", maSachParameter);
+        }
+    
+        public virtual int EditBook(Nullable<int> mS, string tS, Nullable<int> dG, Nullable<System.DateTime> nN, string nXB, Nullable<int> mTL, Nullable<int> soluong, Nullable<System.DateTime> nX, string flag)
+        {
+            var mSParameter = mS.HasValue ?
+                new ObjectParameter("MS", mS) :
+                new ObjectParameter("MS", typeof(int));
+    
+            var tSParameter = tS != null ?
+                new ObjectParameter("TS", tS) :
+                new ObjectParameter("TS", typeof(string));
+    
+            var dGParameter = dG.HasValue ?
+                new ObjectParameter("DG", dG) :
+                new ObjectParameter("DG", typeof(int));
+    
+            var nNParameter = nN.HasValue ?
+                new ObjectParameter("NN", nN) :
+                new ObjectParameter("NN", typeof(System.DateTime));
+    
+            var nXBParameter = nXB != null ?
+                new ObjectParameter("NXB", nXB) :
+                new ObjectParameter("NXB", typeof(string));
+    
+            var mTLParameter = mTL.HasValue ?
+                new ObjectParameter("MTL", mTL) :
+                new ObjectParameter("MTL", typeof(int));
+    
+            var soluongParameter = soluong.HasValue ?
+                new ObjectParameter("Soluong", soluong) :
+                new ObjectParameter("Soluong", typeof(int));
+    
+            var nXParameter = nX.HasValue ?
+                new ObjectParameter("NX", nX) :
+                new ObjectParameter("NX", typeof(System.DateTime));
+    
+            var flagParameter = flag != null ?
+                new ObjectParameter("flag", flag) :
+                new ObjectParameter("flag", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EditBook", mSParameter, tSParameter, dGParameter, nNParameter, nXBParameter, mTLParameter, soluongParameter, nXParameter, flagParameter);
         }
     
         public virtual int IMPORTSACH(Nullable<int> mS, string tS, Nullable<int> dG, Nullable<System.DateTime> nN, string nXB, Nullable<int> mTL, Nullable<int> soluong, Nullable<int> mNQL, Nullable<int> mNCC)
@@ -485,39 +590,6 @@ namespace DBMS_FORM.Model
                 new ObjectParameter("PPFDeduction", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertPersonalDetailsAndAccount", firstNameParameter, lastNameParameter, ageParameter, activeParameter, salaryParameter, pPFDeductionParameter);
-        }
-    
-        public virtual ObjectResult<string> SettingThanhVien(string action, Nullable<int> maTV, string hoVaTenTV, string soDT, string diaChi, string mail, Nullable<int> mDThanThiet)
-        {
-            var actionParameter = action != null ?
-                new ObjectParameter("Action", action) :
-                new ObjectParameter("Action", typeof(string));
-    
-            var maTVParameter = maTV.HasValue ?
-                new ObjectParameter("MaTV", maTV) :
-                new ObjectParameter("MaTV", typeof(int));
-    
-            var hoVaTenTVParameter = hoVaTenTV != null ?
-                new ObjectParameter("HoVaTenTV", hoVaTenTV) :
-                new ObjectParameter("HoVaTenTV", typeof(string));
-    
-            var soDTParameter = soDT != null ?
-                new ObjectParameter("SoDT", soDT) :
-                new ObjectParameter("SoDT", typeof(string));
-    
-            var diaChiParameter = diaChi != null ?
-                new ObjectParameter("DiaChi", diaChi) :
-                new ObjectParameter("DiaChi", typeof(string));
-    
-            var mailParameter = mail != null ?
-                new ObjectParameter("Mail", mail) :
-                new ObjectParameter("Mail", typeof(string));
-    
-            var mDThanThietParameter = mDThanThiet.HasValue ?
-                new ObjectParameter("MDThanThiet", mDThanThiet) :
-                new ObjectParameter("MDThanThiet", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SettingThanhVien", actionParameter, maTVParameter, hoVaTenTVParameter, soDTParameter, diaChiParameter, mailParameter, mDThanThietParameter);
         }
     
         public virtual ObjectResult<string> sp_AddNV(Nullable<int> manv, string hoten, string sdt, string dc, Nullable<int> sosachban, Nullable<int> luongnv, Nullable<int> ngayvang, string username, string password, Nullable<int> typeId, Nullable<int> manql, Nullable<int> danghi)
@@ -768,56 +840,21 @@ namespace DBMS_FORM.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Tv_Delete", idTVParameter, methodParameter);
         }
     
-        public virtual ObjectResult<string> Add_NhaCungCap(Nullable<int> mNCC, string tenNCC, string diaChi, string mail, Nullable<bool> conHD)
-        {
-            var mNCCParameter = mNCC.HasValue ?
-                new ObjectParameter("MNCC", mNCC) :
-                new ObjectParameter("MNCC", typeof(int));
-    
-            var tenNCCParameter = tenNCC != null ?
-                new ObjectParameter("TenNCC", tenNCC) :
-                new ObjectParameter("TenNCC", typeof(string));
-    
-            var diaChiParameter = diaChi != null ?
-                new ObjectParameter("DiaChi", diaChi) :
-                new ObjectParameter("DiaChi", typeof(string));
-    
-            var mailParameter = mail != null ?
-                new ObjectParameter("Mail", mail) :
-                new ObjectParameter("Mail", typeof(string));
-    
-            var conHDParameter = conHD.HasValue ?
-                new ObjectParameter("ConHD", conHD) :
-                new ObjectParameter("ConHD", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_NhaCungCap", mNCCParameter, tenNCCParameter, diaChiParameter, mailParameter, conHDParameter);
-        }
-    
-        [EdmFunction("DOAN_QUANLYNHASACH_DBMSEntities", "getNVofQL")]
-        public virtual IQueryable<getNVofQL_Result> getNVofQL(Nullable<int> maNql)
-        {
-            var maNqlParameter = maNql.HasValue ?
-                new ObjectParameter("maNql", maNql) :
-                new ObjectParameter("maNql", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<getNVofQL_Result>("[DOAN_QUANLYNHASACH_DBMSEntities].[getNVofQL](@maNql)", maNqlParameter);
-        }
-    
-        public virtual ObjectResult<string> Add_TheLoai(Nullable<int> mTL, string tenTL, Nullable<bool> biLoaiBo)
+        public virtual int EditGender(Nullable<int> mTL, string tTL, Nullable<int> flag)
         {
             var mTLParameter = mTL.HasValue ?
                 new ObjectParameter("MTL", mTL) :
                 new ObjectParameter("MTL", typeof(int));
     
-            var tenTLParameter = tenTL != null ?
-                new ObjectParameter("TenTL", tenTL) :
-                new ObjectParameter("TenTL", typeof(string));
+            var tTLParameter = tTL != null ?
+                new ObjectParameter("TTL", tTL) :
+                new ObjectParameter("TTL", typeof(string));
     
-            var biLoaiBoParameter = biLoaiBo.HasValue ?
-                new ObjectParameter("BiLoaiBo", biLoaiBo) :
-                new ObjectParameter("BiLoaiBo", typeof(bool));
+            var flagParameter = flag.HasValue ?
+                new ObjectParameter("flag", flag) :
+                new ObjectParameter("flag", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Add_TheLoai", mTLParameter, tenTLParameter, biLoaiBoParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EditGender", mTLParameter, tTLParameter, flagParameter);
         }
     }
 }

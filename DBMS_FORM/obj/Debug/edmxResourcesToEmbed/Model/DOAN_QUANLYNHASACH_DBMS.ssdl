@@ -82,13 +82,6 @@
     <Property Name="DaNghi" Type="bit" />
     <Property Name="MNQL" Type="int" />
   </EntityType>
-  <EntityType Name="Permission">
-    <Key>
-      <PropertyRef Name="Pid" />
-    </Key>
-    <Property Name="Pid" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="100" />
-  </EntityType>
   <EntityType Name="Sach">
     <Key>
       <PropertyRef Name="MaSach" />
@@ -349,6 +342,9 @@
     <Parameter Name="TenTL" Type="nvarchar" Mode="In" />
     <Parameter Name="BiLoaiBo" Type="bit" Mode="In" />
   </Function>
+  <Function Name="Check_ActiveProviderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="ProviderID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Check_ExistUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="userId" Type="int" Mode="In" />
   </Function>
@@ -373,8 +369,23 @@
     <Parameter Name="password" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="role" Type="nvarchar(max)" Mode="In" />
   </Function>
+  <Function Name="Delete_Providers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MNCC" Type="int" Mode="In" />
+    <Parameter Name="Method" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="deleteSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maSach" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EditBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MS" Type="int" Mode="In" />
+    <Parameter Name="TS" Type="varchar" Mode="In" />
+    <Parameter Name="DG" Type="int" Mode="In" />
+    <Parameter Name="NN" Type="datetime" Mode="In" />
+    <Parameter Name="NXB" Type="nvarchar" Mode="In" />
+    <Parameter Name="MTL" Type="int" Mode="In" />
+    <Parameter Name="Soluong" Type="int" Mode="In" />
+    <Parameter Name="NX" Type="datetime" Mode="In" />
+    <Parameter Name="flag" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="fluongNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
@@ -695,15 +706,6 @@
       </CollectionType>
     </ReturnType>
   </Function>
-  <Function Name="SettingThanhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Action" Type="nvarchar" Mode="In" />
-    <Parameter Name="MaTV" Type="int" Mode="In" />
-    <Parameter Name="HoVaTenTV" Type="nvarchar" Mode="In" />
-    <Parameter Name="SoDT" Type="varchar" Mode="In" />
-    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
-    <Parameter Name="Mail" Type="nvarchar" Mode="In" />
-    <Parameter Name="MDThanThiet" Type="int" Mode="In" />
-  </Function>
   <Function Name="sp_AddNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="int" Mode="In" />
     <Parameter Name="hoten" Type="nvarchar" Mode="In" />
@@ -812,7 +814,6 @@
     <EntitySet Name="Muon" EntityType="Self.Muon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sach" EntityType="Self.Sach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThanhVien" EntityType="Self.ThanhVien" Schema="dbo" store:Type="Tables" />

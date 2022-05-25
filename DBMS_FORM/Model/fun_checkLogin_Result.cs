@@ -16,5 +16,6 @@ namespace DBMS_FORM.Model
         public string HoTenNV { get; set; }
         public string UserName { get; set; }
         public string TypeName { get; set; }
+        public int MNV { get; set; }
     }
 }

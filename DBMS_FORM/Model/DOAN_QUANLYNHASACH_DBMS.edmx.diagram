@@ -4,16 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="83ca49f0bb3f4cf6a12ee8b5cb4132cd" Name="Diagram1">
+      <Diagram DiagramId="929d49095e774997ba77dc923e1e6be4" Name="Diagram1">
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.CungCap" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.DaBan" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.HoaDon" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Muon" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.NhaCungCap" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.NV" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Permission" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.Sach" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.sysdiagram" Width="1.5" PointX="5.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.ThanhVien" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.TheLoai" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DOAN_QUANLYNHASACH_DBMSModel.UserType" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />

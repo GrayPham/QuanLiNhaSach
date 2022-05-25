@@ -66,21 +66,23 @@
     <Compile Include="Banfrm.Designer.cs">
       <DependentUpon>Banfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\GenreBLL.cs" />
     <Compile Include="BLL\Login.cs" />
     <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="BLL\NhanVien.cs" />
+    <Compile Include="BLL\ProviderBLL.cs" />
     <Compile Include="BLL\ThanhVienBLL.cs" />
-    <Compile Include="BookManager\AddBookForm.cs">
+    <Compile Include="BookManager\AddGenre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookManager\AddBookForm.Designer.cs">
-      <DependentUpon>AddBookForm.cs</DependentUpon>
+    <Compile Include="BookManager\AddGenre.Designer.cs">
+      <DependentUpon>AddGenre.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookManager\BookManagementForm.cs">
+    <Compile Include="BookManager\AddProvider.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookManager\BookManagementForm.Designer.cs">
-      <DependentUpon>BookManagementForm.cs</DependentUpon>
+    <Compile Include="BookManager\AddProvider.Designer.cs">
+      <DependentUpon>AddProvider.cs</DependentUpon>
     </Compile>
     <Compile Include="BookManager\EditBookForm.cs">
       <SubType>Form</SubType>
@@ -93,18 +95,6 @@
     </Compile>
     <Compile Include="BookManager\EditGenreForm.Designer.cs">
       <DependentUpon>EditGenreForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BookManager\RemoveBookForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BookManager\RemoveBookForm.Designer.cs">
-      <DependentUpon>RemoveBookForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BookManager\RemoveGenreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BookManager\RemoveGenreForm.Designer.cs">
-      <DependentUpon>RemoveGenreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Form1.cs">
@@ -221,9 +211,6 @@
     <Compile Include="Model\NVinHD_Result.cs">
       <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Permission.cs">
-      <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\QuanLyNhaSach.cs" />
     <Compile Include="Model\Sach.cs">
       <DependentUpon>DOAN_QUANLYNHASACH_DBMS.tt</DependentUpon>
@@ -282,23 +269,17 @@
     <EmbeddedResource Include="Banfrm.resx">
       <DependentUpon>Banfrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookManager\AddBookForm.resx">
-      <DependentUpon>AddBookForm.cs</DependentUpon>
+    <EmbeddedResource Include="BookManager\AddGenre.resx">
+      <DependentUpon>AddGenre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookManager\BookManagementForm.resx">
-      <DependentUpon>BookManagementForm.cs</DependentUpon>
+    <EmbeddedResource Include="BookManager\AddProvider.resx">
+      <DependentUpon>AddProvider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookManager\EditBookForm.resx">
       <DependentUpon>EditBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookManager\EditGenreForm.resx">
       <DependentUpon>EditGenreForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BookManager\RemoveBookForm.resx">
-      <DependentUpon>RemoveBookForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BookManager\RemoveGenreForm.resx">
-      <DependentUpon>RemoveGenreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

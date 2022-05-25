@@ -81,14 +81,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Permissions">
-      <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Permission">
-        <MappingFragment StoreEntitySet="Permission">
-          <ScalarProperty Name="Pid" ColumnName="Pid" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Saches">
       <EntityTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.Sach">
         <MappingFragment StoreEntitySet="Sach">
@@ -173,6 +165,7 @@
           <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -254,10 +247,10 @@
           <ScalarProperty Name="MTV" ColumnName="MTV" />
           <ScalarProperty Name="HoVaTenTV" ColumnName="HoVaTenTV" />
           <ScalarProperty Name="Diachi" ColumnName="Diachi" />
-          <ScalarProperty Name="Mail" ColumnName="Mail" />
           <ScalarProperty Name="SoDT" ColumnName="SoDT" />
-          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
           <ScalarProperty Name="MDThanThiet" ColumnName="MDThanThiet" />
+          <ScalarProperty Name="ConSD" ColumnName="ConSD" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -286,6 +279,25 @@
           <ScalarProperty Name="luongNV" ColumnName="luongNV" />
           <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
           <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
+          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.getNVofQL" FunctionImportName="getNVofQL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result">
+          <ScalarProperty Name="MNV" ColumnName="MNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
+          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
+          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
+          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
           <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
           <ScalarProperty Name="MNQL" ColumnName="MNQL" />
         </ComplexTypeMapping>
@@ -363,17 +375,20 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Add_NhaCungCap" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_NhaCungCap" />
     <FunctionImportMapping FunctionImportName="Add_ThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_ThanhVien" />
+    <FunctionImportMapping FunctionImportName="Add_TheLoai" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_TheLoai" />
     <FunctionImportMapping FunctionImportName="CheckBan" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckBan" />
     <FunctionImportMapping FunctionImportName="CheckMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.CheckMuon" />
     <FunctionImportMapping FunctionImportName="createDbmsUser" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.createDbmsUser" />
+    <FunctionImportMapping FunctionImportName="Delete_Providers" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Delete_Providers" />
     <FunctionImportMapping FunctionImportName="deleteSach" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.deleteSach" />
+    <FunctionImportMapping FunctionImportName="EditBook" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.EditBook" />
     <FunctionImportMapping FunctionImportName="IMPORTSACH" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.IMPORTSACH" />
     <FunctionImportMapping FunctionImportName="INSERTBAN" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBAN" />
     <FunctionImportMapping FunctionImportName="INSERTBANTV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.INSERTBANTV" />
     <FunctionImportMapping FunctionImportName="InsertMuon" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertMuon" />
     <FunctionImportMapping FunctionImportName="InsertPersonalDetailsAndAccount" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.InsertPersonalDetailsAndAccount" />
-    <FunctionImportMapping FunctionImportName="SettingThanhVien" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.SettingThanhVien" />
     <FunctionImportMapping FunctionImportName="sp_AddNV" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_AddNV" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_creatediagram" />
@@ -403,26 +418,5 @@
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="thanhvienUpdate" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.thanhvienUpdate" />
     <FunctionImportMapping FunctionImportName="Tv_Delete" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Tv_Delete" />
-    <FunctionImportMapping FunctionImportName="Add_NhaCungCap" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_NhaCungCap" />
-    <FunctionImportMapping FunctionImportName="getNVofQL" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.getNVofQL">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DOAN_QUANLYNHASACH_DBMSModel.getNVofQL_Result">
-          <ScalarProperty Name="MNV" ColumnName="MNV" />
-          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="SoSachBan" ColumnName="SoSachBan" />
-          <ScalarProperty Name="luongNV" ColumnName="luongNV" />
-          <ScalarProperty Name="NgayVang" ColumnName="NgayVang" />
-          <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
-          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
-          <ScalarProperty Name="DaNghi" ColumnName="DaNghi" />
-          <ScalarProperty Name="MNQL" ColumnName="MNQL" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Add_TheLoai" FunctionName="DOAN_QUANLYNHASACH_DBMSModel.Store.Add_TheLoai" />
   </EntityContainerMapping>
 </Mapping>

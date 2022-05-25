@@ -64,5 +64,42 @@ namespace DBMS_FORM
             edit.ShowDialog();
             this.Visible = true;
         }
+
+        private void providerManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddProvider addProvider = new AddProvider();
+            addProvider.Show(this);
+        }
+
+
+        private void addProviderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddProvider addProvider = new AddProvider();
+            addProvider.Show(this);
+        }
+
+        private void editBookToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EditBookForm editBookForm = new EditBookForm();
+            editBookForm.Show(this);
+        }
+
+        private void addGenreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddGenre addGenre = new AddGenre();
+            addGenre.Show(this);
+        }
+
+        private void importBookToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Importfrm importfrm = new Importfrm();
+            importfrm.Show(this);
+        }
+
+        private void editGenreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditGenreForm editGenreForm = new EditGenreForm();
+            editGenreForm.Show(this);
+        }
     }
 }
